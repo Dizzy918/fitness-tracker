@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<!-- macOS sandbox: required for the .fit fileImporter to read user-picked files. -->
+	<key>com.apple.security.app-sandbox</key>
+	<true/>
+	<key>com.apple.security.files.user-selected.read-only</key>
+	<true/>
+	<!-- Outgoing HTTPS for Strava / intervals.icu / Anthropic. Without this a
+	     sandboxed macOS build silently fails every network request. -->
+	<key>com.apple.security.network.client</key>
+	<true/>
+</dict>
+</plist>

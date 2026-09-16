@@ -1,0 +1,18 @@
+# XcodeGen output — regenerate with `xcodegen generate`
+FitnessTracker.xcodeproj/
+
+# Xcode
+build/
+DerivedData/
+*.xcuserstate
+*.xcscmblueprint
+xcuserdata/
+*.moved-aside
+
+# SwiftPM
+.swiftpm/
+.build/
+Package.resolved
+
+# macOS
+.DS_Store

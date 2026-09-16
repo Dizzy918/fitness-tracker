@@ -1,0 +1,114 @@
+name: FitnessTracker
+options:
+  bundleIdPrefix: com.slavov
+  deploymentTarget:
+    iOS: "17.0"
+    macOS: "14.0"
+  createIntermediateGroups: true
+
+packages:
+  FitDataProtocol:
+    url: https://github.com/FitnessKit/FitDataProtocol
+    from: 2.1.6
+  AntMessageProtocol:
+    url: https://github.com/FitnessKit/AntMessageProtocol
+    from: 1.1.1
+  # Transitive, but linked explicitly: Measurement<UnitCadence> from this module
+  # appears in our own symbols, so the app must link it directly.
+  FitnessUnits:
+    url: https://github.com/FitnessKit/FitnessUnits
+    from: 3.1.0
+
+settings:
+  base:
+    SWIFT_VERSION: "5.9"
+    MARKETING_VERSION: "0.1.0"
+    CURRENT_PROJECT_VERSION: "1"
+    GENERATE_INFOPLIST_FILE: YES
+    ENABLE_PREVIEWS: YES
+    SWIFT_STRICT_CONCURRENCY: minimal
+    # Ad-hoc signing by default. Automatic signing with an empty DEVELOPMENT_TEAM
+    # fails the build outright, which broke `xcodebuild … test` — the command the
+    # README documents — for anyone who hadn't opened Xcode first. Ad-hoc is
+    # enough for the sandboxed macOS app, the test bundle and the iOS Simulator.
+    # To run on a real device, switch the target to Automatic and pick your Team.
+    DEVELOPMENT_TEAM: ""
+    CODE_SIGN_STYLE: Manual
+    CODE_SIGN_IDENTITY: "-"
+    PROVISIONING_PROFILE_SPECIFIER: ""
+
+targets:
+  FitnessTracker:
+    type: application
+    supportedDestinations: [iOS, macOS]
+    sources:
+      - path: FitnessTracker
+    dependencies:
+      - package: FitDataProtocol
+        product: FitDataProtocol
+      - package: AntMessageProtocol
+        product: AntMessageProtocol
+      - package: FitnessUnits
+        product: FitnessUnits
+    info:
+      path: FitnessTracker/Info.plist
+      properties:
+        UILaunchScreen: {}
+        UIApplicationSceneManifest:
+          UIApplicationSupportsMultipleScenes: true
+        LSApplicationCategoryType: public.app-category.healthcare-fitness
+        ITSAppUsesNonExemptEncryption: false
+        # Read-only. This app is a training database, not a recorder: it reads
+        # passive metrics and never writes workouts, so no Update description.
+        # No CoreLocation or CoreMotion use either — purpose strings for APIs
+        # the app doesn't call are an App Review question with no good answer.
+        NSHealthShareUsageDescription: "Import your resting heart rate, HRV, sleep, weight, and VO₂max to score training readiness."
+        # Strava returns the OAuth code to this scheme.
+        CFBundleURLTypes:
+          - CFBundleTypeRole: Editor
+            CFBundleURLName: com.slavov.fitnesstracker.oauth
+            CFBundleURLSchemes: [fitnesstracker]
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.slavov.fitnesstracker
+        PRODUCT_NAME: FitnessTracker
+        CODE_SIGN_ENTITLEMENTS: FitnessTracker/FitnessTracker.entitlements
+        # HealthKit exists only on iOS; requesting the capability on macOS breaks
+        # signing, so the iOS build gets its own entitlements file.
+        CODE_SIGN_ENTITLEMENTS[sdk=iphone*]: FitnessTracker/FitnessTracker-iOS.entitlements
+        # XcodeGen writes CODE_SIGN_IDENTITY = "iPhone Developer" onto any target
+        # that supports iOS, which outranks the project-level default, so the
+        # ad-hoc override has to be repeated here.
+        CODE_SIGN_IDENTITY: "-"
+        GENERATE_INFOPLIST_FILE: NO
+
+  FitnessTrackerTests:
+    type: bundle.unit-test
+    supportedDestinations: [macOS]
+    sources:
+      - path: Tests
+    dependencies:
+      - target: FitnessTracker
+      - package: FitDataProtocol
+        product: FitDataProtocol
+      - package: AntMessageProtocol
+        product: AntMessageProtocol
+      - package: FitnessUnits
+        product: FitnessUnits
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.slavov.fitnesstracker.tests
+        GENERATE_INFOPLIST_FILE: YES
+        # XcodeGen emits the iOS bundle layout; macOS nests the binary deeper.
+        TEST_HOST: "$(BUILT_PRODUCTS_DIR)/FitnessTracker.app/Contents/MacOS/FitnessTracker"
+        BUNDLE_LOADER: "$(TEST_HOST)"
+
+schemes:
+  FitnessTracker:
+    build:
+      targets:
+        FitnessTracker: all
+        FitnessTrackerTests: [test]
+    test:
+      targets:
+        - FitnessTrackerTests

@@ -1,0 +1,85 @@
+import SwiftUI
+import SwiftData
+import OSLog
+
+@main
+struct FitnessTrackerApp: App {
+
+    private static let log = Logger(subsystem: "com.slavov.fitnesstracker", category: "store")
+
+    /// Every model the store holds. Listed once so the app and the recovery
+    /// path can't drift apart.
+    static let schema = Schema([
+        Workout.self,
+        Shoe.self,
+        StrengthSession.self,
+        SetEntry.self,
+        Exercise.self,
+        DailyMetric.self,
+        Route.self,
+    ])
+
+    /// The live container, or `nil` if the store could not be opened.
+    ///
+    /// `.modelContainer(for:)` traps on failure, which turns any store problem —
+    /// a migration that can't be inferred, a corrupt file, a full disk — into a
+    /// launch crash with no explanation and no way out. Years of training
+    /// history deserve better than that, so failure is caught and reported with
+    /// the file still on disk for recovery.
+    private let container: ModelContainer?
+    private let failure: String?
+
+    init() {
+        do {
+            container = try ModelContainer(for: Self.schema)
+            failure = nil
+        } catch {
+            Self.log.error("store failed to open: \(error.localizedDescription, privacy: .public)")
+            container = nil
+            failure = error.localizedDescription
+        }
+    }
+
+    var body: some Scene {
+        WindowGroup {
+            if let container {
+                RootView()
+                    .modelContainer(container)
+            } else {
+                StoreFailureView(message: failure ?? "Unknown error")
+            }
+        }
+    }
+}
+
+/// Shown instead of crashing when the database can't be opened.
+///
+/// It deliberately offers no "reset" button: the store file is still there, and
+/// silently deleting someone's training history to get past an error screen is
+/// the worst possible response to a problem that's usually recoverable.
+struct StoreFailureView: View {
+    let message: String
+
+    private var storeLocation: String {
+        URL.applicationSupportDirectory.appendingPathComponent("default.store").path
+    }
+
+    var body: some View {
+        ContentUnavailableView {
+            Label("Can't open your training database", systemImage: "externaldrive.badge.xmark")
+        } description: {
+            VStack(spacing: 12) {
+                Text(message)
+                Text("""
+                    Your data hasn't been deleted. The file is still at:
+                    \(storeLocation)
+
+                    Quit and reopen the app first. If that doesn't help, copy that \
+                    file somewhere safe before trying anything else.
+                    """)
+                .font(.caption)
+            }
+        }
+        .padding()
+    }
+}
