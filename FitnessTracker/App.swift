@@ -17,6 +17,7 @@ struct FitnessTrackerApp: App {
         Exercise.self,
         DailyMetric.self,
         Route.self,
+        PlannedWorkout.self,
     ])
 
     /// The live container, or `nil` if the store could not be opened.

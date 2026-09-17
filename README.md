@@ -59,10 +59,11 @@ sessions — so every screen has something to show.
 | Manual entry | Log a workout by hand when nothing recorded it, and correct any workout afterwards |
 | HR zones | Five-zone split per workout with time-in-zone, from your max HR |
 | Records | Best efforts at 1 km → marathon from stream data, plus longest run / biggest week / most climbing |
+| Plan | A week of planned sessions matched against what you actually did, with a ramp warning |
 | Dashboard | This-week totals, fitness/fatigue/form with a 120-day curve, weekly volume, road pace trend, shoe alerts |
 | Finding things | Search across sport/source/notes/shoe, plus a sport filter |
 
-380 tests cover the FIT round-trip (encode → decode → assert), splits math, readiness
+410 tests cover the FIT round-trip (encode → decode → assert), splits math, readiness
 scoring (missing-input and flat-baseline cases included), HR zone boundaries and the
 time-in-zone invariant, best-effort extraction, haversine distances against known
 city pairs, GPX export/parse round-trips and malformed input, NP/IF/TSS against their
@@ -168,6 +169,43 @@ threshold.
 **Strength.** Working-set volume by movement pattern (squat/hinge/push/pull/carry/core),
 weekly tonnage, e1RM progression, and PR detection per exercise. Warmups never count
 toward volume.
+
+## Plan
+
+Everything else here is retrospective: it tells you what you did and what it
+cost. That makes the fitness and fatigue curves a report rather than a tool — you
+can see you're overreaching, but the app has no idea what you were planning to do
+about it. Dashboard → **Plan** closes that loop.
+
+One week at a time, deliberately. A month view invites planning further ahead
+than anyone's form can be predicted, and the useful question is always the same:
+what's left this week, and am I keeping up.
+
+**The matching is the whole problem.** A plan says "Tuesday, intervals"; the
+watch produces a run on Tuesday, and nothing links them. Asking you to tick
+things off by hand is a chore you'd abandon by week two, so the pairing is
+inferred — conservatively, and always visible:
+
+1. An explicit link you made always wins.
+2. Otherwise a plan takes the same-day session of the same sport.
+3. Failing that, the same-day session of *any* sport. A planned run that became a
+   ride is still that day's session; calling it both a miss and an extra would
+   double-count the week.
+
+It never crosses a day boundary — Tuesday's plan isn't satisfied by Thursday's
+run — one session can't fulfil two plans, and a plan you marked skipped doesn't
+reach for one at all. Sessions no plan called for are listed as unplanned; they
+still happened and still cost something, so they count toward the week's total.
+
+A plan can just be a name on a day. Give it a duration and its load is estimated
+with the same per-sport assumption the load model makes for an unmeasured
+session, so a planned week and a completed one compare on one scale rather than
+two. Set the load yourself for a session you know is harder than that.
+
+**Ramp warning.** Planning a week far above what you've been doing is the classic
+way to get hurt, and it's exactly the mistake a plan makes easy to commit — so
+the header says so while it's still a plan. Weeks with no training at all are
+excluded from the comparison, or a return from injury would read as reckless.
 
 ## Training load
 

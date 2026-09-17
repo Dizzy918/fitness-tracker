@@ -29,15 +29,16 @@ enum DataArchive {
         var exercises: [ExerciseRecord] = []
         var dailyMetrics: [DailyMetricRecord] = []
         var routes: [RouteRecord] = []
+        var plannedWorkouts: [PlannedWorkoutRecord] = []
 
         var isEmpty: Bool {
             workouts.isEmpty && shoes.isEmpty && strengthSessions.isEmpty
-                && dailyMetrics.isEmpty && routes.isEmpty
+                && dailyMetrics.isEmpty && routes.isEmpty && plannedWorkouts.isEmpty
         }
 
         var itemCount: Int {
             workouts.count + shoes.count + strengthSessions.count
-                + dailyMetrics.count + routes.count
+                + dailyMetrics.count + routes.count + plannedWorkouts.count
         }
     }
 
@@ -131,6 +132,20 @@ enum DataArchive {
         var isLoop: Bool
         var pointsData: Data?
         var elevationsData: Data?
+    }
+
+    struct PlannedWorkoutRecord: Codable, Sendable {
+        var id: UUID
+        var scheduledFor: Date
+        var sport: String
+        var title: String
+        var notes: String?
+        var targetDuration: TimeInterval?
+        var targetDistance: Double?
+        var targetLoad: Double?
+        var completedWorkoutID: UUID?
+        var skippedAt: Date?
+        var order: Int
     }
 
     // MARK: - Coding
@@ -229,6 +244,15 @@ enum DataArchive {
                         pointsData: $0.pointsData, elevationsData: $0.elevationsData)
         }
 
+        archive.plannedWorkouts = try context.fetch(FetchDescriptor<PlannedWorkout>()).map {
+            PlannedWorkoutRecord(
+                id: $0.id, scheduledFor: $0.scheduledFor, sport: $0.sportRaw,
+                title: $0.title, notes: $0.notes,
+                targetDuration: $0.targetDuration, targetDistance: $0.targetDistance,
+                targetLoad: $0.targetLoad, completedWorkoutID: $0.completedWorkoutID,
+                skippedAt: $0.skippedAt, order: $0.order)
+        }
+
         return archive
     }
 
@@ -253,9 +277,12 @@ enum DataArchive {
         var strengthSessions = 0
         var dailyMetrics = 0
         var routes = 0
+        var plannedWorkouts = 0
         var skipped = 0
 
-        var total: Int { workouts + shoes + strengthSessions + dailyMetrics + routes }
+        var total: Int {
+            workouts + shoes + strengthSessions + dailyMetrics + routes + plannedWorkouts
+        }
 
         var summary: String {
             guard total > 0 else {
@@ -269,6 +296,7 @@ enum DataArchive {
             if strengthSessions > 0 { parts.append("\(strengthSessions) lifting sessions") }
             if dailyMetrics > 0 { parts.append("\(dailyMetrics) days of metrics") }
             if routes > 0 { parts.append("\(routes) routes") }
+            if plannedWorkouts > 0 { parts.append("\(plannedWorkouts) planned sessions") }
             var text = "Restored " + parts.joined(separator: ", ") + "."
             if skipped > 0 { text += " Skipped \(skipped) already present." }
             return text
@@ -428,6 +456,23 @@ enum DataArchive {
             route.elevationsData = record.elevationsData
             context.insert(route)
             report.routes += 1
+        }
+
+        let planIDs = Set(try context.fetch(FetchDescriptor<PlannedWorkout>()).map(\.id))
+        for record in archive.plannedWorkouts {
+            if planIDs.contains(record.id) { report.skipped += 1; continue }
+            let plan = PlannedWorkout(
+                id: record.id, scheduledFor: record.scheduledFor,
+                sport: WorkoutSport(rawValue: record.sport) ?? .run,
+                title: record.title, order: record.order)
+            plan.notes = record.notes
+            plan.targetDuration = record.targetDuration
+            plan.targetDistance = record.targetDistance
+            plan.targetLoad = record.targetLoad
+            plan.completedWorkoutID = record.completedWorkoutID
+            plan.skippedAt = record.skippedAt
+            context.insert(plan)
+            report.plannedWorkouts += 1
         }
 
         return report

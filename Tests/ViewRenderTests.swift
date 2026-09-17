@@ -33,7 +33,7 @@ final class ViewRenderTests: XCTestCase {
 
         let container = try ModelContainer(
             for: Workout.self, Shoe.self, StrengthSession.self, SetEntry.self,
-                Exercise.self, DailyMetric.self, Route.self,
+                Exercise.self, DailyMetric.self, Route.self, PlannedWorkout.self,
             configurations: ModelConfiguration(isStoredInMemoryOnly: true)
         )
         let context = ModelContext(container)
@@ -47,7 +47,7 @@ final class ViewRenderTests: XCTestCase {
     private func emptyContainer() throws -> ModelContainer {
         let container = try ModelContainer(
             for: Workout.self, Shoe.self, StrengthSession.self, SetEntry.self,
-                Exercise.self, DailyMetric.self, Route.self,
+                Exercise.self, DailyMetric.self, Route.self, PlannedWorkout.self,
             configurations: ModelConfiguration(isStoredInMemoryOnly: true)
         )
         Self.retainedContainers.append(container)
@@ -91,6 +91,30 @@ final class ViewRenderTests: XCTestCase {
         let context = ModelContext(container)
         let exercise = try XCTUnwrap(try context.fetch(FetchDescriptor<Exercise>()).first)
         try await assertRenders(ExerciseEditor(exercise: exercise), container: container)
+    }
+
+    func testPlanViewRendersWithAndWithoutAPlan() async throws {
+        try await assertRenders(NavigationStack { PlanView() },
+                                container: try emptyContainer())
+
+        let container = try seededContainer()
+        let context = ModelContext(container)
+        let monday = Calendar.current.dateInterval(of: .weekOfYear, for: .now)!.start
+        for offset in [0, 2, 4] {
+            let plan = PlannedWorkout(
+                scheduledFor: Calendar.current.date(byAdding: .day, value: offset, to: monday)!,
+                sport: offset == 2 ? .bike : .run,
+                title: offset == 2 ? "Threshold 3×10" : "Easy")
+            plan.targetDuration = 3600
+            context.insert(plan)
+        }
+        try context.save()
+        try await assertRenders(NavigationStack { PlanView() }, container: container)
+    }
+
+    func testPlannedWorkoutEditorRenders() async throws {
+        try await assertRenders(PlannedWorkoutEditor(existing: nil, day: .now),
+                                container: try seededContainer())
     }
 
     func testManualWorkoutSheetRenders() async throws {

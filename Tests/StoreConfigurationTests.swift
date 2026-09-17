@@ -105,7 +105,7 @@ final class StoreConfigurationTests: XCTestCase {
         let names = Set(schema.entities.map(\.name))
         XCTAssertEqual(names, [
             "Workout", "Shoe", "StrengthSession", "SetEntry",
-            "Exercise", "DailyMetric", "Route",
+            "Exercise", "DailyMetric", "Route", "PlannedWorkout",
         ])
     }
 

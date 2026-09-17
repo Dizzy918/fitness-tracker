@@ -13,7 +13,7 @@ final class DataArchiveTests: XCTestCase {
     private func makeContainer() throws -> ModelContainer {
         try ModelContainer(
             for: Workout.self, Shoe.self, StrengthSession.self, SetEntry.self,
-            Exercise.self, DailyMetric.self, Route.self,
+            Exercise.self, DailyMetric.self, Route.self, PlannedWorkout.self,
             configurations: ModelConfiguration(isStoredInMemoryOnly: true)
         )
     }

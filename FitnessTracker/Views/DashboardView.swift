@@ -9,10 +9,12 @@ struct DashboardView: View {
     @Query(filter: #Predicate<Shoe> { $0.retiredAt == nil }) private var shoes: [Shoe]
     @Query private var strengthSessions: [StrengthSession]
     @Query(sort: \DailyMetric.date, order: .reverse) private var metrics: [DailyMetric]
+    @Query(sort: \PlannedWorkout.scheduledFor) private var plannedWorkouts: [PlannedWorkout]
 
     /// Training load decodes every sample stream, so it's computed off the main
     /// actor once per data change rather than inside `body`.
     @State private var training = TrainingState()
+    @State private var planWeek = TrainingPlan.Week(start: .now)
 
     var body: some View {
         NavigationStack {
@@ -27,6 +29,7 @@ struct DashboardView: View {
                 } else {
                     VStack(alignment: .leading, spacing: 24) {
                         thisWeek
+                        planLink
                         recordsLink
                         shoesLink
                         loadSection
@@ -45,7 +48,7 @@ struct DashboardView: View {
     /// Changes whenever anything load-bearing changes, so the curve recomputes
     /// after a sync or an import but not on every unrelated redraw.
     private var reloadToken: String {
-        "\(workouts.count)-\(strengthSessions.count)-\(workouts.first?.id.uuidString ?? "")"
+        "\(workouts.count)-\(strengthSessions.count)-\(plannedWorkouts.count)-\(workouts.first?.id.uuidString ?? "")"
     }
 
     private func reloadTrainingState() async {
@@ -54,9 +57,14 @@ struct DashboardView: View {
         let strength = strengthSessions.map(\.snapshot)
         let restingHR = metrics.first(where: { $0.restingHR != nil })?.restingHR
         let athlete = AthleteProfile.make(workouts: snapshots, restingHR: restingHR)
-        training = await Task.detached(priority: .userInitiated) {
-            TrainingState.build(workouts: snapshots, strength: strength, athlete: athlete)
+        let plans = plannedWorkouts.map(\.snapshot)
+        let built = await Task.detached(priority: .userInitiated) {
+            (TrainingState.build(workouts: snapshots, strength: strength, athlete: athlete),
+             TrainingPlan.week(containing: .now, planned: plans,
+                               workouts: snapshots, athlete: athlete))
         }.value
+        training = built.0
+        planWeek = built.1
     }
 
     // MARK: - This week
@@ -79,6 +87,34 @@ struct DashboardView: View {
             }
         }
     }
+
+    private var planLink: some View {
+        NavigationLink {
+            PlanView()
+        } label: {
+            HStack {
+                Image(systemName: "calendar")
+                Text("Plan").font(.subheadline.weight(.medium))
+                Spacer()
+                if outstandingThisWeek > 0 {
+                    Text("\(outstandingThisWeek) to go")
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
+                }
+                Image(systemName: "chevron.right").font(.caption)
+            }
+            .padding()
+            .background(.quaternary.opacity(0.4), in: RoundedRectangle(cornerRadius: 10))
+        }
+        .buttonStyle(.plain)
+    }
+
+    /// Planned sessions left this week, so the row is worth glancing at.
+    ///
+    /// Comes from the matched week rather than the plans' stored flags: matching
+    /// is inferred at read time, so a plan you already fulfilled still has no
+    /// completedWorkoutID and would otherwise be nagged about all week.
+    private var outstandingThisWeek: Int { planWeek.outstandingCount }
 
     private var recordsLink: some View {
         NavigationLink {
