@@ -3,6 +3,8 @@ import SwiftData
 import UniformTypeIdentifiers
 
 struct WorkoutListView: View {
+    @Environment(\.units) private var units
+
     @Environment(\.modelContext) private var context
     @Query(sort: \Workout.startedAt, order: .reverse) private var workouts: [Workout]
 
@@ -12,6 +14,7 @@ struct WorkoutListView: View {
     @State private var importingFiles = false
     @State private var showSettings = false
     @State private var showPDFImport = false
+    @State private var showManualEntry = false
     @State private var syncing = false
     @State private var alertMessage: String?
     @State private var alertTitle = ""
@@ -47,6 +50,13 @@ struct WorkoutListView: View {
             .toolbar {
                 ToolbarItem(placement: .primaryAction) {
                     Menu {
+                        Section {
+                            Button {
+                                showManualEntry = true
+                            } label: {
+                                Label("Log a workout by hand…", systemImage: "square.and.pencil")
+                            }
+                        }
                         Section("Import") {
                             Button {
                                 importing = true
@@ -118,6 +128,7 @@ struct WorkoutListView: View {
             )
             .sheet(isPresented: $showSettings) { SettingsView() }
             .sheet(isPresented: $showPDFImport) { PDFImportView() }
+            .sheet(isPresented: $showManualEntry) { ManualWorkoutSheet() }
             .alert(alertTitle, isPresented: Binding(
                 get: { alertMessage != nil },
                 set: { if !$0 { alertMessage = nil } }
@@ -141,6 +152,7 @@ struct WorkoutListView: View {
             VStack(spacing: 8) {
                 Button("Import .fit…") { importing = true }
                     .buttonStyle(.borderedProminent)
+                Button("Log one by hand…") { showManualEntry = true }
                 Button("Connect a service…") { showSettings = true }
                 Button("Seed demo data") {
                     let n = DemoData.seed(into: context)
@@ -176,10 +188,11 @@ struct WorkoutListView: View {
     private var headerText: String {
         let shown = filtered.count
         let distance = filtered.reduce(0) { $0 + $1.distance }
+        let noun = shown == 1 ? "workout" : "workouts"
         if shown == workouts.count {
-            return "\(shown) workouts · \(Fmt.km(distance, decimals: 0)) total"
+            return "\(shown) \(noun) · \(units.distance(distance, decimals: 0)) total"
         }
-        return "\(shown) of \(workouts.count) · \(Fmt.km(distance, decimals: 0))"
+        return "\(shown) of \(workouts.count) · \(units.distance(distance, decimals: 0))"
     }
 
     private var totalDistance: Double {
@@ -263,6 +276,8 @@ struct WorkoutListView: View {
 }
 
 struct WorkoutRow: View {
+    @Environment(\.units) private var units
+
     let workout: Workout
 
     var body: some View {
@@ -312,9 +327,9 @@ struct WorkoutRow: View {
     }
 
     private var subtitle: String {
-        var parts = [Fmt.km(workout.distance), Fmt.duration(workout.duration)]
+        var parts = [units.distance(workout.distance), units.duration(workout.duration)]
         if let pace = workout.paceSecPerKm {
-            parts.append("\(Fmt.pace(pace))/km")
+            parts.append(units.pace(pace))
         }
         if let hr = workout.avgHeartRate {
             parts.append("\(hr) bpm")

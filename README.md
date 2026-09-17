@@ -24,19 +24,21 @@ xcodebuild -project FitnessTracker.xcodeproj -scheme FitnessTracker -destination
 ```
 
 No workouts yet? **Workouts tab → + → Seed demo data** inserts a deterministic
-12-week season (40 runs with routes and HR streams, 2 shoes, 16 lifting sessions)
-so every screen has something to show.
+12-week season — runs with routes and HR streams, rides with power, pool swims,
+four 8 × 400 m track sessions with real lap records, 2 shoes and 16 lifting
+sessions — so every screen has something to show.
 
 ## What works today
 
 | Area | Status |
 |---|---|
 | FIT import | Session/Record/Lap parsing, GPS track, HR/cadence/speed/altitude streams, content-hash dedupe |
-| Strava sync | Own-app OAuth (`activity:read_all`), paged activity fetch, route from `summary_polyline`, token auto-refresh |
+| Strava sync | Own-app OAuth (`activity:read_all`), paged activity fetch, per-second streams backfilled inside the rate limit, token auto-refresh |
 | intervals.icu sync | API-key basic auth, date-windowed activity fetch |
 | PDF extraction | Claude reads a PDF and returns structured workouts; mandatory review before anything is saved |
-| Workouts | List with pace/HR/shoe/source, detail with route map, HR chart, per-km splits |
+| Workouts | List with pace/HR/shoe/source, detail with route map, HR chart, laps and per-km splits |
 | Splits | Interpolated at km boundaries, fastest split highlighted, partial final split |
+| Laps | Watch laps with intensity markings, recovery dimmed, fastest working lap highlighted; switchable with km splits |
 | Shoes | Assign to runs, mileage rollup, wear % with warning colors, retire/un-retire |
 | Strength | Sessions, sets with RPE, Epley e1RM, per-exercise progress chart, add-set flow |
 | Routes | Tap-to-build route planner with path snapping, GPX import/export, elevation profile |
@@ -45,13 +47,16 @@ so every screen has something to show.
 | Swimming | Pace per 100 m, stroke rate, lengths, SWOLF |
 | Running | Race predictions (Riegel) and derived training-pace bands |
 | Recovery | Readiness score with per-component breakdown, HRV/RHR/sleep/weight trends, daily check-in |
-| HealthKit | HRV, resting HR, sleep, weight, VO₂max import (iOS only — HealthKit doesn't exist on macOS) |
+| HealthKit | HRV, resting HR, sleep, weight, VO₂max import, and workout **write-back** with route and HR series (iOS only) |
+| Units | Metric or imperial throughout, display-only — stored values stay SI |
+| Backup | Full JSON export and merge-restore, plus a workouts CSV |
+| Manual entry | Log a workout by hand when nothing recorded it |
 | HR zones | Five-zone split per workout with time-in-zone, from your max HR |
 | Records | Best efforts at 1 km → marathon from stream data, plus longest run / biggest week / most climbing |
 | Dashboard | This-week totals, fitness/fatigue/form with a 120-day curve, weekly volume, road pace trend, shoe alerts |
 | Finding things | Search across sport/source/notes/shoe, plus a sport filter |
 
-226 tests cover the FIT round-trip (encode → decode → assert), splits math, readiness
+309 tests cover the FIT round-trip (encode → decode → assert), splits math, readiness
 scoring (missing-input and flat-baseline cases included), HR zone boundaries and the
 time-in-zone invariant, best-effort extraction, haversine distances against known
 city pairs, GPX export/parse round-trips and malformed input, NP/IF/TSS against their
@@ -176,6 +181,124 @@ Rest days are emitted as zero-load days rather than skipped: decay between sessi
 is the entire point of the model. Readiness now takes its acute:chronic ratio from
 this curve, so a hard ride or a heavy lifting week costs readiness the way it should.
 
+## Laps
+
+Watches record laps; this app stores them and, until now, showed you kilometre
+splits instead. For an 8 × 400 m session that is actively misleading — each
+kilometre smears a rep into its recovery, so a set run at 3:20/km off 6:40 floats
+displays as a wobble between 4:15 and 4:50 and tells you nothing.
+
+The detail view now shows laps when the athlete structured the session, and
+kilometre splits when the watch just ticked over distance. Both are available
+from a switch whenever both exist.
+
+Which one leads is decided from the FIT record rather than guessed: a `manual`
+lap trigger, or any lap marked `rest`, `warmup` or `cooldown`, means the session
+was structured. Files that carry no trigger fall back to geometry — laps all
+within 3% of the same round distance (400 m, 500 m, 1 km, 1 mile, 5 km) are an
+auto-lap, ignoring the trailing remainder.
+
+Recovery, warmup and cooldown laps are dimmed rather than hidden — you want to see
+that the reps were 78 seconds and the floats were 90 — and they're excluded from
+the fastest-lap comparison so a jog can never win it. Swim laps read per 100 m.
+
+## Streams
+
+Strava's activity list carries a summary only: no per-second data, and a
+decimated `summary_polyline` for the map. Without streams there are no splits, no
+zone breakdown, no best efforts, and training load falls back to average heart
+rate — so a synced interval session and a synced steady run scored the same.
+
+Streams cost **one request per activity**, against a budget of 200 per 15 minutes
+and 2000 per day shared with everything else, so they can't be fetched inline:
+a 400-activity first sync would spend the whole day's quota before it finished the
+list. Instead each sync backfills a capped batch, newest first:
+
+- **25 activities per sync**, or fewer if Strava's own `X-RateLimit` headers say
+  the budget is tighter — the point is to stop *before* a 429, not after one.
+- **Newest first**, because a partial backfill covering this month is worth far
+  more than one that starts a year ago and never reaches the present.
+- **Resumable.** The report says how many are left and to sync again.
+- **Asked once.** Plenty of activities genuinely have no streams — a manual
+  entry, a treadmill run logged by hand. `Workout.detailFetchedAt` is stamped
+  even when nothing came back, so those aren't re-requested on every sync
+  forever. A failed activity (deleted, private, 404) is marked too, and costs
+  only itself rather than the rest of the batch.
+
+The full-resolution track from the `latlng` stream replaces the summary polyline
+when it arrives, so the map sharpens as a side effect.
+
+intervals.icu declares `supportsStreams == false` and is skipped; its streams need
+the same per-activity call and the mechanism is ready for it.
+
+## Units
+
+Metric or imperial, in Settings. **Display only** — everything is stored in SI
+and converted at the edge, which is the only way a personal best, a threshold
+pace and a 42-day load average stay comparable across a preference you can flip
+at any moment. Switching back and forth can't change a recorded value, and a
+test asserts that training-load scoring is byte-identical either way.
+
+Imperial means miles for distance, yards for track reps and pool lengths, feet
+for climb, pounds for weight, and pace per mile. Input fields step in whatever
+unit is shown — 5 lb plates rather than 2.5 kg ones — and convert back on save.
+The preference rides the SwiftUI environment from the root, so every screen
+re-renders the moment it changes.
+
+## Apple Health
+
+Reads passive metrics (HRV, resting HR, sleep, weight, VO₂max), and **writes
+workouts back**.
+
+The write-back is the other half of the FIT-first decision. Suunto's own Health
+sync writes a summary and drops the GPS track and per-second heart rate — which
+is why this app reads `.fit` files directly — but that leaves Health, the Fitness
+rings and every other health app looking at the degraded copy. Settings → Apple
+Health pushes each imported workout across with its route as an `HKWorkoutRoute`
+and its heart rate as a real series, plus per-interval distance and energy.
+
+Demo data and workouts that came *from* Health are never written, nothing is
+written twice (`Workout.healthKitExportedAt` is stamped even when a workout
+turned out to have nothing to send, so it isn't re-asked on every run), and the
+count of what's left is shown before you tap.
+
+**HealthKit needs a real signing team.** An ad-hoc build has no entitlement and
+the app says so plainly instead of failing silently.
+
+## Backup
+
+Settings → Backup:
+
+- **Export everything** — plain JSON with GPS tracks and sensor streams. Large,
+  and restores exactly.
+- **Export summary only** — the same minus the streams, a fraction of the size.
+- **Export workouts as CSV** — one row per workout, always metric and ISO dates,
+  RFC 4180 quoting. A CSV is an interchange format, not a view.
+- **Restore** — merges. It never deletes and never overwrites: identity is the
+  row id, then `externalID`, and daily metrics merge *by date* rather than by id,
+  because two devices can easily disagree about a row id for the same day and a
+  duplicated day would corrupt every readiness baseline.
+
+Restoring the same archive twice is a no-op, and a test asserts it.
+
+## iCloud sync
+
+Written and wired, but **off in this repo**. The code asks CloudKit for the store
+at launch and falls back to a local one when it isn't available, reporting which
+it got in Settings — an unavailable iCloud must never stop the app opening
+someone's local history.
+
+The entitlement is deliberately left out of `FitnessTracker.entitlements`:
+unlike HealthKit's, an iCloud container identifier requires a provisioning
+profile *to build at all*, which would break the signing-free `xcodebuild … test`
+above for anyone who hasn't opened Xcode. To turn it on: set your team, add the
+iCloud capability with CloudKit and a container, and point
+`StoreConfiguration.cloudContainerIdentifier` at it.
+
+The schema constraints CloudKit imposes — every attribute optional or defaulted,
+no unique constraints, optional to-one relationships — are asserted by tests
+against the real schema, so they fail here rather than at launch on a device.
+
 ## Readiness
 
 The Recovery tab scores each day 0–100 from whatever inputs exist:
@@ -205,12 +328,13 @@ Design decisions worth knowing:
 FitnessTracker/
   App.swift                  @main + SwiftData container
   Models/                    Workout, Shoe, Strength, WorkoutSport
-  Importers/                 FITImporter (decode), FITPersistence (SwiftData bridge)
+  Importers/                 FITImporter (decode), FITPersistence (SwiftData bridge),
+                             DataArchive (JSON backup + restore)
   Analysis/                  Splits, Readiness, HRZones, PersonalRecords, CyclingPower,
-                             SwimMetrics, RacePrediction, StrengthAnalysis, GeoMath, GPX,
-                             Formatting, DemoData
+                             SwimMetrics, RacePrediction, StrengthAnalysis, TrainingLoad,
+                             AthleteProfile, Units, GeoMath, GPX, Formatting, DemoData
   Sync/                      Providers (Strava, intervals.icu), Keychain, polyline, SyncEngine
-  Health/                    HealthKitReader (iOS-only, compiled out on macOS)
+  Health/                    HealthKitReader, HealthKitWriter (iOS-only)
   AI/                        AnthropicClient, PDFWorkoutExtractor
   Views/                     Workouts, Recovery, Routes, Strength, Dashboard, Records,
                              Shoes, Settings, PDF import
@@ -253,7 +377,10 @@ Tests/                       FIT, splits, readiness, zones, records, persistence
 - [x] HealthKit metrics, readiness score, HR zones, personal records, search
 - [x] Route planner with GPX export, cycling power, swim metrics, race prediction
 - [x] Unified multi-sport training load with fitness/fatigue/form curves
-- [ ] CloudKit sync between iPhone and Mac (models already have defaults for it)
+- [x] Strava per-second streams, watch laps surfaced with intensity markings
+- [x] Metric/imperial units, JSON backup + restore, manual workout entry
+- [x] HealthKit workout write-back; CloudKit wired up behind its entitlement
+- [ ] Turn CloudKit on (code is written; needs a team and the entitlement — see below)
 - [ ] Drag-and-drop FIT import on macOS; watch-folder auto-import
 - [ ] Route elevation from a terrain API (planned routes have no elevation until imported)
 - [ ] Exercise library with form notes
@@ -265,13 +392,14 @@ Tests/                       FIT, splits, readiness, zones, records, persistence
   `.fit` files directly. Export from the Suunto app, then import here.
 - macOS is sandboxed with read-only access to user-selected files
   (`FitnessTracker.entitlements`) — enough for the file importer.
-- `LapMessage` data is parsed and stored but the detail view shows computed km
-  splits instead; watch laps aren't surfaced yet. This is the gap that matters
-  most for interval work — an 8 × 400 m session wants its laps, not its kilometres.
-- Strava activities import with a summary polyline only. Without per-second
-  streams there are no best efforts, no zone breakdown, and training load falls
-  back to average heart rate. Streams need a second call per activity.
-- Everything is metric. There is no unit preference.
+- Strava streams backfill 25 activities per sync, so a large first import takes
+  several runs to fill in. That's a rate-limit floor, not a choice.
+- intervals.icu still imports without GPS tracks or streams.
+- **iCloud sync has never run against two real devices.** The fallback path and
+  the schema constraints are tested; the mirroring itself is not.
+- HealthKit write-back was verified in the Simulator against a synthetic Health
+  store, not against a populated one on a real device.
+- The demo seeder runs on the main thread and takes about a second.
 - **Strava and intervals.icu sync has not been run against a live account** — parsing
   is tested against realistic fixtures, but the first real connection may surface
   field-shape surprises. Same for PDF extraction: the request shape is tested, the

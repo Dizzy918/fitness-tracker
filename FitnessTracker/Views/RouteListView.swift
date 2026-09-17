@@ -4,6 +4,7 @@ import MapKit
 import UniformTypeIdentifiers
 
 struct RouteListView: View {
+
     @Environment(\.modelContext) private var context
     @Query(sort: \Route.createdAt, order: .reverse) private var routes: [Route]
 
@@ -115,6 +116,7 @@ struct RouteListView: View {
 }
 
 struct RouteRow: View {
+    @Environment(\.units) private var units
     let route: Route
 
     var body: some View {
@@ -138,7 +140,7 @@ struct RouteRow: View {
     }
 
     private var subtitle: String {
-        var parts = [Fmt.km(route.distance)]
+        var parts = [units.distance(route.distance)]
         if let gain = route.elevationGain, gain > 0 { parts.append("↑\(Int(gain)) m") }
         parts.append(route.createdAt.formatted(date: .abbreviated, time: .omitted))
         return parts.joined(separator: " · ")
@@ -146,6 +148,7 @@ struct RouteRow: View {
 }
 
 struct RouteDetailView: View {
+    @Environment(\.units) private var units
     @Environment(\.modelContext) private var context
     @Bindable var route: Route
 
@@ -163,8 +166,8 @@ struct RouteDetailView: View {
                 }
 
                 LazyVGrid(columns: [GridItem(.adaptive(minimum: 110), spacing: 12)], spacing: 12) {
-                    StatTile(label: "Distance", value: Fmt.km(route.distance))
-                    StatTile(label: "Elev gain", value: Fmt.meters(route.elevationGain))
+                    StatTile(label: "Distance", value: units.distance(route.distance))
+                    StatTile(label: "Elev gain", value: units.elevation(route.elevationGain))
                     StatTile(label: "Points", value: "\(route.points.count)")
                     StatTile(label: "Shape", value: route.isLoop ? "Loop" : "Point to point")
                 }

@@ -21,7 +21,16 @@ final class ViewRenderTests: XCTestCase {
     /// process lifetime is cheaper than a flaky suite.
     private nonisolated(unsafe) static var retainedContainers: [ModelContainer] = []
 
+    /// Seeded containers, keyed by season length.
+    ///
+    /// Seeding a season and writing its sample streams costs well over a second;
+    /// doing it once per render test dominated the whole suite's runtime. These
+    /// tests only read, so one container per `weeks` value serves all of them.
+    private nonisolated(unsafe) static var seededByWeeks: [Int: ModelContainer] = [:]
+
     private func seededContainer(weeks: Int = 6) throws -> ModelContainer {
+        if let existing = Self.seededByWeeks[weeks] { return existing }
+
         let container = try ModelContainer(
             for: Workout.self, Shoe.self, StrengthSession.self, SetEntry.self,
                 Exercise.self, DailyMetric.self, Route.self,
@@ -31,6 +40,7 @@ final class ViewRenderTests: XCTestCase {
         DemoData.seed(into: context, weeks: weeks)
         try context.save()
         Self.retainedContainers.append(container)
+        Self.seededByWeeks[weeks] = container
         return container
     }
 

@@ -9,6 +9,8 @@ import MapKit
 /// across blocks. It falls back to a straight segment whenever MapKit can't
 /// route (remote terrain, throttling), so a snap failure never loses your work.
 struct RouteBuilderView: View {
+    @Environment(\.units) private var units
+
     @Environment(\.dismiss) private var dismiss
     @Environment(\.modelContext) private var context
 
@@ -70,7 +72,7 @@ struct RouteBuilderView: View {
         VStack(spacing: 12) {
             HStack {
                 VStack(alignment: .leading, spacing: 2) {
-                    Text(Fmt.km(distance))
+                    Text(units.distance(distance))
                         .font(.title2.weight(.semibold).monospacedDigit())
                     Text("\(waypoints.count) waypoints\(GeoMath.isLoop(pathPoints) ? " · loop" : "")")
                         .font(.caption)

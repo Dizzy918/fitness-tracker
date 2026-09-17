@@ -3,6 +3,8 @@ import SwiftData
 import Charts
 
 struct DashboardView: View {
+    @Environment(\.units) private var units
+
     @Query(sort: \Workout.startedAt, order: .reverse) private var workouts: [Workout]
     @Query(filter: #Predicate<Shoe> { $0.retiredAt == nil }) private var shoes: [Shoe]
     @Query private var strengthSessions: [StrengthSession]
@@ -70,10 +72,10 @@ struct DashboardView: View {
         return VStack(alignment: .leading, spacing: 8) {
             Text("This week").font(.headline)
             LazyVGrid(columns: [GridItem(.adaptive(minimum: 110), spacing: 12)], spacing: 12) {
-                StatTile(label: "Distance", value: Fmt.km(km))
-                StatTile(label: "Time", value: Fmt.duration(time))
+                StatTile(label: "Distance", value: units.distance(km))
+                StatTile(label: "Time", value: units.duration(time))
                 StatTile(label: "Sessions", value: "\(thisWeekRuns.count)")
-                StatTile(label: "Elev gain", value: Fmt.meters(gain))
+                StatTile(label: "Elev gain", value: units.elevation(gain))
             }
         }
     }
@@ -239,11 +241,11 @@ struct DashboardView: View {
             Chart(weeklyBuckets) { bucket in
                 BarMark(
                     x: .value("Week", bucket.weekStart, unit: .weekOfYear),
-                    y: .value("km", bucket.km)
+                    y: .value(units.distanceUnit, displayDistance(bucket.km * 1000))
                 )
                 .foregroundStyle(.tint)
             }
-            .chartYAxisLabel("km")
+            .chartYAxisLabel(units.distanceUnit)
             .frame(height: 180)
         }
     }
@@ -269,20 +271,20 @@ struct DashboardView: View {
                     ForEach(Array(roadRuns.enumerated()), id: \.offset) { _, point in
                         PointMark(
                             x: .value("Date", point.0),
-                            y: .value("Pace", point.1 / 60)
+                            y: .value("Pace", (units.paceValue(point.1) ?? point.1) / 60)
                         )
                         .foregroundStyle(.secondary)
                     }
                     ForEach(Array(movingAverage(roadRuns, window: 5).enumerated()), id: \.offset) { _, point in
                         LineMark(
                             x: .value("Date", point.0),
-                            y: .value("Pace", point.1 / 60)
+                            y: .value("Pace", (units.paceValue(point.1) ?? point.1) / 60)
                         )
                         .foregroundStyle(.tint)
                         .interpolationMethod(.monotone)
                     }
                 }
-                .chartYAxisLabel("min/km")
+                .chartYAxisLabel("min/\(units.paceUnit)")
                 // Faster is better, so invert the axis: down = slower.
                 .chartYScale(domain: .automatic(reversed: true))
                 .frame(height: 180)
@@ -300,6 +302,11 @@ struct DashboardView: View {
     }
 
     // MARK: - Shoes
+
+    /// Metres in, chart-axis number out.
+    private func displayDistance(_ meters: Double) -> Double {
+        units.system == .metric ? meters / 1000 : meters / UnitConversion.metersPerMile
+    }
 
     private var shoeWarnings: [Shoe] {
         shoes.filter { $0.wearFraction > 0.85 }

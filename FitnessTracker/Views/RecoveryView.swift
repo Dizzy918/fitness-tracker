@@ -3,6 +3,7 @@ import SwiftData
 import Charts
 
 struct RecoveryView: View {
+    @Environment(\.units) private var units
     @Environment(\.modelContext) private var context
     @Query(sort: \DailyMetric.date, order: .reverse) private var metrics: [DailyMetric]
     @Query(sort: \Workout.startedAt, order: .reverse) private var workouts: [Workout]
@@ -233,8 +234,8 @@ struct RecoveryView: View {
                 m.sleepHours.map { (m.date, $0) }
             }, color: .indigo)
 
-            metricChart(title: "Weight", unit: "kg", values: metrics.compactMap { m in
-                m.weightKg.map { (m.date, $0) }
+            metricChart(title: "Weight", unit: units.weightUnit, values: metrics.compactMap { m in
+                m.weightKg.map { (m.date, units.displayedWeight(fromKilograms: $0)) }
             }, color: .teal)
         }
     }

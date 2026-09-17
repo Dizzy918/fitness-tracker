@@ -6,6 +6,8 @@ import SwiftData
 /// Best efforts require decoding every workout's sample stream, so the work runs
 /// off the main actor and the result is cached in state.
 struct RecordsView: View {
+    @Environment(\.units) private var units
+
     @Query(sort: \Workout.startedAt, order: .reverse) private var workouts: [Workout]
 
     @State private var records: [PersonalRecord] = []
@@ -35,14 +37,14 @@ struct RecordsView: View {
                             }
                             Spacer()
                             VStack(alignment: .trailing, spacing: 2) {
-                                Text(Fmt.duration(record.time))
+                                Text(units.duration(record.time))
                                     .font(.title3.monospacedDigit())
-                                Text("\(Fmt.pace(record.paceSecPerKm))/km")
+                                Text(units.pace(record.paceSecPerKm))
                                     .font(.caption).foregroundStyle(.secondary)
                             }
                         }
                         .accessibilityElement(children: .combine)
-                        .accessibilityLabel("\(record.label) best \(Fmt.duration(record.time))")
+                        .accessibilityLabel("\(record.label) best \(units.duration(record.time))")
                     }
                 }
             }
@@ -53,11 +55,11 @@ struct RecordsView: View {
                         HStack {
                             VStack(alignment: .leading, spacing: 2) {
                                 Text(prediction.label).font(.headline)
-                                Text("\(Fmt.pace(prediction.paceSecPerKm))/km")
+                                Text(units.pace(prediction.paceSecPerKm))
                                     .font(.caption).foregroundStyle(.secondary)
                             }
                             Spacer()
-                            Text(Fmt.duration(prediction.time))
+                            Text(units.duration(prediction.time))
                                 .font(.title3.monospacedDigit())
                                 .foregroundStyle(prediction.isSpeculative ? .secondary : .primary)
                             if prediction.isSpeculative {
@@ -83,12 +85,12 @@ struct RecordsView: View {
                                 Text(band.purpose).font(.caption2).foregroundStyle(.secondary)
                             }
                             Spacer()
-                            Text("\(Fmt.pace(band.range.upperBound))–\(Fmt.pace(band.range.lowerBound))")
+                            Text("\(Fmt.clock(units.paceValue(band.range.upperBound)))–\(Fmt.clock(units.paceValue(band.range.lowerBound)))")
                                 .font(.callout.monospacedDigit())
                         }
                     }
                 } header: {
-                    Text("Training paces (per km)")
+                    Text("Training paces (per \(units.paceUnit))")
                 } footer: {
                     Text("Derived from your best effort converted to a 10 km equivalent. A lab or field test would be more accurate.")
                 }
@@ -96,21 +98,21 @@ struct RecordsView: View {
 
             Section("Milestones") {
                 if let longest = milestones.longestRun {
-                    milestoneRow("Longest run", Fmt.km(longest.distance), longest.date)
+                    milestoneRow("Longest run", units.distance(longest.distance), longest.date)
                 }
                 if let longest = milestones.longestRide {
-                    milestoneRow("Longest ride", Fmt.km(longest.distance), longest.date)
+                    milestoneRow("Longest ride", units.distance(longest.distance), longest.date)
                 }
                 if let longest = milestones.longestSwim {
-                    milestoneRow("Longest swim", Fmt.meters(longest.distance), longest.date)
+                    milestoneRow("Longest swim", units.elevation(longest.distance), longest.date)
                 }
                 if let week = milestones.biggestWeek {
-                    milestoneRow("Biggest running week", Fmt.km(week.distance), week.weekStart)
+                    milestoneRow("Biggest running week", units.distance(week.distance), week.weekStart)
                 }
                 if let climb = milestones.mostElevation {
-                    milestoneRow("Most climbing", Fmt.meters(climb.gain), climb.date)
+                    milestoneRow("Most climbing", units.elevation(climb.gain), climb.date)
                 }
-                LabeledContent("Lifetime distance", value: Fmt.km(milestones.totalDistance, decimals: 0))
+                LabeledContent("Lifetime distance", value: units.distance(milestones.totalDistance, decimals: 0))
                 LabeledContent("Workouts", value: "\(milestones.totalWorkouts)")
             }
         }

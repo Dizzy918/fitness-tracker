@@ -27,6 +27,9 @@ final class Workout {
     /// answers it already has.
     var detailFetchedAt: Date?
 
+    /// When this workout was written to Apple Health, so it isn't written twice.
+    var healthKitExportedAt: Date?
+
     // Large payloads kept as blobs and decoded on demand.
     //
     // `.externalStorage` is what actually keeps list queries cheap: it writes

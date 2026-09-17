@@ -2,6 +2,7 @@ import SwiftUI
 import SwiftData
 
 struct ShoeListView: View {
+
     /// True when pushed from the Dashboard: the parent already owns a
     /// NavigationStack, and nesting one breaks the title and back button.
     var embedded = true
@@ -106,6 +107,7 @@ struct ShoeRow: View {
 }
 
 struct ShoeDetailView: View {
+    @Environment(\.units) private var units
     @Environment(\.modelContext) private var context
     @Bindable var shoe: Shoe
 
@@ -153,7 +155,7 @@ struct ShoeDetailView: View {
                             HStack {
                                 Text(run.startedAt.formatted(date: .abbreviated, time: .omitted))
                                 Spacer()
-                                Text(Fmt.km(run.distance)).foregroundStyle(.secondary)
+                                Text(units.distance(run.distance)).foregroundStyle(.secondary)
                             }
                         }
                     }

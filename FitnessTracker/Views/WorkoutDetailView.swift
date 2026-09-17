@@ -4,6 +4,8 @@ import MapKit
 import Charts
 
 struct WorkoutDetailView: View {
+    @Environment(\.units) private var units
+
     @Bindable var workout: Workout
     @Query(filter: #Predicate<Shoe> { $0.retiredAt == nil },
            sort: \Shoe.acquiredAt, order: .reverse)
@@ -24,6 +26,8 @@ struct WorkoutDetailView: View {
     @State private var powerSummary: CyclingPower.Summary?
     @State private var swimSummary: SwimMetrics.Summary?
     @State private var load: TrainingLoad.Score?
+    @State private var laps: [FITLap] = []
+    @State private var intervalView: IntervalView = .laps
 
     /// Max HR drives zone boundaries. Set once in Recovery/Settings; falls back
     /// to the highest HR this workout recorded so zones are never nonsense.
@@ -64,9 +68,7 @@ struct WorkoutDetailView: View {
                         maxIsEstimated: maxHRIsEstimated
                     )
                 }
-                if !splits.isEmpty, workout.sport != .swim {
-                    SplitsTable(splits: splits)
-                }
+                intervalSection
                 if hasElevation {
                     ElevationChart(samples: samples)
                 }
@@ -85,6 +87,14 @@ struct WorkoutDetailView: View {
             let decoded = workout.samples
             samples = decoded
             splits = SplitCalculator.splits(from: decoded)
+            let decodedLaps = workout.laps
+            laps = decodedLaps
+            // Watch laps win by default when the athlete structured the
+            // session; an auto-lap every kilometre says nothing the computed
+            // splits don't already say better.
+            intervalView = decodedLaps.count >= 2 && !LapAnalysis.areAutoLaps(decodedLaps)
+                ? .laps
+                : .splits
             zoneTotals = HRZones(maxHR: effectiveMaxHR).timeInZones(decoded)
             load = TrainingLoad.score(
                 for: workout.snapshot,
@@ -128,6 +138,52 @@ struct WorkoutDetailView: View {
         return (try? context.fetch(descriptor).first)?.maxHeartRate
     }
 
+    enum IntervalView: String, CaseIterable, Identifiable {
+        case laps, splits
+        var id: String { rawValue }
+        var label: String {
+            switch self {
+            case .laps:   return "Laps"
+            case .splits: return "Kilometres"
+            }
+        }
+    }
+
+    private var hasUsableLaps: Bool { laps.count >= 2 }
+    private var hasUsableSplits: Bool { !splits.isEmpty && workout.sport != .swim }
+
+    /// Laps and computed splits, with a switch when both are worth having.
+    ///
+    /// Laps were parsed and stored from day one and then never shown, which made
+    /// the app useless for interval work: an 8 × 400 m session became a list of
+    /// kilometre averages that smeared every rep into its recovery.
+    @ViewBuilder
+    private var intervalSection: some View {
+        if hasUsableLaps || hasUsableSplits {
+            VStack(alignment: .leading, spacing: 8) {
+                HStack {
+                    Text(hasUsableLaps && intervalView == .laps ? "Laps" : "Splits")
+                        .font(.headline)
+                    Spacer()
+                    if hasUsableLaps && hasUsableSplits {
+                        Picker("View", selection: $intervalView) {
+                            ForEach(IntervalView.allCases) { Text($0.label).tag($0) }
+                        }
+                        .pickerStyle(.segmented)
+                        .labelsHidden()
+                        .frame(maxWidth: 200)
+                    }
+                }
+
+                if hasUsableLaps, intervalView == .laps || !hasUsableSplits {
+                    LapsTable(laps: laps, sport: workout.sport)
+                } else if hasUsableSplits {
+                    SplitsTable(splits: splits)
+                }
+            }
+        }
+    }
+
     /// True when zones are derived rather than user-supplied, so the UI can say so.
     private var maxHRIsEstimated: Bool { storedMaxHR < 100 }
 
@@ -144,20 +200,20 @@ struct WorkoutDetailView: View {
 
     private var summaryGrid: some View {
         LazyVGrid(columns: [GridItem(.adaptive(minimum: 110), spacing: 12)], spacing: 12) {
-            StatTile(label: "Distance", value: Fmt.km(workout.distance))
-            StatTile(label: "Time", value: Fmt.duration(workout.duration))
+            StatTile(label: "Distance", value: units.distance(workout.distance))
+            StatTile(label: "Time", value: units.duration(workout.duration))
             if workout.sport == .swim, let swim = swimSummary {
-                StatTile(label: "Pace", value: "\(swim.pacePer100Formatted)/100m")
+                StatTile(label: "Pace", value: units.swimPace(swim.pacePer100))
             } else {
-                StatTile(label: "Pace", value: "\(Fmt.pace(workout.paceSecPerKm))/km")
+                StatTile(label: "Pace", value: units.pace(workout.paceSecPerKm))
             }
             if let power = workout.avgPower {
                 StatTile(label: "Avg power", value: "\(power) W")
             }
-            StatTile(label: "Avg HR", value: Fmt.bpm(workout.avgHeartRate))
-            StatTile(label: "Max HR", value: Fmt.bpm(workout.maxHeartRate))
-            StatTile(label: "Elev gain", value: Fmt.meters(workout.elevationGain))
-            StatTile(label: "Calories", value: Fmt.kcal(workout.calories))
+            StatTile(label: "Avg HR", value: units.bpm(workout.avgHeartRate))
+            StatTile(label: "Max HR", value: units.bpm(workout.maxHeartRate))
+            StatTile(label: "Elev gain", value: units.elevation(workout.elevationGain))
+            StatTile(label: "Calories", value: units.kcal(workout.calories))
             StatTile(label: "Sport", value: workout.sport.displayName)
         }
     }
@@ -308,14 +364,14 @@ struct HeartRateChart: View {
 }
 
 struct SplitsTable: View {
+    @Environment(\.units) private var units
+
     let splits: [Split]
 
     private var fastestIndex: Int? { SplitCalculator.fastest(splits)?.index }
 
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
-            Text("Splits").font(.headline)
-
             // Bar length is relative to the slowest split, so faster reads longer.
             let slowest = splits.compactMap(\.paceSecPerKm).max() ?? 1
 
@@ -337,11 +393,11 @@ struct SplitsTable: View {
                         }
                         .frame(height: 16)
 
-                        Text("\(Fmt.pace(split.paceSecPerKm))/km")
+                        Text(units.pace(split.paceSecPerKm))
                             .font(.system(.footnote, design: .monospaced))
                             .frame(width: 74, alignment: .trailing)
 
-                        Text(Fmt.bpm(split.avgHR))
+                        Text(units.bpm(split.avgHR))
                             .font(.system(.caption, design: .monospaced))
                             .foregroundStyle(.secondary)
                             .frame(width: 62, alignment: .trailing)
@@ -353,7 +409,128 @@ struct SplitsTable: View {
 }
 
 
+/// Watch laps, the way an athlete reads a structured session.
+///
+/// Recovery, warmup and cooldown laps are dimmed rather than hidden: you want to
+/// see that the 400s were 78 seconds and the floats were 90, not a filtered list
+/// that hides half the session. The fastest working lap is highlighted, and
+/// recovery laps are excluded from that comparison so a jog can never win.
+struct LapsTable: View {
+    @Environment(\.units) private var units
+
+    let laps: [FITLap]
+    var sport: WorkoutSport = .run
+
+    private var fastestIndex: Int? { LapAnalysis.fastest(laps)?.index }
+    private var isSwim: Bool { sport == .swim }
+    private var showsPower: Bool { laps.contains { $0.avgPower != nil } }
+
+    /// Longest working lap, for scaling the bars. Recovery laps often run
+    /// longer than the reps, which would squash every effort bar to nothing.
+    private var referenceDistance: Double {
+        max(LapAnalysis.workingLaps(laps).map(\.distance).max() ?? 1, 1)
+    }
+
+    var body: some View {
+        VStack(spacing: 4) {
+            ForEach(laps) { lap in
+                HStack(spacing: 8) {
+                    Text("\(lap.index + 1)")
+                        .font(.system(.footnote, design: .monospaced))
+                        .foregroundStyle(lap.isRecovery ? .tertiary : .primary)
+                        .frame(width: 22, alignment: .trailing)
+
+                    if let badge = lap.intensityBadge {
+                        Text(badge)
+                            .font(.system(size: 9, weight: .medium))
+                            .padding(.horizontal, 4).padding(.vertical, 1)
+                            .background(.quaternary, in: Capsule())
+                            .foregroundStyle(.secondary)
+                            .frame(width: 34)
+                    } else {
+                        Color.clear.frame(width: 34, height: 1)
+                    }
+
+                    GeometryReader { geo in
+                        let ratio = min(1, lap.distance / referenceDistance)
+                        RoundedRectangle(cornerRadius: 3)
+                            .fill(barColor(lap))
+                            .frame(width: max(3, geo.size.width * ratio))
+                    }
+                    .frame(height: 14)
+
+                    Text(distanceText(lap))
+                        .font(.system(.caption, design: .monospaced))
+                        .frame(width: 58, alignment: .trailing)
+
+                    Text(units.duration(lap.duration))
+                        .font(.system(.footnote, design: .monospaced))
+                        .frame(width: 52, alignment: .trailing)
+
+                    Text(paceText(lap))
+                        .font(.system(.caption, design: .monospaced))
+                        .foregroundStyle(.secondary)
+                        .frame(width: 56, alignment: .trailing)
+
+                    if showsPower {
+                        Text(lap.avgPower.map { "\($0)W" } ?? "–")
+                            .font(.system(.caption, design: .monospaced))
+                            .foregroundStyle(.secondary)
+                            .frame(width: 44, alignment: .trailing)
+                    } else {
+                        Text(lap.avgHR.map { "\($0)" } ?? "–")
+                            .font(.system(.caption, design: .monospaced))
+                            .foregroundStyle(.secondary)
+                            .frame(width: 34, alignment: .trailing)
+                    }
+                }
+                .opacity(lap.isRecovery ? 0.55 : 1)
+                .accessibilityElement(children: .combine)
+                .accessibilityLabel(accessibilityLabel(lap))
+            }
+
+            if LapAnalysis.hasStructure(laps) {
+                Text("Recovery, warmup and cooldown laps are dimmed and excluded from the fastest-lap comparison.")
+                    .font(.caption2)
+                    .foregroundStyle(.tertiary)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.top, 2)
+            }
+        }
+    }
+
+    private func barColor(_ lap: FITLap) -> Color {
+        if lap.isRecovery { return .gray.opacity(0.5) }
+        return lap.index == fastestIndex ? .green : .accentColor
+    }
+
+    private func distanceText(_ lap: FITLap) -> String {
+        // Reps are measured in metres; nobody writes "0.40 km" on a track.
+        lap.distance < 1_000
+            ? "\(Int(lap.distance.rounded())) m"
+            : String(format: "%.2f km", lap.distance / 1000)
+    }
+
+    private func paceText(_ lap: FITLap) -> String {
+        isSwim
+            ? units.swimPace(lap.pacePer100m)
+            : units.pace(lap.paceSecPerKm)
+    }
+
+    private func accessibilityLabel(_ lap: FITLap) -> String {
+        var parts = ["Lap \(lap.index + 1)"]
+        if let badge = lap.intensityBadge { parts.append(badge) }
+        parts.append(distanceText(lap))
+        parts.append(units.duration(lap.duration))
+        parts.append(paceText(lap))
+        if let hr = lap.avgHR { parts.append("\(hr) bpm") }
+        return parts.joined(separator: ", ")
+    }
+}
+
 struct ZoneBreakdown: View {
+    @Environment(\.units) private var units
+
     let totals: [Int: TimeInterval]
     let zones: HRZones
     var maxIsEstimated: Bool = false
@@ -408,14 +585,14 @@ struct ZoneBreakdown: View {
                                 .font(.caption2).foregroundStyle(.tertiary)
                         }
                         Spacer()
-                        Text(Fmt.duration(seconds))
+                        Text(units.duration(seconds))
                             .font(.caption.monospacedDigit())
                         Text("\(Int(seconds / total * 100))%")
                             .font(.caption2).foregroundStyle(.secondary)
                             .frame(width: 34, alignment: .trailing)
                     }
                     .accessibilityElement(children: .combine)
-                    .accessibilityLabel("Zone \(zone), \(Fmt.duration(seconds))")
+                    .accessibilityLabel("Zone \(zone), \(units.duration(seconds))")
                 }
             }
         }
@@ -423,6 +600,7 @@ struct ZoneBreakdown: View {
 }
 
 struct ElevationChart: View {
+
     let samples: [FITSample]
 
     private var points: [(Double, Double)] {
@@ -458,6 +636,7 @@ struct ElevationChart: View {
 
 
 struct PowerSummaryView: View {
+
     let summary: CyclingPower.Summary
     let ftp: Int?
     let bodyWeightKg: Double?
@@ -506,13 +685,15 @@ struct PowerSummaryView: View {
 }
 
 struct SwimSummaryView: View {
+    @Environment(\.units) private var units
+
     let summary: SwimMetrics.Summary
 
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
             Text("Swim").font(.headline)
             LazyVGrid(columns: [GridItem(.adaptive(minimum: 110), spacing: 12)], spacing: 12) {
-                StatTile(label: "Pace", value: "\(summary.pacePer100Formatted)/100m")
+                StatTile(label: "Pace", value: units.swimPace(summary.pacePer100))
                 if let rate = summary.strokeRate {
                     StatTile(label: "Stroke rate", value: "\(Int(rate.rounded()))/min")
                 }

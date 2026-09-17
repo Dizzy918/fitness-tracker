@@ -3,6 +3,8 @@ import SwiftData
 import Charts
 
 struct StrengthListView: View {
+    @Environment(\.units) private var units
+
     @Environment(\.modelContext) private var context
     @Query(sort: \StrengthSession.startedAt, order: .reverse) private var sessions: [StrengthSession]
     @Query(sort: \Exercise.name) private var exercises: [Exercise]
@@ -82,11 +84,12 @@ struct StrengthListView: View {
 
     private func bestE1RMText(for exercise: Exercise, cache: [UUID: Double]) -> String {
         guard let best = cache[exercise.id] else { return "–" }
-        return String(format: "e1RM %.0f kg", best)
+        return "e1RM " + units.volume(best)
     }
 }
 
 struct SessionRow: View {
+    @Environment(\.units) private var units
     let session: StrengthSession
 
     var body: some View {
@@ -107,6 +110,7 @@ struct SessionRow: View {
 }
 
 struct StrengthSessionDetailView: View {
+    @Environment(\.units) private var units
     @Environment(\.modelContext) private var context
     @Bindable var session: StrengthSession
     @Query(sort: \Exercise.name) private var exercises: [Exercise]
@@ -117,9 +121,9 @@ struct StrengthSessionDetailView: View {
         List {
             Section {
                 LabeledContent("Sets", value: "\(session.workingSets.count)")
-                LabeledContent("Volume", value: "\(Int(session.totalVolume)) kg")
+                LabeledContent("Volume", value: units.volume(session.totalVolume))
                 if let d = session.duration {
-                    LabeledContent("Duration", value: Fmt.duration(d))
+                    LabeledContent("Duration", value: units.duration(d))
                 }
             }
 
@@ -186,6 +190,7 @@ struct StrengthSessionDetailView: View {
 struct AddSetSheet: View {
     @Environment(\.dismiss) private var dismiss
     @Environment(\.modelContext) private var context
+    @Environment(\.units) private var units
     let session: StrengthSession
     let exercises: [Exercise]
 
@@ -194,6 +199,14 @@ struct AddSetSheet: View {
     @State private var weight: Double = 60
     @State private var rpe: Double = 8
     @State private var isWarmup = false
+
+    /// The slider works in whatever unit is shown; `weight` stays kilograms.
+    private var displayedWeight: Binding<Double> {
+        Binding(
+            get: { units.displayedWeight(fromKilograms: weight) },
+            set: { weight = units.kilograms(fromDisplayed: $0) }
+        )
+    }
 
     var body: some View {
         NavigationStack {
@@ -206,10 +219,12 @@ struct AddSetSheet: View {
                 HStack {
                     Text("Weight")
                     Spacer()
-                    Text(String(format: "%.1f kg", weight))
+                    Text(units.weight(weight))
                         .foregroundStyle(.secondary)
                 }
-                Slider(value: $weight, in: 0...300, step: 2.5)
+                Slider(value: displayedWeight,
+                       in: 0...(units.system == .metric ? 300 : 660),
+                       step: units.system == .metric ? 2.5 : 5)
                 Toggle("Warmup set", isOn: $isWarmup)
                 if !isWarmup {
                     HStack {
@@ -248,6 +263,7 @@ struct AddSetSheet: View {
 }
 
 struct ExerciseProgressView: View {
+    @Environment(\.units) private var units
     let exercise: Exercise
     @Query(sort: \StrengthSession.startedAt) private var sessions: [StrengthSession]
 
@@ -272,13 +288,13 @@ struct ExerciseProgressView: View {
                                       y: .value("e1RM", point.e1rm))
                                 .foregroundStyle(.tint)
                         }
-                        .chartYAxisLabel("kg")
+                        .chartYAxisLabel(units.weightUnit)
                         .frame(height: 200)
                     }
 
                     LazyVGrid(columns: [GridItem(.adaptive(minimum: 110), spacing: 12)], spacing: 12) {
                         StatTile(label: "Best e1RM",
-                                 value: String(format: "%.0f kg", points.map(\.e1rm).max() ?? 0))
+                                 value: units.volume(points.map(\.e1rm).max() ?? 0))
                         StatTile(label: "Sessions", value: "\(points.count)")
                         StatTile(label: "Category", value: exercise.category.capitalized)
                     }

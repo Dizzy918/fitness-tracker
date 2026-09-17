@@ -1,6 +1,7 @@
 import SwiftUI
 import SwiftData
 import AuthenticationServices
+import UniformTypeIdentifiers
 
 struct SettingsView: View {
     @Environment(\.modelContext) private var context
@@ -11,6 +12,9 @@ struct SettingsView: View {
     @State private var intervalsKey = CredentialStore.get(.intervalsAPIKey) ?? ""
     @State private var intervalsAthlete = CredentialStore.get(.intervalsAthleteID) ?? ""
     @State private var anthropicKey = CredentialStore.get(.anthropicAPIKey) ?? ""
+    @Environment(\.syncStatus) private var syncStatus
+    @AppStorage(StoreConfiguration.syncEnabledKey) private var iCloudSyncEnabled = true
+    @AppStorage(UnitSystem.defaultsKey) private var unitSystem: UnitSystem = .metric
     @AppStorage("maxHeartRate") private var maxHeartRate = 0
     @AppStorage("restingHeartRate") private var restingHeartRate = 0
     @AppStorage("ftpWatts") private var ftp = 0
@@ -18,6 +22,10 @@ struct SettingsView: View {
 
     @State private var stravaConnected = StravaProvider().isConfigured
     @State private var syncing = false
+    @State private var exportingHealth = false
+    @State private var exportedFile: URL?
+    @State private var restoring = false
+    @State private var pendingHealthExport = 0
     @State private var message: String?
     @State private var messageTitle = ""
 
@@ -26,6 +34,10 @@ struct SettingsView: View {
     var body: some View {
         NavigationStack {
             Form {
+                syncStatusSection
+                unitsSection
+                backupSection
+                appleHealthSection
                 trainingSection
                 cyclingSection
                 syncSection
@@ -36,6 +48,13 @@ struct SettingsView: View {
                 dangerSection
             }
             .navigationTitle("Settings")
+            .task { refreshPendingCount() }
+            .fileImporter(isPresented: $restoring,
+                          allowedContentTypes: [.json],
+                          onCompletion: handleRestore)
+            .sheet(item: $exportedFile) { url in
+                ShareLinkSheet(url: url)
+            }
             .toolbar {
                 ToolbarItem(placement: .confirmationAction) {
                     Button("Done") { dismiss() }
@@ -51,6 +70,228 @@ struct SettingsView: View {
             }
         }
     }
+
+    // MARK: - iCloud
+
+    /// Reports what the store actually opened as, not what the preference says.
+    ///
+    /// Those differ often — an ad-hoc build has no entitlement, an account can
+    /// be signed out — and showing the preference in that situation would be a
+    /// lie about where someone's data lives.
+    private var syncStatusSection: some View {
+        Section {
+            Toggle("Sync with iCloud", isOn: Binding(
+                get: { iCloudSyncEnabled },
+                set: { iCloudSyncEnabled = $0 }
+            ))
+            LabeledContent("Status") {
+                HStack(spacing: 6) {
+                    Image(systemName: syncStatus.isSyncing
+                          ? "checkmark.icloud.fill" : "icloud.slash")
+                        .foregroundStyle(syncStatus.isSyncing ? Color.green : Color.secondary)
+                    Text(syncStatus.label)
+                }
+            }
+            if iCloudSyncEnabled != syncStatus.isSyncing {
+                Text("Quit and reopen the app to apply this.")
+                    .font(.caption)
+                    .foregroundStyle(.orange)
+            }
+        } header: {
+            Text("iCloud")
+        } footer: {
+            Text(syncStatus.detail)
+        }
+    }
+
+    // MARK: - Backup
+
+    /// Export everything, and read it back.
+    ///
+    /// A backup you can't restore is only half a safety net, so both directions
+    /// live here. Restore merges rather than replacing — it never deletes, and
+    /// it dedupes on the same identity the importers use.
+    private var backupSection: some View {
+        Section {
+            Button {
+                exportArchive(includeStreams: true)
+            } label: {
+                Label("Export everything…", systemImage: "arrow.down.doc")
+            }
+            Button {
+                exportArchive(includeStreams: false)
+            } label: {
+                Label("Export summary only…", systemImage: "doc.plaintext")
+            }
+            Button {
+                exportCSV()
+            } label: {
+                Label("Export workouts as CSV…", systemImage: "tablecells")
+            }
+            Button {
+                restoring = true
+            } label: {
+                Label("Restore from a backup…", systemImage: "arrow.up.doc")
+            }
+        } header: {
+            Text("Backup")
+        } footer: {
+            Text("""
+                The full export is plain JSON and includes GPS tracks and sensor \
+                streams, so it can be restored exactly — and it's large. The summary \
+                leaves those out. Restoring merges into what's already here; it never \
+                deletes anything.
+                """)
+        }
+    }
+
+    private func exportArchive(includeStreams: Bool) {
+        do {
+            let data = try DataArchive.exportData(from: context, includeStreams: includeStreams)
+            shareFile(named: DataArchive.filename(includeStreams: includeStreams), data: data)
+        } catch {
+            messageTitle = "Export failed"
+            message = error.localizedDescription
+        }
+    }
+
+    private func exportCSV() {
+        do {
+            let archive = try DataArchive.archive(from: context, includeStreams: false)
+            let csv = DataArchive.workoutsCSV(archive.workouts)
+            shareFile(named: "fitnesstracker-workouts.csv", data: Data(csv.utf8))
+        } catch {
+            messageTitle = "Export failed"
+            message = error.localizedDescription
+        }
+    }
+
+    /// Writes to a temporary file and hands it to the share sheet — the share
+    /// sheet takes a URL, and a multi-megabyte archive shouldn't be passed
+    /// around in memory as a `Data` the system then copies again.
+    private func shareFile(named name: String, data: Data) {
+        let url = URL.temporaryDirectory.appendingPathComponent(name)
+        do {
+            try data.write(to: url, options: .atomic)
+            exportedFile = url
+        } catch {
+            messageTitle = "Export failed"
+            message = error.localizedDescription
+        }
+    }
+
+    private func handleRestore(_ result: Result<URL, Error>) {
+        guard case .success(let url) = result else {
+            if case .failure(let error) = result {
+                messageTitle = "Restore failed"
+                message = error.localizedDescription
+            }
+            return
+        }
+        do {
+            let scoped = url.startAccessingSecurityScopedResource()
+            defer { if scoped { url.stopAccessingSecurityScopedResource() } }
+
+            let archive = try DataArchive.read(try Data(contentsOf: url))
+            let report = try DataArchive.restore(archive, into: context)
+            refreshPendingCount()
+            messageTitle = "Restore complete"
+            message = report.summary
+        } catch {
+            messageTitle = "Restore failed"
+            message = error.localizedDescription
+        }
+    }
+
+    // MARK: - Apple Health
+
+    /// Push imported workouts back into Health.
+    ///
+    /// Only shown on iOS, and only when there's something to send. Suunto's own
+    /// Health sync drops the GPS track and per-second heart rate, so for anyone
+    /// importing `.fit` files this is the only way Health ends up with the real
+    /// thing rather than a summary.
+    @ViewBuilder
+    private var appleHealthSection: some View {
+        if HealthKitWriter.isAvailable {
+            Section {
+                Button {
+                    Task { await exportToHealth() }
+                } label: {
+                    HStack {
+                        Text(exportingHealth ? "Writing…" : "Write workouts to Apple Health")
+                        if exportingHealth {
+                            Spacer()
+                            ProgressView()
+                        }
+                    }
+                }
+                .disabled(exportingHealth || pendingHealthExport == 0)
+
+                LabeledContent("Not yet in Health", value: "\(pendingHealthExport)")
+                    .foregroundStyle(.secondary)
+            } header: {
+                Text("Apple Health")
+            } footer: {
+                Text("""
+                    Writes each imported workout with its route and heart-rate series, \
+                    which is more than your watch's own Health sync carries. Demo data \
+                    and workouts that came *from* Health are skipped, and nothing is \
+                    written twice.
+                    """)
+            }
+        }
+    }
+
+    private func exportToHealth() async {
+        exportingHealth = true
+        defer {
+            exportingHealth = false
+            refreshPendingCount()
+        }
+        do {
+            let report = try await HealthKitWriter.exportPending(in: context)
+            messageTitle = "Apple Health"
+            message = report.failures.isEmpty
+                ? report.summary
+                : report.summary + "\n\n" + report.failures.prefix(5).joined(separator: "\n")
+        } catch {
+            messageTitle = "Apple Health"
+            message = error.localizedDescription
+        }
+    }
+
+    private func refreshPendingCount() {
+        pendingHealthExport = HealthKitWriter.pendingExport(in: context).count
+    }
+
+    // MARK: - Units
+
+    /// Display only. Everything is stored in SI and converted at the edge, so
+    /// flipping this can't corrupt a personal best or shift a training-load
+    /// curve — it re-labels the same numbers.
+    private var unitsSection: some View {
+        Section {
+            Picker("Units", selection: $unitSystem) {
+                ForEach(UnitSystem.allCases) { system in
+                    Text(system.displayName).tag(system)
+                }
+            }
+            .pickerStyle(.segmented)
+            Text(unitSystem.detail)
+                .font(.caption)
+                .foregroundStyle(.secondary)
+        } header: {
+            Text("Units")
+        } footer: {
+            Text("Affects display only. Your data is stored in metric and converted for display, so switching back and forth never changes a recorded value.")
+        }
+    }
+
+    /// A formatter for this sheet's own labels. Settings is presented as a
+    /// sheet, which on some platforms doesn't inherit the root's environment,
+    /// and it has to reflect the picker above it immediately anyway.
+    private var units: UnitFormatter { UnitFormatter(unitSystem) }
 
     // MARK: - Training
 
@@ -89,9 +330,13 @@ struct SettingsView: View {
             }
             // A slider was a poor fit here: 0–150 kg in 0.5 kg steps is 300
             // positions to drag through, and it excluded anyone above 150 kg.
-            Stepper(value: $bodyWeight, in: 0...250, step: 0.5) {
+            //
+            // Stepped in the displayed unit so imperial users move in pounds,
+            // then converted back to the stored kilograms — a 0.5 kg step would
+            // read as a bizarre 1.1 lb increment otherwise.
+            Stepper(value: displayedBodyWeight, in: 0...(unitSystem == .metric ? 250 : 550), step: 0.5) {
                 LabeledContent("Body weight",
-                               value: bodyWeight > 0 ? String(format: "%.1f kg", bodyWeight) : "Not set")
+                               value: bodyWeight > 0 ? units.weight(bodyWeight) : "Not set")
             }
         } header: {
             Text("Cycling")
@@ -123,6 +368,13 @@ struct SettingsView: View {
                     .foregroundStyle(.secondary)
             }
         }
+    }
+
+    private var displayedBodyWeight: Binding<Double> {
+        Binding(
+            get: { units.displayedWeight(fromKilograms: bodyWeight) },
+            set: { bodyWeight = units.kilograms(fromDisplayed: $0) }
+        )
     }
 
     private var anyProviderConfigured: Bool {
@@ -270,6 +522,54 @@ struct SettingsView: View {
                 stravaConnected = false
             }
         }
+    }
+}
+
+extension URL: @retroactive Identifiable {
+    public var id: String { absoluteString }
+}
+
+/// Hands an exported file to the system share sheet.
+///
+/// A plain `ShareLink` in the Form row would rebuild the archive on every
+/// redraw of Settings; exporting on tap and presenting the result keeps the
+/// expensive part to one call.
+struct ShareLinkSheet: View {
+    @Environment(\.dismiss) private var dismiss
+    let url: URL
+
+    var body: some View {
+        NavigationStack {
+            VStack(spacing: 20) {
+                Image(systemName: "doc.badge.arrow.up")
+                    .font(.system(size: 48))
+                    .foregroundStyle(.tint)
+                Text(url.lastPathComponent)
+                    .font(.headline)
+                    .multilineTextAlignment(.center)
+                if let size = try? url.resourceValues(forKeys: [.fileSizeKey]).fileSize {
+                    Text(ByteCountFormatter.string(fromByteCount: Int64(size),
+                                                   countStyle: .file))
+                        .font(.subheadline)
+                        .foregroundStyle(.secondary)
+                }
+                ShareLink(item: url) {
+                    Label("Share", systemImage: "square.and.arrow.up")
+                        .frame(maxWidth: .infinity)
+                }
+                .buttonStyle(.borderedProminent)
+                .controlSize(.large)
+                Spacer()
+            }
+            .padding()
+            .navigationTitle("Export ready")
+            .toolbar {
+                ToolbarItem(placement: .confirmationAction) {
+                    Button("Done") { dismiss() }
+                }
+            }
+        }
+        .presentationDetents([.medium])
     }
 }
 

@@ -14,20 +14,29 @@ enum Fmt {
             : String(format: "%d:%02d", m, sec)
     }
 
-    /// "4:35" from seconds-per-km.
-    static func pace(_ secPerKm: Double?) -> String {
-        guard let secPerKm, secPerKm.isFinite, secPerKm > 0 else { return "–" }
-        let total = Int(secPerKm.rounded())
+    /// "4:35" from a seconds-per-something value. Unit-agnostic: the caller
+    /// has already converted, and labels the number itself.
+    static func clock(_ seconds: Double?) -> String {
+        guard let seconds, seconds.isFinite, seconds > 0 else { return "–" }
+        let total = Int(seconds.rounded())
         return String(format: "%d:%02d", total / 60, total % 60)
     }
 
+    /// "4:35" from seconds-per-km.
+    ///
+    /// Metric by construction. Anything user-facing should go through
+    /// `UnitFormatter` instead — this stays for the analysis layer, which works
+    /// in SI throughout.
+    static func pace(_ secPerKm: Double?) -> String { clock(secPerKm) }
+
     /// "8.24 km"
     static func km(_ meters: Double, decimals: Int = 2) -> String {
-        String(format: "%.\(decimals)f km", meters / 1000)
+        guard meters.isFinite else { return "–" }
+        return String(format: "%.\(decimals)f km", meters / 1000)
     }
 
     static func meters(_ m: Double?) -> String {
-        guard let m else { return "–" }
+        guard let m, m.isFinite else { return "–" }
         return "\(Int(m.rounded())) m"
     }
 

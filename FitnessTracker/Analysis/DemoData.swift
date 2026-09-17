@@ -85,6 +85,7 @@ struct DemoData {
         }
 
         inserted += seedRidesAndSwims(into: context, weeks: weeks, daily: daily, rng: &rng)
+        inserted += seedIntervalSessions(into: context, weeks: weeks, daily: daily, rng: &rng)
         seedStrength(into: context, rng: &rng)
         seedDailyMetrics(into: context, days: weeks * 7, rng: &rng)
         return inserted
@@ -170,6 +171,110 @@ struct DemoData {
                 context.insert(swim)
                 inserted += 1
             }
+        }
+        return inserted
+    }
+
+    /// A track session every third week: warmup, 8 × 400 m with 200 m floats,
+    /// cooldown — with real `FITLap` records carrying intensity and a manual
+    /// trigger, the way a watch writes them.
+    ///
+    /// The lap view is unusable without a structured session to show, and this
+    /// is the shape of workout it exists for: kilometre splits smear each rep
+    /// into its recovery and tell you nothing.
+    private static func seedIntervalSessions(
+        into context: ModelContext,
+        weeks: Int,
+        daily: Shoe,
+        rng: inout RNG
+    ) -> Int {
+        var inserted = 0
+        let calendar = Calendar.current
+
+        for week in stride(from: 1, to: weeks, by: 3) {
+            guard let date = calendar.date(
+                byAdding: .day, value: -((weeks - week) * 7 - 3), to: .now
+            ) else { continue }
+
+            let reps = 8
+            let repDistance = 400.0
+            let floatDistance = 200.0
+            let warmup = rng.range(2200, 2800)
+            let cooldown = rng.range(1400, 1900)
+
+            var laps: [FITLap] = []
+            var samples: [FITSample] = []
+            var clock: TimeInterval = 0
+            var covered: Double = 0
+            var peakHR = 0
+
+            /// Appends one lap plus a 1 Hz stream for it.
+            func addLap(distance: Double, pace: Double, hr: Int, intensity: String) {
+                let duration = distance / 1000 * pace
+                var lap = FITLap(index: laps.count, duration: duration,
+                                 distance: distance, avgHR: hr)
+                lap.startOffset = clock
+                lap.movingTime = duration
+                lap.maxHR = hr + Int(rng.range(2, 6))
+                lap.avgCadence = Int(rng.range(intensity == "active" ? 92 : 80,
+                                               intensity == "active" ? 98 : 86))
+                lap.intensity = intensity
+                // A track session is lapped by hand, every time.
+                lap.trigger = "manual"
+                laps.append(lap)
+                peakHR = max(peakHR, lap.maxHR ?? hr)
+
+                // 1 Hz for a rep, coarser for a fifteen-minute warmup. Capped
+                // because the seeder runs on-device too, and tripling the
+                // store's stream volume for one demo session is a real cost to
+                // whoever taps the button. Well inside the 60 s gap that load
+                // scoring treats as a dropout.
+                let steps = min(max(2, Int(duration)), 90)
+                for step in 1...steps {
+                    let fraction = Double(step) / Double(steps)
+                    samples.append(FITSample(
+                        t: clock + duration * fraction,
+                        hr: hr + Int(rng.range(-4, 5)),
+                        alt: 550 + rng.range(-2, 2),
+                        speed: 1000 / pace,
+                        cadence: lap.avgCadence,
+                        dist: covered + distance * fraction
+                    ))
+                }
+                clock += duration
+                covered += distance
+            }
+
+            addLap(distance: warmup, pace: rng.range(330, 360), hr: 132, intensity: "warmup")
+            for rep in 0..<reps {
+                // Fade a little across the set, the way a real session goes.
+                let pace = rng.range(196, 206) + Double(rep) * 0.8
+                addLap(distance: repDistance, pace: pace,
+                       hr: 168 + Int(rng.range(0, 6)), intensity: "active")
+                if rep < reps - 1 {
+                    addLap(distance: floatDistance, pace: rng.range(390, 430),
+                           hr: 148 + Int(rng.range(0, 5)), intensity: "rest")
+                }
+            }
+            addLap(distance: cooldown, pace: rng.range(345, 375), hr: 136, intensity: "cooldown")
+
+            let session = Workout(
+                sport: .run, startedAt: date, duration: clock,
+                distance: covered, source: "demo",
+                externalID: "demo-intervals-\(week)"
+            )
+            session.avgHeartRate = 152
+            session.maxHeartRate = peakHR
+            session.elevationGain = rng.range(8, 20)
+            session.calories = covered / 1000 * rng.range(60, 72)
+            session.notes = "\(reps) × 400 m off 200 m float"
+            session.shoe = daily
+
+            let encoder = JSONEncoder()
+            session.streamsData = try? encoder.encode(samples)
+            session.lapsData = try? encoder.encode(laps)
+            context.insert(session)
+            inserted += 1
         }
         return inserted
     }

@@ -28,14 +28,18 @@ struct FitnessTrackerApp: App {
     /// the file still on disk for recovery.
     private let container: ModelContainer?
     private let failure: String?
+    private let syncStatus: StoreConfiguration.Status
 
     init() {
         do {
-            container = try ModelContainer(for: Self.schema)
+            let opened = try StoreConfiguration.open(schema: Self.schema)
+            container = opened.container
+            syncStatus = opened.status
             failure = nil
         } catch {
             Self.log.error("store failed to open: \(error.localizedDescription, privacy: .public)")
             container = nil
+            syncStatus = .localOnly(reason: "The store couldn't be opened.")
             failure = error.localizedDescription
         }
     }
@@ -45,10 +49,24 @@ struct FitnessTrackerApp: App {
             if let container {
                 RootView()
                     .modelContainer(container)
+                    .environment(\.syncStatus, syncStatus)
             } else {
                 StoreFailureView(message: failure ?? "Unknown error")
             }
         }
+    }
+}
+
+private struct SyncStatusKey: EnvironmentKey {
+    static let defaultValue = StoreConfiguration.Status.syncDisabled
+}
+
+extension EnvironmentValues {
+    /// What the store actually opened as, so Settings can report the truth
+    /// rather than the preference.
+    var syncStatus: StoreConfiguration.Status {
+        get { self[SyncStatusKey.self] }
+        set { self[SyncStatusKey.self] = newValue }
     }
 }
 

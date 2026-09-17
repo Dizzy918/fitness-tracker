@@ -58,11 +58,13 @@ targets:
           UIApplicationSupportsMultipleScenes: true
         LSApplicationCategoryType: public.app-category.healthcare-fitness
         ITSAppUsesNonExemptEncryption: false
-        # Read-only. This app is a training database, not a recorder: it reads
-        # passive metrics and never writes workouts, so no Update description.
-        # No CoreLocation or CoreMotion use either — purpose strings for APIs
-        # the app doesn't call are an App Review question with no good answer.
+        # Reads passive metrics; writes back workouts imported from .fit files
+        # and synced services, which is the only way Apple Health ever sees the
+        # full-fidelity route and heart-rate series. No CoreLocation or
+        # CoreMotion use — this app records nothing live, so it declares no
+        # purpose string for APIs it never calls.
         NSHealthShareUsageDescription: "Import your resting heart rate, HRV, sleep, weight, and VO₂max to score training readiness."
+        NSHealthUpdateUsageDescription: "Write workouts you import here back to Apple Health, with their route and heart-rate data intact."
         # Strava returns the OAuth code to this scheme.
         CFBundleURLTypes:
           - CFBundleTypeRole: Editor

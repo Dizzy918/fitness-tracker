@@ -37,6 +37,8 @@
 	<string>public.app-category.healthcare-fitness</string>
 	<key>NSHealthShareUsageDescription</key>
 	<string>Import your resting heart rate, HRV, sleep, weight, and VO₂max to score training readiness.</string>
+	<key>NSHealthUpdateUsageDescription</key>
+	<string>Write workouts you import here back to Apple Health, with their route and heart-rate data intact.</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

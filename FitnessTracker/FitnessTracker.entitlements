@@ -11,5 +11,15 @@
 	     sandboxed macOS build silently fails every network request. -->
 	<key>com.apple.security.network.client</key>
 	<true/>
+	<!-- iCloud sync is implemented and wired up, but its entitlement is left
+	     out on purpose: unlike HealthKit's, an iCloud container identifier
+	     requires a provisioning profile *to build at all*, which would break
+	     the signing-free `xcodebuild … test` the README documents.
+
+	     To turn sync on: set your team in Xcode, add the iCloud capability
+	     with CloudKit and a container named iCloud.<your bundle id>, then
+	     point StoreConfiguration.cloudContainerIdentifier at it. The app
+	     already asks for CloudKit at launch and falls back to a local store
+	     when it isn't granted, so nothing else needs changing. -->
 </dict>
 </plist>

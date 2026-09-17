@@ -16,10 +16,9 @@ enum SwimMetrics {
         /// SWOLF: length time + strokes for that length. Lower is more efficient.
         let swolf: Double?
 
-        var pacePer100Formatted: String {
-            let total = Int(pacePer100.rounded())
-            return String(format: "%d:%02d", total / 60, total % 60)
-        }
+        /// Metric text. User-facing code should pass `pacePer100` through
+        /// `UnitFormatter.swimPace` instead, which handles yards.
+        var pacePer100Formatted: String { Fmt.clock(pacePer100) }
     }
 
     /// Build a swim summary.

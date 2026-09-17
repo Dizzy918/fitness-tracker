@@ -7,6 +7,7 @@ import UniformTypeIdentifiers
 /// The review step is not optional. Model extraction from arbitrary documents
 /// can misread a table, so nothing reaches the database until you approve it.
 struct PDFImportView: View {
+
     @Environment(\.modelContext) private var context
     @Environment(\.dismiss) private var dismiss
 
@@ -237,6 +238,7 @@ struct PDFImportView: View {
 }
 
 private struct ExtractedRow: View {
+    @Environment(\.units) private var units
     let workout: ExtractedWorkout
     let isSelected: Bool
     let toggle: () -> Void
@@ -282,10 +284,10 @@ private struct ExtractedRow: View {
 
     private var detail: String {
         var parts: [String] = []
-        if let d = workout.distanceMeters, d > 0 { parts.append(Fmt.km(d)) }
-        if let s = workout.durationSeconds, s > 0 { parts.append(Fmt.duration(s)) }
+        if let d = workout.distanceMeters, d > 0 { parts.append(units.distance(d)) }
+        if let s = workout.durationSeconds, s > 0 { parts.append(units.duration(s)) }
         if let hr = workout.avgHeartRate { parts.append("\(hr) bpm") }
-        if let gain = workout.elevationGainMeters, gain > 0 { parts.append("↑\(Int(gain)) m") }
+        if let gain = workout.elevationGainMeters, gain > 0 { parts.append("↑" + units.elevation(gain)) }
         return parts.isEmpty ? "No metrics stated" : parts.joined(separator: " · ")
     }
 }

@@ -383,26 +383,36 @@ private final class Accumulator {
         let dur = l.totalElapsedTime?.converted(to: .seconds).value ?? 0
         let dist = l.totalDistance?.converted(to: .meters).value ?? 0
 
+        // Bound separately, not chained: in `a?.value.map { … }` the optional
+        // chain covers the whole postfix expression, so `map` would be applied
+        // to a non-optional `Double`.
+        let avgHRRaw = l.averageHeartRate?.value
+        let maxHRRaw = l.maximumHeartRate?.value
+        let cadenceRaw = l.averageCadence?.value
+        let avgHR: Int? = avgHRRaw.map { Int($0) }
+        let maxHR: Int? = maxHRRaw.map { Int($0) }
+        let avgCadence: Int? = cadenceRaw.map { Int($0) }
+        let avgPowerWatts: Double? = l.averagePower?.converted(to: .watts).value
+        let maxPowerWatts: Double? = l.maximumPower?.converted(to: .watts).value
+        let moving: TimeInterval? = l.totalTimerTime?.converted(to: .seconds).value
+        let ascent: Double? = l.totalAscent?.converted(to: .meters).value
+        let kcal: Double? = l.totalCalories?.converted(to: .kilocalories).value
+
+        var lap = FITLap(index: pendingLaps.count, duration: dur,
+                         distance: dist, avgHR: avgHR)
+        lap.movingTime = moving
+        lap.maxHR = maxHR
+        lap.avgCadence = avgCadence
+        lap.avgPower = avgPowerWatts.map { Int($0) }
+        lap.maxPower = maxPowerWatts.map { Int($0) }
+        lap.elevationGain = ascent
+        lap.calories = kcal
+        lap.intensity = Self.name(of: l.intensity)
+        lap.trigger = Self.name(of: l.lapTrigger)
+
         // Laps can arrive before the Session message, so the start offset can't
         // be computed yet. Keep the absolute time and rebase with the records.
-        pendingLaps.append((
-            l.startTime?.recordDate,
-            FITLap(
-                index: pendingLaps.count,
-                duration: dur,
-                distance: dist,
-                avgHR: l.averageHeartRate?.value.map { Int($0) },
-                movingTime: l.totalTimerTime?.converted(to: .seconds).value,
-                maxHR: l.maximumHeartRate?.value.map { Int($0) },
-                avgCadence: l.averageCadence?.value.map { Int($0) },
-                avgPower: l.averagePower?.converted(to: .watts).value.map { Int($0) },
-                maxPower: l.maximumPower?.converted(to: .watts).value.map { Int($0) },
-                elevationGain: l.totalAscent?.converted(to: .meters).value,
-                calories: l.totalCalories?.converted(to: .kilocalories).value,
-                intensity: Self.name(of: l.intensity),
-                trigger: Self.name(of: l.lapTrigger)
-            )
-        ))
+        pendingLaps.append((l.startTime?.recordDate, lap))
         rebasePendingLaps()
     }
 
