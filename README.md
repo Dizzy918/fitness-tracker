@@ -42,7 +42,7 @@ sessions — so every screen has something to show.
 | Shoes | Assign to runs, mileage rollup, wear % with warning colors, retire/un-retire |
 | Strength | Sessions, sets with RPE, Epley e1RM, per-exercise progress chart, add-set flow |
 | Exercises | Library grouped by movement pattern, form cues, starter catalogue, create/edit inline while logging |
-| Routes | Tap-to-build route planner with path snapping, GPX import/export, elevation profile |
+| Routes | Tap-to-build route planner with path snapping, GPX import/export, elevation profile fetched from terrain data |
 | Training load | Per-session stress on one TSS scale across every sport, plus fitness (42-day) / fatigue (7-day) / form curves |
 | Cycling | Normalized Power, Intensity Factor, TSS, W/kg, variability index, best-power windows |
 | Swimming | Pace per 100 m, stroke rate, lengths, SWOLF |
@@ -57,7 +57,7 @@ sessions — so every screen has something to show.
 | Dashboard | This-week totals, fitness/fatigue/form with a 120-day curve, weekly volume, road pace trend, shoe alerts |
 | Finding things | Search across sport/source/notes/shoe, plus a sport filter |
 
-338 tests cover the FIT round-trip (encode → decode → assert), splits math, readiness
+357 tests cover the FIT round-trip (encode → decode → assert), splits math, readiness
 scoring (missing-input and flat-baseline cases included), HR zone boundaries and the
 time-in-zone invariant, best-effort extraction, haversine distances against known
 city pairs, GPX export/parse round-trips and malformed input, NP/IF/TSS against their
@@ -124,6 +124,23 @@ Plan on the map, send to the watch:
   is patchier).
 - **GPX import** for routes built elsewhere (plotaroute, Strava, a friend's file).
   Out-of-range coordinates are dropped rather than plotted.
+- **Elevation**, on request. Apple publishes no elevation API, so a route drawn
+  in the app used to have no climb figure and no profile — only imported GPX
+  carrying `<ele>` ever did.
+
+  It's a button, not something that happens on save, because it sends the route's
+  coordinates to a third party and this app otherwise talks only to services you
+  configured yourself. The footer says where they go. The public OpenTopoData
+  instance needs no key and no account, which is the only reason it fits an app
+  that ships no shared credentials.
+
+  A snapped route can run to thousands of points and 30 m terrain data can't
+  resolve that, so at most 200 evenly spaced points are looked up — two requests,
+  within the instance's 100-per-request and one-per-second limits — and the rest
+  are interpolated. The first and last point are always sampled. Coordinates
+  outside the dataset's coverage come back null and are filled from their
+  neighbours rather than read as sea level, which would invent a mountain's worth
+  of gain; the result says how many.
 
 ## Sport-specific analysis
 
@@ -413,7 +430,7 @@ Tests/                       FIT, splits, readiness, zones, records, persistence
 - [x] HealthKit workout write-back; CloudKit wired up behind its entitlement
 - [ ] Turn CloudKit on (code is written; needs a team and the entitlement — see below)
 - [ ] Drag-and-drop FIT import on macOS; watch-folder auto-import
-- [ ] Route elevation from a terrain API (planned routes have no elevation until imported)
+- [x] Route elevation from a terrain API
 - [x] Exercise library with form notes
 - [ ] Nutrition (last — needs a food database; Open Food Facts or USDA)
 
@@ -444,8 +461,6 @@ Tests/                       FIT, splits, readiness, zones, records, persistence
   metrics won't appear there until CloudKit sync is wired up.
 - Set your max HR in Settings before trusting zones; the estimated fallback is
   labelled in the UI but still only an estimate. Same for FTP and cycling TSS.
-- **Routes built in-app have no elevation data** — Apple provides no public elevation
-  API, so gain and the profile only appear for imported GPX that carries `<ele>`.
 - Path snapping depends on MapKit directions, which are unavailable off-grid and can
   throttle; it degrades to straight segments.
 - **Route builder map interaction is verified by render tests, not by a real tap

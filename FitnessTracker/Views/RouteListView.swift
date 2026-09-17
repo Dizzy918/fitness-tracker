@@ -155,6 +155,9 @@ struct RouteDetailView: View {
     @State private var editing = false
     @State private var exportURL: URL?
     @State private var exportError: String?
+    @State private var fetchingElevation = false
+    @State private var elevationMessage: String?
+    @State private var elevationFailed = false
 
     var body: some View {
         ScrollView {
@@ -178,6 +181,8 @@ struct RouteDetailView: View {
                         coordinates: route.coordinates
                     )
                 }
+
+                elevationLookup
 
                 // Sharing the file is how a route reaches a watch: AirDrop it, or
                 // send it to the Suunto/Garmin app.
@@ -204,6 +209,66 @@ struct RouteDetailView: View {
         }
         .sheet(isPresented: $editing) { RouteBuilderView(existing: route) }
         .task(id: route.id) { prepareExport() }
+    }
+
+    /// Fetching a profile for a route drawn in the app.
+    ///
+    /// Deliberately a button rather than something that happens on save: it
+    /// sends the route's coordinates to a third-party service, and this app
+    /// otherwise talks only to services you configured yourself. The footer says
+    /// where they go.
+    @ViewBuilder
+    private var elevationLookup: some View {
+        if route.coordinates.count >= 2 {
+            VStack(alignment: .leading, spacing: 8) {
+                Button {
+                    Task { await fetchElevation() }
+                } label: {
+                    HStack {
+                        Label(fetchingElevation
+                              ? "Looking up…"
+                              : (route.elevations.isEmpty ? "Add elevation profile" : "Refresh elevation"),
+                              systemImage: "mountain.2")
+                        if fetchingElevation {
+                            Spacer()
+                            ProgressView()
+                        }
+                    }
+                }
+                .disabled(fetchingElevation)
+
+                Text("Sends this route's coordinates to OpenTopoData's public service to read ground elevation. Imported GPX that already carries elevation doesn't need this.")
+                    .font(.caption2)
+                    .foregroundStyle(.tertiary)
+                    .fixedSize(horizontal: false, vertical: true)
+
+                if let elevationMessage {
+                    Text(elevationMessage)
+                        .font(.caption)
+                        .foregroundStyle(elevationFailed ? Color.orange : Color.secondary)
+                        .fixedSize(horizontal: false, vertical: true)
+                }
+            }
+        }
+    }
+
+    private func fetchElevation() async {
+        fetchingElevation = true
+        elevationMessage = nil
+        defer { fetchingElevation = false }
+
+        let coordinates = route.coordinates
+        do {
+            let outcome = try await ElevationService().profile(for: coordinates)
+            // setGeometry recomputes distance, gain and loop-ness together, so
+            // the stored summary can't drift from the stored points.
+            route.setGeometry(coordinates: coordinates, elevations: outcome.elevations)
+            elevationFailed = false
+            elevationMessage = outcome.summary
+        } catch {
+            elevationFailed = true
+            elevationMessage = error.localizedDescription
+        }
     }
 
     /// ShareLink needs a real file; write the GPX to a temporary one.
