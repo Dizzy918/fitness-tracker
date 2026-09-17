@@ -163,10 +163,7 @@ enum ExerciseLibrary {
     /// silently corrupts volume-by-pattern and every e1RM history.
     @MainActor
     static func loggedSetCount(for exercise: Exercise, in context: ModelContext) -> Int {
-        let id = exercise.id
-        let descriptor = FetchDescriptor<SetEntry>(
-            predicate: #Predicate { $0.exercise?.id == id })
-        return ((try? context.fetch(descriptor)) ?? []).count
+        exercise.sets.count
     }
 }
 

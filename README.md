@@ -34,7 +34,7 @@ sessions — so every screen has something to show.
 |---|---|
 | FIT import | Session/Record/Lap parsing, GPS track, HR/cadence/speed/altitude streams, content-hash dedupe |
 | Strava sync | Own-app OAuth (`activity:read_all`), paged activity fetch, per-second streams backfilled inside the rate limit, token auto-refresh |
-| intervals.icu sync | API-key basic auth, date-windowed activity fetch |
+| intervals.icu sync | API-key basic auth, date-windowed activity fetch, per-second streams backfilled |
 | PDF extraction | Claude reads a PDF and returns structured workouts; mandatory review before anything is saved |
 | Workouts | List with pace/HR/shoe/source, detail with route map, HR chart, laps and per-km splits |
 | Splits | Interpolated at km boundaries, fastest split highlighted, partial final split |
@@ -57,7 +57,7 @@ sessions — so every screen has something to show.
 | Dashboard | This-week totals, fitness/fatigue/form with a 120-day curve, weekly volume, road pace trend, shoe alerts |
 | Finding things | Search across sport/source/notes/shoe, plus a sport filter |
 
-329 tests cover the FIT round-trip (encode → decode → assert), splits math, readiness
+338 tests cover the FIT round-trip (encode → decode → assert), splits math, readiness
 scoring (missing-input and flat-baseline cases included), HR zone boundaries and the
 time-in-zone invariant, best-effort extraction, haversine distances against known
 city pairs, GPX export/parse round-trips and malformed input, NP/IF/TSS against their
@@ -229,8 +229,12 @@ list. Instead each sync backfills a capped batch, newest first:
 The full-resolution track from the `latlng` stream replaces the summary polyline
 when it arrives, so the map sharpens as a side effect.
 
-intervals.icu declares `supportsStreams == false` and is skipped; its streams need
-the same per-activity call and the mechanism is ready for it.
+intervals.icu goes through the same backfill. It publishes no rate-limit headers,
+so the engine's own per-sync cap is the only budget there. Its streams arrive as
+an array of `{type, data}` rather than Strava's keyed object, and it writes
+`null` mid-channel where a sensor dropped out — plus `latlng` puts arrays in the
+same `data` field the numeric channels use, so every element is decoded
+permissively or one odd channel fails the whole response.
 
 ## Units
 
@@ -421,7 +425,6 @@ Tests/                       FIT, splits, readiness, zones, records, persistence
   (`FitnessTracker.entitlements`) — enough for the file importer.
 - Strava streams backfill 25 activities per sync, so a large first import takes
   several runs to fill in. That's a rate-limit floor, not a choice.
-- intervals.icu still imports without GPS tracks or streams.
 - **iCloud sync has never run against two real devices.** The fallback path and
   the schema constraints are tested; the mirroring itself is not.
 - HealthKit write-back was verified in the Simulator against a synthetic Health

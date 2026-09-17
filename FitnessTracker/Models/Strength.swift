@@ -9,6 +9,15 @@ final class Exercise {
     var primaryMuscles: [String] = []
     var notes: String?
 
+    /// The inverse of `SetEntry.exercise`.
+    ///
+    /// CloudKit refuses to load a store containing a relationship with no
+    /// inverse, so this isn't optional decoration — without it the container
+    /// falls back to local forever. Nullify, not cascade: deleting an exercise
+    /// must never take logged sets with it.
+    @Relationship(deleteRule: .nullify, inverse: \SetEntry.exercise)
+    var sets: [SetEntry] = []
+
     init(id: UUID = UUID(), name: String, category: String, primaryMuscles: [String] = []) {
         self.id = id
         self.name = name

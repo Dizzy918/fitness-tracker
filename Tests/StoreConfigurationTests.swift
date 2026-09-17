@@ -62,6 +62,45 @@ final class StoreConfigurationTests: XCTestCase {
                       "CloudKit needs optional to-one relationships: \(offenders.joined(separator: ", "))")
     }
 
+    /// **Every relationship needs an inverse.** CloudKit refuses to load the
+    /// store otherwise, and this is the constraint the first version of these
+    /// tests missed: `SetEntry.exercise` pointed at `Exercise` with nothing
+    /// pointing back, so sync fell back to local on every launch while the
+    /// optionality and uniqueness checks above passed happily.
+    func testEveryRelationshipHasAnInverse() {
+        var offenders: [String] = []
+        for entity in schema.entities {
+            for property in entity.properties {
+                guard let relationship = property as? Schema.Relationship else { continue }
+                if relationship.inverseName == nil {
+                    offenders.append("\(entity.name).\(relationship.name)")
+                }
+            }
+        }
+        XCTAssertTrue(offenders.isEmpty,
+                      "CloudKit needs an inverse for: \(offenders.joined(separator: ", "))")
+    }
+
+    /// Belt and braces for the same thing: actually open a CloudKit-configured
+    /// store and assert it isn't the fallback. A structural check can only see
+    /// the constraints someone thought to write down; this sees whatever
+    /// CoreData actually objects to.
+    ///
+    /// Skipped rather than failed when the entitlement is absent, which is the
+    /// normal state for an ad-hoc build and for CI.
+    func testCloudKitStoreLoadsWhenTheEntitlementIsPresent() throws {
+        let result = try StoreConfiguration.open(schema: schema, syncRequested: true)
+        guard case .localOnly(let reason) = result.status else {
+            XCTAssertTrue(result.status.isSyncing)
+            return
+        }
+        // A missing entitlement is expected here. A *schema* complaint is not,
+        // and is the failure this test exists to catch.
+        XCTAssertFalse(reason.lowercased().contains("inverse"),
+                       "CloudKit rejected the schema: \(reason)")
+        throw XCTSkip("No iCloud entitlement in this build: \(reason)")
+    }
+
     func testSchemaCoversEveryModelTheAppUses() {
         let names = Set(schema.entities.map(\.name))
         XCTAssertEqual(names, [

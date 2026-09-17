@@ -301,10 +301,93 @@ final class StreamsAndLapsTests: XCTestCase {
             "failures are marked too, or they retry forever")
     }
 
-    func testProvidersWithoutStreamSupportAreSkipped() async {
-        XCTAssertFalse(IntervalsICUProvider().supportsStreams)
-        await XCTAssertThrowsErrorAsync(
-            try await IntervalsICUProvider().fetchDetail(externalID: "intervals:1"))
+    // MARK: - intervals.icu streams
+
+    /// intervals.icu returns an array of `{type, data}` rather than Strava's
+    /// keyed object, so the channels are matched by type.
+    func testIntervalsStreamsParseFromTheArrayShape() throws {
+        let detail = try IntervalsICUProvider.parseStreams(Data(#"""
+        [
+          {"type": "time",      "data": [0, 1, 2, 3]},
+          {"type": "distance",  "data": [0.0, 3.2, 6.5, 9.9]},
+          {"type": "latlng",    "data": [[42.70, 23.32], [42.71, 23.33], [42.72, 23.34], [42.73, 23.35]]},
+          {"type": "altitude",  "data": [550.0, 551.0, 552.5, 553.0]},
+          {"type": "heartrate", "data": [120, 128, 134, 141]},
+          {"type": "watts",     "data": [210, 225, 240, 233]}
+        ]
+        """#.utf8))
+
+        XCTAssertEqual(detail.samples.count, 4)
+        XCTAssertEqual(detail.samples[2].hr, 134)
+        XCTAssertEqual(detail.samples[2].power, 240)
+        XCTAssertEqual(detail.samples[2].dist ?? 0, 6.5, accuracy: 0.001)
+        XCTAssertEqual(detail.samples[2].lat ?? 0, 42.72, accuracy: 0.0001)
+        XCTAssertEqual(detail.coordinates.count, 4)
+    }
+
+    /// intervals.icu writes nulls where a sensor dropped out, so a gap can be
+    /// mid-stream rather than only past the end.
+    func testIntervalsNullsMidStreamCostOnlyThatSample() throws {
+        let detail = try IntervalsICUProvider.parseStreams(Data(#"""
+        [
+          {"type": "time",      "data": [0, 1, 2]},
+          {"type": "heartrate", "data": [120, null, 134]}
+        ]
+        """#.utf8))
+        XCTAssertEqual(detail.samples.count, 3)
+        XCTAssertEqual(detail.samples[0].hr, 120)
+        XCTAssertNil(detail.samples[1].hr)
+        XCTAssertEqual(detail.samples[2].hr, 134)
+    }
+
+    func testIntervalsHandlesMissingChannelsAndEmptyResponses() throws {
+        let sparse = try IntervalsICUProvider.parseStreams(Data(#"""
+        [{"type": "time", "data": [0, 1]}]
+        """#.utf8))
+        XCTAssertEqual(sparse.samples.count, 2)
+        XCTAssertNil(sparse.samples[0].hr)
+        XCTAssertTrue(sparse.coordinates.isEmpty)
+
+        XCTAssertTrue(try IntervalsICUProvider.parseStreams(Data("[]".utf8)).isEmpty)
+        XCTAssertThrowsError(try IntervalsICUProvider.parseStreams(Data("nope".utf8)))
+    }
+
+    /// An unknown channel from a future API version must be ignored, not fatal.
+    func testIntervalsIgnoresUnknownChannels() throws {
+        let detail = try IntervalsICUProvider.parseStreams(Data(#"""
+        [
+          {"type": "time", "data": [0, 1]},
+          {"type": "core_temperature", "data": [37.1, 37.2]}
+        ]
+        """#.utf8))
+        XCTAssertEqual(detail.samples.count, 2)
+    }
+
+    func testIntervalsActivityIDIsStrippedOfItsNamespace() {
+        XCTAssertEqual(IntervalsICUProvider.activityID(from: "intervals:i12345"), "i12345")
+        XCTAssertEqual(IntervalsICUProvider.activityID(from: "i12345"), "i12345")
+    }
+
+    /// Both providers now supply streams, so both are eligible for the backfill.
+    func testBothProvidersDeclareStreamSupport() {
+        XCTAssertTrue(StravaProvider().supportsStreams)
+        XCTAssertTrue(IntervalsICUProvider().supportsStreams)
+    }
+
+    /// Only Strava publishes a rate-limit budget; intervals.icu doesn't, so the
+    /// engine has to fall back to its own cap rather than assuming zero.
+    func testOnlyStravaReportsARateLimitBudget() {
+        XCTAssertNil(IntervalsICUProvider().rateLimitBudget)
+    }
+
+    func testAProviderWithoutStreamSupportThrowsRatherThanReturningEmpty() async {
+        struct Bare: ActivityProvider {
+            let kind: ProviderKind = .polar
+            var isConfigured: Bool { true }
+            func fetchActivities(since: Date?) async throws -> [RemoteActivity] { [] }
+        }
+        XCTAssertFalse(Bare().supportsStreams)
+        await XCTAssertThrowsErrorAsync(try await Bare().fetchDetail(externalID: "polar:1"))
     }
 
     // MARK: - Lap analysis
