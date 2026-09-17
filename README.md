@@ -58,12 +58,13 @@ sessions — so every screen has something to show.
 | Backup | Full JSON export and merge-restore, plus a workouts CSV |
 | Manual entry | Log a workout by hand when nothing recorded it, and correct any workout afterwards |
 | HR zones | Five-zone split per workout with time-in-zone, from your max HR |
+| Intensity | Time-in-band across a 4/12/52-week block, read against the 80/20 convention |
 | Records | Best efforts at 1 km → marathon from stream data, plus longest run / biggest week / most climbing |
 | Plan | A week of planned sessions matched against what you actually did, with a ramp warning |
 | Dashboard | This-week totals, fitness/fatigue/form with a 120-day curve, weekly volume, road pace trend, shoe alerts |
 | Finding things | Search across sport/source/notes/shoe, plus a sport filter |
 
-410 tests cover the FIT round-trip (encode → decode → assert), splits math, readiness
+432 tests cover the FIT round-trip (encode → decode → assert), splits math, readiness
 scoring (missing-input and flat-baseline cases included), HR zone boundaries and the
 time-in-zone invariant, best-effort extraction, haversine distances against known
 city pairs, GPX export/parse round-trips and malformed input, NP/IF/TSS against their
@@ -389,6 +390,31 @@ Deleting an exercise that has logged sets is **refused**, with the count.
 identity — quietly wrong volume-by-pattern and a broken e1RM history, with no
 visible cause. Renaming is the answer, and it's edit-in-place so the history
 stays attached.
+
+## Intensity distribution
+
+A zone breakdown of one session answers nothing on its own. The question that
+changes what you do next week is whether the *block* was distributed right — most
+endurance athletes go too hard on easy days and not hard enough on hard ones, and
+the only way to see it is to add the time up. Dashboard → **Intensity
+distribution**, over four weeks, twelve, or a year.
+
+The five recorded zones collapse into the three the polarization question is
+asked in, because "80/20" has never meant anything in five. The boundaries are
+the two lactate thresholds, approximated at 80% and 90% of max HR — that
+approximation is the weak link and the screen says so. The *shape* is reliable;
+any single percentage point isn't.
+
+Four readings, and the order they're tested in matters. **Grey zone** is checked
+first: a block of 42% easy / 57% moderate / 2% hard has barely any hard work in
+it, and testing "is easy below 60%" first labelled that "too hard" and advised
+cutting intensity the athlete wasn't doing. The defining failure there is the
+time in the middle, so that's what gets named.
+
+Coverage is reported alongside. A distribution built from a third of your
+training describes that third, and saying so is the difference between an insight
+and a confidently wrong number — below 60% of sessions, or fewer than three, the
+screen says it isn't representative rather than drawing a conclusion.
 
 ## Readiness
 

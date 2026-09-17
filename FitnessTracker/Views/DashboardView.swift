@@ -30,6 +30,7 @@ struct DashboardView: View {
                     VStack(alignment: .leading, spacing: 24) {
                         thisWeek
                         planLink
+                        intensityLink
                         recordsLink
                         shoesLink
                         loadSection
@@ -115,6 +116,22 @@ struct DashboardView: View {
     /// is inferred at read time, so a plan you already fulfilled still has no
     /// completedWorkoutID and would otherwise be nagged about all week.
     private var outstandingThisWeek: Int { planWeek.outstandingCount }
+
+    private var intensityLink: some View {
+        NavigationLink {
+            IntensityView()
+        } label: {
+            HStack {
+                Image(systemName: "chart.bar.doc.horizontal")
+                Text("Intensity distribution").font(.subheadline.weight(.medium))
+                Spacer()
+                Image(systemName: "chevron.right").font(.caption)
+            }
+            .padding()
+            .background(.quaternary.opacity(0.4), in: RoundedRectangle(cornerRadius: 10))
+        }
+        .buttonStyle(.plain)
+    }
 
     private var recordsLink: some View {
         NavigationLink {
