@@ -66,6 +66,7 @@ sessions — so every screen has something to show.
 | Cycling | Normalized Power, Intensity Factor, TSS, W/kg, variability index, best-power windows |
 | Swimming | Pace per 100 m, stroke rate, lengths, SWOLF |
 | Running | Race predictions (Riegel) and derived training-pace bands |
+| Today | Readiness, form and the day's plan reasoned about together into one suggestion |
 | Recovery | Readiness score with per-component breakdown, HRV/RHR/sleep/weight trends, daily check-in with hand-entered measurements |
 | HealthKit | HRV, resting HR, sleep, weight, VO₂max import, and workout **write-back** with route and HR series (iOS only) |
 | Units | Metric or imperial throughout, display-only — stored values stay SI |
@@ -78,7 +79,7 @@ sessions — so every screen has something to show.
 | Dashboard | This-week totals, fitness/fatigue/form with a 120-day curve, weekly volume, road pace trend, shoe alerts |
 | Finding things | Search across sport/source/notes/shoe, plus a sport filter |
 
-446 tests cover the FIT round-trip (encode → decode → assert), splits math, readiness
+470 tests cover the FIT round-trip (encode → decode → assert), splits math, readiness
 scoring (missing-input and flat-baseline cases included), HR zone boundaries and the
 time-in-zone invariant, best-effort extraction, haversine distances against known
 city pairs, GPX export/parse round-trips and malformed input, NP/IF/TSS against their
@@ -429,6 +430,30 @@ Coverage is reported alongside. A distribution built from a third of your
 training describes that third, and saying so is the difference between an insight
 and a confidently wrong number — below 60% of sessions, or fewer than three, the
 screen says it isn't representative rather than drawing a conclusion.
+
+## Today
+
+Readiness knew your markers were down, the fitness curve knew you were carrying
+fatigue, and the plan knew today was intervals — and none of them talked to each
+other, so you had to hold all three in your head every morning. The card at the
+top of Recovery does that reasoning out loud.
+
+Both signals agreeing you're depleted is the only case that argues for a day off
+outright — and even then, an *easy* planned session is waved through, because
+active recovery is a legitimate answer to fatigue and telling someone to skip a
+recovery jog is the kind of over-caution that gets the whole card ignored. "Hard"
+means hard relative to your own median session over the last four weeks, not
+against a number picked out of the air; without that baseline the app says
+nothing is demanding rather than guessing, and won't wave an unknown session
+through on the one day it mattered.
+
+The numbers behind the call are always shown, so it can be argued with rather
+than obeyed. A readiness score below its own confidence floor is not evidence and
+is ignored outright; one signal gives advice but the card says it's working from
+half the picture.
+
+**It is a suggestion, and it defers to how you feel.** The wording is chosen so it
+never reads as an instruction.
 
 ## Readiness
 

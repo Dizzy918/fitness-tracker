@@ -23,11 +23,15 @@ struct RecoveryView: View {
         score: 0, band: .moderate, contributions: [], confidence: 0, missing: []
     )
     @State private var training = TrainingState()
+    @State private var guidance: DailyGuidance.Advice?
+
+    @Query(sort: \PlannedWorkout.scheduledFor) private var planned: [PlannedWorkout]
 
     var body: some View {
         NavigationStack {
             ScrollView {
                 VStack(alignment: .leading, spacing: 24) {
+                    guidanceCard
                     readinessCard
                     if !todayContributions.isEmpty { breakdown }
                     checkInPrompt
@@ -71,6 +75,64 @@ struct RecoveryView: View {
         }
     }
 
+    // MARK: - Today
+
+    /// Readiness, form and the plan, reasoned about together.
+    ///
+    /// Each of those already existed and none of them talked to each other, so
+    /// the athlete had to do the combining in their head every morning.
+    @ViewBuilder
+    private var guidanceCard: some View {
+        if let guidance, guidance.recommendation != .unknown {
+            VStack(alignment: .leading, spacing: 10) {
+                HStack(spacing: 10) {
+                    Image(systemName: guidance.recommendation.symbolName)
+                        .font(.title2)
+                        .foregroundStyle(guidanceColor(guidance.recommendation))
+                    Text(guidance.recommendation.label)
+                        .font(.headline)
+                    Spacer()
+                }
+                Text(guidance.headline)
+                    .font(.subheadline)
+                    .fixedSize(horizontal: false, vertical: true)
+
+                if !guidance.reasons.isEmpty {
+                    VStack(alignment: .leading, spacing: 2) {
+                        ForEach(guidance.reasons, id: \.self) { reason in
+                            Text(reason)
+                                .font(.caption)
+                                .foregroundStyle(.secondary)
+                        }
+                    }
+                }
+
+                Text(guidance.isPartial
+                     ? "Based on part of the picture, and on how your own trends usually look — not on how you feel. If those disagree, trust yourself."
+                     : "A suggestion from your own trends, not a measurement. If it disagrees with how you feel, trust yourself.")
+                    .font(.caption2)
+                    .foregroundStyle(.tertiary)
+                    .fixedSize(horizontal: false, vertical: true)
+            }
+            .padding()
+            .background(guidanceColor(guidance.recommendation).opacity(0.10),
+                        in: RoundedRectangle(cornerRadius: 12))
+            .accessibilityElement(children: .combine)
+            .accessibilityLabel("\(guidance.recommendation.label). \(guidance.headline)")
+        }
+    }
+
+    private func guidanceColor(_ recommendation: DailyGuidance.Recommendation) -> Color {
+        switch recommendation {
+        case .done:        return .secondary
+        case .proceed:     return .green
+        case .easier:      return .orange
+        case .rest:        return .red
+        case .opportunity: return .mint
+        case .unknown:     return .secondary
+        }
+    }
+
     // MARK: - Readiness
 
     private var today: Date { Calendar.current.startOfDay(for: .now) }
@@ -88,7 +150,7 @@ struct RecoveryView: View {
     }
 
     private var reloadToken: String {
-        "\(metrics.count)-\(workouts.count)-\(strengthSessions.count)-\(todayMetric?.snapshot.hashValue ?? 0)"
+        "\(metrics.count)-\(workouts.count)-\(strengthSessions.count)-\(planned.count)-\(todayMetric?.snapshot.hashValue ?? 0)"
     }
 
     private func reload() async {
@@ -106,8 +168,24 @@ struct RecoveryView: View {
         training = state
         // Acute:chronic now comes from multi-sport training stress, so a hard
         // ride or lifting session costs readiness the way it should.
-        result = Readiness.score(day: day, history: history,
-                                 loadRatio: state.acuteChronicRatio)
+        let scored = Readiness.score(day: day, history: history,
+                                     loadRatio: state.acuteChronicRatio)
+        result = scored
+
+        let calendar = Calendar.current
+        let fourWeeksAgo = calendar.date(byAdding: .day, value: -28, to: .now) ?? .now
+        var input = DailyGuidance.Input()
+        input.readiness = scored
+        input.form = state.today
+        input.trainedToday = snapshots.contains {
+            calendar.isDateInToday($0.startedAt)
+        }
+        input.outstandingToday = planned
+            .filter { calendar.isDateInToday($0.scheduledFor) && $0.isOutstanding }
+            .map(\.snapshot)
+        input.typicalSessionLoad = DailyGuidance.typicalSessionLoad(
+            workouts: snapshots, athlete: athlete, since: fourWeeksAgo)
+        guidance = DailyGuidance.advise(input)
     }
 
     private var readinessCard: some View {
@@ -311,12 +389,19 @@ struct ReadinessRing: View {
 
     var body: some View {
         ZStack {
-            Circle()
-                .trim(from: 0, to: 0.75)
-                .stroke(.quaternary, style: StrokeStyle(lineWidth: 14, lineCap: .round))
-            Circle()
-                .trim(from: 0, to: 0.75 * Double(score) / 100)
-                .stroke(color, style: StrokeStyle(lineWidth: 14, lineCap: .round))
+            // The rotation is scoped to the arcs. Applied to the whole stack it
+            // turned the score and its label upside down — the number was
+            // legible only with your head tilted.
+            ZStack {
+                Circle()
+                    .trim(from: 0, to: 0.75)
+                    .stroke(.quaternary, style: StrokeStyle(lineWidth: 14, lineCap: .round))
+                Circle()
+                    .trim(from: 0, to: 0.75 * Double(score) / 100)
+                    .stroke(color, style: StrokeStyle(lineWidth: 14, lineCap: .round))
+            }
+            .rotationEffect(.degrees(135))   // start the arc bottom-left
+
             VStack(spacing: 0) {
                 Text("\(score)")
                     .font(.system(size: 34, weight: .semibold, design: .rounded))
@@ -324,7 +409,6 @@ struct ReadinessRing: View {
                 Text("readiness").font(.caption2).foregroundStyle(.secondary)
             }
         }
-        .rotationEffect(.degrees(135))   // start the arc bottom-left
         .compositingGroup()
     }
 }
