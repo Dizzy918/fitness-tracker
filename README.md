@@ -28,6 +28,20 @@ app exported. Folders are expanded (one level, not recursively), the list is
 de-duplicated so dropping a file and its folder doesn't count it twice, and
 decoding happens off the main thread so a batch doesn't freeze the UI.
 
+Better still, **Settings → Watched folder**: point it at the directory your watch
+app exports to and new files are imported whenever you open the app. It's checked
+on activation rather than continuously — a live filesystem watcher means an
+FSEvents stream to start, restart and tear down, plus sandbox lifetime questions,
+in exchange for noticing a file while you aren't looking at the app. The folder is
+remembered across launches with a security-scoped bookmark, and a bookmark that
+has gone stale is refreshed in place; one that can't resolve at all says so,
+rather than leaving "auto-import stopped working" with no visible cause.
+
+Re-scanning is free, which is what makes the whole approach simple: FIT files
+dedupe on a content hash, so seeing the same hundred files again imports nothing.
+The same ride exported twice under different names is one workout, and the report
+says so rather than claiming two.
+
 No workouts yet? **Workouts tab → + → Seed demo data** inserts a deterministic
 12-week season — runs with routes and HR streams, rides with power, pool swims,
 four 8 × 400 m track sessions with real lap records, 2 shoes and 16 lifting
@@ -37,7 +51,7 @@ sessions — so every screen has something to show.
 
 | Area | Status |
 |---|---|
-| FIT import | Session/Record/Lap parsing, GPS track, HR/cadence/speed/altitude streams, content-hash dedupe, drag-and-drop a file or a whole folder |
+| FIT import | Session/Record/Lap parsing, GPS track, HR/cadence/speed/altitude streams, content-hash dedupe, drag-and-drop a file or folder, watched-folder auto-import |
 | Strava sync | Own-app OAuth (`activity:read_all`), paged activity fetch, per-second streams backfilled inside the rate limit, token auto-refresh |
 | intervals.icu sync | API-key basic auth, date-windowed activity fetch, per-second streams backfilled |
 | PDF extraction | Claude reads a PDF and returns structured workouts; mandatory review before anything is saved |
@@ -64,7 +78,7 @@ sessions — so every screen has something to show.
 | Dashboard | This-week totals, fitness/fatigue/form with a 120-day curve, weekly volume, road pace trend, shoe alerts |
 | Finding things | Search across sport/source/notes/shoe, plus a sport filter |
 
-432 tests cover the FIT round-trip (encode → decode → assert), splits math, readiness
+446 tests cover the FIT round-trip (encode → decode → assert), splits math, readiness
 scoring (missing-input and flat-baseline cases included), HR zone boundaries and the
 time-in-zone invariant, best-effort extraction, haversine distances against known
 city pairs, GPX export/parse round-trips and malformed input, NP/IF/TSS against their
@@ -506,7 +520,7 @@ Tests/                       FIT, splits, readiness, zones, records, persistence
 - [x] HealthKit workout write-back; CloudKit wired up behind its entitlement
 - [ ] Turn CloudKit on (code is written; needs a team and the entitlement — see below)
 - [x] Drag-and-drop FIT import, including a whole folder at once
-- [ ] Watch-folder auto-import (drop handles the manual case)
+- [x] Watch-folder auto-import
 - [x] Route elevation from a terrain API
 - [x] Exercise library with form notes
 - [ ] Nutrition (last — needs a food database; Open Food Facts or USDA)

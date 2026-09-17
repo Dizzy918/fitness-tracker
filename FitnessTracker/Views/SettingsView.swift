@@ -14,6 +14,7 @@ struct SettingsView: View {
     @State private var anthropicKey = CredentialStore.get(.anthropicAPIKey) ?? ""
     @Environment(\.syncStatus) private var syncStatus
     @AppStorage(StoreConfiguration.syncEnabledKey) private var iCloudSyncEnabled = true
+    @AppStorage(WatchedFolder.enabledKey) private var watchedFolderEnabled = true
     @AppStorage(UnitSystem.defaultsKey) private var unitSystem: UnitSystem = .metric
     @AppStorage("maxHeartRate") private var maxHeartRate = 0
     @AppStorage("restingHeartRate") private var restingHeartRate = 0
@@ -23,6 +24,10 @@ struct SettingsView: View {
     @State private var stravaConnected = StravaProvider().isConfigured
     @State private var syncing = false
     @State private var exportingHealth = false
+    @State private var scanningFolder = false
+    @State private var pickingFolder = false
+    /// Mirrors the resolved bookmark so the row updates when it changes.
+    @State private var watchedFolderPath: String? = WatchedFolder.displayPath()
     @State private var exportedFile: URL?
     @State private var restoring = false
     @State private var pendingHealthExport = 0
@@ -35,6 +40,7 @@ struct SettingsView: View {
         NavigationStack {
             Form {
                 syncStatusSection
+                watchedFolderSection
                 unitsSection
                 backupSection
                 appleHealthSection
@@ -52,6 +58,9 @@ struct SettingsView: View {
             .fileImporter(isPresented: $restoring,
                           allowedContentTypes: [.json],
                           onCompletion: handleRestore)
+            .fileImporter(isPresented: $pickingFolder,
+                          allowedContentTypes: [.folder],
+                          onCompletion: handleFolderPick)
             .sheet(item: $exportedFile) { url in
                 ShareLinkSheet(url: url)
             }
@@ -67,6 +76,70 @@ struct SettingsView: View {
                 Button("OK") { message = nil }
             } message: {
                 Text(message ?? "")
+            }
+        }
+    }
+
+    // MARK: - Watched folder
+
+    /// A folder the app re-checks for new `.fit` files.
+    private var watchedFolderSection: some View {
+        Section {
+            Toggle("Check a folder for new files", isOn: Binding(
+                get: { watchedFolderEnabled },
+                set: { watchedFolderEnabled = $0 }
+            ))
+
+            if let path = WatchedFolder.displayPath() {
+                LabeledContent("Folder") {
+                    Text(path)
+                        .font(.caption)
+                        .lineLimit(2)
+                        .truncationMode(.head)
+                        .foregroundStyle(.secondary)
+                }
+                Button("Scan now") { Task { await scanWatchedFolder() } }
+                    .disabled(scanningFolder || !watchedFolderEnabled)
+                Button("Stop watching", role: .destructive) {
+                    WatchedFolder.forget()
+                    watchedFolderPath = nil
+                }
+            } else {
+                Button("Choose a folder…") { pickingFolder = true }
+            }
+        } header: {
+            Text("Watched folder")
+        } footer: {
+            Text("""
+                Point this at the folder your watch app exports to and new `.fit` \
+                files are imported whenever you open the app. It's checked on \
+                activation rather than continuously — and re-importing is free, \
+                since files dedupe on their contents.
+                """)
+        }
+    }
+
+    private func scanWatchedFolder() async {
+        scanningFolder = true
+        defer { scanningFolder = false }
+        let report = await WatchedFolder.scan(into: context)
+        messageTitle = "Watched folder"
+        message = report.summary
+    }
+
+    private func handleFolderPick(_ result: Result<URL, Error>) {
+        switch result {
+        case .failure(let error):
+            messageTitle = "Watched folder"
+            message = error.localizedDescription
+        case .success(let url):
+            do {
+                try WatchedFolder.remember(url)
+                watchedFolderPath = WatchedFolder.displayPath()
+                Task { await scanWatchedFolder() }
+            } catch {
+                messageTitle = "Watched folder"
+                message = "Couldn't keep access to that folder: \(error.localizedDescription)"
             }
         }
     }

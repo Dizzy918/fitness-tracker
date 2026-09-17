@@ -1,6 +1,9 @@
 import SwiftUI
 
 struct RootView: View {
+    @Environment(\.modelContext) private var context
+    @Environment(\.scenePhase) private var scenePhase
+
     /// Display units. Held here and pushed into the environment so every screen
     /// redraws the moment the preference changes — the alternative, each view
     /// reading defaults on its own, leaves half the app in the old units until
@@ -12,7 +15,14 @@ struct RootView: View {
     /// set-and-glance tracker, so it lives behind the Dashboard (which already
     /// surfaces its wear alerts). Import and settings sit in the Workouts toolbar.
     var body: some View {
-        tabs.environment(\.units, UnitFormatter(unitSystem))
+        tabs
+            .environment(\.units, UnitFormatter(unitSystem))
+            // Becoming active is when a new watch export would have appeared,
+            // and it's the only moment worth spending a folder scan on.
+            .onChange(of: scenePhase) { _, phase in
+                guard phase == .active else { return }
+                Task { await WatchedFolder.scan(into: context) }
+            }
     }
 
     private var tabs: some View {
