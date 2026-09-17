@@ -26,6 +26,7 @@ struct WorkoutDetailView: View {
     @State private var powerSummary: CyclingPower.Summary?
     @State private var swimSummary: SwimMetrics.Summary?
     @State private var load: TrainingLoad.Score?
+    @State private var editing = false
     @State private var laps: [FITLap] = []
     @State private var intervalView: IntervalView = .laps
 
@@ -82,6 +83,12 @@ struct WorkoutDetailView: View {
             .padding()
         }
         .navigationTitle(workout.startedAt.formatted(date: .abbreviated, time: .shortened))
+        .toolbar {
+            ToolbarItem(placement: .primaryAction) {
+                Button("Edit") { editing = true }
+            }
+        }
+        .sheet(isPresented: $editing) { ManualWorkoutSheet(existing: workout) }
         .task(id: workout.id) {
             observedMaxHR = Self.highestRecordedHR(in: context)
             let decoded = workout.samples

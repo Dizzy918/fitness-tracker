@@ -97,6 +97,16 @@ final class ViewRenderTests: XCTestCase {
         try await assertRenders(ManualWorkoutSheet(), container: try seededContainer())
     }
 
+    /// The same sheet in edit mode, against a workout that has recorded data —
+    /// which takes the warning branch.
+    func testWorkoutEditorRendersForAnExistingWorkout() async throws {
+        let container = try seededContainer()
+        let context = ModelContext(container)
+        let workout = try XCTUnwrap(
+            try context.fetch(FetchDescriptor<Workout>()).first { !$0.samples.isEmpty })
+        try await assertRenders(ManualWorkoutSheet(existing: workout), container: container)
+    }
+
     /// Both unit systems have to lay out — imperial strings are longer, and a
     /// stat tile that fits "8.24 km" may not fit "5.12 mi".
     func testScreensRenderInImperial() async throws {

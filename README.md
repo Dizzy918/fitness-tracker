@@ -47,17 +47,17 @@ sessions — so every screen has something to show.
 | Cycling | Normalized Power, Intensity Factor, TSS, W/kg, variability index, best-power windows |
 | Swimming | Pace per 100 m, stroke rate, lengths, SWOLF |
 | Running | Race predictions (Riegel) and derived training-pace bands |
-| Recovery | Readiness score with per-component breakdown, HRV/RHR/sleep/weight trends, daily check-in |
+| Recovery | Readiness score with per-component breakdown, HRV/RHR/sleep/weight trends, daily check-in with hand-entered measurements |
 | HealthKit | HRV, resting HR, sleep, weight, VO₂max import, and workout **write-back** with route and HR series (iOS only) |
 | Units | Metric or imperial throughout, display-only — stored values stay SI |
 | Backup | Full JSON export and merge-restore, plus a workouts CSV |
-| Manual entry | Log a workout by hand when nothing recorded it |
+| Manual entry | Log a workout by hand when nothing recorded it, and correct any workout afterwards |
 | HR zones | Five-zone split per workout with time-in-zone, from your max HR |
 | Records | Best efforts at 1 km → marathon from stream data, plus longest run / biggest week / most climbing |
 | Dashboard | This-week totals, fitness/fatigue/form with a 120-day curve, weekly volume, road pace trend, shoe alerts |
 | Finding things | Search across sport/source/notes/shoe, plus a sport filter |
 
-357 tests cover the FIT round-trip (encode → decode → assert), splits math, readiness
+368 tests cover the FIT round-trip (encode → decode → assert), splits math, readiness
 scoring (missing-input and flat-baseline cases included), HR zone boundaries and the
 time-in-zone invariant, best-effort extraction, haversine distances against known
 city pairs, GPX export/parse round-trips and malformed input, NP/IF/TSS against their
@@ -361,6 +361,13 @@ The Recovery tab scores each day 0–100 from whatever inputs exist:
 
 Design decisions worth knowing:
 
+- **Measurements can be entered by hand.** HealthKit is iOS-only, so on the Mac
+  the score could never see HRV or resting heart rate — half its weight — and sat
+  permanently below the confidence floor. The check-in now takes them directly,
+  which is equally the answer for anyone whose watch doesn't report them. A
+  stepper left at zero writes nothing: a resting heart rate of 0 in the history
+  would drag the baseline mean down and make every later day read as a dramatic
+  improvement.
 - **Weights renormalize over available inputs.** A missing HRV reading doesn't drag
   the score toward zero; it just lowers reported `confidence`. Below 30% confidence
   the app refuses to show a score instead of inventing one.
@@ -457,8 +464,8 @@ Tests/                       FIT, splits, readiness, zones, records, persistence
 - **HealthKit import is unverified against real data** — the simulator has none, and
   the adapter's queries haven't run against a populated Health store. The scoring it
   feeds is thoroughly tested; the plumbing that fills it is not.
-- HealthKit is iOS-only. On macOS the Recovery tab works from manual check-ins, and
-  metrics won't appear there until CloudKit sync is wired up.
+- HealthKit is iOS-only. On macOS every metric has to be entered by hand until
+  CloudKit sync is turned on.
 - Set your max HR in Settings before trusting zones; the estimated fallback is
   labelled in the UI but still only an estimate. Same for FTP and cycling TSS.
 - Path snapping depends on MapKit directions, which are unavailable off-grid and can

@@ -1,13 +1,21 @@
 import SwiftUI
 import SwiftData
 
-/// Log a workout by hand.
+/// Log a workout by hand, or correct one.
 ///
 /// The app is built around importing full-fidelity files, but not everything
 /// gets recorded: a treadmill run, a gym class, a ride on a bike without a
 /// computer, or a session whose `.fit` file went missing. Without this those
 /// sessions are simply absent from the training load, which makes the fitness
 /// curve wrong in the one direction that matters — it under-reports.
+///
+/// The same form edits an existing workout, because a hand-typed distance with
+/// a typo in it was otherwise permanent — and a wrong distance doesn't just look
+/// wrong, it feeds pace, training load and the fitness curve.
+///
+/// Editing deliberately covers only the summary fields. Recorded streams, laps
+/// and the GPS track belong to whatever device produced them, and letting the UI
+/// contradict them would make a workout's own numbers disagree with each other.
 struct ManualWorkoutSheet: View {
     @Environment(\.dismiss) private var dismiss
     @Environment(\.modelContext) private var context
@@ -16,6 +24,9 @@ struct ManualWorkoutSheet: View {
     @Query(filter: #Predicate<Shoe> { $0.retiredAt == nil },
            sort: \Shoe.acquiredAt, order: .reverse)
     private var activeShoes: [Shoe]
+
+    /// Nil when logging a new one.
+    var existing: Workout?
 
     @State private var sport: WorkoutSport = .run
     @State private var startedAt: Date = .now
@@ -42,8 +53,17 @@ struct ManualWorkoutSheet: View {
             : distanceValue * UnitConversion.metersPerMile
     }
 
+    @State private var loaded = false
+
     private var canSave: Bool {
         duration > 0 && (!hasDistance || distanceValue > 0)
+    }
+
+    /// True when the workout carries recorded data the summary should agree
+    /// with, so the UI can warn rather than silently letting them diverge.
+    private var hasRecordedData: Bool {
+        guard let existing else { return false }
+        return existing.hasStreams || existing.hasRoute || !existing.laps.isEmpty
     }
 
     var body: some View {
@@ -119,8 +139,20 @@ struct ManualWorkoutSheet: View {
                     TextField("Notes", text: $notes, axis: .vertical)
                         .lineLimit(1...4)
                 }
+
+                if hasRecordedData {
+                    Section {
+                        Label("""
+                            This workout has recorded data — a GPS track, laps or a \
+                            sensor stream. Those aren't changed here, so editing the \
+                            summary can make it disagree with them.
+                            """, systemImage: "exclamationmark.triangle")
+                            .font(.caption)
+                            .foregroundStyle(.orange)
+                    }
+                }
             }
-            .navigationTitle("Log Workout")
+            .navigationTitle(existing == nil ? "Log Workout" : "Edit Workout")
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
                     Button("Cancel") { dismiss() }
@@ -129,11 +161,38 @@ struct ManualWorkoutSheet: View {
                     Button("Save") { save() }.disabled(!canSave)
                 }
             }
+            .task { load() }
         }
     }
 
+    private func load() {
+        guard !loaded else { return }
+        loaded = true
+        guard let existing else { return }
+
+        sport = existing.sport
+        startedAt = existing.startedAt
+        hours = Int(existing.duration) / 3600
+        minutes = (Int(existing.duration) % 3600) / 60
+        hasDistance = existing.distance > 0
+        if hasDistance {
+            distanceValue = units.system == .metric
+                ? existing.distance / 1000
+                : existing.distance / UnitConversion.metersPerMile
+        }
+        avgHR = existing.avgHeartRate ?? 0
+        maxHR = existing.maxHeartRate ?? 0
+        elevation = Int(existing.elevationGain ?? 0)
+        calories = Int(existing.calories ?? 0)
+        shoe = existing.shoe
+        notes = existing.notes ?? ""
+    }
+
     private func save() {
-        let workout = Workout(
+        // Editing in place rather than replacing keeps the row id, the source
+        // and any recorded streams — and keeps it out of the sync watermark's
+        // way, since a new row would look like a workout that had never synced.
+        let workout = existing ?? Workout(
             sport: sport,
             startedAt: startedAt,
             duration: duration,
@@ -144,16 +203,23 @@ struct ManualWorkoutSheet: View {
             // day stay two rows.
             externalID: "manual:\(UUID().uuidString)"
         )
+        workout.sport = sport
+        workout.startedAt = startedAt
+        workout.duration = duration
+        workout.distance = distanceMeters
         workout.avgHeartRate = avgHR > 0 ? avgHR : nil
         workout.maxHeartRate = maxHR > 0 ? maxHR : nil
         workout.elevationGain = elevation > 0 ? Double(elevation) : nil
         workout.calories = calories > 0 ? Double(calories) : nil
         workout.notes = notes.isEmpty ? nil : notes
         workout.shoe = shoe
-        // Hand-logged sessions have no detail to fetch; saying so keeps them out
-        // of the provider backfill queue.
-        workout.detailFetchedAt = .now
-        context.insert(workout)
+
+        if existing == nil {
+            // Hand-logged sessions have no detail to fetch; saying so keeps them
+            // out of the provider backfill queue.
+            workout.detailFetchedAt = .now
+            context.insert(workout)
+        }
         dismiss()
     }
 }
