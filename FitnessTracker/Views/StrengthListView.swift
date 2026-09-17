@@ -13,11 +13,23 @@ struct StrengthListView: View {
         NavigationStack {
             Group {
                 if sessions.isEmpty {
-                    ContentUnavailableView(
-                        "No lifts logged",
-                        systemImage: "dumbbell",
-                        description: Text("Start a session, or seed demo data from the Workouts tab.")
-                    )
+                    ContentUnavailableView {
+                        Label("No lifts logged", systemImage: "dumbbell")
+                    } description: {
+                        Text(exercises.isEmpty
+                             ? "Sets are logged against an exercise, so start by setting up your library."
+                             : "Start a session and add your first set.")
+                    } actions: {
+                        VStack(spacing: 8) {
+                            if exercises.isEmpty {
+                                NavigationLink("Set up exercises…") { ExerciseLibraryView() }
+                                    .buttonStyle(.borderedProminent)
+                            } else {
+                                Button("Start a session") { startSession() }
+                                    .buttonStyle(.borderedProminent)
+                            }
+                        }
+                    }
                 } else {
                     List {
                         if !exercises.isEmpty {
@@ -39,6 +51,17 @@ struct StrengthListView: View {
                             }
                         }
 
+                        Section {
+                            NavigationLink {
+                                ExerciseLibraryView()
+                            } label: {
+                                Label("Exercise library", systemImage: "list.bullet.rectangle")
+                                Spacer()
+                                Text("\(exercises.count)")
+                                    .foregroundStyle(.secondary)
+                            }
+                        }
+
                         Section("Sessions") {
                             ForEach(sessions) { session in
                                 NavigationLink {
@@ -57,15 +80,16 @@ struct StrengthListView: View {
             .navigationTitle("Strength")
             .toolbar {
                 ToolbarItem(placement: .primaryAction) {
-                    Button {
-                        let s = StrengthSession(startedAt: .now)
-                        context.insert(s)
-                    } label: {
+                    Button { startSession() } label: {
                         Label("New session", systemImage: "plus")
                     }
                 }
             }
         }
+    }
+
+    private func startSession() {
+        context.insert(StrengthSession(startedAt: .now))
     }
 
     /// One pass over every working set, keyed by exercise. Computing this per
@@ -169,7 +193,7 @@ struct StrengthSessionDetailView: View {
             }
         }
         .sheet(isPresented: $showAddSet) {
-            AddSetSheet(session: session, exercises: exercises)
+            AddSetSheet(session: session)
         }
     }
 
@@ -192,13 +216,18 @@ struct AddSetSheet: View {
     @Environment(\.modelContext) private var context
     @Environment(\.units) private var units
     let session: StrengthSession
-    let exercises: [Exercise]
+
+    /// Queried rather than passed in: creating an exercise from this sheet has
+    /// to make it selectable immediately, and a snapshot array taken when the
+    /// sheet opened never updates.
+    @Query(sort: \Exercise.name) private var exercises: [Exercise]
 
     @State private var selected: Exercise?
     @State private var reps = 5
     @State private var weight: Double = 60
     @State private var rpe: Double = 8
     @State private var isWarmup = false
+    @State private var creatingExercise = false
 
     /// The slider works in whatever unit is shown; `weight` stays kilograms.
     private var displayedWeight: Binding<Double> {
@@ -211,9 +240,23 @@ struct AddSetSheet: View {
     var body: some View {
         NavigationStack {
             Form {
-                Picker("Exercise", selection: $selected) {
-                    Text("Select…").tag(Exercise?.none)
-                    ForEach(exercises) { Text($0.name).tag(Exercise?.some($0)) }
+                Section {
+                    Picker("Exercise", selection: $selected) {
+                        Text("Select…").tag(Exercise?.none)
+                        ForEach(exercises) { Text($0.name).tag(Exercise?.some($0)) }
+                    }
+                    Button {
+                        creatingExercise = true
+                    } label: {
+                        Label("New exercise…", systemImage: "plus.circle")
+                    }
+                } footer: {
+                    if let note = selected?.formNote {
+                        Label(note, systemImage: "lightbulb")
+                            .font(.caption)
+                    } else if exercises.isEmpty {
+                        Text("No exercises yet — create one to log a set against.")
+                    }
                 }
                 Stepper("Reps: \(reps)", value: $reps, in: 1...30)
                 HStack {
@@ -258,6 +301,16 @@ struct AddSetSheet: View {
                 }
             }
             .onAppear { if selected == nil { selected = exercises.first } }
+            .sheet(isPresented: $creatingExercise) { ExerciseEditor(exercise: nil) }
+            // A newly created exercise is the one you meant to use, so select it
+            // rather than making the picker a second step. The list is sorted by
+            // name, so the new one isn't simply the last — diff the ids.
+            .onChange(of: exercises.map(\.id)) { previous, current in
+                let added = Set(current).subtracting(previous)
+                if let id = added.first, let match = exercises.first(where: { $0.id == id }) {
+                    selected = match
+                }
+            }
         }
     }
 }

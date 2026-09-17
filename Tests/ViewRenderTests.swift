@@ -72,6 +72,43 @@ final class ViewRenderTests: XCTestCase {
 
     // MARK: - Populated
 
+    func testExerciseLibraryRendersWithData() async throws {
+        try await assertRenders(NavigationStack { ExerciseLibraryView() },
+                                container: try seededContainer())
+    }
+
+    /// The state a real user starts in: no exercises at all. It has to offer a
+    /// way forward rather than an empty list.
+    func testExerciseLibraryRendersEmpty() async throws {
+        try await assertRenders(NavigationStack { ExerciseLibraryView() },
+                                container: try emptyContainer())
+    }
+
+    func testExerciseEditorRendersForNewAndExisting() async throws {
+        let container = try seededContainer()
+        try await assertRenders(ExerciseEditor(exercise: nil), container: container)
+
+        let context = ModelContext(container)
+        let exercise = try XCTUnwrap(try context.fetch(FetchDescriptor<Exercise>()).first)
+        try await assertRenders(ExerciseEditor(exercise: exercise), container: container)
+    }
+
+    func testManualWorkoutSheetRenders() async throws {
+        try await assertRenders(ManualWorkoutSheet(), container: try seededContainer())
+    }
+
+    /// Both unit systems have to lay out — imperial strings are longer, and a
+    /// stat tile that fits "8.24 km" may not fit "5.12 mi".
+    func testScreensRenderInImperial() async throws {
+        let container = try seededContainer()
+        try await assertRenders(
+            DashboardView().environment(\.units, UnitFormatter(.imperial)),
+            container: container)
+        try await assertRenders(
+            WorkoutListView().environment(\.units, UnitFormatter(.imperial)),
+            container: container)
+    }
+
     func testRootViewRenders() async throws {
         try await assertRenders(RootView(), container: try seededContainer())
     }

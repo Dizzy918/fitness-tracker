@@ -41,6 +41,7 @@ sessions — so every screen has something to show.
 | Laps | Watch laps with intensity markings, recovery dimmed, fastest working lap highlighted; switchable with km splits |
 | Shoes | Assign to runs, mileage rollup, wear % with warning colors, retire/un-retire |
 | Strength | Sessions, sets with RPE, Epley e1RM, per-exercise progress chart, add-set flow |
+| Exercises | Library grouped by movement pattern, form cues, starter catalogue, create/edit inline while logging |
 | Routes | Tap-to-build route planner with path snapping, GPX import/export, elevation profile |
 | Training load | Per-session stress on one TSS scale across every sport, plus fitness (42-day) / fatigue (7-day) / form curves |
 | Cycling | Normalized Power, Intensity Factor, TSS, W/kg, variability index, best-power windows |
@@ -56,7 +57,7 @@ sessions — so every screen has something to show.
 | Dashboard | This-week totals, fitness/fatigue/form with a 120-day curve, weekly volume, road pace trend, shoe alerts |
 | Finding things | Search across sport/source/notes/shoe, plus a sport filter |
 
-309 tests cover the FIT round-trip (encode → decode → assert), splits math, readiness
+329 tests cover the FIT round-trip (encode → decode → assert), splits math, readiness
 scoring (missing-input and flat-baseline cases included), HR zone boundaries and the
 time-in-zone invariant, best-effort extraction, haversine distances against known
 city pairs, GPX export/parse round-trips and malformed input, NP/IF/TSS against their
@@ -299,6 +300,32 @@ The schema constraints CloudKit imposes — every attribute optional or defaulte
 no unique constraints, optional to-one relationships — are asserted by tests
 against the real schema, so they fail here rather than at launch on a device.
 
+## Exercises
+
+Sets are logged against an `Exercise`, and until now nothing in the app could
+create one — they came only from the demo seeder or a restore. A real user's set
+picker was empty, which meant no strength set could be logged at all.
+
+Strength → **Exercise library** now manages them, grouped by movement pattern
+rather than listed alphabetically, because that's how a program is written and
+how this app attributes volume: seeing six pushes and one pull is the point. Each
+carries primary muscles and a **form cue** — one line that prevents the usual
+failure, shown at the moment you pick it while logging a set, not a paragraph of
+technique theory nobody reads mid-session.
+
+A 17-lift starter catalogue covers every pattern and can be added in one tap;
+seeding is idempotent and matches case-insensitively, so running it after the
+demo data or a restore can't produce a second "Back Squat" and split that lift's
+history in two. New exercises can be created from inside the add-set sheet and
+are selected automatically, so a missing lift doesn't cost you the half-entered
+set.
+
+Deleting an exercise that has logged sets is **refused**, with the count.
+`SetEntry.exercise` nullifies on delete, so the sets would survive without an
+identity — quietly wrong volume-by-pattern and a broken e1RM history, with no
+visible cause. Renaming is the answer, and it's edit-in-place so the history
+stays attached.
+
 ## Readiness
 
 The Recovery tab scores each day 0–100 from whatever inputs exist:
@@ -383,7 +410,7 @@ Tests/                       FIT, splits, readiness, zones, records, persistence
 - [ ] Turn CloudKit on (code is written; needs a team and the entitlement — see below)
 - [ ] Drag-and-drop FIT import on macOS; watch-folder auto-import
 - [ ] Route elevation from a terrain API (planned routes have no elevation until imported)
-- [ ] Exercise library with form notes
+- [x] Exercise library with form notes
 - [ ] Nutrition (last — needs a food database; Open Food Facts or USDA)
 
 ## Known gaps
