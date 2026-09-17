@@ -23,6 +23,11 @@ Tests:
 xcodebuild -project FitnessTracker.xcodeproj -scheme FitnessTracker -destination 'platform=macOS' test
 ```
 
+On a Mac, **drag `.fit` files onto the window** — or the whole folder your watch
+app exported. Folders are expanded (one level, not recursively), the list is
+de-duplicated so dropping a file and its folder doesn't count it twice, and
+decoding happens off the main thread so a batch doesn't freeze the UI.
+
 No workouts yet? **Workouts tab → + → Seed demo data** inserts a deterministic
 12-week season — runs with routes and HR streams, rides with power, pool swims,
 four 8 × 400 m track sessions with real lap records, 2 shoes and 16 lifting
@@ -32,7 +37,7 @@ sessions — so every screen has something to show.
 
 | Area | Status |
 |---|---|
-| FIT import | Session/Record/Lap parsing, GPS track, HR/cadence/speed/altitude streams, content-hash dedupe |
+| FIT import | Session/Record/Lap parsing, GPS track, HR/cadence/speed/altitude streams, content-hash dedupe, drag-and-drop a file or a whole folder |
 | Strava sync | Own-app OAuth (`activity:read_all`), paged activity fetch, per-second streams backfilled inside the rate limit, token auto-refresh |
 | intervals.icu sync | API-key basic auth, date-windowed activity fetch, per-second streams backfilled |
 | PDF extraction | Claude reads a PDF and returns structured workouts; mandatory review before anything is saved |
@@ -57,7 +62,7 @@ sessions — so every screen has something to show.
 | Dashboard | This-week totals, fitness/fatigue/form with a 120-day curve, weekly volume, road pace trend, shoe alerts |
 | Finding things | Search across sport/source/notes/shoe, plus a sport filter |
 
-368 tests cover the FIT round-trip (encode → decode → assert), splits math, readiness
+380 tests cover the FIT round-trip (encode → decode → assert), splits math, readiness
 scoring (missing-input and flat-baseline cases included), HR zone boundaries and the
 time-in-zone invariant, best-effort extraction, haversine distances against known
 city pairs, GPX export/parse round-trips and malformed input, NP/IF/TSS against their
@@ -436,7 +441,8 @@ Tests/                       FIT, splits, readiness, zones, records, persistence
 - [x] Metric/imperial units, JSON backup + restore, manual workout entry
 - [x] HealthKit workout write-back; CloudKit wired up behind its entitlement
 - [ ] Turn CloudKit on (code is written; needs a team and the entitlement — see below)
-- [ ] Drag-and-drop FIT import on macOS; watch-folder auto-import
+- [x] Drag-and-drop FIT import, including a whole folder at once
+- [ ] Watch-folder auto-import (drop handles the manual case)
 - [x] Route elevation from a terrain API
 - [x] Exercise library with form notes
 - [ ] Nutrition (last — needs a food database; Open Food Facts or USDA)

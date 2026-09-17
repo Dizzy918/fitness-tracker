@@ -5,77 +5,9 @@ import AntMessageProtocol
 
 final class FITImporterTests: XCTestCase {
 
-    /// Build a synthetic Suunto-like activity FIT file in memory.
-    private func makeFITData(
-        sport: Sport = .running,
-        subSport: SubSport? = nil,
-        start: Date,
-        duration: TimeInterval = 1800,
-        distance: Double = 5000,
-        avgHR: UInt8 = 150,
-        maxHR: UInt8 = 172,
-        ascent: Double = 42,
-        kcal: Double = 380,
-        recordCount: Int = 5
-    ) throws -> Data {
-        let fileId = FileIdMessage(
-            deviceSerialNumber: 1234,
-            fileCreationDate: FitTime(date: start),
-            manufacturer: .suunto,
-            fileType: FileType.activity
-        )
-
-        let session = SessionMessage(
-            startTime: FitTime(date: start),
-            sport: sport,
-            subSport: subSport,
-            totalElapsedTime: Measurement(value: duration, unit: UnitDuration.seconds),
-            totalDistance: Measurement(value: distance, unit: UnitLength.meters),
-            totalCalories: Measurement(value: kcal, unit: UnitEnergy.kilocalories),
-            averageHeartRate: avgHR,
-            maximumHeartRate: maxHR,
-            totalAscent: Measurement(value: ascent, unit: UnitLength.meters)
-        )
-
-        var messages: [FitMessage] = [session]
-
-        // Records climbing steadily north-east, gaining altitude.
-        for i in 0..<recordCount {
-            let t = start.addingTimeInterval(Double(i) * 10)
-            let rec = RecordMessage(
-                timeStamp: FitTime(date: t),
-                position: Position(
-                    latitude: Measurement(value: 42.6977 + Double(i) * 0.001, unit: UnitAngle.degrees),
-                    longitude: Measurement(value: 23.3219 + Double(i) * 0.001, unit: UnitAngle.degrees)
-                ),
-                altitude: Measurement(value: 500 + Double(i) * 5, unit: UnitLength.meters),
-                speed: Measurement(value: 2.8, unit: UnitSpeed.metersPerSecond),
-                heartRate: UInt8(140 + i),
-                cadence: UInt8(80)
-            )
-            messages.append(rec)
-        }
-
-        let lap = LapMessage(
-            startTime: FitTime(date: start),
-            totalElapsedTime: Measurement(value: 900, unit: UnitDuration.seconds),
-            totalDistance: Measurement(value: 2500, unit: UnitLength.meters),
-            averageHeartRate: 148
-        )
-        messages.append(lap)
-
-        let encoder = FitFileEncoder(dataValidityStrategy: .none)
-        switch encoder.encode(fildIdMessage: fileId, messages: messages) {
-        case .success(let data):
-            return data
-        case .failure(let error):
-            throw error
-        }
-    }
-
     func testDecodeSummaryFields() throws {
         let start = Date(timeIntervalSince1970: 1_700_000_000)
-        let data = try makeFITData(start: start)
+        let data = try FITFixture.makeFITData(start: start)
 
         let decoded = try FITImporter().decode(data: data)
 
@@ -93,7 +25,7 @@ final class FITImporterTests: XCTestCase {
 
     func testDecodeTrackAndSamples() throws {
         let start = Date(timeIntervalSince1970: 1_700_000_000)
-        let data = try makeFITData(start: start, recordCount: 5)
+        let data = try FITFixture.makeFITData(start: start, recordCount: 5)
 
         let decoded = try FITImporter().decode(data: data)
 
@@ -116,7 +48,7 @@ final class FITImporterTests: XCTestCase {
 
     func testLapsDecoded() throws {
         let start = Date(timeIntervalSince1970: 1_700_000_000)
-        let data = try makeFITData(start: start)
+        let data = try FITFixture.makeFITData(start: start)
 
         let decoded = try FITImporter().decode(data: data)
 
@@ -131,7 +63,7 @@ final class FITImporterTests: XCTestCase {
 
     func testTrailSubSportMapsToTrailRun() throws {
         let start = Date(timeIntervalSince1970: 1_700_000_000)
-        let data = try makeFITData(sport: .running, subSport: .trail, start: start)
+        let data = try FITFixture.makeFITData(sport: .running, subSport: .trail, start: start)
 
         let decoded = try FITImporter().decode(data: data)
 
@@ -148,7 +80,7 @@ final class FITImporterTests: XCTestCase {
             (.rowing, .other),
         ]
         for (fitSport, expected) in cases {
-            let data = try makeFITData(sport: fitSport, start: start)
+            let data = try FITFixture.makeFITData(sport: fitSport, start: start)
             let decoded = try FITImporter().decode(data: data)
             XCTAssertEqual(decoded.sport, expected, "sport \(fitSport) should map to \(expected)")
         }
@@ -156,9 +88,9 @@ final class FITImporterTests: XCTestCase {
 
     func testExternalIDIsStableAndContentAddressed() throws {
         let start = Date(timeIntervalSince1970: 1_700_000_000)
-        let a = try makeFITData(start: start, distance: 5000)
-        let b = try makeFITData(start: start, distance: 5000)
-        let c = try makeFITData(start: start, distance: 9999)
+        let a = try FITFixture.makeFITData(start: start, distance: 5000)
+        let b = try FITFixture.makeFITData(start: start, distance: 5000)
+        let c = try FITFixture.makeFITData(start: start, distance: 9999)
 
         let idA = try FITImporter().decode(data: a).externalID
         let idB = try FITImporter().decode(data: b).externalID
@@ -178,7 +110,7 @@ final class FITImporterTests: XCTestCase {
     func testPaceDerivation() throws {
         let start = Date(timeIntervalSince1970: 1_700_000_000)
         // 30:00 over 5 km => 360 s/km => 6:00/km
-        let data = try makeFITData(start: start, duration: 1800, distance: 5000)
+        let data = try FITFixture.makeFITData(start: start, duration: 1800, distance: 5000)
         let decoded = try FITImporter().decode(data: data)
         XCTAssertEqual(decoded.distanceKm, 5.0, accuracy: 0.01)
         let pace = decoded.duration / decoded.distanceKm

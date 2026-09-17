@@ -276,6 +276,53 @@ struct FITImporter {
         )
     }
 
+    /// Expand a drop into the `.fit` files it actually contains.
+    ///
+    /// Dropping a *folder* is the common case on a Mac — watch apps export a
+    /// directory of them — and a drop hands over the folder URL, not its
+    /// contents, so it has to be walked. Shallow by design: recursing into a
+    /// whole home directory because someone aimed badly is not a favour.
+    ///
+    /// Sorted by name so a batch import is deterministic, and de-duplicated so
+    /// dropping a file and the folder containing it doesn't import it twice.
+    static func fitFiles(in urls: [URL],
+                         fileManager: FileManager = .default) -> [URL] {
+        var found: [URL] = []
+
+        for url in urls {
+            var isDirectory: ObjCBool = false
+            guard fileManager.fileExists(atPath: url.path, isDirectory: &isDirectory) else {
+                // A URL we can't stat may still be a security-scoped file whose
+                // extension tells us enough.
+                if isFIT(url) { found.append(url) }
+                continue
+            }
+
+            if isDirectory.boolValue {
+                // Scoped access covers the enumeration of a dropped folder.
+                let scoped = url.startAccessingSecurityScopedResource()
+                defer { if scoped { url.stopAccessingSecurityScopedResource() } }
+
+                let contents = (try? fileManager.contentsOfDirectory(
+                    at: url, includingPropertiesForKeys: nil,
+                    options: [.skipsHiddenFiles, .skipsSubdirectoryDescendants])) ?? []
+                found.append(contentsOf: contents.filter(isFIT))
+            } else if isFIT(url) {
+                found.append(url)
+            }
+        }
+
+        var seen = Set<String>()
+        return found
+            .filter { seen.insert($0.standardizedFileURL.path).inserted }
+            .sorted { $0.lastPathComponent.localizedStandardCompare($1.lastPathComponent) == .orderedAscending }
+    }
+
+    /// `.fit` has no registered system UTI, so the extension is the only signal.
+    static func isFIT(_ url: URL) -> Bool {
+        url.pathExtension.lowercased() == "fit"
+    }
+
     /// SHA-256 of the file bytes so re-importing the same file dedupes cleanly.
     /// Namespaced like provider IDs (`strava:123`) so every `externalID` in the
     /// store says where it came from.

@@ -15,6 +15,7 @@ struct WorkoutListView: View {
     @State private var showSettings = false
     @State private var showPDFImport = false
     @State private var showManualEntry = false
+    @State private var dropTargeted = false
     @State private var syncing = false
     @State private var alertMessage: String?
     @State private var alertTitle = ""
@@ -126,6 +127,37 @@ struct WorkoutListView: View {
                 allowsMultipleSelection: true,
                 onCompletion: handleImport
             )
+            // Dropping files onto the window is how importing a folder of
+            // watch exports is actually bearable on a Mac — the file picker
+            // means navigating to them one batch at a time.
+            .dropDestination(for: URL.self) { urls, _ in
+                // Folders are expanded: dropping a directory of watch exports is
+                // the whole reason this exists.
+                let fitFiles = FITImporter.fitFiles(in: urls)
+                guard !fitFiles.isEmpty else {
+                    show("Nothing to import",
+                         "No .fit files there. Drop the exports from your watch's app, or the folder containing them.")
+                    return false
+                }
+                Task { await runImport(fitFiles) }
+                return true
+            } isTargeted: { dropTargeted = $0 }
+            .overlay {
+                if dropTargeted {
+                    RoundedRectangle(cornerRadius: 16)
+                        .strokeBorder(Color.accentColor, style: StrokeStyle(lineWidth: 3, dash: [8]))
+                        .background(Color.accentColor.opacity(0.06),
+                                    in: RoundedRectangle(cornerRadius: 16))
+                        .overlay {
+                            Label("Drop .fit files to import", systemImage: "square.and.arrow.down")
+                                .font(.headline)
+                                .padding()
+                                .background(.regularMaterial, in: Capsule())
+                        }
+                        .padding(8)
+                        .allowsHitTesting(false)
+                }
+            }
             .sheet(isPresented: $showSettings) { SettingsView() }
             .sheet(isPresented: $showPDFImport) { PDFImportView() }
             .sheet(isPresented: $showManualEntry) { ManualWorkoutSheet() }
@@ -145,8 +177,9 @@ struct WorkoutListView: View {
             Label("No workouts yet", systemImage: "figure.run")
         } description: {
             Text("""
-                Import a .fit file from your Suunto, connect Strava or intervals.icu, \
-                read a PDF with AI, or seed demo data to explore the app.
+                Import a .fit file from your Suunto — or drag a folder's worth onto \
+                this window — connect Strava or intervals.icu, read a PDF with AI, \
+                or seed demo data to explore the app.
                 """)
         } actions: {
             VStack(spacing: 8) {
