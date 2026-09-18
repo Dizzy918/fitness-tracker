@@ -77,6 +77,23 @@ enum StoreConfiguration {
                           status: inMemory ? .localOnly(reason: "Running in memory.") : .syncDisabled)
         }
 
+        // Check the entitlement *before* asking for a CloudKit store.
+        //
+        // This is not belt-and-braces. While the schema was invalid, the
+        // container init threw and the fallback below caught it; once the schema
+        // was fixed the init started succeeding, and CloudKit then aborted the
+        // whole process on its own for the missing entitlement — turning a
+        // graceful degradation into a launch crash on every build that isn't
+        // signed with a team. The failure has to be detected up front.
+        guard hasCloudKitEntitlement() else {
+            log.notice("no iCloud entitlement; opening a local store")
+            let localConfiguration = ModelConfiguration(
+                schema: schema, isStoredInMemoryOnly: false, cloudKitDatabase: .none)
+            return Result(
+                container: try ModelContainer(for: schema, configurations: localConfiguration),
+                status: .localOnly(reason: "This build isn't signed with an iCloud entitlement — set your development team in Xcode."))
+        }
+
         let cloudConfiguration = ModelConfiguration(
             schema: schema,
             isStoredInMemoryOnly: false,
@@ -95,6 +112,25 @@ enum StoreConfiguration {
             let container = try ModelContainer(for: schema, configurations: localConfiguration)
             return Result(container: container, status: .localOnly(reason: explain(error)))
         }
+    }
+
+    /// Whether this build carries the CloudKit entitlement.
+    ///
+    /// A compile-time flag rather than a runtime probe, because the only
+    /// cross-platform runtime check doesn't exist: `SecTaskCopyValueForEntitlement`
+    /// is macOS-only, and there's no iOS equivalent that works in the Simulator.
+    ///
+    /// Getting this wrong is fatal, not merely wrong. Asking SwiftData for a
+    /// CloudKit store in a process without the entitlement doesn't throw — the
+    /// container opens and CloudKit then aborts the process, turning a graceful
+    /// degradation into a launch crash. So the flag is set in exactly the same
+    /// place as the entitlement, in `project.yml`, and neither is useful alone.
+    static func hasCloudKitEntitlement() -> Bool {
+        #if FITNESS_ICLOUD
+        return true
+        #else
+        return false
+        #endif
     }
 
     /// Turns a CloudKit failure into something worth reading.

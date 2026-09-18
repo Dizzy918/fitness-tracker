@@ -46,20 +46,49 @@ final class StoreConfigurationTests: XCTestCase {
                       "CloudKit rejects unique constraints on: \(offenders.joined(separator: ", "))")
     }
 
-    /// To-one relationships must be optional — the other side may not have
-    /// synced yet when a record arrives.
-    func testToOneRelationshipsAreOptional() {
+    /// **Every** relationship must be optional, not just the to-one ones.
+    ///
+    /// This is the second constraint these tests missed. Checking only to-one
+    /// left three non-optional arrays in place, and CoreData reports one class
+    /// of violation at a time — so fixing the missing inverse simply revealed
+    /// this one, with sync still silently falling back to local on every launch.
+    func testEveryRelationshipIsOptional() {
         var offenders: [String] = []
         for entity in schema.entities {
             for property in entity.properties {
                 guard let relationship = property as? Schema.Relationship else { continue }
-                if relationship.isToOneRelationship && !relationship.isOptional {
-                    offenders.append("\(entity.name).\(relationship.name)")
+                if !relationship.isOptional {
+                    let kind = relationship.isToOneRelationship ? "to-one" : "to-many"
+                    offenders.append("\(entity.name).\(relationship.name) (\(kind))")
                 }
             }
         }
         XCTAssertTrue(offenders.isEmpty,
-                      "CloudKit needs optional to-one relationships: \(offenders.joined(separator: ", "))")
+                      "CloudKit needs every relationship optional: \(offenders.joined(separator: ", "))")
+    }
+
+    /// The non-optional accessors callers use must survive the stored side
+    /// being optional — an empty relationship reads as an empty array, never nil.
+    @MainActor
+    func testNonOptionalAccessorsStillReadAsEmptyArrays() throws {
+        let container = try ModelContainer(
+            for: schema,
+            configurations: ModelConfiguration(schema: schema, isStoredInMemoryOnly: true))
+        let context = ModelContext(container)
+
+        let shoe = Shoe(brand: "Nike", model: "Pegasus")
+        let session = StrengthSession(startedAt: .now)
+        let exercise = Exercise(name: "Squat", category: "squat")
+        context.insert(shoe)
+        context.insert(session)
+        context.insert(exercise)
+        try context.save()
+
+        XCTAssertEqual(shoe.workouts.count, 0)
+        XCTAssertEqual(session.sets.count, 0)
+        XCTAssertEqual(exercise.sets.count, 0)
+        XCTAssertEqual(shoe.totalDistance, 0)
+        XCTAssertEqual(session.totalVolume, 0)
     }
 
     /// **Every relationship needs an inverse.** CloudKit refuses to load the

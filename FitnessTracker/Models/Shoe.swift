@@ -14,8 +14,17 @@ final class Shoe {
     var notes: String?
 
     /// Nullify rather than cascade: deleting a shoe must not delete runs.
+    ///
+    /// Stored optional because CloudKit refuses to load a store with a
+    /// non-optional relationship; `workouts` below is the non-optional view
+    /// every caller actually wants.
     @Relationship(deleteRule: .nullify)
-    var workouts: [Workout] = []
+    var workoutsStorage: [Workout]?
+
+    var workouts: [Workout] {
+        get { workoutsStorage ?? [] }
+        set { workoutsStorage = newValue }
+    }
 
     init(
         id: UUID = UUID(),

@@ -82,6 +82,12 @@ targets:
         # that supports iOS, which outranks the project-level default, so the
         # ad-hoc override has to be repeated here.
         CODE_SIGN_IDENTITY: "-"
+        # Turning on iCloud sync means adding the iCloud capability *and*
+        # defining this flag, together. The entitlement alone makes the app
+        # crash-free but local; the flag alone makes CloudKit abort the process
+        # at launch for a missing entitlement. Neither is useful without the
+        # other, so they live in the same file, next to each other.
+        #   SWIFT_ACTIVE_COMPILATION_CONDITIONS: "$(inherited) FITNESS_ICLOUD"
         GENERATE_INFOPLIST_FILE: NO
 
   FitnessTrackerTests:

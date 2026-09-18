@@ -40,7 +40,7 @@ final class Workout {
     @Attribute(.externalStorage) var streamsData: Data?    // [FITSample]
     @Attribute(.externalStorage) var lapsData: Data?       // [FITLap]
 
-    @Relationship(deleteRule: .nullify, inverse: \Shoe.workouts)
+    @Relationship(deleteRule: .nullify, inverse: \Shoe.workoutsStorage)
     var shoe: Shoe?
 
     init(

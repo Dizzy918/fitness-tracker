@@ -16,7 +16,13 @@ final class Exercise {
     /// falls back to local forever. Nullify, not cascade: deleting an exercise
     /// must never take logged sets with it.
     @Relationship(deleteRule: .nullify, inverse: \SetEntry.exercise)
-    var sets: [SetEntry] = []
+    var setsStorage: [SetEntry]?
+
+    /// Non-optional view; the stored side has to be optional for CloudKit.
+    var sets: [SetEntry] {
+        get { setsStorage ?? [] }
+        set { setsStorage = newValue }
+    }
 
     init(id: UUID = UUID(), name: String, category: String, primaryMuscles: [String] = []) {
         self.id = id
@@ -34,7 +40,13 @@ final class StrengthSession {
     var notes: String?
 
     @Relationship(deleteRule: .cascade, inverse: \SetEntry.session)
-    var sets: [SetEntry] = []
+    var setsStorage: [SetEntry]?
+
+    /// Non-optional view; the stored side has to be optional for CloudKit.
+    var sets: [SetEntry] {
+        get { setsStorage ?? [] }
+        set { setsStorage = newValue }
+    }
 
     init(id: UUID = UUID(), startedAt: Date = .now) {
         self.id = id
