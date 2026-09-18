@@ -36,18 +36,20 @@ enum DataArchive {
         /// the file, and "email me my training log" shouldn't mean sending
         /// megabytes of bathroom photos.
         var progressPhotos: [ProgressPhotoRecord] = []
+        var races: [RaceRecord] = []
 
         var isEmpty: Bool {
             workouts.isEmpty && shoes.isEmpty && strengthSessions.isEmpty
                 && dailyMetrics.isEmpty && routes.isEmpty && plannedWorkouts.isEmpty
                 && routines.isEmpty && bodyMeasurements.isEmpty
-                && progressPhotos.isEmpty
+                && progressPhotos.isEmpty && races.isEmpty
         }
 
         var itemCount: Int {
             workouts.count + shoes.count + strengthSessions.count
                 + dailyMetrics.count + routes.count + plannedWorkouts.count
                 + routines.count + bodyMeasurements.count + progressPhotos.count
+                + races.count
         }
     }
 
@@ -95,6 +97,20 @@ enum DataArchive {
         var primaryMuscles: [String]
         var notes: String?
         var defaultRestSeconds: Int?
+    }
+
+    struct RaceRecord: Codable, Sendable {
+        var id: UUID
+        var name: String
+        var date: Date
+        var sport: String
+        var priority: String
+        var distance: Double?
+        var goalDuration: TimeInterval?
+        var notes: String?
+        var resultWorkoutID: UUID?
+        var resultDuration: TimeInterval?
+        var resultNotes: String?
     }
 
     struct BodyMeasurementRecord: Codable, Sendable {
@@ -360,6 +376,15 @@ enum DataArchive {
                 thumbnailData: $0.thumbnailData)
         }
 
+        archive.races = try context.fetch(FetchDescriptor<Race>()).map {
+            RaceRecord(
+                id: $0.id, name: $0.name, date: $0.date, sport: $0.sportRaw,
+                priority: $0.priorityRaw, distance: $0.distance,
+                goalDuration: $0.goalDuration, notes: $0.notes,
+                resultWorkoutID: $0.resultWorkoutID,
+                resultDuration: $0.resultDuration, resultNotes: $0.resultNotes)
+        }
+
         return archive
     }
 
@@ -388,11 +413,13 @@ enum DataArchive {
         var routines = 0
         var bodyMeasurements = 0
         var progressPhotos = 0
+        var races = 0
         var skipped = 0
 
         var total: Int {
             workouts + shoes + strengthSessions + dailyMetrics + routes
                 + plannedWorkouts + routines + bodyMeasurements + progressPhotos
+                + races
         }
 
         var summary: String {
@@ -413,6 +440,7 @@ enum DataArchive {
                 parts.append("\(bodyMeasurements) sets of measurements")
             }
             if progressPhotos > 0 { parts.append("\(progressPhotos) photos") }
+            if races > 0 { parts.append("\(races) races") }
             var text = "Restored " + parts.joined(separator: ", ") + "."
             if skipped > 0 { text += " Skipped \(skipped) already present." }
             return text
@@ -595,6 +623,23 @@ enum DataArchive {
             photo.thumbnailData = record.thumbnailData
             context.insert(photo)
             report.progressPhotos += 1
+        }
+
+        let raceIDs = Set(try context.fetch(FetchDescriptor<Race>()).map(\.id))
+        for record in archive.races {
+            if raceIDs.contains(record.id) { report.skipped += 1; continue }
+            let race = Race(
+                id: record.id, name: record.name, date: record.date,
+                sport: WorkoutSport(rawValue: record.sport) ?? .other,
+                priority: Race.Priority(rawValue: record.priority) ?? .a)
+            race.distance = record.distance
+            race.goalDuration = record.goalDuration
+            race.notes = record.notes
+            race.resultWorkoutID = record.resultWorkoutID
+            race.resultDuration = record.resultDuration
+            race.resultNotes = record.resultNotes
+            context.insert(race)
+            report.races += 1
         }
 
         // Metrics are keyed by day, not by row id — two devices can easily have

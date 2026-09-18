@@ -13,6 +13,7 @@ struct PlanView: View {
     @Query(sort: \PlannedWorkout.scheduledFor) private var planned: [PlannedWorkout]
     @Query(sort: \Workout.startedAt, order: .reverse) private var workouts: [Workout]
     @Query(sort: \DailyMetric.date, order: .reverse) private var metrics: [DailyMetric]
+    @Query(sort: \Race.date) private var races: [Race]
 
     @State private var weekOffset = 0
     @State private var week = TrainingPlan.Week(start: .now)
@@ -29,6 +30,19 @@ struct PlanView: View {
 
     private var days: [Date] {
         (0..<7).compactMap { calendar.date(byAdding: .day, value: $0, to: weekStart) }
+    }
+
+    /// The link doubles as the countdown, so the goal race is visible from the
+    /// week view without a second screen.
+    private var seasonLabel: String {
+        guard let focus = SeasonPlan.focus(among: races.map(\.snapshot)) else {
+            return "Season & races"
+        }
+        let days = Calendar.current.dateComponents(
+            [.day], from: calendar.startOfDay(for: .now),
+            to: calendar.startOfDay(for: focus.date)).day ?? 0
+        if days == 0 { return "\(focus.name) — today" }
+        return "\(focus.name) — \(days) \(days == 1 ? "day" : "days")"
     }
 
     var body: some View {
@@ -95,6 +109,18 @@ struct PlanView: View {
             }
         }
         .navigationTitle("Plan")
+        .safeAreaInset(edge: .bottom) {
+            NavigationLink { SeasonView() } label: {
+                Label(seasonLabel, systemImage: "flag.checkered")
+                    .font(.callout.weight(.medium))
+                    .frame(maxWidth: .infinity)
+                    .padding(.vertical, 10)
+            }
+            .buttonStyle(.bordered)
+            .padding(.horizontal, 16)
+            .padding(.bottom, 6)
+            .background(.bar)
+        }
         .toolbar {
             ToolbarItem(placement: .navigation) {
                 Button { weekOffset -= 1 } label: { Image(systemName: "chevron.left") }
