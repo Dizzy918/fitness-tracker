@@ -325,6 +325,7 @@ struct PlannedWorkoutEditor: View {
     @State private var load: Double = 60
     @State private var notes = ""
     @State private var loaded = false
+    @State private var editingSteps = false
 
     private var duration: TimeInterval? {
         hasDuration ? TimeInterval(minutes) * 60 : nil
@@ -397,6 +398,31 @@ struct PlannedWorkoutEditor: View {
                     Text("Left alone, it's estimated from the duration using the same per-sport assumption the load model makes for an unmeasured session — so a planned week and a completed one compare on one scale. Set it yourself for a session you know is harder or easier than that.")
                 }
 
+                if let existing {
+                    Section {
+                        Button {
+                            editingSteps = true
+                        } label: {
+                            HStack {
+                                Label(existing.hasStructure ? "Edit steps" : "Add steps…",
+                                      systemImage: "list.number")
+                                Spacer()
+                                if let shorthand = existing.structure?.shorthand,
+                                   !shorthand.isEmpty {
+                                    Text(shorthand)
+                                        .font(.caption)
+                                        .foregroundStyle(.secondary)
+                                        .lineLimit(1)
+                                }
+                            }
+                        }
+                    } header: {
+                        Text("Structure")
+                    } footer: {
+                        Text("Steps can be sent to your watch as a .fit workout, so the session runs itself rather than being a name you have to remember.")
+                    }
+                }
+
                 Section("Notes") {
                     TextField("Anything worth remembering", text: $notes, axis: .vertical)
                         .lineLimit(1...4)
@@ -412,6 +438,9 @@ struct PlannedWorkoutEditor: View {
                 }
             }
             .task { load_() }
+            .sheet(isPresented: $editingSteps) {
+                if let existing { WorkoutStructureEditor(plan: existing) }
+            }
         }
     }
 

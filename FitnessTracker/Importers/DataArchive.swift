@@ -146,6 +146,9 @@ enum DataArchive {
         var completedWorkoutID: UUID?
         var skippedAt: Date?
         var order: Int
+        /// The session's steps. Losing these to a restore would leave a plan
+        /// that says "8 × 400 m" with nothing behind it.
+        var structureData: Data?
     }
 
     // MARK: - Coding
@@ -250,7 +253,8 @@ enum DataArchive {
                 title: $0.title, notes: $0.notes,
                 targetDuration: $0.targetDuration, targetDistance: $0.targetDistance,
                 targetLoad: $0.targetLoad, completedWorkoutID: $0.completedWorkoutID,
-                skippedAt: $0.skippedAt, order: $0.order)
+                skippedAt: $0.skippedAt, order: $0.order,
+                structureData: $0.structureData)
         }
 
         return archive
@@ -471,6 +475,7 @@ enum DataArchive {
             plan.targetLoad = record.targetLoad
             plan.completedWorkoutID = record.completedWorkoutID
             plan.skippedAt = record.skippedAt
+            plan.structureData = record.structureData
             context.insert(plan)
             report.plannedWorkouts += 1
         }

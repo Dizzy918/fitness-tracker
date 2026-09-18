@@ -78,10 +78,11 @@ sessions — so every screen has something to show.
 | Duration curve | Best power or pace at every duration from 5 s to 3 h, this window against the last |
 | Records | Best efforts at 1 km → marathon from stream data, plus longest run / biggest week / most climbing |
 | Plan | A week of planned sessions matched against what you actually did, with a ramp warning |
+| Structured sessions | Build a session's steps and export it as a `.fit` workout file for the watch |
 | Dashboard | This-week totals, fitness/fatigue/form with a 120-day curve, weekly volume, road pace trend, shoe alerts |
 | Finding things | Search across sport/source/notes/shoe, plus a sport filter |
 
-511 tests cover the FIT round-trip (encode → decode → assert), splits math, readiness
+540 tests cover the FIT round-trip (encode → decode → assert), splits math, readiness
 scoring (missing-input and flat-baseline cases included), HR zone boundaries and the
 time-in-zone invariant, best-effort extraction, haversine distances against known
 city pairs, GPX export/parse round-trips and malformed input, NP/IF/TSS against their
@@ -224,6 +225,33 @@ two. Set the load yourself for a session you know is harder than that.
 way to get hurt, and it's exactly the mistake a plan makes easy to commit — so
 the header says so while it's still a plan. Weeks with no training at all are
 excluded from the comparison, or a return from injury would read as reckless.
+
+## Structured sessions
+
+A plan could say "8 × 400 m" as a *name*, which you then had to remember and
+execute from memory. Every other direction of data here flows through FIT; this
+was the one that didn't, and structure is exactly what a watch is good at holding
+for you. Plan → a session → **Add steps** builds it, and **Send to watch** writes
+a `.fit` workout file — the same route the route planner's GPX already takes.
+
+Steps carry a duration (time, distance, or open until you press lap), an effort —
+warm-up, work, recovery, cool-down, the same vocabulary the lap parser reads back
+— and optionally a heart-rate zone, which is resolved into a real bpm range from
+your max on the way out. Without a max HR there's no honest range to write, so
+the step goes out untargeted rather than carrying someone else's zones.
+
+Blocks repeat, one level deep. Warm-up, N × (work, float), cool-down covers
+essentially every session anyone writes down, and arbitrary nesting would cost a
+tree editor for sessions nobody plans. FIT has no nested groups at all: a repeat
+is a *step* whose duration value is the index to jump back to, so the flattening
+is where the bugs would live and it's tested directly.
+
+**Names are folded to ASCII on the way out, and that's a workaround for a real
+defect.** The FIT library sizes a string field by character count while writing
+UTF-8 bytes, so one multi-byte character makes the declared length disagree with
+the content and the file crashes the decoder outright. The obvious name for the
+session is the one that breaks it — "8 × 400 m" is what this app's own shorthand
+produces — so it becomes "8 x 400 m", which loses nothing anyone will miss.
 
 ## Training load
 

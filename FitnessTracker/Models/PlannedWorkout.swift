@@ -42,6 +42,12 @@ final class PlannedWorkout {
     /// Position within the day, for weeks with a double session.
     var order: Int = 0
 
+    /// The session's steps, as JSON. See `WorkoutStructure`.
+    ///
+    /// External storage because a long interval session is a few kilobytes and
+    /// the plan list queries every row.
+    @Attribute(.externalStorage) var structureData: Data?
+
     init(
         id: UUID = UUID(),
         scheduledFor: Date,
