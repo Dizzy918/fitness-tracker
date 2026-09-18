@@ -75,12 +75,13 @@ sessions — so every screen has something to show.
 | Manual entry | Log a workout by hand when nothing recorded it, and correct any workout afterwards |
 | HR zones | Five-zone split per workout with time-in-zone, from your max HR |
 | Intensity | Time-in-band across a 4/12/52-week block, read against the 80/20 convention |
+| Duration curve | Best power or pace at every duration from 5 s to 3 h, this window against the last |
 | Records | Best efforts at 1 km → marathon from stream data, plus longest run / biggest week / most climbing |
 | Plan | A week of planned sessions matched against what you actually did, with a ramp warning |
 | Dashboard | This-week totals, fitness/fatigue/form with a 120-day curve, weekly volume, road pace trend, shoe alerts |
 | Finding things | Search across sport/source/notes/shoe, plus a sport filter |
 
-490 tests cover the FIT round-trip (encode → decode → assert), splits math, readiness
+511 tests cover the FIT round-trip (encode → decode → assert), splits math, readiness
 scoring (missing-input and flat-baseline cases included), HR zone boundaries and the
 time-in-zone invariant, best-effort extraction, haversine distances against known
 city pairs, GPX export/parse round-trips and malformed input, NP/IF/TSS against their
@@ -455,6 +456,30 @@ half the picture.
 
 **It is a suggestion, and it defers to how you feel.** The wording is chosen so it
 never reads as an instruction.
+
+## Duration curve
+
+Best efforts at five fixed race distances answer "how fast is my 10 km" and
+nothing else. The mean-maximal curve answers what a training block is actually
+judged on: *which part* of your range moved. A sprinter's curve and a
+marathoner's can cross at 20 minutes — identical at that one point, completely
+different athletes.
+
+Sampled at twelve durations from 5 seconds to 3 hours, spaced logarithmically
+because the interesting distinctions are 5 s vs 30 s and 20 min vs 60 min, not
+41 vs 42 minutes. Each point takes the best effort from *any* session in the
+window, so a sprint and a long steady ride each own the part of the range they're
+best at.
+
+The comparison is the reason it exists: the previous window of the same length is
+drawn dashed underneath, and the footer names where the biggest gain was. Change
+is signed by **improvement**, not arithmetic — a pace that dropped from 4:00 to
+3:50 shows as a gain, because reporting it as −4% would read as a loss at a
+glance.
+
+Power is cycling only and pace is foot sports only, for the same reason in both
+directions: a bike's pace curve would dwarf every run on the chart, and running
+power is a different quantity on a different scale from cycling power.
 
 ## Thresholds
 

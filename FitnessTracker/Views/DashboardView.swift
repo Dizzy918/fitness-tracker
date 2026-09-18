@@ -31,6 +31,7 @@ struct DashboardView: View {
                         thisWeek
                         planLink
                         intensityLink
+                        durationCurveLink
                         recordsLink
                         shoesLink
                         loadSection
@@ -124,6 +125,22 @@ struct DashboardView: View {
             HStack {
                 Image(systemName: "chart.bar.doc.horizontal")
                 Text("Intensity distribution").font(.subheadline.weight(.medium))
+                Spacer()
+                Image(systemName: "chevron.right").font(.caption)
+            }
+            .padding()
+            .background(.quaternary.opacity(0.4), in: RoundedRectangle(cornerRadius: 10))
+        }
+        .buttonStyle(.plain)
+    }
+
+    private var durationCurveLink: some View {
+        NavigationLink {
+            DurationCurveView()
+        } label: {
+            HStack {
+                Image(systemName: "chart.xyaxis.line")
+                Text("Duration curve").font(.subheadline.weight(.medium))
                 Spacer()
                 Image(systemName: "chevron.right").font(.caption)
             }

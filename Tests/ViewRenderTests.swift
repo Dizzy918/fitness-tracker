@@ -93,6 +93,13 @@ final class ViewRenderTests: XCTestCase {
         try await assertRenders(ExerciseEditor(exercise: exercise), container: container)
     }
 
+    func testDurationCurveRendersWithAndWithoutData() async throws {
+        try await assertRenders(NavigationStack { DurationCurveView() },
+                                container: try emptyContainer())
+        try await assertRenders(NavigationStack { DurationCurveView() },
+                                container: try seededContainer())
+    }
+
     func testIntensityViewRendersWithAndWithoutData() async throws {
         try await assertRenders(NavigationStack { IntensityView() },
                                 container: try emptyContainer())

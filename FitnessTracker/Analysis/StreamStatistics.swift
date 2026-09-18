@@ -60,4 +60,40 @@ enum StreamStatistics {
     static func bestAverageHeartRate(seconds: TimeInterval, in samples: [FITSample]) -> Double? {
         bestAverage(seconds: seconds, of: { $0.hr.map(Double.init) }, in: samples)
     }
+
+    /// Furthest distance covered in any window of `target` seconds.
+    ///
+    /// Read off cumulative distance rather than averaging the speed channel:
+    /// speed is a smoothed, derived value and averaging it over a window
+    /// compounds that smoothing, while the distance delta is what actually
+    /// happened.
+    static func bestDistance(seconds target: TimeInterval, in samples: [FITSample]) -> Double? {
+        guard target > 0 else { return nil }
+
+        let points: [(t: TimeInterval, d: Double)] = samples
+            .compactMap { sample in sample.dist.map { (sample.t, $0) } }
+            .sorted { $0.0 < $1.0 }
+        guard points.count >= 2,
+              let first = points.first, let last = points.last,
+              (last.t - first.t) >= target
+        else { return nil }
+
+        var best: Double?
+        var start = 0
+
+        for end in points.indices {
+            // Advance the start while the window is still longer than target,
+            // keeping the widest window that fits.
+            while start + 1 < end, points[end].t - points[start + 1].t >= target {
+                start += 1
+            }
+            let span = points[end].t - points[start].t
+            guard span >= target * 0.9 else { continue }
+            let covered = points[end].d - points[start].d
+            // A negative delta is a distance reset mid-file, not a teleport.
+            guard covered > 0 else { continue }
+            if best == nil || covered > best! { best = covered }
+        }
+        return best
+    }
 }
