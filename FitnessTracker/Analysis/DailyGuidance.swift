@@ -29,12 +29,12 @@ enum DailyGuidance {
 
         var label: String {
             switch self {
-            case .done:        return "Done for today"
-            case .proceed:     return "Good to go"
-            case .easier:      return "Go easier"
-            case .rest:        return "Rest"
-            case .opportunity: return "Free hit"
-            case .unknown:     return "Not enough to go on"
+            case .done:        return String(localized: "Done for today")
+            case .proceed:     return String(localized: "Good to go")
+            case .easier:      return String(localized: "Go easier")
+            case .rest:        return String(localized: "Rest")
+            case .opportunity: return String(localized: "Free hit")
+            case .unknown:     return String(localized: "Not enough to go on")
             }
         }
 

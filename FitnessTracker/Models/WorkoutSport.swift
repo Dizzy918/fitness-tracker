@@ -7,13 +7,13 @@ enum WorkoutSport: String, Codable, CaseIterable, Sendable {
 
     var displayName: String {
         switch self {
-        case .run:      return "Run"
-        case .trailRun: return "Trail Run"
-        case .bike:     return "Bike"
-        case .swim:     return "Swim"
-        case .hike:     return "Hike"
-        case .walk:     return "Walk"
-        case .other:    return "Other"
+        case .run:      return String(localized: "Run")
+        case .trailRun: return String(localized: "Trail Run")
+        case .bike:     return String(localized: "Bike")
+        case .swim:     return String(localized: "Swim")
+        case .hike:     return String(localized: "Hike")
+        case .walk:     return String(localized: "Walk")
+        case .other:    return String(localized: "Other")
         }
     }
 

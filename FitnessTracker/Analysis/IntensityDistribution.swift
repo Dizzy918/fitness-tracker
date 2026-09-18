@@ -37,17 +37,17 @@ enum IntensityDistribution {
 
         var displayName: String {
             switch self {
-            case .easy:     return "Easy"
-            case .moderate: return "Moderate"
-            case .hard:     return "Hard"
+            case .easy:     return String(localized: "Easy")
+            case .moderate: return String(localized: "Moderate")
+            case .hard:     return String(localized: "Hard")
             }
         }
 
         var detail: String {
             switch self {
-            case .easy:     return "Below the aerobic threshold — conversational"
-            case .moderate: return "Between the thresholds — comfortably hard"
-            case .hard:     return "Above the anaerobic threshold — interval effort"
+            case .easy:     return String(localized: "Below the aerobic threshold — conversational")
+            case .moderate: return String(localized: "Between the thresholds — comfortably hard")
+            case .hard:     return String(localized: "Above the anaerobic threshold — interval effort")
             }
         }
 
@@ -153,10 +153,10 @@ enum IntensityDistribution {
 
         var label: String {
             switch self {
-            case .polarized: return "Polarized"
-            case .allEasy:   return "All easy"
-            case .threshold: return "Grey zone"
-            case .tooHard:   return "Too hard"
+            case .polarized: return String(localized: "Polarized")
+            case .allEasy:   return String(localized: "All easy")
+            case .threshold: return String(localized: "Grey zone")
+            case .tooHard:   return String(localized: "Too hard")
             }
         }
 

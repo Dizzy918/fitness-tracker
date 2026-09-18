@@ -64,9 +64,9 @@ final class Race {
 
         var displayName: String {
             switch self {
-            case .a: return "A — goal race"
-            case .b: return "B — important"
-            case .c: return "C — train through"
+            case .a: return String(localized: "A — goal race")
+            case .b: return String(localized: "B — important")
+            case .c: return String(localized: "C — train through")
             }
         }
 

@@ -24,11 +24,11 @@ enum Readiness {
 
         var displayName: String {
             switch self {
-            case .hrv:        return "HRV"
-            case .sleep:      return "Sleep"
-            case .restingHR:  return "Resting HR"
-            case .load:       return "Training load"
-            case .subjective: return "How you feel"
+            case .hrv:        return String(localized: "HRV")
+            case .sleep:      return String(localized: "Sleep")
+            case .restingHR:  return String(localized: "Resting HR")
+            case .load:       return String(localized: "Training load")
+            case .subjective: return String(localized: "How you feel")
             }
         }
     }
@@ -46,10 +46,10 @@ enum Readiness {
 
         var label: String {
             switch self {
-            case .rest:     return "Rest"
-            case .easy:     return "Take it easy"
-            case .moderate: return "Normal training"
-            case .primed:   return "Primed"
+            case .rest:     return String(localized: "Rest")
+            case .easy:     return String(localized: "Take it easy")
+            case .moderate: return String(localized: "Normal training")
+            case .primed:   return String(localized: "Primed")
             }
         }
 

@@ -79,8 +79,8 @@ enum GPX {
 
         var errorDescription: String? {
             switch self {
-            case .unreadable: return "That file isn't readable GPX."
-            case .noPoints:   return "No track or route points found in that GPX file."
+            case .unreadable: return String(localized: "That file isn't readable GPX.")
+            case .noPoints:   return String(localized: "No track or route points found in that GPX file.")
             }
         }
     }

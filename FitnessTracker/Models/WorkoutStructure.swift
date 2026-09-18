@@ -98,10 +98,10 @@ struct WorkoutStructure: Codable, Sendable, Equatable {
 
         var displayName: String {
             switch self {
-            case .warmup:   return "Warm-up"
-            case .active:   return "Work"
-            case .rest:     return "Recovery"
-            case .cooldown: return "Cool-down"
+            case .warmup:   return String(localized: "Warm-up")
+            case .active:   return String(localized: "Work")
+            case .rest:     return String(localized: "Recovery")
+            case .cooldown: return String(localized: "Cool-down")
             }
         }
     }
@@ -139,9 +139,9 @@ struct WorkoutStructure: Codable, Sendable, Equatable {
 
         var displayName: String {
             switch self {
-            case .none:                   return "No target"
-            case .heartRateZone(let z):   return "Heart-rate zone \(z)"
-            case .power(let lo, let hi):  return "\(lo)–\(hi) W"
+            case .none:                   return String(localized: "No target")
+            case .heartRateZone(let z):   return String(localized: "Heart-rate zone \(z)")
+            case .power(let lo, let hi):  return String(localized: "\(lo)–\(hi) W")
             }
         }
     }

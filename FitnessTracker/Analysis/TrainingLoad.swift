@@ -57,11 +57,11 @@ enum TrainingLoad {
 
         var displayName: String {
             switch self {
-            case .duration:         return "Estimated from duration"
-            case .pace:             return "From pace vs threshold"
-            case .averageHeartRate: return "From average heart rate"
-            case .heartRateStream:  return "From heart-rate stream"
-            case .power:            return "From power"
+            case .duration:         return String(localized: "Estimated from duration")
+            case .pace:             return String(localized: "From pace vs threshold")
+            case .averageHeartRate: return String(localized: "From average heart rate")
+            case .heartRateStream:  return String(localized: "From heart-rate stream")
+            case .power:            return String(localized: "From power")
             }
         }
 
@@ -320,10 +320,10 @@ enum TrainingLoad {
 
         var label: String {
             switch self {
-            case .fresh:        return "Fresh"
-            case .neutral:      return "Neutral"
-            case .productive:   return "Productive"
-            case .overreaching: return "Overreaching"
+            case .fresh:        return String(localized: "Fresh")
+            case .neutral:      return String(localized: "Neutral")
+            case .productive:   return String(localized: "Productive")
+            case .overreaching: return String(localized: "Overreaching")
             }
         }
 

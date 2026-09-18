@@ -44,13 +44,13 @@ struct ElevationService: Sendable {
         var errorDescription: String? {
             switch self {
             case .tooFewPoints:
-                return "This route needs at least two points before it can have a profile."
+                return String(localized: "This route needs at least two points before it can have a profile.")
             case .noData:
-                return "The elevation service had no data for this route. That usually means it's outside the dataset's coverage (roughly 60°N to 56°S)."
+                return String(localized: "The elevation service had no data for this route. That usually means it's outside the dataset's coverage (roughly 60°N to 56°S).")
             case .rateLimited:
-                return "The elevation service is rate-limited right now. Try again in a minute."
+                return String(localized: "The elevation service is rate-limited right now. Try again in a minute.")
             case .status(let code):
-                return "The elevation service returned an error (HTTP \(code))."
+                return String(localized: "The elevation service returned an error (HTTP \(code)).")
             }
         }
     }

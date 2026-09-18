@@ -38,20 +38,20 @@ enum StoreConfiguration {
 
         var label: String {
             switch self {
-            case .syncing:      return "Syncing with iCloud"
-            case .localOnly:    return "This device only"
-            case .syncDisabled: return "Sync turned off"
+            case .syncing:      return String(localized: "Syncing with iCloud")
+            case .localOnly:    return String(localized: "This device only")
+            case .syncDisabled: return String(localized: "Sync turned off")
             }
         }
 
         var detail: String {
             switch self {
             case .syncing:
-                return "Workouts, metrics and routes are shared with your other devices through your private iCloud database. Nothing goes to any server of ours."
+                return String(localized: "Workouts, metrics and routes are shared with your other devices through your private iCloud database. Nothing goes to any server of ours.")
             case .localOnly(let reason):
-                return "iCloud sync isn't available, so everything is stored on this device. \(reason)"
+                return String(localized: "iCloud sync isn't available, so everything is stored on this device. \(reason)")
             case .syncDisabled:
-                return "Everything is stored on this device. Turn sync on to share it with your other devices."
+                return String(localized: "Everything is stored on this device. Turn sync on to share it with your other devices.")
             }
         }
     }

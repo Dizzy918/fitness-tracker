@@ -58,18 +58,18 @@ final class BodyMeasurement {
 
         var displayName: String {
             switch self {
-            case .bodyFat:    return "Body fat"
-            case .neck:       return "Neck"
-            case .shoulders:  return "Shoulders"
-            case .chest:      return "Chest"
-            case .waist:      return "Waist"
-            case .hips:       return "Hips"
-            case .thighLeft:  return "Thigh (L)"
-            case .thighRight: return "Thigh (R)"
-            case .armLeft:    return "Arm (L)"
-            case .armRight:   return "Arm (R)"
-            case .calfLeft:   return "Calf (L)"
-            case .calfRight:  return "Calf (R)"
+            case .bodyFat:    return String(localized: "Body fat")
+            case .neck:       return String(localized: "Neck")
+            case .shoulders:  return String(localized: "Shoulders")
+            case .chest:      return String(localized: "Chest")
+            case .waist:      return String(localized: "Waist")
+            case .hips:       return String(localized: "Hips")
+            case .thighLeft:  return String(localized: "Thigh (L)")
+            case .thighRight: return String(localized: "Thigh (R)")
+            case .armLeft:    return String(localized: "Arm (L)")
+            case .armRight:   return String(localized: "Arm (R)")
+            case .calfLeft:   return String(localized: "Calf (L)")
+            case .calfRight:  return String(localized: "Calf (R)")
             }
         }
 

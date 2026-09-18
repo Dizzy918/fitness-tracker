@@ -1,6 +1,7 @@
 name: FitnessTracker
 options:
   bundleIdPrefix: com.slavov
+  developmentLanguage: en
   deploymentTarget:
     iOS: "17.0"
     macOS: "14.0"
@@ -27,6 +28,11 @@ settings:
     GENERATE_INFOPLIST_FILE: YES
     ENABLE_PREVIEWS: YES
     SWIFT_STRICT_CONCURRENCY: minimal
+    # Extract every localizable literal at compile time into .stringsdata, which
+    # is what populates the String Catalog. Without it the catalog only ever
+    # contains what someone typed into it by hand.
+    SWIFT_EMIT_LOC_STRINGS: YES
+    LOCALIZATION_PREFERS_STRING_CATALOGS: YES
     # Ad-hoc signing by default. Automatic signing with an empty DEVELOPMENT_TEAM
     # fails the build outright, which broke `xcodebuild … test` — the command the
     # README documents — for anyone who hadn't opened Xcode first. Ad-hoc is
@@ -58,6 +64,18 @@ targets:
           UIApplicationSupportsMultipleScenes: true
         LSApplicationCategoryType: public.app-category.healthcare-fitness
         ITSAppUsesNonExemptEncryption: false
+        CFBundleLocalizations:
+          - en
+          - bg
+          - de
+          - es
+          - fr
+          - it
+          - nl
+          - pt-PT
+          - pl
+          - sv
+          - ja
         # Reads passive metrics; writes back workouts imported from .fit files
         # and synced services, which is the only way Apple Health ever sees the
         # full-fidelity route and heart-rate series. No CoreLocation or

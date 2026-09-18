@@ -134,9 +134,9 @@ enum ThresholdEstimator {
 
         var displayName: String {
             switch self {
-            case .ftp:                return "FTP"
-            case .lactateThresholdHR: return "Threshold HR"
-            case .maxHeartRate:       return "Max heart rate"
+            case .ftp:                return String(localized: "FTP")
+            case .lactateThresholdHR: return String(localized: "Threshold HR")
+            case .maxHeartRate:       return String(localized: "Max heart rate")
             }
         }
 

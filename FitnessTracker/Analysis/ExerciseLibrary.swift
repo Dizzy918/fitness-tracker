@@ -25,25 +25,25 @@ enum ExerciseLibrary {
 
         var displayName: String {
             switch self {
-            case .squat:     return "Squat"
-            case .hinge:     return "Hinge"
-            case .push:      return "Push"
-            case .pull:      return "Pull"
-            case .carry:     return "Carry"
-            case .core:      return "Core"
-            case .accessory: return "Accessory"
+            case .squat:     return String(localized: "Squat")
+            case .hinge:     return String(localized: "Hinge")
+            case .push:      return String(localized: "Push")
+            case .pull:      return String(localized: "Pull")
+            case .carry:     return String(localized: "Carry")
+            case .core:      return String(localized: "Core")
+            case .accessory: return String(localized: "Accessory")
             }
         }
 
         var detail: String {
             switch self {
-            case .squat:     return "Knee-dominant, upright torso"
-            case .hinge:     return "Hip-dominant, loaded posterior chain"
-            case .push:      return "Pressing, horizontal or vertical"
-            case .pull:      return "Rowing and pulling, horizontal or vertical"
-            case .carry:     return "Loaded carries and holds"
-            case .core:      return "Trunk bracing and anti-rotation"
-            case .accessory: return "Everything else — arms, calves, rehab"
+            case .squat:     return String(localized: "Knee-dominant, upright torso")
+            case .hinge:     return String(localized: "Hip-dominant, loaded posterior chain")
+            case .push:      return String(localized: "Pressing, horizontal or vertical")
+            case .pull:      return String(localized: "Rowing and pulling, horizontal or vertical")
+            case .carry:     return String(localized: "Loaded carries and holds")
+            case .core:      return String(localized: "Trunk bracing and anti-rotation")
+            case .accessory: return String(localized: "Everything else — arms, calves, rehab")
             }
         }
 

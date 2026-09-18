@@ -186,10 +186,10 @@ enum TrainingPlan {
 
         var label: String {
             switch self {
-            case .light:       return "Easy week"
-            case .sustainable: return "Sustainable"
-            case .ambitious:   return "Ambitious"
-            case .reckless:    return "Too much, too soon"
+            case .light:       return String(localized: "Easy week")
+            case .sustainable: return String(localized: "Sustainable")
+            case .ambitious:   return String(localized: "Ambitious")
+            case .reckless:    return String(localized: "Too much, too soon")
             }
         }
 

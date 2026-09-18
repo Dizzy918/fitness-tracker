@@ -17,15 +17,15 @@ enum UnitSystem: String, CaseIterable, Codable, Sendable, Identifiable {
 
     var displayName: String {
         switch self {
-        case .metric:   return "Metric"
-        case .imperial: return "Imperial"
+        case .metric:   return String(localized: "Metric")
+        case .imperial: return String(localized: "Imperial")
         }
     }
 
     var detail: String {
         switch self {
-        case .metric:   return "km, metres, kilograms"
-        case .imperial: return "miles, feet, pounds"
+        case .metric:   return String(localized: "km, metres, kilograms")
+        case .imperial: return String(localized: "miles, feet, pounds")
         }
     }
 

@@ -34,26 +34,26 @@ enum SeasonPlan {
 
         var label: String {
             switch self {
-            case .carryingFatigue:  return "Carrying fatigue"
-            case .slightlyFatigued: return "Slightly heavy"
-            case .sharp:            return "Sharp"
-            case .overTapered:      return "Over-tapered"
-            case .detrained:        return "Losing fitness"
+            case .carryingFatigue:  return String(localized: "Carrying fatigue")
+            case .slightlyFatigued: return String(localized: "Slightly heavy")
+            case .sharp:            return String(localized: "Sharp")
+            case .overTapered:      return String(localized: "Over-tapered")
+            case .detrained:        return String(localized: "Losing fitness")
             }
         }
 
         var detail: String {
             switch self {
             case .carryingFatigue:
-                return "On this plan you arrive tired. Cutting volume over the last two weeks — while keeping some intensity — sheds fatigue much faster than it sheds fitness."
+                return String(localized: "On this plan you arrive tired. Cutting volume over the last two weeks — while keeping some intensity — sheds fatigue much faster than it sheds fitness.")
             case .slightlyFatigued:
-                return "Close, but you arrive with a little fatigue still in the legs. An easier final week would sharpen it."
+                return String(localized: "Close, but you arrive with a little fatigue still in the legs. An easier final week would sharpen it.")
             case .sharp:
-                return "This is the window people race well from: the fatigue has cleared and the fitness is still there."
+                return String(localized: "This is the window people race well from: the fatigue has cleared and the fitness is still there.")
             case .overTapered:
-                return "Fresh, but this much rest costs fitness as well as fatigue. Keeping a couple of short, sharp sessions in the last week holds more of it."
+                return String(localized: "Fresh, but this much rest costs fitness as well as fatigue. Keeping a couple of short, sharp sessions in the last week holds more of it.")
             case .detrained:
-                return "This plan arrives rested but a long way down on fitness. Form looks healthy because there's no fatigue left to subtract — that isn't the same as being sharp. There's room for a lot more work between now and then."
+                return String(localized: "This plan arrives rested but a long way down on fitness. Form looks healthy because there's no fatigue left to subtract — that isn't the same as being sharp. There's room for a lot more work between now and then.")
             }
         }
 

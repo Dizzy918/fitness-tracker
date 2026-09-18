@@ -54,8 +54,8 @@ enum DurationCurve {
 
         var displayName: String {
             switch self {
-            case .power: return "Power"
-            case .pace:  return "Pace"
+            case .power: return String(localized: "Power")
+            case .pace:  return String(localized: "Pace")
             }
         }
 

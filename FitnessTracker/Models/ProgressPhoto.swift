@@ -47,9 +47,9 @@ final class ProgressPhoto {
         var id: String { rawValue }
         var displayName: String {
             switch self {
-            case .front: return "Front"
-            case .side:  return "Side"
-            case .back:  return "Back"
+            case .front: return String(localized: "Front")
+            case .side:  return String(localized: "Side")
+            case .back:  return String(localized: "Back")
             }
         }
         var symbol: String {
