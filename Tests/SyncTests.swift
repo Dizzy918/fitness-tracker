@@ -210,7 +210,7 @@ final class SyncEngineTests: XCTestCase {
 
     private func makeContext() throws -> ModelContext {
         let container = try ModelContainer(
-            for: Workout.self, Shoe.self, StrengthSession.self, SetEntry.self, Exercise.self,
+            for: FitnessTrackerApp.schema,
             configurations: ModelConfiguration(isStoredInMemoryOnly: true)
         )
         return ModelContext(container)

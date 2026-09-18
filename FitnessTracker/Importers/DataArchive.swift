@@ -30,15 +30,18 @@ enum DataArchive {
         var dailyMetrics: [DailyMetricRecord] = []
         var routes: [RouteRecord] = []
         var plannedWorkouts: [PlannedWorkoutRecord] = []
+        var routines: [RoutineRecord] = []
 
         var isEmpty: Bool {
             workouts.isEmpty && shoes.isEmpty && strengthSessions.isEmpty
                 && dailyMetrics.isEmpty && routes.isEmpty && plannedWorkouts.isEmpty
+                && routines.isEmpty
         }
 
         var itemCount: Int {
             workouts.count + shoes.count + strengthSessions.count
                 + dailyMetrics.count + routes.count + plannedWorkouts.count
+                + routines.count
         }
     }
 
@@ -85,6 +88,29 @@ enum DataArchive {
         var category: String
         var primaryMuscles: [String]
         var notes: String?
+        var defaultRestSeconds: Int?
+    }
+
+    struct RoutineRecord: Codable, Sendable {
+        var id: UUID
+        var name: String
+        var notes: String?
+        var createdAt: Date
+        var lastUsedAt: Date?
+        var useCount: Int?
+        var items: [RoutineItemRecord]
+    }
+
+    struct RoutineItemRecord: Codable, Sendable {
+        var id: UUID
+        var order: Int
+        var exerciseID: UUID?
+        var targetSets: Int
+        var targetReps: Int
+        var targetWeightKg: Double?
+        var restSeconds: Int
+        var supersetGroup: Int?
+        var notes: String?
     }
 
     struct SetRecord: Codable, Sendable {
@@ -95,6 +121,10 @@ enum DataArchive {
         var rpe: Double?
         var isWarmup: Bool
         var exerciseID: UUID?
+        var isPending: Bool?
+        var completedAt: Date?
+        var restSeconds: Int?
+        var supersetGroup: Int?
     }
 
     struct StrengthSessionRecord: Codable, Sendable {
@@ -103,6 +133,8 @@ enum DataArchive {
         var endedAt: Date?
         var notes: String?
         var sets: [SetRecord]
+        var routineID: UUID?
+        var routineName: String?
     }
 
     struct DailyMetricRecord: Codable, Sendable {
@@ -216,7 +248,8 @@ enum DataArchive {
 
         archive.exercises = try context.fetch(FetchDescriptor<Exercise>()).map {
             ExerciseRecord(id: $0.id, name: $0.name, category: $0.category,
-                           primaryMuscles: $0.primaryMuscles, notes: $0.notes)
+                           primaryMuscles: $0.primaryMuscles, notes: $0.notes,
+                           defaultRestSeconds: $0.defaultRestSeconds)
         }
 
         archive.strengthSessions = try context.fetch(FetchDescriptor<StrengthSession>()).map { s in
@@ -225,8 +258,11 @@ enum DataArchive {
                 sets: s.sets.sorted { $0.order < $1.order }.map {
                     SetRecord(id: $0.id, order: $0.order, reps: $0.reps,
                               weightKg: $0.weightKg, rpe: $0.rpe,
-                              isWarmup: $0.isWarmup, exerciseID: $0.exercise?.id)
-                }
+                              isWarmup: $0.isWarmup, exerciseID: $0.exercise?.id,
+                              isPending: $0.isPending, completedAt: $0.completedAt,
+                              restSeconds: $0.restSeconds, supersetGroup: $0.supersetGroup)
+                },
+                routineID: s.routineID, routineName: s.routineName
             )
         }
 
@@ -257,6 +293,21 @@ enum DataArchive {
                 structureData: $0.structureData)
         }
 
+        archive.routines = try context.fetch(FetchDescriptor<Routine>()).map { routine in
+            RoutineRecord(
+                id: routine.id, name: routine.name, notes: routine.notes,
+                createdAt: routine.createdAt, lastUsedAt: routine.lastUsedAt,
+                useCount: routine.useCount,
+                items: routine.orderedItems.map {
+                    RoutineItemRecord(
+                        id: $0.id, order: $0.order, exerciseID: $0.exercise?.id,
+                        targetSets: $0.targetSets, targetReps: $0.targetReps,
+                        targetWeightKg: $0.targetWeightKg, restSeconds: $0.restSeconds,
+                        supersetGroup: $0.supersetGroup, notes: $0.notes)
+                }
+            )
+        }
+
         return archive
     }
 
@@ -282,10 +333,12 @@ enum DataArchive {
         var dailyMetrics = 0
         var routes = 0
         var plannedWorkouts = 0
+        var routines = 0
         var skipped = 0
 
         var total: Int {
-            workouts + shoes + strengthSessions + dailyMetrics + routes + plannedWorkouts
+            workouts + shoes + strengthSessions + dailyMetrics + routes
+                + plannedWorkouts + routines
         }
 
         var summary: String {
@@ -301,6 +354,7 @@ enum DataArchive {
             if dailyMetrics > 0 { parts.append("\(dailyMetrics) days of metrics") }
             if routes > 0 { parts.append("\(routes) routes") }
             if plannedWorkouts > 0 { parts.append("\(plannedWorkouts) planned sessions") }
+            if routines > 0 { parts.append("\(routines) routines") }
             var text = "Restored " + parts.joined(separator: ", ") + "."
             if skipped > 0 { text += " Skipped \(skipped) already present." }
             return text
@@ -357,6 +411,7 @@ enum DataArchive {
                                     category: record.category,
                                     primaryMuscles: record.primaryMuscles)
             exercise.notes = record.notes
+            if let rest = record.defaultRestSeconds { exercise.defaultRestSeconds = rest }
             context.insert(exercise)
             exercisesByID[record.id] = exercise
         }
@@ -405,10 +460,42 @@ enum DataArchive {
                     weightKg: setRecord.weightKg, rpe: setRecord.rpe,
                     isWarmup: setRecord.isWarmup,
                     exercise: setRecord.exerciseID.flatMap { exercisesByID[$0] })
+                // Absent in archives written before routines existed, where
+                // every recorded set was by definition one already done.
+                entry.isPending = setRecord.isPending ?? false
+                entry.completedAt = setRecord.completedAt
+                entry.restSeconds = setRecord.restSeconds
+                entry.supersetGroup = setRecord.supersetGroup
                 entry.session = session
                 context.insert(entry)
             }
+            session.routineID = record.routineID
+            session.routineName = record.routineName
             report.strengthSessions += 1
+        }
+
+        let routineIDs = Set(try context.fetch(FetchDescriptor<Routine>()).map(\.id))
+        for record in archive.routines {
+            if routineIDs.contains(record.id) { report.skipped += 1; continue }
+            let routine = Routine(id: record.id, name: record.name,
+                                  createdAt: record.createdAt)
+            routine.notes = record.notes
+            routine.lastUsedAt = record.lastUsedAt
+            routine.useCount = record.useCount ?? 0
+            context.insert(routine)
+            for itemRecord in record.items {
+                let item = RoutineItem(
+                    id: itemRecord.id, order: itemRecord.order,
+                    exercise: itemRecord.exerciseID.flatMap { exercisesByID[$0] },
+                    targetSets: itemRecord.targetSets, targetReps: itemRecord.targetReps,
+                    targetWeightKg: itemRecord.targetWeightKg,
+                    restSeconds: itemRecord.restSeconds,
+                    supersetGroup: itemRecord.supersetGroup)
+                item.notes = itemRecord.notes
+                item.routine = routine
+                context.insert(item)
+            }
+            report.routines += 1
         }
 
         // Metrics are keyed by day, not by row id — two devices can easily have

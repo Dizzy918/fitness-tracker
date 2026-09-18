@@ -187,8 +187,7 @@ final class RouteModelTests: XCTestCase {
 
     private func makeContext() throws -> ModelContext {
         let container = try ModelContainer(
-            for: Workout.self, Shoe.self, StrengthSession.self, SetEntry.self,
-                Exercise.self, DailyMetric.self, Route.self, PlannedWorkout.self,
+            for: FitnessTrackerApp.schema,
             configurations: ModelConfiguration(isStoredInMemoryOnly: true)
         )
         return ModelContext(container)

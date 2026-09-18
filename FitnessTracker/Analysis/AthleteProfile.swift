@@ -17,6 +17,9 @@ enum AthleteProfile {
         static let thresholdHeartRate = "thresholdHeartRate"
         static let ftpWatts = "ftpWatts"
         static let bodyWeightKg = "bodyWeightKg"
+        /// The bar you actually lift on, for the plate calculator. Zero means
+        /// "not set", so the unit system picks the Olympic default.
+        static let barWeightKg = "barWeightKg"
     }
 
     /// Build from stored settings, falling back to what the data implies.

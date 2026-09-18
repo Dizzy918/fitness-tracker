@@ -32,8 +32,7 @@ final class ViewRenderTests: XCTestCase {
         if let existing = Self.seededByWeeks[weeks] { return existing }
 
         let container = try ModelContainer(
-            for: Workout.self, Shoe.self, StrengthSession.self, SetEntry.self,
-                Exercise.self, DailyMetric.self, Route.self, PlannedWorkout.self,
+            for: FitnessTrackerApp.schema,
             configurations: ModelConfiguration(isStoredInMemoryOnly: true)
         )
         let context = ModelContext(container)
@@ -46,8 +45,7 @@ final class ViewRenderTests: XCTestCase {
 
     private func emptyContainer() throws -> ModelContainer {
         let container = try ModelContainer(
-            for: Workout.self, Shoe.self, StrengthSession.self, SetEntry.self,
-                Exercise.self, DailyMetric.self, Route.self, PlannedWorkout.self,
+            for: FitnessTrackerApp.schema,
             configurations: ModelConfiguration(isStoredInMemoryOnly: true)
         )
         Self.retainedContainers.append(container)

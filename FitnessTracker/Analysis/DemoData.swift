@@ -401,12 +401,36 @@ struct DemoData {
         }
     }
 
+    /// An exercise with this name, reusing the library's if it's already there.
+    ///
+    /// `ExerciseLibrary.seedStarter` skips names that exist, but this ran the
+    /// other way round and inserted its own "Back Squat" regardless — so the
+    /// library's and the demo's sat side by side in the picker and in the
+    /// progress list, one of them permanently empty, and any set you logged
+    /// went to whichever you happened to pick.
+    private static func exercise(
+        named name: String, category: String, muscles: [String],
+        in context: ModelContext
+    ) -> Exercise {
+        let wanted = name.lowercased()
+        if let existing = (try? context.fetch(FetchDescriptor<Exercise>()))?
+            .first(where: { $0.name.lowercased() == wanted }) {
+            return existing
+        }
+        let exercise = Exercise(name: name, category: category, primaryMuscles: muscles)
+        context.insert(exercise)
+        return exercise
+    }
+
     private static func seedStrength(into context: ModelContext, rng: inout RNG) {
-        let squat = Exercise(name: "Back Squat", category: "squat", primaryMuscles: ["quads", "glutes"])
-        let dead = Exercise(name: "Deadlift", category: "hinge", primaryMuscles: ["hamstrings", "back"])
-        let bench = Exercise(name: "Bench Press", category: "push", primaryMuscles: ["chest", "triceps"])
-        let row = Exercise(name: "Barbell Row", category: "pull", primaryMuscles: ["lats", "biceps"])
-        [squat, dead, bench, row].forEach { context.insert($0) }
+        let squat = exercise(named: "Back Squat", category: "squat",
+                             muscles: ["quads", "glutes"], in: context)
+        let dead = exercise(named: "Deadlift", category: "hinge",
+                            muscles: ["hamstrings", "back"], in: context)
+        let bench = exercise(named: "Bench Press", category: "push",
+                             muscles: ["chest", "triceps"], in: context)
+        let row = exercise(named: "Barbell Row", category: "pull",
+                           muscles: ["lats", "biceps"], in: context)
 
         // 8 weeks of simple linear progression, twice a week.
         for week in 0..<8 {

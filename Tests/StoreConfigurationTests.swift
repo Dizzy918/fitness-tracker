@@ -135,6 +135,7 @@ final class StoreConfigurationTests: XCTestCase {
         XCTAssertEqual(names, [
             "Workout", "Shoe", "StrengthSession", "SetEntry",
             "Exercise", "DailyMetric", "Route", "PlannedWorkout",
+            "Routine", "RoutineItem",
         ])
     }
 

@@ -8,9 +8,14 @@ struct StrengthListView: View {
     @Environment(\.modelContext) private var context
     @Query(sort: \StrengthSession.startedAt, order: .reverse) private var sessions: [StrengthSession]
     @Query(sort: \Exercise.name) private var exercises: [Exercise]
+    @Query private var routines: [Routine]
+
+    /// Pushed when a routine is started, so you land in the session rather than
+    /// having to go back and find it.
+    @State private var path = NavigationPath()
 
     var body: some View {
-        NavigationStack {
+        NavigationStack(path: $path) {
             Group {
                 if sessions.isEmpty {
                     ContentUnavailableView {
@@ -27,6 +32,7 @@ struct StrengthListView: View {
                             } else {
                                 Button("Start a session") { startSession() }
                                     .buttonStyle(.borderedProminent)
+                                NavigationLink("Build a routine…") { routinesView }
                             }
                         }
                     }
@@ -53,6 +59,14 @@ struct StrengthListView: View {
 
                         Section {
                             NavigationLink {
+                                routinesView
+                            } label: {
+                                Label("Routines", systemImage: "square.stack.3d.up")
+                                Spacer()
+                                Text("\(routines.count)")
+                                    .foregroundStyle(.secondary)
+                            }
+                            NavigationLink {
                                 ExerciseLibraryView()
                             } label: {
                                 Label("Exercise library", systemImage: "list.bullet.rectangle")
@@ -77,6 +91,9 @@ struct StrengthListView: View {
                     }
                 }
             }
+            .navigationDestination(for: StrengthSession.self) { session in
+                StrengthSessionDetailView(session: session)
+            }
             .navigationTitle("Strength")
             .toolbar {
                 ToolbarItem(placement: .primaryAction) {
@@ -88,8 +105,16 @@ struct StrengthListView: View {
         }
     }
 
+    private var routinesView: some View {
+        RoutinesView { session in
+            path.append(session)
+        }
+    }
+
     private func startSession() {
-        context.insert(StrengthSession(startedAt: .now))
+        let session = StrengthSession(startedAt: .now)
+        context.insert(session)
+        path.append(session)
     }
 
     /// One pass over every working set, keyed by exercise. Computing this per
@@ -126,88 +151,12 @@ struct SessionRow: View {
                 .font(.subheadline)
                 .foregroundStyle(.secondary)
                 .lineLimit(1)
-            Text("\(session.workingSets.count) sets · \(Int(session.totalVolume)) kg volume")
+            // Was hardcoded kilograms, so an athlete set to imperial saw their
+            // e1RM in pounds and the volume on the same row in kilos.
+            Text("\(session.completedWorkingSets.count) sets · \(units.volume(session.totalVolume)) volume")
                 .font(.caption)
                 .foregroundStyle(.tertiary)
         }
-    }
-}
-
-struct StrengthSessionDetailView: View {
-    @Environment(\.units) private var units
-    @Environment(\.modelContext) private var context
-    @Bindable var session: StrengthSession
-    @Query(sort: \Exercise.name) private var exercises: [Exercise]
-
-    @State private var showAddSet = false
-
-    var body: some View {
-        List {
-            Section {
-                LabeledContent("Sets", value: "\(session.workingSets.count)")
-                LabeledContent("Volume", value: units.volume(session.totalVolume))
-                if let d = session.duration {
-                    LabeledContent("Duration", value: units.duration(d))
-                }
-            }
-
-            ForEach(groupedByExercise, id: \.0) { name, sets in
-                Section(name) {
-                    ForEach(sets) { set in
-                        HStack {
-                            Text(set.isWarmup ? "warmup" : "\(set.order + 1)")
-                                .font(.caption)
-                                .foregroundStyle(.secondary)
-                                .frame(width: 56, alignment: .leading)
-                            Text("\(set.reps) × \(set.displayWeight)")
-                            Spacer()
-                            if let rpe = set.rpe {
-                                Text("RPE \(String(format: "%.1f", rpe))")
-                                    .font(.caption)
-                                    .foregroundStyle(.secondary)
-                            }
-                            if !set.isWarmup {
-                                Text(String(format: "e1RM %.0f", set.estimated1RM))
-                                    .font(.caption2)
-                                    .foregroundStyle(.tertiary)
-                            }
-                        }
-                    }
-                    .onDelete { offsets in
-                        for i in offsets { context.delete(sets[i]) }
-                    }
-                }
-            }
-
-            if let notes = session.notes, !notes.isEmpty {
-                Section("Notes") { Text(notes) }
-            }
-        }
-        .navigationTitle(session.startedAt.formatted(date: .abbreviated, time: .omitted))
-        .toolbar {
-            ToolbarItem(placement: .primaryAction) {
-                Button { showAddSet = true } label: {
-                    Label("Add set", systemImage: "plus")
-                }
-                .disabled(exercises.isEmpty)
-            }
-        }
-        .sheet(isPresented: $showAddSet) {
-            AddSetSheet(session: session)
-        }
-    }
-
-    /// Sets grouped by exercise, preserving performance order.
-    private var groupedByExercise: [(String, [SetEntry])] {
-        let sorted = session.sets.sorted { $0.order < $1.order }
-        var order: [String] = []
-        var buckets: [String: [SetEntry]] = [:]
-        for set in sorted {
-            let name = set.exercise?.name ?? "Unassigned"
-            if buckets[name] == nil { order.append(name) }
-            buckets[name, default: []].append(set)
-        }
-        return order.map { ($0, buckets[$0] ?? []) }
     }
 }
 

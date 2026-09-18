@@ -15,6 +15,8 @@ struct FitnessTrackerApp: App {
         StrengthSession.self,
         SetEntry.self,
         Exercise.self,
+        Routine.self,
+        RoutineItem.self,
         DailyMetric.self,
         Route.self,
         PlannedWorkout.self,
