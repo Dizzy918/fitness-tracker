@@ -338,19 +338,37 @@ struct WorkoutListView: View {
 
 struct WorkoutRow: View {
     @Environment(\.units) private var units
+    @Environment(\.dynamicTypeSize) private var typeSize
+    /// The icon is `.title2`, so it grows with the text — a fixed 30-point
+    /// frame stops holding it at accessibility sizes and the glyph spills over
+    /// the date beside it. Scaling the frame with the same text style keeps
+    /// them apart.
+    @ScaledMetric(relativeTo: .title2) private var iconWidth: CGFloat = 30
 
     let workout: Workout
 
+    /// At accessibility text sizes the row's own layout is the problem, not the
+    /// font. Side by side, a date and its time wrap to one word per line and a
+    /// single workout fills the screen — the list stops being scannable for
+    /// exactly the people who turned the text up. Stacked, with the time on the
+    /// line below, it stays a list.
+    private var isAccessibilitySize: Bool { typeSize.isAccessibilitySize }
+
     var body: some View {
-        HStack(spacing: 12) {
+        HStack(alignment: .top, spacing: 12) {
             Image(systemName: workout.sport.symbolName)
                 .font(.title2)
-                .frame(width: 30)
+                .frame(width: iconWidth)
                 .foregroundStyle(.tint)
 
             VStack(alignment: .leading, spacing: 2) {
-                Text(workout.startedAt.formatted(date: .abbreviated, time: .shortened))
+                Text(workout.startedAt.formatted(date: .abbreviated, time: .omitted))
                     .font(.headline)
+                if isAccessibilitySize {
+                    Text(workout.startedAt.formatted(date: .omitted, time: .shortened))
+                        .font(.subheadline)
+                        .foregroundStyle(.secondary)
+                }
                 Text(subtitle)
                     .font(.subheadline)
                     .foregroundStyle(.secondary)
@@ -366,14 +384,28 @@ struct WorkoutRow: View {
                 .foregroundStyle(.tertiary)
             }
 
-            Spacer()
+            Spacer(minLength: 0)
 
-            if workout.hasRoute {
+            // The map hint is decoration, and at large sizes it costs width the
+            // text needs far more.
+            if workout.hasRoute && !isAccessibilitySize {
                 Image(systemName: "map")
                     .font(.caption)
                     .foregroundStyle(.tertiary)
             }
         }
+        // One element to VoiceOver, spoken as a sentence, rather than five
+        // fragments read in layout order.
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel(accessibilityDescription)
+    }
+
+    private var accessibilityDescription: String {
+        var parts = [workout.sport.displayName,
+                     workout.startedAt.formatted(date: .abbreviated, time: .shortened),
+                     spokenSubtitle]
+        if let shoe = workout.shoe { parts.append(shoe.displayName) }
+        return parts.joined(separator: ", ")
     }
 
     /// Where this row came from, when it isn't a plain manual entry.
@@ -396,5 +428,18 @@ struct WorkoutRow: View {
             parts.append("\(hr) bpm")
         }
         return parts.joined(separator: " · ")
+    }
+
+    /// The same facts without the separators, which VoiceOver reads aloud as
+    /// "middle dot" between every number.
+    private var spokenSubtitle: String {
+        var parts = [units.distance(workout.distance), units.duration(workout.duration)]
+        if let pace = workout.paceSecPerKm {
+            parts.append(units.rate(pace, sport: workout.sport))
+        }
+        if let hr = workout.avgHeartRate {
+            parts.append(String(localized: "\(hr) bpm"))
+        }
+        return parts.joined(separator: ", ")
     }
 }

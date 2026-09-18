@@ -213,13 +213,16 @@ private struct Bullet: View {
     let icon: String
     let title: String
     let detail: String
+    /// Grows with the text, like the glyph it holds. A fixed frame stops
+    /// containing a `.title3` symbol at accessibility sizes.
+    @ScaledMetric(relativeTo: .title3) private var iconWidth: CGFloat = 28
 
     var body: some View {
         HStack(alignment: .top, spacing: 14) {
             Image(systemName: icon)
                 .font(.title3)
                 .foregroundStyle(.tint)
-                .frame(width: 28)
+                .frame(width: iconWidth)
             VStack(alignment: .leading, spacing: 3) {
                 Text(title).font(.headline)
                 Text(detail)

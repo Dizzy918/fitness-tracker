@@ -438,6 +438,11 @@ struct LapsTable: View {
     let laps: [FITLap]
     var sport: WorkoutSport = .run
 
+    /// `Font.system(size:)` is a fixed point size: it does not grow when the
+    /// reader turns text up, at any accessibility setting. Scaling the number
+    /// itself is what makes it respond.
+    @ScaledMetric(relativeTo: .caption2) private var badgeSize: CGFloat = 9
+
     private var fastestIndex: Int? { LapAnalysis.fastest(laps)?.index }
     private var isSwim: Bool { sport == .swim }
     private var showsPower: Bool { laps.contains { $0.avgPower != nil } }
@@ -459,7 +464,7 @@ struct LapsTable: View {
 
                     if let badge = lap.intensityBadge {
                         Text(badge)
-                            .font(.system(size: 9, weight: .medium))
+                            .font(.system(size: badgeSize, weight: .medium))
                             .padding(.horizontal, 4).padding(.vertical, 1)
                             .background(.quaternary, in: Capsule())
                             .foregroundStyle(.secondary)
