@@ -31,17 +31,23 @@ enum DataArchive {
         var routes: [RouteRecord] = []
         var plannedWorkouts: [PlannedWorkoutRecord] = []
         var routines: [RoutineRecord] = []
+        var bodyMeasurements: [BodyMeasurementRecord] = []
+        /// Photos are excluded from a streamless export: they're the bulk of
+        /// the file, and "email me my training log" shouldn't mean sending
+        /// megabytes of bathroom photos.
+        var progressPhotos: [ProgressPhotoRecord] = []
 
         var isEmpty: Bool {
             workouts.isEmpty && shoes.isEmpty && strengthSessions.isEmpty
                 && dailyMetrics.isEmpty && routes.isEmpty && plannedWorkouts.isEmpty
-                && routines.isEmpty
+                && routines.isEmpty && bodyMeasurements.isEmpty
+                && progressPhotos.isEmpty
         }
 
         var itemCount: Int {
             workouts.count + shoes.count + strengthSessions.count
                 + dailyMetrics.count + routes.count + plannedWorkouts.count
-                + routines.count
+                + routines.count + bodyMeasurements.count + progressPhotos.count
         }
     }
 
@@ -89,6 +95,33 @@ enum DataArchive {
         var primaryMuscles: [String]
         var notes: String?
         var defaultRestSeconds: Int?
+    }
+
+    struct BodyMeasurementRecord: Codable, Sendable {
+        var id: UUID
+        var date: Date
+        var bodyFatPercent: Double?
+        var neck: Double?
+        var shoulders: Double?
+        var chest: Double?
+        var waist: Double?
+        var hips: Double?
+        var thighLeft: Double?
+        var thighRight: Double?
+        var armLeft: Double?
+        var armRight: Double?
+        var calfLeft: Double?
+        var calfRight: Double?
+        var notes: String?
+    }
+
+    struct ProgressPhotoRecord: Codable, Sendable {
+        var id: UUID
+        var date: Date
+        var pose: String
+        var notes: String?
+        var imageData: Data?
+        var thumbnailData: Data?
     }
 
     struct RoutineRecord: Codable, Sendable {
@@ -308,6 +341,25 @@ enum DataArchive {
             )
         }
 
+        archive.bodyMeasurements = try context.fetch(FetchDescriptor<BodyMeasurement>()).map {
+            BodyMeasurementRecord(
+                id: $0.id, date: $0.date, bodyFatPercent: $0.bodyFatPercent,
+                neck: $0.neck, shoulders: $0.shoulders, chest: $0.chest,
+                waist: $0.waist, hips: $0.hips,
+                thighLeft: $0.thighLeft, thighRight: $0.thighRight,
+                armLeft: $0.armLeft, armRight: $0.armRight,
+                calfLeft: $0.calfLeft, calfRight: $0.calfRight, notes: $0.notes)
+        }
+
+        archive.progressPhotos = try context.fetch(FetchDescriptor<ProgressPhoto>()).map {
+            ProgressPhotoRecord(
+                id: $0.id, date: $0.date, pose: $0.poseRaw, notes: $0.notes,
+                // The image rides along only in a full export, for the same
+                // reason sample streams do: it dominates the file size.
+                imageData: includeStreams ? $0.imageData : nil,
+                thumbnailData: $0.thumbnailData)
+        }
+
         return archive
     }
 
@@ -334,11 +386,13 @@ enum DataArchive {
         var routes = 0
         var plannedWorkouts = 0
         var routines = 0
+        var bodyMeasurements = 0
+        var progressPhotos = 0
         var skipped = 0
 
         var total: Int {
             workouts + shoes + strengthSessions + dailyMetrics + routes
-                + plannedWorkouts + routines
+                + plannedWorkouts + routines + bodyMeasurements + progressPhotos
         }
 
         var summary: String {
@@ -355,6 +409,10 @@ enum DataArchive {
             if routes > 0 { parts.append("\(routes) routes") }
             if plannedWorkouts > 0 { parts.append("\(plannedWorkouts) planned sessions") }
             if routines > 0 { parts.append("\(routines) routines") }
+            if bodyMeasurements > 0 {
+                parts.append("\(bodyMeasurements) sets of measurements")
+            }
+            if progressPhotos > 0 { parts.append("\(progressPhotos) photos") }
             var text = "Restored " + parts.joined(separator: ", ") + "."
             if skipped > 0 { text += " Skipped \(skipped) already present." }
             return text
@@ -496,6 +554,47 @@ enum DataArchive {
                 context.insert(item)
             }
             report.routines += 1
+        }
+
+        // Keyed by day, like metrics: at most one measurement per date, and two
+        // rows for one day would put two points on the same x in every chart.
+        let measurementDates = Set(try context.fetch(FetchDescriptor<BodyMeasurement>())
+            .map(\.date))
+        for record in archive.bodyMeasurements {
+            let day = Calendar.current.startOfDay(for: record.date)
+            if measurementDates.contains(day) { report.skipped += 1; continue }
+            let measurement = BodyMeasurement(id: record.id, date: record.date)
+            measurement.bodyFatPercent = record.bodyFatPercent
+            measurement.neck = record.neck
+            measurement.shoulders = record.shoulders
+            measurement.chest = record.chest
+            measurement.waist = record.waist
+            measurement.hips = record.hips
+            measurement.thighLeft = record.thighLeft
+            measurement.thighRight = record.thighRight
+            measurement.armLeft = record.armLeft
+            measurement.armRight = record.armRight
+            measurement.calfLeft = record.calfLeft
+            measurement.calfRight = record.calfRight
+            measurement.notes = record.notes
+            context.insert(measurement)
+            report.bodyMeasurements += 1
+        }
+
+        let photoIDs = Set(try context.fetch(FetchDescriptor<ProgressPhoto>()).map(\.id))
+        for record in archive.progressPhotos {
+            if photoIDs.contains(record.id) { report.skipped += 1; continue }
+            // A photo whose image was stripped by a streamless export is not
+            // worth restoring as an empty frame with a date on it.
+            guard record.imageData != nil else { report.skipped += 1; continue }
+            let photo = ProgressPhoto(
+                id: record.id, date: record.date,
+                pose: ProgressPhoto.Pose(rawValue: record.pose) ?? .front)
+            photo.notes = record.notes
+            photo.imageData = record.imageData
+            photo.thumbnailData = record.thumbnailData
+            context.insert(photo)
+            report.progressPhotos += 1
         }
 
         // Metrics are keyed by day, not by row id — two devices can easily have

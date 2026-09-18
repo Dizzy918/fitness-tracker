@@ -188,3 +188,56 @@ final class RegressionTests: XCTestCase {
         CredentialStore.remove(.anthropicAPIKey)
     }
 }
+
+/// Demo data is the first thing a new install shows, and every derived number
+/// on that screen is only as sane as the data under it.
+@MainActor
+final class DemoDataPlausibilityTests: XCTestCase {
+
+    private func makeContext() throws -> ModelContext {
+        let container = try ModelContainer(
+            for: FitnessTrackerApp.schema,
+            configurations: ModelConfiguration(isStoredInMemoryOnly: true)
+        )
+        return ModelContext(container)
+    }
+
+    /// A misplaced paren seeded a 7 kg athlete, so the Recovery weight chart
+    /// read "16.8 lb" and watts-per-kilo would have been off by a factor of ten.
+    func testSeededBodyWeightIsAHumanWeight() throws {
+        let context = try makeContext()
+        _ = DemoData.seed(into: context)
+        try context.save()
+
+        let weights = try context.fetch(FetchDescriptor<DailyMetric>())
+            .compactMap(\.weightKg)
+        XCTAssertFalse(weights.isEmpty, "demo data seeds no weight at all")
+        for weight in weights {
+            XCTAssertTrue((40...200).contains(weight),
+                          "seeded body weight of \(weight) kg is not a person")
+        }
+        // And it varies day to day rather than being a constant.
+        XCTAssertGreaterThan(Set(weights).count, 1)
+    }
+
+    /// The same class of error in the other seeded series.
+    func testOtherSeededMetricsAreInPlausibleRanges() throws {
+        let context = try makeContext()
+        _ = DemoData.seed(into: context)
+        try context.save()
+        let metrics = try context.fetch(FetchDescriptor<DailyMetric>())
+
+        for value in metrics.compactMap(\.sleepHours) {
+            XCTAssertTrue((3...12).contains(value), "sleep of \(value) h")
+        }
+        for value in metrics.compactMap(\.restingHR) {
+            XCTAssertTrue((35...90).contains(value), "resting HR of \(value) bpm")
+        }
+        for value in metrics.compactMap(\.hrvSDNN) {
+            XCTAssertTrue((10...200).contains(value), "HRV of \(value) ms")
+        }
+        for value in metrics.compactMap(\.vo2Max) {
+            XCTAssertTrue((20...90).contains(value), "VO2max of \(value)")
+        }
+    }
+}

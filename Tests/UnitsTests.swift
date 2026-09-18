@@ -183,3 +183,46 @@ final class UnitsTests: XCTestCase {
         }
     }
 }
+
+/// Signed number formatting.
+///
+/// Every signed figure in the app went through `String(format: "%+.0f", …)`,
+/// which prints "-0" for anything in (-0.5, 0). The Recovery screen read
+/// "Form -0 — neutral", which looks like a defect because it is one.
+final class SignedFormattingTests: XCTestCase {
+
+    func testNegativeZeroIsJustZero() {
+        XCTAssertEqual(Fmt.signed(-0.4), "0")
+        XCTAssertEqual(Fmt.signed(-0.0), "0")
+        XCTAssertEqual(Fmt.signed(0), "0")
+        XCTAssertEqual(Fmt.signed(0.4), "0")
+        XCTAssertEqual(Fmt.signed(-0.04, decimals: 1), "0.0")
+    }
+
+    func testRealValuesKeepTheirSign() {
+        XCTAssertEqual(Fmt.signed(5), "+5")
+        XCTAssertEqual(Fmt.signed(-5), "-5")
+        XCTAssertEqual(Fmt.signed(0.6), "+1")
+        XCTAssertEqual(Fmt.signed(-0.6), "-1")
+        XCTAssertEqual(Fmt.signed(-12.34, decimals: 1), "-12.3")
+        XCTAssertEqual(Fmt.signed(12.36, decimals: 2), "+12.36")
+    }
+
+    func testNonFiniteDegradesRatherThanPrintingInf() {
+        XCTAssertEqual(Fmt.signed(.nan), "–")
+        XCTAssertEqual(Fmt.signed(.infinity), "–")
+    }
+
+    /// The measurement delta formatter is built on it, so it inherits the fix.
+    func testMeasurementDeltaNeverShowsNegativeZero() {
+        let metric = UnitFormatter(.metric)
+        XCTAssertEqual(metric.bodyMeasurementDelta(-0.02, site: .waist), "0.0 cm")
+        XCTAssertEqual(metric.bodyMeasurementDelta(-3, site: .waist), "-3.0 cm")
+        XCTAssertEqual(metric.bodyMeasurementDelta(-1.2, site: .bodyFat), "-1.2%")
+
+        let imperial = UnitFormatter(.imperial)
+        XCTAssertEqual(imperial.bodyMeasurementDelta(-0.01, site: .waist), "0.0 in")
+        // Body fat is a percentage in both systems and must not be converted.
+        XCTAssertEqual(imperial.bodyMeasurementDelta(-1.2, site: .bodyFat), "-1.2%")
+    }
+}

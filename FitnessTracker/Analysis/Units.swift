@@ -45,6 +45,7 @@ enum UnitConversion {
     static let metersPerYard = 0.9144
     static let metersPerFoot = 0.3048
     static let kilogramsPerPound = 0.45359237
+    static let centimetresPerInch = 2.54
 }
 
 /// Formats stored SI values for display in the athlete's chosen units.
@@ -151,6 +152,30 @@ struct UnitFormatter: Sendable, Equatable {
     /// Converts stored kilograms into the number an input field should show.
     func displayedWeight(fromKilograms value: Double) -> Double {
         isMetric ? value : value / UnitConversion.kilogramsPerPound
+    }
+
+    // MARK: - Body measurements
+
+    /// A circumference or a body-fat percentage, whichever the site is.
+    ///
+    /// Takes the site rather than a flag because body fat is a percentage in
+    /// both unit systems and converting it would be nonsense — a mistake that
+    /// a generic "length" formatter invites.
+    func bodyMeasurement(_ value: Double?, site: BodyMeasurement.Site) -> String {
+        guard let value, value.isFinite else { return "–" }
+        if site.isPercentage { return String(format: "%.1f%%", value) }
+        return isMetric
+            ? String(format: "%.1f cm", value)
+            : String(format: "%.1f in", value / UnitConversion.centimetresPerInch)
+    }
+
+    /// The same, signed, for a change.
+    func bodyMeasurementDelta(_ value: Double, site: BodyMeasurement.Site) -> String {
+        guard value.isFinite else { return "–" }
+        if site.isPercentage { return Fmt.signed(value, decimals: 1) + "%" }
+        return isMetric
+            ? Fmt.signed(value, decimals: 1) + " cm"
+            : Fmt.signed(value / UnitConversion.centimetresPerInch, decimals: 1) + " in"
     }
 
     // MARK: - Unit-independent passthroughs

@@ -5,6 +5,20 @@ import Foundation
 enum Fmt {
 
     /// "1:23:45" or "23:45"
+    /// A signed number, without the "-0" that `%+f` produces near zero.
+    ///
+    /// `String(format: "%+.0f", -0.4)` is "-0", and "Form -0 — neutral" reads
+    /// as a bug because it is one. Rounds first, then drops the sign when the
+    /// result is zero — every place in the app that shows a signed figure has
+    /// this trap, so it lives in one function.
+    static func signed(_ value: Double, decimals: Int = 0) -> String {
+        guard value.isFinite else { return "–" }
+        let scale = pow(10.0, Double(decimals))
+        let rounded = (value * scale).rounded() / scale
+        if rounded == 0 { return String(format: "%.\(decimals)f", 0.0) }
+        return String(format: "%+.\(decimals)f", rounded)
+    }
+
     static func duration(_ s: TimeInterval) -> String {
         guard s.isFinite, s >= 0 else { return "–" }
         let total = Int(s.rounded())

@@ -139,7 +139,7 @@ struct DurationCurveView: View {
                     Spacer()
 
                     if let change = comparison.change(at: point.duration) {
-                        Text(String(format: "%+.0f%%", change * 100))
+                        Text(Fmt.signed(change * 100) + "%")
                             .font(.caption.monospacedDigit())
                             .foregroundStyle(change > 0.01 ? Color.green
                                              : change < -0.01 ? Color.orange : Color.secondary)

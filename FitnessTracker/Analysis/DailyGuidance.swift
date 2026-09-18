@@ -112,7 +112,7 @@ enum DailyGuidance {
             reasons.append("Readiness \(readiness.score) — \(readiness.band.label.lowercased()).")
         }
         if let point = input.form, let formVerdict {
-            reasons.append("Form \(String(format: "%+.0f", point.form)) — \(formVerdict.label.lowercased()).")
+            reasons.append("Form \(Fmt.signed(point.form)) — \(formVerdict.label.lowercased()).")
         }
 
         let planned = input.outstandingToday

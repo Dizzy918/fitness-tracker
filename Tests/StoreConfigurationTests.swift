@@ -136,6 +136,7 @@ final class StoreConfigurationTests: XCTestCase {
             "Workout", "Shoe", "StrengthSession", "SetEntry",
             "Exercise", "DailyMetric", "Route", "PlannedWorkout",
             "Routine", "RoutineItem",
+            "BodyMeasurement", "ProgressPhoto",
         ])
     }
 

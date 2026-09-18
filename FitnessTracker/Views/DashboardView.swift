@@ -202,7 +202,7 @@ struct DashboardView: View {
                 Text("Fitness & fatigue").font(.headline)
                 Spacer()
                 if let ramp = training.weeklyRamp, training.isEstablished {
-                    Text(String(format: "%+.0f/week", ramp))
+                    Text("\(Fmt.signed(ramp))/week")
                         .font(.caption.monospacedDigit())
                         .foregroundStyle(ramp > 7 ? .orange : .secondary)
                 }
@@ -219,7 +219,7 @@ struct DashboardView: View {
                              value: String(format: "%.0f", training.fatigue))
                     VStack(alignment: .leading, spacing: 4) {
                         Text("Form").font(.caption).foregroundStyle(.secondary)
-                        Text(String(format: "%+.0f", training.form))
+                        Text(Fmt.signed(training.form))
                             .font(.title3.weight(.semibold))
                             .monospacedDigit()
                         Text(training.verdict.label)

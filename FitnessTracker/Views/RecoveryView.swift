@@ -321,6 +321,14 @@ struct RecoveryView: View {
             // it's the one metric here that tracks aerobic fitness directly
             // rather than inferring it from load.
             vo2MaxSection
+
+            NavigationLink {
+                BodyCompositionView()
+            } label: {
+                Label("Body measurements & photos", systemImage: "figure.arms.open")
+                    .font(.subheadline)
+            }
+            .buttonStyle(.bordered)
         }
     }
 

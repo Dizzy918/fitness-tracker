@@ -385,7 +385,10 @@ struct DemoData {
             metric.hrvSDNN = (hrvBase + rng.range(-5, 5)).rounded()
             metric.restingHR = (rhrBase + rng.range(-2, 2)).rounded()
             metric.sleepHours = (rng.range(6.0, 8.6) * 10).rounded() / 10
-            metric.weightKg = (72 + rng.range(-0.8, 0.8) * 10).rounded() / 10 + 0.0
+            // Parenthesised carefully: `(72 + jitter * 10).rounded() / 10` was
+            // rounding the *whole* weight and then dividing it by ten, seeding
+            // a 7 kg athlete and a weight chart that read 16 lb.
+            metric.weightKg = ((72 + rng.range(-0.8, 0.8)) * 10).rounded() / 10
             metric.vo2Max = 52 + rng.range(-1, 1)
 
             // Only a subset of days get a subjective check-in — realistic, and it
