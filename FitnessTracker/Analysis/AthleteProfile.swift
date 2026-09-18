@@ -110,11 +110,13 @@ struct TrainingState: Sendable {
         workouts: [WorkoutSnapshot],
         strength: [StrengthSessionSnapshot],
         athlete: TrainingLoad.Athlete,
+        cache: TrainingLoad.ScoreCache? = .shared,
         now: Date = .now,
         calendar: Calendar = .current
     ) -> TrainingState {
         let totals = TrainingLoad.dailyTotals(
-            workouts: workouts, strength: strength, athlete: athlete, calendar: calendar
+            workouts: workouts, strength: strength, athlete: athlete,
+            cache: cache, calendar: calendar
         )
         let series = TrainingLoad.series(dailyTotals: totals, through: now, calendar: calendar)
 
@@ -125,7 +127,12 @@ struct TrainingState: Sendable {
 
         let weekAgo = calendar.date(byAdding: .day, value: -7, to: now) ?? now
         let recent = workouts.filter { $0.startedAt >= weekAgo }
-        let methods = recent.compactMap { TrainingLoad.score(for: $0, athlete: athlete)?.method }
+        // Through the cache too: these were all just scored above, and scoring
+        // one means decoding its stream.
+        let methods = recent.compactMap {
+            (cache?.score(for: $0, athlete: athlete)
+                ?? TrainingLoad.score(for: $0, athlete: athlete))?.method
+        }
         state.weakestRecentMethod = methods.min()
         state.estimatedSessionCount = methods.filter { !$0.isMeasured }.count
         return state

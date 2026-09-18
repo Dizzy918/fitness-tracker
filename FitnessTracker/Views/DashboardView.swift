@@ -14,6 +14,12 @@ struct DashboardView: View {
     /// Training load decodes every sample stream, so it's computed off the main
     /// actor once per data change rather than inside `body`.
     @State private var training = TrainingState()
+    /// Whether the curve is still being built.
+    ///
+    /// Without this the section says "No scored sessions yet" while it works,
+    /// which isn't a missing spinner — it's a false statement about the
+    /// athlete's data, shown for however long the first build takes.
+    @State private var buildingTrainingState = true
     @State private var planWeek = TrainingPlan.Week(start: .now)
 
     var body: some View {
@@ -55,11 +61,25 @@ struct DashboardView: View {
 
     private func reloadTrainingState() async {
         // Snapshot on the main actor: SwiftData models can't cross actors.
-        let snapshots = workouts.map(\.snapshot)
-        let strength = strengthSessions.map(\.snapshot)
+        //
+        // Streams are external storage, so building a full snapshot reads a
+        // file per workout — right here, on the main actor, before any of the
+        // work is handed off. That is what used to leave this screen blank
+        // rather than merely slow. Only workouts the cache can't already answer
+        // need theirs.
         let restingHR = metrics.first(where: { $0.restingHR != nil })?.restingHR
-        let athlete = AthleteProfile.make(workouts: snapshots, restingHR: restingHR)
+        let athlete = AthleteProfile.make(workouts: workouts.map(\.lightSnapshot),
+                                          restingHR: restingHR)
+        let cache = TrainingLoad.ScoreCache.shared
+        let snapshots = workouts.map { workout -> WorkoutSnapshot in
+            let light = workout.lightSnapshot
+            return cache.canAnswer(light, athlete: athlete) ? light : workout.snapshot
+        }
+        let strength = strengthSessions.map(\.snapshot)
         let plans = plannedWorkouts.map(\.snapshot)
+        buildingTrainingState = true
+        defer { buildingTrainingState = false }
+
         let built = await Task.detached(priority: .userInitiated) {
             (TrainingState.build(workouts: snapshots, strength: strength, athlete: athlete),
              TrainingPlan.week(containing: .now, planned: plans,
@@ -208,7 +228,13 @@ struct DashboardView: View {
                 }
             }
 
-            if training.today == nil {
+            if buildingTrainingState && training.today == nil {
+                HStack(spacing: 8) {
+                    ProgressView()
+                    Text("Working out your fitness and fatigue…")
+                        .font(.caption).foregroundStyle(.secondary)
+                }
+            } else if training.today == nil {
                 Text("No scored sessions yet.")
                     .font(.caption).foregroundStyle(.secondary)
             } else {

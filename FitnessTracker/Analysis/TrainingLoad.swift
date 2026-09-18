@@ -123,10 +123,21 @@ enum TrainingLoad {
         guard workout.duration > 0 else { return nil }
         let hours = workout.duration / 3600
 
+        // The stream is JSON on disk and `samples` decodes it on every read, so
+        // a ride that tries power and then heart rate used to decode the same
+        // few thousand samples twice. Decoded at most once here, and not at all
+        // for a workout that never reaches a branch needing it.
+        var decoded: [FITSample]?
+        func samples() -> [FITSample] {
+            if let decoded { return decoded }
+            let fresh = workout.samples
+            decoded = fresh
+            return fresh
+        }
+
         // 1. Power. Only cycling records it, and it's the reference standard.
         if let ftp = athlete.ftp {
-            let samples = workout.samples
-            if let power = CyclingPower.summary(samples: samples, ftp: ftp),
+            if let power = CyclingPower.summary(samples: samples(), ftp: ftp),
                let tss = power.trainingStressScore,
                let intensity = power.intensityFactor,
                tss > 0 {
@@ -139,14 +150,14 @@ enum TrainingLoad {
         //    squaring the intensity before integrating is what separates them.
         if let reserve = athlete.heartRateReserve, let maxHR = athlete.maxHR {
             let rest = Double(athlete.restingHR ?? 60)
-            let samples = workout.samples.filter { $0.hr != nil }.sorted { $0.t < $1.t }
+            let withHR = samples().filter { $0.hr != nil }.sorted { $0.t < $1.t }
 
-            if samples.count >= 2 {
+            if withHR.count >= 2 {
                 var weightedSeconds = 0.0
                 var totalSeconds = 0.0
-                for index in samples.indices.dropLast() {
-                    guard let hr = samples[index].hr else { continue }
-                    let dt = samples[index + 1].t - samples[index].t
+                for index in withHR.indices.dropLast() {
+                    guard let hr = withHR[index].hr else { continue }
+                    let dt = withHR[index + 1].t - withHR[index].t
                     guard dt > 0, dt <= maxSampleGapSeconds else { continue }
                     let intensity = intensityFactor(forHeartRate: Double(hr),
                                                     rest: rest, reserve: reserve)
@@ -228,17 +239,123 @@ enum TrainingLoad {
     // MARK: - Daily totals
 
     /// One day's total stress, keyed by start-of-day.
+    /// Memoises per-workout scores across rebuilds of the curve.
+    ///
+    /// The dashboard rebuilds the whole series every time it appears, walking
+    /// every workout ever recorded. Nothing about those scores changes between
+    /// appearances unless the workout or the athlete's profile changed — and
+    /// recomputing them is not cheap, because scoring a session means decoding
+    /// its per-second stream. Four years of training measured eight seconds.
+    ///
+    /// Memoisation of a pure function, so the only thing that can make it wrong
+    /// is a stale key. The key is every input that can change an answer.
+    final class ScoreCache: @unchecked Sendable {
+        static let shared = ScoreCache()
+
+        private let lock = NSLock()
+        private var entries: [UUID: (key: Int, score: Score?)] = [:]
+
+        init() {}
+
+        /// Inputs that can change a score. Anything else about a workout —
+        /// its notes, its shoe — cannot, so it isn't in here.
+        ///
+        /// Deliberately **scalars only**. The sample stream also changes a
+        /// score, but it lives in external storage and merely looking at it
+        /// reads a file — so putting it in the key would make every cache
+        /// lookup cost the thing the cache exists to avoid. A stream arriving
+        /// later is handled by whoever writes it calling `forget(_:)`.
+        private func key(for workout: WorkoutSnapshot, athlete: Athlete) -> Int {
+            var hasher = Hasher()
+            hasher.combine(athlete.ftp)
+            hasher.combine(athlete.maxHR)
+            hasher.combine(athlete.restingHR)
+            hasher.combine(athlete.thresholdPaceSecPerKm)
+            hasher.combine(workout.sport)
+            hasher.combine(workout.duration)
+            hasher.combine(workout.distance)
+            hasher.combine(workout.avgHeartRate)
+            return hasher.finalize()
+        }
+
+        /// Whether this workout's score is already known.
+        ///
+        /// Lets a caller decide, before touching external storage, whether it
+        /// needs to fault a stream in at all — which is the whole point.
+        func canAnswer(_ workout: WorkoutSnapshot, athlete: Athlete) -> Bool {
+            let wanted = key(for: workout, athlete: athlete)
+            lock.lock()
+            defer { lock.unlock() }
+            return entries[workout.id]?.key == wanted
+        }
+
+        /// Drop one workout's entry, for when something the key can't see has
+        /// changed — in practice, a sample stream arriving after the fact.
+        func forget(_ id: UUID) {
+            lock.lock()
+            defer { lock.unlock() }
+            entries.removeValue(forKey: id)
+        }
+
+        func score(for workout: WorkoutSnapshot, athlete: Athlete) -> Score? {
+            let wanted = key(for: workout, athlete: athlete)
+
+            lock.lock()
+            if let entry = entries[workout.id], entry.key == wanted {
+                lock.unlock()
+                return entry.score
+            }
+            lock.unlock()
+
+            // Computed outside the lock: scoring decodes a stream and can take
+            // milliseconds, and holding the lock for that would serialise every
+            // caller behind the slowest workout.
+            let fresh = TrainingLoad.score(for: workout, athlete: athlete)
+
+            lock.lock()
+            entries[workout.id] = (wanted, fresh)
+            lock.unlock()
+            return fresh
+        }
+
+        /// Forget everything not in `keep`, so deleting workouts doesn't leak.
+        func prune(to keep: Set<UUID>) {
+            lock.lock()
+            defer { lock.unlock() }
+            guard entries.count > keep.count else { return }
+            entries = entries.filter { keep.contains($0.key) }
+        }
+
+        func removeAll() {
+            lock.lock()
+            defer { lock.unlock() }
+            entries.removeAll()
+        }
+
+        var count: Int {
+            lock.lock()
+            defer { lock.unlock() }
+            return entries.count
+        }
+    }
+
+    /// - Parameter cache: pass nil to score everything afresh. Tests that
+    ///   measure the cost of scoring want that; the app never does.
     static func dailyTotals(
         workouts: [WorkoutSnapshot],
         strength: [StrengthSessionSnapshot] = [],
         athlete: Athlete,
+        cache: ScoreCache? = .shared,
         calendar: Calendar = .current
     ) -> [Date: Double] {
         var totals: [Date: Double] = [:]
         for workout in workouts {
-            guard let score = score(for: workout, athlete: athlete) else { continue }
+            let score = cache?.score(for: workout, athlete: athlete)
+                ?? score(for: workout, athlete: athlete)
+            guard let score else { continue }
             totals[calendar.startOfDay(for: workout.startedAt), default: 0] += score.value
         }
+        cache?.prune(to: Set(workouts.map(\.id)))
         for session in strength {
             guard let score = score(for: session) else { continue }
             totals[calendar.startOfDay(for: session.startedAt), default: 0] += score.value

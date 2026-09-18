@@ -105,7 +105,25 @@ struct WorkoutSnapshot: Sendable, Identifiable {
 }
 
 extension Workout {
-    /// Cheap to build: copies scalars and retains the blob without decoding it.
+    /// A snapshot without the sample stream.
+    ///
+    /// `streamsData` is external storage, so merely *reading* the property
+    /// faults the blob in from a file. Mapping a whole history to snapshots on
+    /// the main actor therefore reads every stream off disk before any work is
+    /// handed off, which is what leaves a screen blank rather than merely slow.
+    /// Anything that only needs the scalars should take this.
+    var lightSnapshot: WorkoutSnapshot {
+        WorkoutSnapshot(
+            id: id, sport: sport, startedAt: startedAt,
+            distance: distance, duration: duration,
+            elevationGain: elevationGain,
+            avgHeartRate: avgHeartRate, maxHeartRate: maxHeartRate,
+            streamsData: nil
+        )
+    }
+
+    /// Copies scalars and retains the blob without decoding it — but reading
+    /// the blob still faults it in. See `lightSnapshot`.
     var snapshot: WorkoutSnapshot {
         WorkoutSnapshot(
             id: id, sport: sport, startedAt: startedAt,

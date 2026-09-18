@@ -151,6 +151,10 @@ struct SyncEngine {
 
         if !detail.samples.isEmpty {
             workout.streamsData = try? JSONEncoder().encode(detail.samples)
+            // The load cache keys on scalars so that a lookup never faults the
+            // stream in. A stream arriving now changes the score without
+            // changing any of those, so it has to say so.
+            TrainingLoad.ScoreCache.shared.forget(workout.id)
         }
         // The full track beats the decimated summary polyline we already have.
         if !detail.coordinates.isEmpty {
