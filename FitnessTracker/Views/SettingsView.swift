@@ -837,11 +837,15 @@ private struct EstimateRow: View {
 
     private var source: String {
         let when = estimate.date.formatted(date: .abbreviated, time: .omitted)
-        if estimate.windowSeconds > 0 {
-            return "From \(estimate.observed) \(kind.unit) over \(estimate.windowMinutes) min on \(when)"
-                + (current > 0 ? " · currently \(current) \(kind.unit)" : "")
-        }
-        return "Recorded \(when)" + (current > 0 ? " · currently \(current) \(kind.unit)" : "")
+        // Built as whole sentences rather than glued from fragments: a
+        // translator needs to see the shape of the sentence to reorder it, and
+        // several languages can't put a trailing clause where English does.
+        let unit = kind.unit
+        let base = estimate.windowSeconds > 0
+            ? String(localized: "From \(estimate.observed) \(unit) over \(estimate.windowMinutes) min on \(when)")
+            : String(localized: "Recorded \(when)")
+        guard current > 0 else { return base }
+        return base + String(localized: " · currently \(current) \(unit)")
     }
 }
 

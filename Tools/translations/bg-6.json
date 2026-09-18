@@ -1,0 +1,11 @@
+{
+  "%lld yr": "%lld г.",
+  "%lld mo": "%lld мес.",
+  "%lld days": "%lld дни",
+  "From %lld %@ over %lld min on %@": "От %lld %@ за %lld мин на %@",
+  "Recorded %@": "Записано на %@",
+  " · currently %lld %@": " · в момента %lld %@",
+  "1 workout · %@ total": "1 тренировка · %@ общо",
+  "%lld workouts · %@ total": "%lld тренировки · %@ общо",
+  "%lld of %lld · %@": "%lld от %lld · %@"
+}

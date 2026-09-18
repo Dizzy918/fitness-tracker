@@ -230,9 +230,9 @@ struct BodyCompositionView: View {
     private func span(_ pair: (before: ProgressPhoto, after: ProgressPhoto)) -> String {
         let days = Calendar.current.dateComponents(
             [.day], from: pair.before.date, to: pair.after.date).day ?? 0
-        if days >= 365 { return "\(days / 365) yr" }
-        if days >= 60 { return "\(days / 30) mo" }
-        return "\(days) days"
+        if days >= 365 { return String(localized: "\(days / 365) yr") }
+        if days >= 60 { return String(localized: "\(days / 30) mo") }
+        return String(localized: "\(days) days")
     }
 
     private func addMeasurement() {

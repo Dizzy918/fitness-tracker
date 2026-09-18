@@ -244,12 +244,16 @@ struct WorkoutListView: View {
 
     private var headerText: String {
         let shown = filtered.count
-        let distance = filtered.reduce(0) { $0 + $1.distance }
-        let noun = shown == 1 ? "workout" : "workouts"
-        if shown == workouts.count {
-            return "\(shown) \(noun) · \(units.distance(distance, decimals: 0)) total"
+        let total = units.distance(filtered.reduce(0) { $0 + $1.distance }, decimals: 0)
+        guard shown == workouts.count else {
+            return String(localized: "\(shown) of \(workouts.count) · \(total)")
         }
-        return "\(shown) of \(workouts.count) · \(units.distance(distance, decimals: 0))"
+        // Singular and plural are separate keys rather than a noun picked in
+        // code: a translator can't reach a word that was chosen by a ternary,
+        // and "1 workouts" is what you get when nobody can.
+        return shown == 1
+            ? String(localized: "1 workout · \(total) total")
+            : String(localized: "\(shown) workouts · \(total) total")
     }
 
     private var totalDistance: Double {

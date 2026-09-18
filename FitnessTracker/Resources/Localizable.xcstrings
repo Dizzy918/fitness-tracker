@@ -1,6 +1,17 @@
 {
   "sourceLanguage": "en",
   "strings": {
+    " · currently %lld %@": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": " · в момента %lld %@"
+          }
+        }
+      }
+    },
     "\"80/20\" is a convention, not a law — it describes what most successful endurance athletes are measured doing, over a block, not every week.": {
       "extractionState": "extracted_with_value",
       "localizations": {
@@ -177,6 +188,17 @@
         }
       }
     },
+    "%lld days": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld дни"
+          }
+        }
+      }
+    },
     "%lld days · %@ → %@": {
       "extractionState": "extracted_with_value",
       "localizations": {
@@ -210,6 +232,17 @@
         }
       }
     },
+    "%lld mo": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld мес."
+          }
+        }
+      }
+    },
     "%lld of %lld sets": {
       "extractionState": "extracted_with_value",
       "localizations": {
@@ -217,6 +250,17 @@
           "stringUnit": {
             "state": "translated",
             "value": "%lld от %lld серии"
+          }
+        }
+      }
+    },
+    "%lld of %lld · %@": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld от %lld · %@"
           }
         }
       }
@@ -298,6 +342,17 @@
         }
       }
     },
+    "%lld workouts · %@ total": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld тренировки · %@ общо"
+          }
+        }
+      }
+    },
     "%lld worn": {
       "extractionState": "extracted_with_value",
       "localizations": {
@@ -305,6 +360,17 @@
           "stringUnit": {
             "state": "translated",
             "value": "%lld износени"
+          }
+        }
+      }
+    },
+    "%lld yr": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld г."
           }
         }
       }
@@ -415,6 +481,17 @@
           "stringUnit": {
             "state": "translated",
             "value": ".fit файл от часовник…"
+          }
+        }
+      }
+    },
+    "1 workout · %@ total": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "1 тренировка · %@ общо"
           }
         }
       }
@@ -1433,1963 +1510,5415 @@
     },
     "Close": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Затвори"
+          }
+        }
+      }
     },
     "Close the loop": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Затвори кръга"
+          }
+        }
+      }
     },
     "Close, but you arrive with a little fatigue still in the legs. An easier final week would sharpen it.": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Близо е, но пристигаш с малко умора в краката. По-лека последна седмица би те изострила."
+          }
+        }
+      }
     },
     "Comma-separated. Optional — used for searching.": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Разделени със запетая. По избор — използва се за търсене."
+          }
+        }
+      }
     },
     "Compare %@ — %@": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Сравни %@ — %@"
+          }
+        }
+      }
     },
     "Connect Strava or intervals.icu below to enable syncing.": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Свържи Strava или intervals.icu по-долу, за да включиш синхронизацията."
+          }
+        }
+      }
     },
     "Connect a service…": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Свържи услуга…"
+          }
+        }
+      }
     },
     "Connected": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Свързано"
+          }
+        }
+      }
     },
     "Continue": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Продължи"
+          }
+        }
+      }
     },
     "Cool-down": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Разпускане"
+          }
+        }
+      }
     },
     "Core": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Кор"
+          }
+        }
+      }
     },
     "Couldn't add that photo": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Снимката не може да бъде добавена"
+          }
+        }
+      }
     },
     "Couldn't snap that segment to a path — using a straight line.": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Отсечката не можа да се захване за пътека — използва се права линия."
+          }
+        }
+      }
     },
     "Counts as": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Брои се като"
+          }
+        }
+      }
     },
     "Course, conditions, plan…": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Трасе, условия, план…"
+          }
+        }
+      }
     },
     "Coverage": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Покритие"
+          }
+        }
+      }
     },
     "Create a routine": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Създай рутина"
+          }
+        }
+      }
     },
     "Create one…": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Създай…"
+          }
+        }
+      }
     },
     "Create your own API application at strava.com/settings/api (free), set the callback domain to `localhost`, then paste the Client ID and Secret here. Requests the `activity:read_all` scope so private activities sync too.": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Създай собствено API приложение на strava.com/settings/api (безплатно), задай callback домейн `localhost` и постави Client ID и Secret тук. Иска обхват `activity:read_all`, за да се синхронизират и частните активности."
+          }
+        }
+      }
     },
     "Cycling": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Колоездене"
+          }
+        }
+      }
     },
     "Daily Check-in": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Дневна самооценка"
+          }
+        }
+      }
     },
     "Daily check-in": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Дневна самооценка"
+          }
+        }
+      }
     },
     "Dashboard": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Табло"
+          }
+        }
+      }
     },
     "Date": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Дата"
+          }
+        }
+      }
     },
     "Day": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ден"
+          }
+        }
+      }
     },
     "Delete": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Изтрий"
+          }
+        }
+      }
     },
     "Delete this photo?": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Да се изтрие ли тази снимка?"
+          }
+        }
+      }
     },
     "Derived from your best effort converted to a 10 km equivalent. A lab or field test would be more accurate.": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Изведено от най-доброто ти усилие, преобразувано към еквивалент на 10 км. Лабораторен или полеви тест би бил по-точен."
+          }
+        }
+      }
     },
     "Discard": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Отхвърли"
+          }
+        }
+      }
     },
     "Disconnect": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Прекъсни връзката"
+          }
+        }
+      }
     },
     "Distance": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Разстояние"
+          }
+        }
+      }
     },
     "Do a daily check-in to get a readiness score. (Health data is iOS-only.)": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Направи дневна самооценка, за да получиш оценка за готовност. (Данните от Health са само за iOS.)"
+          }
+        }
+      }
     },
     "Document": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Документ"
+          }
+        }
+      }
     },
     "Done": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Готово"
+          }
+        }
+      }
     },
     "Done for today": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Готово за днес"
+          }
+        }
+      }
     },
     "Drop .fit files to import": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Пусни .fit файлове за импортиране"
+          }
+        }
+      }
     },
     "Duration": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Продължителност"
+          }
+        }
+      }
     },
     "Duration curve": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Крива по продължителност"
+          }
+        }
+      }
     },
     "Duration curve, %lld points": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Крива по продължителност, %lld точки"
+          }
+        }
+      }
     },
     "Each side": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "От всяка страна"
+          }
+        }
+      }
     },
     "Each site is compared between its own first and last reading in the window — you probably measure your waist more often than your calves.": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Всяко място се сравнява между собственото си първо и последно измерване в периода — вероятно мериш талията си по-често от прасците."
+          }
+        }
+      }
     },
     "Easy": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Леко"
+          }
+        }
+      }
     },
     "Easy week": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Лека седмица"
+          }
+        }
+      }
     },
     "Edit": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Редактирай"
+          }
+        }
+      }
     },
     "Edit Exercise": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Редактирай упражнение"
+          }
+        }
+      }
     },
     "Edit Plan": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Редактирай план"
+          }
+        }
+      }
     },
     "Edit Route": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Редактирай маршрут"
+          }
+        }
+      }
     },
     "Edit Workout": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Редактирай тренировка"
+          }
+        }
+      }
     },
     "Edit race": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Редактирай състезание"
+          }
+        }
+      }
     },
     "Edit steps": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Редактирай стъпките"
+          }
+        }
+      }
     },
     "Effort": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Усилие"
+          }
+        }
+      }
     },
     "Elevation": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Надморска височина"
+          }
+        }
+      }
     },
     "Elevation profile": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Профил на височината"
+          }
+        }
+      }
     },
     "End": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Край"
+          }
+        }
+      }
     },
     "Enter hours manually": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Въведи часовете ръчно"
+          }
+        }
+      }
     },
     "Estimate from my training": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Оцени от моите тренировки"
+          }
+        }
+      }
     },
     "Estimate thresholds": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Оцени праговете"
+          }
+        }
+      }
     },
     "Estimated 1RM": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Оценен 1ПМ"
+          }
+        }
+      }
     },
     "Estimated by your watch from heart rate against pace. It moves slowly and noisily, so read the direction over months rather than any single reading.": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Оценено от часовника ти по пулс спрямо темпо. Движи се бавно и шумно, затова чети посоката през месеци, а не отделно измерване."
+          }
+        }
+      }
     },
     "Estimated from duration": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Оценено по продължителност"
+          }
+        }
+      }
     },
     "Estimated from your highest recorded HR. Set your real max in Settings for accurate zones.": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Оценено по най-високия ти записан пулс. Задай реалния максимум в Настройки за точни зони."
+          }
+        }
+      }
     },
     "Evening check-in": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Вечерна самооценка"
+          }
+        }
+      }
     },
     "Every duration": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Всяка продължителност"
+          }
+        }
+      }
     },
     "Everything else — arms, calves, rehab": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Всичко останало — ръце, прасци, рехабилитация"
+          }
+        }
+      }
     },
     "Everything is stored on this device. Turn sync on to share it with your other devices.": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Всичко се съхранява на това устройство. Включи синхронизацията, за да го споделиш с другите си устройства."
+          }
+        }
+      }
     },
     "Exercise": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Упражнение"
+          }
+        }
+      }
     },
     "Exercise library": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Библиотека с упражнения"
+          }
+        }
+      }
     },
     "Exercises": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Упражнения"
+          }
+        }
+      }
     },
     "Exercises run in order, resting after every set.": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Упражненията се изпълняват по ред, с почивка след всяка серия."
+          }
+        }
+      }
     },
     "Expected %@ %@ — check the decimal point": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Очаква се %@ %@ — провери десетичната запетая"
+          }
+        }
+      }
     },
     "Export": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Експорт"
+          }
+        }
+      }
     },
     "Export GPX to watch or app": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Експортирай GPX към часовник или приложение"
+          }
+        }
+      }
     },
     "Export everything…": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Експортирай всичко…"
+          }
+        }
+      }
     },
     "Export ready": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Експортът е готов"
+          }
+        }
+      }
     },
     "Export summary only…": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Експортирай само обобщение…"
+          }
+        }
+      }
     },
     "Export workouts as CSV…": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Експортирай тренировките като CSV…"
+          }
+        }
+      }
     },
     "Extraction failed": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Извличането е неуспешно"
+          }
+        }
+      }
     },
     "FTP": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "FTP"
+          }
+        }
+      }
     },
     "FTP unlocks Intensity Factor, TSS and power-based training load on rides. Body weight adds W/kg. Both are optional — average and normalized power work without them.": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "FTP отключва Intensity Factor, TSS и натоварване по мощност при каране. Телесното тегло добавя W/кг. И двете са по избор — средната и нормализираната мощност работят без тях."
+          }
+        }
+      }
     },
     "Fatigue": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Умора"
+          }
+        }
+      }
     },
     "Fatigue %lld": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Умора %lld"
+          }
+        }
+      }
     },
     "Filter": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Филтър"
+          }
+        }
+      }
     },
     "Finish time": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Време на финиширане"
+          }
+        }
+      }
     },
     "Fitness": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Форма"
+          }
+        }
+      }
     },
     "Fitness %lld": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Форма %lld"
+          }
+        }
+      }
     },
     "Fitness & fatigue": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Форма и умора"
+          }
+        }
+      }
     },
     "Fitness and fatigue over the last %lld days": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Форма и умора през последните %lld дни"
+          }
+        }
+      }
     },
     "Folder": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Папка"
+          }
+        }
+      }
     },
     "Form": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Форма на деня"
+          }
+        }
+      }
     },
     "Form notes": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Бележки за техниката"
+          }
+        }
+      }
     },
     "Four taps. Sharpens the score.": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Четири докосвания. Прави оценката по-точна."
+          }
+        }
+      }
     },
     "Free hit": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Свободен ден"
+          }
+        }
+      }
     },
     "Fresh": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Свеж"
+          }
+        }
+      }
     },
     "Fresh, but this much rest costs fitness as well as fatigue. Keeping a couple of short, sharp sessions in the last week holds more of it.": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Свеж, но толкова почивка струва не само умора, а и форма. Няколко кратки и остри тренировки в последната седмица задържат повече от нея."
+          }
+        }
+      }
+    },
+    "From %lld %@ over %lld min on %@": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "От %lld %@ за %lld мин на %@"
+          }
+        }
+      }
     },
     "From average heart rate": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "От среден пулс"
+          }
+        }
+      }
     },
     "From heart-rate stream": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "От поток на пулса"
+          }
+        }
+      }
     },
     "From pace vs threshold": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "От темпо спрямо прага"
+          }
+        }
+      }
     },
     "From power": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "От мощност"
+          }
+        }
+      }
     },
     "Front": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Отпред"
+          }
+        }
+      }
     },
     "Go easier": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Карай по-леко"
+          }
+        }
+      }
     },
     "Goal pace": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Целево темпо"
+          }
+        }
+      }
     },
     "Goal race": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Основно състезание"
+          }
+        }
+      }
     },
     "Goal time": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Целево време"
+          }
+        }
+      }
     },
     "Good to go": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Готов си"
+          }
+        }
+      }
     },
     "Grey zone": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Сива зона"
+          }
+        }
+      }
     },
     "HR": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Пулс"
+          }
+        }
+      }
     },
     "HRV": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "HRV"
+          }
+        }
+      }
     },
     "HRV (SDNN)": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "HRV (SDNN)"
+          }
+        }
+      }
     },
     "Hard": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Тежко"
+          }
+        }
+      }
     },
     "Health data is iOS-only, so on this Mac these have to be entered by hand. HRV and resting heart rate are half the readiness score's weight.": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Данните от Health са само за iOS, затова на този Mac трябва да се въвеждат ръчно. HRV и пулсът в покой са половината от тежестта на оценката за готовност."
+          }
+        }
+      }
     },
     "Heart rate": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Пулс"
+          }
+        }
+      }
     },
     "Heart-rate zone %lld": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Пулсова зона %lld"
+          }
+        }
+      }
     },
     "Heart-rate zones": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Пулсови зони"
+          }
+        }
+      }
     },
     "Hike": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Преход"
+          }
+        }
+      }
     },
     "Hinge": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Тазов сгъв"
+          }
+        }
+      }
     },
     "Hip-dominant, loaded posterior chain": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "С акцент на таза, натоварена задна верига"
+          }
+        }
+      }
     },
     "Hips": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ханш"
+          }
+        }
+      }
     },
     "History": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "История"
+          }
+        }
+      }
     },
     "Hours": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Часове"
+          }
+        }
+      }
     },
     "How did you sleep?": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Как спа?"
+          }
+        }
+      }
     },
     "How do you feel today?": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Как се чувстваш днес?"
+          }
+        }
+      }
     },
     "How does your body feel?": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Как се чувства тялото ти?"
+          }
+        }
+      }
     },
     "How you feel": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Как се чувстваш"
+          }
+        }
+      }
     },
     "I'll do it later": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ще го направя по-късно"
+          }
+        }
+      }
     },
     "If you've seen a higher number on a hard effort, use that instead — this estimate is ±10 bpm at best.": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ако си виждал по-високо число при тежко усилие, използвай него — тази оценка е ±10 уд/мин в най-добрия случай."
+          }
+        }
+      }
     },
     "Image missing": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Липсва изображение"
+          }
+        }
+      }
     },
     "Imperial": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Имперски"
+          }
+        }
+      }
     },
     "Import": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Импортирай"
+          }
+        }
+      }
     },
     "Import %lld": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Импортирай %lld"
+          }
+        }
+      }
     },
     "Import .fit files…": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Импортирай .fit файлове…"
+          }
+        }
+      }
     },
     "Import .fit…": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Импортирай .fit…"
+          }
+        }
+      }
     },
     "Import GPX…": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Импортирай GPX…"
+          }
+        }
+      }
     },
     "Import a .fit file from your Suunto — or drag a folder's worth onto this window — connect Strava or intervals.icu, read a PDF with AI, or seed demo data to explore the app.": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Импортирай .fit файл от Suunto — или довлачи цяла папка върху този прозорец — свържи Strava или intervals.icu, прочети PDF с ИИ, или зареди демо данни, за да разгледаш приложението."
+          }
+        }
+      }
     },
     "Import from Health": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Импортирай от Health"
+          }
+        }
+      }
     },
     "Import from Health or do a daily check-in to get a readiness score.": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Импортирай от Health или направи дневна самооценка, за да получиш оценка за готовност."
+          }
+        }
+      }
     },
     "Import or log some training and the projection will appear here.": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Импортирай или запиши тренировки и прогнозата ще се появи тук."
+          }
+        }
+      }
     },
     "Import workouts or seed demo data first.": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Първо импортирай тренировки или зареди демо данни."
+          }
+        }
+      }
     },
     "Imported": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Импортирано"
+          }
+        }
+      }
     },
     "Importing…": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Импортиране…"
+          }
+        }
+      }
     },
     "Include the route": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Включи маршрута"
+          }
+        }
+      }
     },
     "Intensity": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Интензивност"
+          }
+        }
+      }
     },
     "Intensity %@": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Интензивност %@"
+          }
+        }
+      }
     },
     "Intensity distribution": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Разпределение на интензивността"
+          }
+        }
+      }
     },
     "Kind": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Вид"
+          }
+        }
+      }
     },
     "Knee-dominant, upright torso": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "С акцент на коляното, изправен торс"
+          }
+        }
+      }
     },
     "LOAD %lld": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "НАТОВАРВАНЕ %lld"
+          }
+        }
+      }
     },
     "Laps": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Обиколки"
+          }
+        }
+      }
     },
     "Left alone, it's estimated from the duration using the same per-sport assumption the load model makes for an unmeasured session — so a planned week and a completed one compare on one scale. Set it yourself for a session you know is harder or easier than that.": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ако не се пипа, се оценява по продължителността със същото допускане за спорта, което моделът прави за неизмерена тренировка — така планираната и завършената седмица се сравняват по една скала. Задай го сам за тренировка, за която знаеш, че е по-тежка или по-лека."
+          }
+        }
+      }
     },
     "Lifetime distance": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Общо разстояние"
+          }
+        }
+      }
     },
     "Load": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Натоварване"
+          }
+        }
+      }
     },
     "Loaded carries and holds": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Носене и задържане с тежест"
+          }
+        }
+      }
     },
     "Log Workout": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Запиши тренировка"
+          }
+        }
+      }
     },
     "Log a working set for %@.": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Запиши работна серия за %@."
+          }
+        }
+      }
     },
     "Log a workout by hand…": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Запиши тренировка ръчно…"
+          }
+        }
+      }
     },
     "Log one by hand…": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Запиши една ръчно…"
+          }
+        }
+      }
     },
     "Looking up…": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Търсене…"
+          }
+        }
+      }
     },
     "Loop route": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Кръгов маршрут"
+          }
+        }
+      }
     },
     "Losing fitness": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Губиш форма"
+          }
+        }
+      }
     },
     "Low confidence — verify against the PDF": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ниска увереност — провери спрямо PDF-а"
+          }
+        }
+      }
     },
     "Max HR drives zone boundaries (50/60/70/80/90% of max). Use a figure from a real max-effort test if you have one — age formulas are rough. Resting HR sharpens training load: stress is scored against heart-rate *reserve*, not raw bpm. Leave it blank on iOS and Health's measured value is used instead.": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Максималният пулс определя границите на зоните (50/60/70/80/90% от максимума). Използвай стойност от реален тест за максимално усилие, ако имаш — формулите по възраст са груби. Пулсът в покой прави натоварването по-точно: стресът се оценява спрямо пулсовия *резерв*, не спрямо суровите удари. Остави го празно на iOS и ще се използва измерената стойност от Health."
+          }
+        }
+      }
     },
     "Max heart rate": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Максимален пулс"
+          }
+        }
+      }
     },
     "Maximum": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Максимум"
+          }
+        }
+      }
     },
     "Measurements": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Измервания"
+          }
+        }
+      }
     },
     "Metric": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Метрични"
+          }
+        }
+      }
     },
     "Milestones": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Етапи"
+          }
+        }
+      }
     },
     "Minutes": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Минути"
+          }
+        }
+      }
     },
     "Mixed time and distance steps, so there's no single total until it's run.": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Смесени стъпки по време и разстояние, така че няма общ сбор, докато не се изпълни."
+          }
+        }
+      }
     },
     "Mode": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Режим"
+          }
+        }
+      }
     },
     "Model": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Модел"
+          }
+        }
+      }
     },
     "Moderate": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Умерено"
+          }
+        }
+      }
     },
     "Most of those days have nothing planned, so this assumes you rest through them.": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "През повечето от тези дни няма нищо планирано, затова се приема, че почиваш."
+          }
+        }
+      }
     },
     "Name": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Име"
+          }
+        }
+      }
     },
     "Name (optional)": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Име (по избор)"
+          }
+        }
+      }
     },
     "Name, e.g. Berlin Marathon": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Име, напр. Маратон Берлин"
+          }
+        }
+      }
     },
     "Name, e.g. Push Day A": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Име, напр. Бутане ден A"
+          }
+        }
+      }
     },
     "Neck": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Врат"
+          }
+        }
+      }
     },
     "Need at least two road runs.": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Нужни са поне две шосейни бягания."
+          }
+        }
+      }
     },
     "Needed to read workouts out of PDFs. Get a key from console.anthropic.com. Stored in the Keychain on this device — extraction calls the API directly, so the key stays local and usage is billed to your account.": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Нужен е, за да се четат тренировки от PDF. Вземи ключ от console.anthropic.com. Пази се в Keychain на това устройство — извличането вика API-то директно, така че ключът остава локален, а потреблението се таксува на твоя акаунт."
+          }
+        }
+      }
     },
     "Needs rides with a power meter. Power comes from a .fit import or a synced activity with streams.": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Нужни са каране с измервател на мощност. Мощността идва от .fit импорт или синхронизирана активност с потоци."
+          }
+        }
+      }
     },
     "Needs runs with per-second data, from a .fit import or a synced activity with streams.": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Нужни са бягания с данни по секунди, от .fit импорт или синхронизирана активност с потоци."
+          }
+        }
+      }
     },
     "Neutral": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Неутрално"
+          }
+        }
+      }
     },
     "New Exercise": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ново упражнение"
+          }
+        }
+      }
     },
     "New exercise…": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ново упражнение…"
+          }
+        }
+      }
     },
     "New routine": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Нова рутина"
+          }
+        }
+      }
     },
     "New session": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Нова тренировка"
+          }
+        }
+      }
     },
     "Next up": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Следва"
+          }
+        }
+      }
     },
     "Nickname (optional)": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Прякор (по избор)"
+          }
+        }
+      }
     },
     "No efforts long enough to read a threshold from yet. These need a 20-minute stretch of recorded power or heart rate.": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Още няма достатъчно дълги усилия, от които да се отчете праг. Нужни са 20 минути непрекъснато записана мощност или пулс."
+          }
+        }
+      }
     },
     "No exercises yet": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Още няма упражнения"
+          }
+        }
+      }
     },
     "No exercises yet — create one to log a set against.": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Още няма упражнения — създай едно, за да записваш серии."
+          }
+        }
+      }
     },
     "No heart rate": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Няма пулс"
+          }
+        }
+      }
     },
     "No heart-rate data yet": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Още няма данни за пулс"
+          }
+        }
+      }
     },
     "No lifts logged": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Няма записани вдигания"
+          }
+        }
+      }
     },
     "No races": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Няма състезания"
+          }
+        }
+      }
     },
     "No routes yet": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Още няма маршрути"
+          }
+        }
+      }
     },
     "No routines": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Няма рутини"
+          }
+        }
+      }
     },
     "No runs assigned yet.": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Още няма зададени бягания."
+          }
+        }
+      }
     },
     "No scored sessions yet.": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Още няма оценени тренировки."
+          }
+        }
+      }
     },
     "No sets yet": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Още няма серии"
+          }
+        }
+      }
     },
     "No shoes yet": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Още няма обувки"
+          }
+        }
+      }
     },
     "No steps yet": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Още няма стъпки"
+          }
+        }
+      }
     },
     "No stream data yet. Best efforts need per-second data from a .fit import or Strava sync.": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Още няма данни от потоци. Най-добрите усилия изискват данни по секунди от .fit импорт или синхронизация със Strava."
+          }
+        }
+      }
     },
     "No taper — this one is a hard training day with a number on your chest.": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Без намаляване — това е тежък тренировъчен ден с номер на гърдите."
+          }
+        }
+      }
     },
     "No target": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Без цел"
+          }
+        }
+      }
     },
     "No track or route points found in that GPX file.": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "В този GPX файл не са открити точки от следа или маршрут."
+          }
+        }
+      }
     },
     "No workouts match. Clear the search or filter.": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Няма съвпадащи тренировки. Изчисти търсенето или филтъра."
+          }
+        }
+      }
     },
     "No workouts yet": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Още няма тренировки"
+          }
+        }
+      }
     },
     "None": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Няма"
+          }
+        }
+      }
     },
     "Normal training": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Нормална тренировка"
+          }
+        }
+      }
     },
     "Not enough data to import": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Няма достатъчно данни за импортиране"
+          }
+        }
+      }
     },
     "Not enough data yet": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Още няма достатъчно данни"
+          }
+        }
+      }
     },
     "Not enough to go on": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Няма достатъчно, на което да се стъпи"
+          }
+        }
+      }
     },
     "Not set": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Не е зададено"
+          }
+        }
+      }
     },
     "Not yet in Health": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Още не е в Health"
+          }
+        }
+      }
     },
     "Notes": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Бележки"
+          }
+        }
+      }
     },
     "Nothing measured yet": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Още нищо не е измерено"
+          }
+        }
+      }
     },
     "Nothing to chart yet": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Още няма какво да се начертае"
+          }
+        }
+      }
     },
     "Nothing to plot yet": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Още няма какво да се нанесе"
+          }
+        }
+      }
     },
     "Notifications are turned off for this app in System Settings.": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Известията за това приложение са изключени в Системни настройки."
+          }
+        }
+      }
     },
     "OK": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Добре"
+          }
+        }
+      }
     },
     "On the bar": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "На лоста"
+          }
+        }
+      }
     },
     "On this plan you arrive tired. Cutting volume over the last two weeks — while keeping some intensity — sheds fatigue much faster than it sheds fitness.": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "С този план пристигаш уморен. Намаляването на обема през последните две седмици — при запазена интензивност — сваля умората много по-бързо, отколкото формата."
+          }
+        }
+      }
     },
     "One cue that keeps the rep honest": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Една подсказка, която пази повторението честно"
+          }
+        }
+      }
     },
     "Only %lld%% of sessions in this window had heart rate, so this describes that slice rather than your training as a whole.": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Само %lld%% от тренировките в този период имаха пулс, така че това описва тази част, а не тренировките ти като цяло."
+          }
+        }
+      }
     },
     "Optional — import from Health instead if your watch records them. HRV and resting heart rate are half the readiness score's weight.": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "По избор — вместо това импортирай от Health, ако часовникът ти ги записва. HRV и пулсът в покой са половината от тежестта на оценката за готовност."
+          }
+        }
+      }
     },
     "Optional, but an average heart rate is what lets this session be scored for training load rather than estimated from its duration.": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "По избор, но средният пулс е това, което позволява тренировката да се оцени по натоварване, вместо да се оценява по продължителност."
+          }
+        }
+      }
     },
     "Optional. Used to show the pace the goal implies.": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "По избор. Използва се, за да покаже темпото, което целта предполага."
+          }
+        }
+      }
     },
     "Other": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Друго"
+          }
+        }
+      }
     },
     "Other services": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Други услуги"
+          }
+        }
+      }
     },
     "Over goal": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Над целта"
+          }
+        }
+      }
     },
     "Over-tapered": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Прекалено намалено"
+          }
+        }
+      }
     },
     "Overreaching": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Преумора"
+          }
+        }
+      }
     },
     "PDF Import": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Импорт от PDF"
+          }
+        }
+      }
     },
     "Pace": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Темпо"
+          }
+        }
+      }
     },
     "Pattern": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Модел на движение"
+          }
+        }
+      }
     },
     "Per side": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "От страна"
+          }
+        }
+      }
     },
     "Personal records": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Лични рекорди"
+          }
+        }
+      }
     },
     "Photos": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Снимки"
+          }
+        }
+      }
     },
     "Pick a PDF — a coach's plan, a race result, a training log export — and Claude will pull the workouts out. You review everything before anything is saved.": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Избери PDF — план от треньор, резултат от състезание, експорт на тренировъчен дневник — и Claude ще извлече тренировките. Ти преглеждаш всичко, преди нещо да се запази."
+          }
+        }
+      }
     },
     "Plan": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "План"
+          }
+        }
+      }
     },
     "Plan Route": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Планирай маршрут"
+          }
+        }
+      }
     },
     "Plan a Session": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Планирай тренировка"
+          }
+        }
+      }
     },
     "Plan a route": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Планирай маршрут"
+          }
+        }
+      }
     },
     "Plan a route on the map, or import a GPX file. Export sends it to your watch.": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Планирай маршрут на картата или импортирай GPX файл. Експортът го изпраща към часовника ти."
+          }
+        }
+      }
     },
     "Plan on map": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Планирай на картата"
+          }
+        }
+      }
     },
     "Planned volume": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Планиран обем"
+          }
+        }
+      }
     },
     "Plans a %lld-day taper before this date.": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Планира %lld-дневно намаляване преди тази дата."
+          }
+        }
+      }
     },
     "Plates": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Дискове"
+          }
+        }
+      }
     },
     "Point this at the folder your watch app exports to and new `.fit` files are imported whenever you open the app. It's checked on activation rather than continuously — and re-importing is free, since files dedupe on their contents.": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Насочи това към папката, в която приложението на часовника ти експортира, и новите `.fit` файлове се импортират при всяко отваряне на приложението. Проверява се при активиране, а не непрекъснато — а повторното импортиране е безплатно, защото файловете се разпознават по съдържание."
+          }
+        }
+      }
     },
     "Polarized": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Поляризирано"
+          }
+        }
+      }
     },
     "Pose": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Поза"
+          }
+        }
+      }
     },
     "Power": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Мощност"
+          }
+        }
+      }
     },
     "Predicted times": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Прогнозни времена"
+          }
+        }
+      }
     },
     "Preset": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Предварително зададено"
+          }
+        }
+      }
     },
     "Pressing, horizontal or vertical": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Бутане, хоризонтално или вертикално"
+          }
+        }
+      }
     },
     "Primary muscles": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Основни мускули"
+          }
+        }
+      }
     },
     "Primed": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Заредено"
+          }
+        }
+      }
     },
     "Priority": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Приоритет"
+          }
+        }
+      }
     },
     "Productive": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Продуктивно"
+          }
+        }
+      }
     },
     "Progress": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Напредък"
+          }
+        }
+      }
     },
     "Pull": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Дърпане"
+          }
+        }
+      }
     },
     "Push": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Бутане"
+          }
+        }
+      }
     },
     "Quit and reopen the app to apply this.": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Затвори и отвори приложението отново, за да се приложи."
+          }
+        }
+      }
     },
     "RPE": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "RPE"
+          }
+        }
+      }
     },
     "RPE %@": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "RPE %@"
+          }
+        }
+      }
     },
     "Race": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Състезание"
+          }
+        }
+      }
     },
     "Race countdown": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Обратно броене до състезание"
+          }
+        }
+      }
     },
     "Read a PDF with AI…": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Прочети PDF с ИИ…"
+          }
+        }
+      }
     },
     "Read workouts from a PDF": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Прочети тренировки от PDF"
+          }
+        }
+      }
     },
     "Readiness %lld out of 100, %@": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Готовност %lld от 100, %@"
+          }
+        }
+      }
     },
     "Readiness is a heuristic over your own recent trends — not a medical measurement. Treat it as one input alongside how you actually feel.": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Готовността е евристика върху собствените ти скорошни тенденции — не медицинско измерване. Приемай я като един показател редом с това как реално се чувстваш."
+          }
+        }
+      }
     },
     "Reading": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Показание"
+          }
+        }
+      }
     },
     "Reading %@…": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Четене на %@…"
+          }
+        }
+      }
     },
     "Reading your efforts…": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Четене на усилията ти…"
+          }
+        }
+      }
     },
     "Reads your best 20-minute efforts from the last year. Every figure is a convention applied to your own training, not a lab test — each row says what it rests on, and nothing is applied until you tap it.": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Чете най-добрите ти 20-минутни усилия от последната година. Всяко число е конвенция, приложена към твоите тренировки, не лабораторен тест — всеки ред казва на какво стъпва и нищо не се прилага, докато не го докоснеш."
+          }
+        }
+      }
+    },
+    "Recorded %@": {
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Записано на %@"
+          }
+        }
+      }
     },
     "Recorded a distance": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Записано разстояние"
+          }
+        }
+      }
     },
     "Records": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Рекорди"
+          }
+        }
+      }
     },
     "Recovery": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Възстановяване"
+          }
+        }
+      }
     },
     "Recovery, warmup and cooldown laps are dimmed and excluded from the fastest-lap comparison.": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Обиколките за възстановяване, загряване и разпускане са затъмнени и изключени от сравнението за най-бърза обиколка."
+          }
+        }
+      }
     },
     "Refresh elevation": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Обнови височината"
+          }
+        }
+      }
     },
     "Reminders": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Напомняния"
+          }
+        }
+      }
     },
     "Remove all stored credentials": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Премахни всички запазени идентификационни данни"
+          }
+        }
+      }
     },
     "Repeat": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Повторение"
+          }
+        }
+      }
     },
     "Reps: %lld": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Повторения: %lld"
+          }
+        }
+      }
     },
     "Rest": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Почивка"
+          }
+        }
+      }
     },
     "Rest's up": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Почивката свърши"
+          }
+        }
+      }
     },
     "Rest: %@": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Почивка: %@"
+          }
+        }
+      }
     },
     "Resting": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Почиваш"
+          }
+        }
+      }
     },
     "Resting HR": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Пулс в покой"
+          }
+        }
+      }
     },
     "Resting heart rate": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Пулс в покой"
+          }
+        }
+      }
     },
     "Restore from a backup…": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Възстанови от резервно копие…"
+          }
+        }
+      }
     },
     "Rests %@ after this set.": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Почива %@ след тази серия."
+          }
+        }
+      }
     },
     "Result": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Резултат"
+          }
+        }
+      }
     },
     "Retire this pair": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Пенсионирай този чифт"
+          }
+        }
+      }
     },
     "Retired": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Пенсионирани"
+          }
+        }
+      }
     },
     "Riegel extrapolation from your longest best effort. Marked entries extrapolate a long way and tend to be optimistic — marathon predictions especially assume endurance you may not have trained.": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Екстраполация по Riegel от най-дългото ти най-добро усилие. Отбелязаните редове екстраполират надалеч и са склонни към оптимизъм — прогнозите за маратон особено предполагат издръжливост, която може да не си тренирал."
+          }
+        }
+      }
     },
     "Road pace trend": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Тенденция в шосейното темпо"
+          }
+        }
+      }
     },
     "Route name": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Име на маршрута"
+          }
+        }
+      }
     },
     "Routes": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Маршрути"
+          }
+        }
+      }
     },
     "Routines": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Рутини"
+          }
+        }
+      }
     },
     "Rowing and pulling, horizontal or vertical": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Гребане и дърпане, хоризонтално или вертикално"
+          }
+        }
+      }
     },
     "Run": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Бягане"
+          }
+        }
+      }
     },
     "Runs": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Бягания"
+          }
+        }
+      }
     },
     "Runs until you press lap on the watch.": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Продължава, докато не натиснеш обиколка на часовника."
+          }
+        }
+      }
     },
     "SWOLF adds length time and stroke count — lower means more efficient.": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "SWOLF събира времето за дължина и броя загребвания — по-ниско значи по-ефективно."
+          }
+        }
+      }
     },
     "Save": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Запази"
+          }
+        }
+      }
     },
     "Save a session once — the exercises, sets, reps and rest — and start it with one tap on the day.": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Запази тренировка веднъж — упражненията, сериите, повторенията и почивката — и я започни с едно докосване в деня."
+          }
+        }
+      }
     },
     "Scan now": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Сканирай сега"
+          }
+        }
+      }
     },
     "Scanning workouts…": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Сканиране на тренировките…"
+          }
+        }
+      }
     },
     "Scheduled": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Планирани"
+          }
+        }
+      }
     },
     "Search name, pattern, or muscle": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Търси по име, модел или мускул"
+          }
+        }
+      }
     },
     "Search notes, sport, or source": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Търси в бележки, спорт или източник"
+          }
+        }
+      }
     },
     "Season": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Сезон"
+          }
+        }
+      }
     },
     "Seed demo data": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Зареди демо данни"
+          }
+        }
+      }
     },
     "Select…": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Избери…"
+          }
+        }
+      }
     },
     "Send to watch…": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Изпрати към часовник…"
+          }
+        }
+      }
     },
     "Sends this route's coordinates to OpenTopoData's public service to read ground elevation. Imported GPX that already carries elevation doesn't need this.": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Изпраща координатите на маршрута към публичната услуга на OpenTopoData, за да прочете надморската височина. Импортиран GPX, който вече носи височина, няма нужда от това."
+          }
+        }
+      }
     },
     "Series": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Серия"
+          }
+        }
+      }
     },
     "Session": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Тренировка"
+          }
+        }
+      }
     },
     "Session reminders": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Напомняния за тренировка"
+          }
+        }
+      }
     },
     "Sessions": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Тренировки"
+          }
+        }
+      }
     },
     "Sessions counted": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Преброени тренировки"
+          }
+        }
+      }
     },
     "Set the load myself": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Задай натоварването сам"
+          }
+        }
+      }
     },
     "Set up exercises…": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Настрой упражненията…"
+          }
+        }
+      }
     },
     "Set your FTP in Settings to get Intensity Factor and TSS.": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Задай FTP в Настройки, за да получиш Intensity Factor и TSS."
+          }
+        }
+      }
     },
     "Sets": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Серии"
+          }
+        }
+      }
     },
     "Sets are logged against an exercise, so start by setting up your library.": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Сериите се записват към упражнение, затова започни с изграждането на библиотеката."
+          }
+        }
+      }
     },
     "Sets are logged against an exercise, so you need at least one. Start from the built-in list and edit it, or add your own.": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Сериите се записват към упражнение, така че ти трябва поне едно. Започни от вградения списък и го редактирай, или добави свои."
+          }
+        }
+      }
     },
     "Sets: %lld": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Серии: %lld"
+          }
+        }
+      }
     },
     "Settings": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Настройки"
+          }
+        }
+      }
     },
     "Share": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Сподели"
+          }
+        }
+      }
     },
     "Sharp": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Остър"
+          }
+        }
+      }
     },
     "Shoe": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Обувки"
+          }
+        }
+      }
     },
     "Shoe alerts": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Известия за обувки"
+          }
+        }
+      }
     },
     "Shoes": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Обувки"
+          }
+        }
+      }
     },
     "Shoes & gear": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Обувки и екипировка"
+          }
+        }
+      }
     },
     "Shoulders": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Рамене"
+          }
+        }
+      }
     },
     "Shown when you pick this exercise while logging a set.": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Показва се, когато избереш това упражнение при записване на серия."
+          }
+        }
+      }
     },
     "Side": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Отстрани"
+          }
+        }
+      }
     },
     "Site": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Място"
+          }
+        }
+      }
     },
     "Skip": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Пропусни"
+          }
+        }
+      }
     },
     "Sleep": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Сън"
+          }
+        }
+      }
     },
     "Slightly heavy": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Леко натежал"
+          }
+        }
+      }
     },
     "Snap to paths": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Захвани за пътеки"
+          }
+        }
+      }
     },
     "Split": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Отсечка"
+          }
+        }
+      }
     },
     "Splits": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Отсечки"
+          }
+        }
+      }
     },
     "Sport": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Спорт"
+          }
+        }
+      }
     },
     "Squat": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Клек"
+          }
+        }
+      }
     },
     "Start": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Старт"
+          }
+        }
+      }
     },
     "Start a session": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Започни тренировка"
+          }
+        }
+      }
     },
     "Start a session and add your first set.": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Започни тренировка и добави първата си серия."
+          }
+        }
+      }
     },
     "Start from a steady session": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Започни от равномерна тренировка"
+          }
+        }
+      }
     },
     "Start from an interval session": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Започни от интервална тренировка"
+          }
+        }
+      }
     },
     "Started": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Започнато"
+          }
+        }
+      }
     },
     "Status": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Състояние"
+          }
+        }
+      }
     },
     "Steps": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Стъпки"
+          }
+        }
+      }
     },
     "Steps can be sent to your watch as a .fit workout, so the session runs itself rather than being a name you have to remember.": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Стъпките могат да се изпратят към часовника като .fit тренировка, така че тренировката се води сама, вместо да е име, което трябва да помниш."
+          }
+        }
+      }
     },
     "Still to do": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Остава да се направи"
+          }
+        }
+      }
     },
     "Still warming up — the 42-day average needs about three weeks of history before it settles.": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Още се загрява — 42-дневната средна има нужда от около три седмици история, преди да се установи."
+          }
+        }
+      }
     },
     "Stop watching": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Спри наблюдението"
+          }
+        }
+      }
     },
     "Stored on this device only — they go into an encrypted backup if you make one, and nowhere else.": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Съхраняват се само на това устройство — влизат в криптирано резервно копие, ако направиш такова, и никъде другаде."
+          }
+        }
+      }
     },
     "Straight into the next exercise — the rest comes at the end of the round.": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Направо към следващото упражнение — почивката идва в края на кръга."
+          }
+        }
+      }
     },
     "Strava": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Strava"
+          }
+        }
+      }
     },
     "Strength": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Сила"
+          }
+        }
+      }
     },
     "Structure": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Структура"
+          }
+        }
+      }
     },
     "Superset": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Суперсерия"
+          }
+        }
+      }
     },
     "Superset exercises alternate: a set of each, then rest.": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Упражненията в суперсерия се редуват: по една серия от всяко, после почивка."
+          }
+        }
+      }
     },
     "Superset the last two": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Направи последните две суперсерия"
+          }
+        }
+      }
     },
     "Sustainable": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Устойчиво"
+          }
+        }
+      }
     },
     "Sweeping every effort…": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Преглед на всяко усилие…"
+          }
+        }
+      }
     },
     "Swim": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Плуване"
+          }
+        }
+      }
     },
     "Sync": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Синхронизация"
+          }
+        }
+      }
     },
     "Sync connected services": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Синхронизирай свързаните услуги"
+          }
+        }
+      }
     },
     "Sync now": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Синхронизирай сега"
+          }
+        }
+      }
     },
     "Sync turned off": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Синхронизацията е изключена"
+          }
+        }
+      }
     },
     "Sync with iCloud": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Синхронизирай с iCloud"
+          }
+        }
+      }
     },
     "Syncing with iCloud": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Синхронизира се с iCloud"
+          }
+        }
+      }
     },
     "Syncing…": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Синхронизиране…"
+          }
+        }
+      }
     },
     "Take it easy": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Карай леко"
+          }
+        }
+      }
     },
     "Taken": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Направена"
+          }
+        }
+      }
     },
     "Taper starts": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Намаляването започва"
+          }
+        }
+      }
     },
     "Target": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Цел"
+          }
+        }
+      }
     },
     "Target a distance": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Цел по разстояние"
+          }
+        }
+      }
     },
     "Target a duration": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Цел по продължителност"
+          }
+        }
+      }
     },
     "That file isn't readable GPX.": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Този файл не е четим GPX."
+          }
+        }
+      }
     },
     "The elevation service had no data for this route. That usually means it's outside the dataset's coverage (roughly 60°N to 56°S).": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Услугата за надморска височина няма данни за този маршрут. Обикновено това значи, че е извън покритието на набора данни (приблизително от 60°N до 56°S)."
+          }
+        }
+      }
     },
     "The elevation service is rate-limited right now. Try again in a minute.": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Услугата за надморска височина е ограничена в момента. Опитай отново след минута."
+          }
+        }
+      }
     },
     "The elevation service returned an error (HTTP %lld).": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Услугата за надморска височина върна грешка (HTTP %lld)."
+          }
+        }
+      }
     },
     "The fitness and fatigue curves say what shape you're in today. Give them a date to aim at and they'll say what shape you'll be in on the day.": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Кривите на формата и умората казват в каква форма си днес. Дай им дата, към която да се стремят, и ще кажат в каква форма ще си в деня."
+          }
+        }
+      }
     },
     "The full export is plain JSON and includes GPS tracks and sensor streams, so it can be restored exactly — and it's large. The summary leaves those out. Restoring merges into what's already here; it never deletes anything.": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Пълният експорт е обикновен JSON и включва GPS следи и потоци от сензори, така че може да се възстанови точно — и е голям. Обобщението ги пропуска. Възстановяването се слива с това, което вече е тук; никога не изтрива нищо."
+          }
+        }
+      }
     },
     "The route is drawn from your own recording — no map tiles, no third party. It still traces wherever you started, so it's off unless you turn it on.": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Маршрутът е начертан от твоя собствен запис — без карти, без трети страни. Все пак очертава откъде си тръгнал, затова е изключен, докато не го включиш."
+          }
+        }
+      }
     },
     "Thigh (L)": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Бедро (Л)"
+          }
+        }
+      }
     },
     "Thigh (R)": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Бедро (Д)"
+          }
+        }
+      }
     },
     "This can't be undone.": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Това не може да се върне."
+          }
+        }
+      }
     },
     "This device only": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Само това устройство"
+          }
+        }
+      }
     },
     "This is the window people race well from: the fatigue has cleared and the fitness is still there.": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Това е прозорецът, от който хората се състезават добре: умората е изчистена, а формата още е налице."
+          }
+        }
+      }
     },
     "This plan arrives rested but a long way down on fitness. Form looks healthy because there's no fatigue left to subtract — that isn't the same as being sharp. There's room for a lot more work between now and then.": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "С този план пристигаш отпочинал, но далеч назад по форма. Формата изглежда добре, защото не е останала умора за изваждане — това не е същото като да си остър. Има място за много повече работа оттук дотогава."
+          }
+        }
+      }
     },
     "This route needs at least two points before it can have a profile.": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Този маршрут се нуждае от поне две точки, за да има профил."
+          }
+        }
+      }
     },
     "This week": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Тази седмица"
+          }
+        }
+      }
     },
     "This workout has no GPS track, so the card is stats only.": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Тази тренировка няма GPS следа, затова картата е само със статистики."
+          }
+        }
+      }
     },
     "This workout has recorded data — a GPS track, laps or a sensor stream. Those aren't changed here, so editing the summary can make it disagree with them.": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Тази тренировка има записани данни — GPS следа, обиколки или поток от сензори. Те не се променят тук, така че редактирането на обобщението може да го разминe с тях."
+          }
+        }
+      }
     },
     "Threshold HR": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Прагов пулс"
+          }
+        }
+      }
     },
     "Time": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Време"
+          }
+        }
+      }
     },
     "Time in each band": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Време във всяка лента"
+          }
+        }
+      }
     },
     "Time in zone needs per-second heart rate, which comes from a .fit import or a synced activity with streams.": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Времето в зона изисква пулс по секунди, който идва от .fit импорт или синхронизирана активност с потоци."
+          }
+        }
+      }
     },
     "Time of day, conditions…": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Час от деня, условия…"
+          }
+        }
+      }
     },
     "Today": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Днес"
+          }
+        }
+      }
     },
     "Too hard": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Твърде тежко"
+          }
+        }
+      }
     },
     "Too much, too soon": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Твърде много, твърде рано"
+          }
+        }
+      }
     },
     "Total": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Общо"
+          }
+        }
+      }
     },
     "Total distance": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Общо разстояние"
+          }
+        }
+      }
     },
     "Total time": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Общо време"
+          }
+        }
+      }
     },
     "Trail Run": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Планинско бягане"
+          }
+        }
+      }
     },
     "Training load": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Тренировъчно натоварване"
+          }
+        }
+      }
     },
     "Training load %lld, %@": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Тренировъчно натоварване %lld, %@"
+          }
+        }
+      }
     },
     "Training paces (per %@)": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Тренировъчни темпа (за %@)"
+          }
+        }
+      }
     },
     "Training stress": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Тренировъчен стрес"
+          }
+        }
+      }
     },
     "Trunk bracing and anti-rotation": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Стабилизация на торса и антиротация"
+          }
+        }
+      }
     },
     "Try it with sample data": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Пробвай с примерни данни"
+          }
+        }
+      }
     },
     "Un-retire": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Върни в употреба"
+          }
+        }
+      }
     },
     "Under goal": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Под целта"
+          }
+        }
+      }
     },
     "Undo": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Отмени"
+          }
+        }
+      }
     },
     "Units": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Мерни единици"
+          }
+        }
+      }
     },
     "Until you set this, zones use the highest HR in your whole history — better than one session's peak, but still a guess.": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Докато не зададеш това, зоните използват най-високия пулс в цялата ти история — по-добре от пика на една тренировка, но пак предположение."
+          }
+        }
+      }
     },
     "Up next": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Следва"
+          }
+        }
+      }
     },
     "Upcoming": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Предстоящи"
+          }
+        }
+      }
     },
     "Use": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Използвай"
+          }
+        }
+      }
     },
     "Use the age estimate (%lld bpm)": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Използвай оценката по възраст (%lld уд/мин)"
+          }
+        }
+      }
     },
     "VO₂max": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "VO₂max"
+          }
+        }
+      }
     },
     "VO₂max trend over %lld readings": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Тенденция на VO₂max за %lld измервания"
+          }
+        }
+      }
     },
     "Value": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Стойност"
+          }
+        }
+      }
     },
     "View": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Изглед"
+          }
+        }
+      }
     },
     "Volume": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Обем"
+          }
+        }
+      }
     },
     "W": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "W"
+          }
+        }
+      }
     },
     "Waist": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Талия"
+          }
+        }
+      }
     },
     "Walk": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ходене"
+          }
+        }
+      }
     },
     "Warm-up": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Загряване"
+          }
+        }
+      }
     },
     "Warmup set": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Загряваща серия"
+          }
+        }
+      }
     },
     "Watched folder": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Наблюдавана папка"
+          }
+        }
+      }
     },
     "Wear": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Износване"
+          }
+        }
+      }
     },
     "Wear limit": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Лимит на износване"
+          }
+        }
+      }
     },
     "Wear limit: %lld km": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Лимит на износване: %lld км"
+          }
+        }
+      }
     },
     "Week": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Седмица"
+          }
+        }
+      }
     },
     "Weekly volume": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Седмичен обем"
+          }
+        }
+      }
     },
     "Weight": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Тегло"
+          }
+        }
+      }
     },
     "Weight moves several kilos on water and can't tell muscle from anything else. A waist and an arm can, and a photo every few weeks answers it outright.": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Теглото се движи с няколко килограма заради вода и не различава мускул от каквото и да било. Талията и ръката различават, а снимка на няколко седмици отговаря направо."
+          }
+        }
+      }
     },
     "What drove it": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Какво го определи"
+          }
+        }
+      }
     },
     "What is it? e.g. 8 × 400 m": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Какво е? напр. 8 × 400 м"
+          }
+        }
+      }
     },
     "Window": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Период"
+          }
+        }
+      }
     },
     "Work": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Работа"
+          }
+        }
+      }
     },
     "Working out the projection…": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Изчисляване на прогнозата…"
+          }
+        }
+      }
     },
     "Workouts": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Тренировки"
+          }
+        }
+      }
     },
     "Workouts, metrics and routes are shared with your other devices through your private iCloud database. Nothing goes to any server of ours.": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Тренировките, показателите и маршрутите се споделят с другите ти устройства през частната ти iCloud база. Нищо не отива на наш сървър."
+          }
+        }
+      }
     },
     "Write workouts to Apple Health": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Записвай тренировките в Apple Health"
+          }
+        }
+      }
     },
     "Writes a .fit workout file — AirDrop it or hand it to your watch's app. Set your max heart rate in Settings and zone targets will be written as real bpm ranges; without it the steps go out untargeted.": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Записва .fit файл с тренировка — изпрати го през AirDrop или го дай на приложението на часовника. Задай максималния си пулс в Настройки и целите по зони ще се запишат като реални диапазони в удари/мин; без него стъпките излизат без цели."
+          }
+        }
+      }
     },
     "Writes a .fit workout file — AirDrop it or hand it to your watch's app. Zone targets are written as bpm ranges from your max of %lld.": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Записва .fit файл с тренировка — изпрати го през AirDrop или го дай на приложението на часовника. Целите по зони се записват като диапазони в удари/мин спрямо максимума ти от %lld."
+          }
+        }
+      }
     },
     "Writes each imported workout with its route and heart-rate series, which is more than your watch's own Health sync carries. Demo data and workouts that came *from* Health are skipped, and nothing is written twice.": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Записва всяка импортирана тренировка с маршрута и поредицата от пулс, което е повече от това, което носи собствената синхронизация на часовника с Health. Демо данните и тренировките, дошли *от* Health, се пропускат и нищо не се записва два пъти."
+          }
+        }
+      }
     },
     "Writing…": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Записване…"
+          }
+        }
+      }
     },
     "Your API key is at the bottom of the intervals.icu Settings page. Leave Athlete ID blank to use the authenticated athlete.": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "API ключът ти е в долната част на страницата с настройки на intervals.icu. Остави ID на атлет празно, за да се използва удостовереният атлет."
+          }
+        }
+      }
     },
     "Your data hasn't been deleted. The file is still at:\n%@\n\nQuit and reopen the app first. If that doesn't help, copy that file somewhere safe before trying anything else.": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Данните ти не са изтрити. Файлът все още е в:\n%@\n\nПърво затвори и отвори приложението отново. Ако това не помогне, копирай файла на сигурно място, преди да опитваш нещо друго."
+          }
+        }
+      }
     },
     "Z%lld %@": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "З%lld %@"
+          }
+        }
+      }
     },
     "Zone %lld, %@": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Зона %lld, %@"
+          }
+        }
+      }
     },
     "Zones, training load and readiness are all computed against your own heart rate. Without a maximum they fall back to the highest figure in your data, which is usually a little low.": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Зоните, тренировъчното натоварване и готовността се изчисляват спрямо собствения ти пулс. Без максимум те падат обратно към най-високото число в данните ти, което обикновено е малко ниско."
+          }
+        }
+      }
     },
     "day to go": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ден остава"
+          }
+        }
+      }
     },
     "days to go": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "дни остават"
+          }
+        }
+      }
     },
     "e1RM": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "e1ПМ"
+          }
+        }
+      }
     },
     "form %@": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "форма %@"
+          }
+        }
+      }
     },
     "iCloud": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "iCloud"
+          }
+        }
+      }
     },
     "iCloud sync isn't available, so everything is stored on this device. %@": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Синхронизацията с iCloud не е достъпна, затова всичко се съхранява на това устройство. %@"
+          }
+        }
+      }
     },
     "intervals.icu": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "intervals.icu"
+          }
+        }
+      }
     },
     "km": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "км"
+          }
+        }
+      }
     },
     "km, metres, kilograms": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "км, метри, килограми"
+          }
+        }
+      }
     },
     "limit %lld km": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "лимит %lld км"
+          }
+        }
+      }
     },
     "load": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "натоварване"
+          }
+        }
+      }
     },
     "m": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "м"
+          }
+        }
+      }
     },
     "mL/kg·min": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "мл/кг·мин"
+          }
+        }
+      }
     },
     "max %lld bpm": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "макс %lld уд/мин"
+          }
+        }
+      }
     },
     "miles, feet, pounds": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "мили, футове, паундове"
+          }
+        }
+      }
     },
     "min/%@": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "мин/%@"
+          }
+        }
+      }
     },
     "minutes": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "минути"
+          }
+        }
+      }
     },
     "not set": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "не е зададено"
+          }
+        }
+      }
     },
     "optional": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "по избор"
+          }
+        }
+      }
     },
     "quads, glutes": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "квадрицепс, седалищни"
+          }
+        }
+      }
     },
     "readiness": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "готовност"
+          }
+        }
+      }
     },
     "reps": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "повторения"
+          }
+        }
+      }
     },
     "today": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "днес"
+          }
+        }
+      }
     },
     "warmup": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "загряване"
+          }
+        }
+      }
     },
     "x": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "x"
+          }
+        }
+      }
     },
     "–": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "–"
+          }
+        }
+      }
     },
     "—": {
       "extractionState": "extracted_with_value",
-      "localizations": {}
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "—"
+          }
+        }
+      }
     }
   },
   "version": "1.0"
