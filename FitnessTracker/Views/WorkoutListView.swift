@@ -20,6 +20,11 @@ struct WorkoutListView: View {
     @State private var alertMessage: String?
     @State private var alertTitle = ""
 
+    /// First launch. Presented from here because this is the tab the app opens
+    /// on, and the flow's last step hands off to this view's own importer.
+    @AppStorage(AthleteProfile.Key.hasOnboarded) private var hasOnboarded = false
+    @State private var showOnboarding = false
+
     /// `.fit` has no registered system UTI, so match on the extension.
     private static let fitType = UTType(filenameExtension: "fit") ?? .data
 
@@ -120,6 +125,25 @@ struct WorkoutListView: View {
                               : "line.3.horizontal.decrease.circle.fill")
                     }
                 }
+            }
+            .sheet(isPresented: $showOnboarding) {
+                OnboardingView { outcome in
+                    switch outcome {
+                    case .importFile:     importing = true
+                    case .connectService: showSettings = true
+                    case .seedDemo:
+                        let n = DemoData.seed(into: context)
+                        show("Sample data",
+                             "Seeded \(n) workouts, 2 shoes, and 16 lifting sessions. You can delete it from Settings when you're done looking.")
+                    case .nothing:        break
+                    }
+                }
+            }
+            .task {
+                // Only on a genuinely empty store. Someone restoring a backup
+                // onto a new device has no use for an introduction, and being
+                // shown one would suggest their data hadn't arrived.
+                if !hasOnboarded && workouts.isEmpty { showOnboarding = true }
             }
             .fileImporter(
                 isPresented: $importing,

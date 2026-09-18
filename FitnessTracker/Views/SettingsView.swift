@@ -21,6 +21,14 @@ struct SettingsView: View {
     @AppStorage("restingHeartRate") private var restingHeartRate = 0
     @AppStorage("ftpWatts") private var ftp = 0
     @AppStorage("bodyWeightKg") private var bodyWeight = 0.0
+    @AppStorage(AthleteProfile.Key.sessionReminders) private var sessionReminders = false
+    @AppStorage(AthleteProfile.Key.sessionReminderMinute) private var sessionReminderMinute = 7 * 60
+    @AppStorage(AthleteProfile.Key.checkInReminders) private var checkInReminders = false
+    @AppStorage(AthleteProfile.Key.checkInMinute) private var checkInMinute = 20 * 60
+    @AppStorage(AthleteProfile.Key.raceCountdown) private var raceCountdown = false
+
+    @State private var notificationAuthorization: NotificationScheduler.Authorization = .notRequested
+    @State private var pendingReminders = 0
 
     @State private var stravaConnected = StravaProvider().isConfigured
     @State private var syncing = false
@@ -45,6 +53,7 @@ struct SettingsView: View {
                 syncStatusSection
                 watchedFolderSection
                 unitsSection
+                remindersSection
                 backupSection
                 appleHealthSection
                 estimateSection
@@ -58,6 +67,13 @@ struct SettingsView: View {
                 dangerSection
             }
             .navigationTitle("Settings")
+            .task { await refreshNotificationState() }
+            // One handler for every toggle and time: whatever changed, the
+            // right answer is to recompute the whole set. Patching individual
+            // reminders is how stale ones survive.
+            .onChange(of: reminderSettings) { _, _ in
+                Task { await applyReminderSettings() }
+            }
             .task { refreshPendingCount() }
             .fileImporter(isPresented: $restoring,
                           allowedContentTypes: [.json],
@@ -82,6 +98,121 @@ struct SettingsView: View {
                 Text(message ?? "")
             }
         }
+    }
+
+    // MARK: - Reminders
+
+    private var remindersSection: some View {
+        Section {
+            if notificationAuthorization == .denied {
+                Label("Notifications are turned off for this app in System Settings.",
+                      systemImage: "bell.slash")
+                    .font(.callout)
+                    .foregroundStyle(.orange)
+            }
+
+            Toggle("Session reminders", isOn: $sessionReminders)
+            if sessionReminders {
+                reminderTimePicker("Time", minute: $sessionReminderMinute)
+            }
+
+            Toggle("Evening check-in", isOn: $checkInReminders)
+            if checkInReminders {
+                reminderTimePicker("Time", minute: $checkInMinute)
+            }
+
+            Toggle("Race countdown", isOn: $raceCountdown)
+
+            if reminderSettings.isAnyEnabled && notificationAuthorization == .granted {
+                LabeledContent("Scheduled", value: "\(pendingReminders)")
+                    .foregroundStyle(.secondary)
+            }
+        } header: {
+            Text("Reminders")
+        } footer: {
+            Text(reminderFooter)
+        }
+    }
+
+    private var reminderSettings: NotificationPlan.Settings {
+        NotificationPlan.Settings(
+            sessionReminders: sessionReminders,
+            sessionReminderMinute: sessionReminderMinute,
+            checkInReminders: checkInReminders,
+            checkInMinute: checkInMinute,
+            raceCountdown: raceCountdown)
+    }
+
+    private var reminderFooter: String {
+        switch notificationAuthorization {
+        case .unavailable:
+            return "Notifications aren't available on this platform."
+        case .denied:
+            return "Turn them back on in System Settings to use reminders."
+        default:
+            return "A morning nudge on days you've planned a session, an evening prompt for the check-in that readiness is built on, and a handful of milestones before a race — not a daily countdown."
+        }
+    }
+
+    private func reminderTimePicker(_ label: String, minute: Binding<Int>) -> some View {
+        DatePicker(label, selection: Binding(
+            get: {
+                Calendar.current.date(bySettingHour: minute.wrappedValue / 60,
+                                      minute: minute.wrappedValue % 60,
+                                      second: 0, of: .now) ?? .now
+            },
+            set: { date in
+                let parts = Calendar.current.dateComponents([.hour, .minute], from: date)
+                minute.wrappedValue = (parts.hour ?? 0) * 60 + (parts.minute ?? 0)
+            }
+        ), displayedComponents: .hourAndMinute)
+    }
+
+    private func refreshNotificationState() async {
+        notificationAuthorization = await NotificationScheduler.authorization()
+        pendingReminders = await NotificationScheduler.pendingCount()
+    }
+
+    private func applyReminderSettings() async {
+        guard reminderSettings.isAnyEnabled else {
+            await NotificationScheduler.cancelAll()
+            pendingReminders = 0
+            return
+        }
+        // Ask only once something is actually turned on. Prompting on first
+        // launch for a feature nobody asked for is how people end up denying
+        // it permanently.
+        if notificationAuthorization == .notRequested {
+            _ = await NotificationScheduler.requestAuthorization()
+            notificationAuthorization = await NotificationScheduler.authorization()
+        }
+        guard notificationAuthorization == .granted else {
+            pendingReminders = 0
+            return
+        }
+        await rescheduleReminders()
+        pendingReminders = await NotificationScheduler.pendingCount()
+    }
+
+    /// Recompute the whole reminder set from the current plan and races.
+    ///
+    /// Fetched here rather than held in a `@Query`, because this runs in
+    /// response to a toggle rather than on every store change — a reminder set
+    /// that rebuilt itself on every keystroke in the plan editor would be a
+    /// lot of work for nothing.
+    private func rescheduleReminders() async {
+        let plans = (try? context.fetch(FetchDescriptor<PlannedWorkout>()))?
+            .map(\.snapshot) ?? []
+        let races = (try? context.fetch(FetchDescriptor<Race>()))?
+            .map(\.snapshot) ?? []
+        let settings = NotificationPlan.Settings(
+            sessionReminders: sessionReminders,
+            sessionReminderMinute: sessionReminderMinute,
+            checkInReminders: checkInReminders,
+            checkInMinute: checkInMinute,
+            raceCountdown: raceCountdown)
+        await NotificationScheduler.apply(
+            NotificationPlan.requests(plans: plans, races: races, settings: settings))
     }
 
     // MARK: - Estimating thresholds

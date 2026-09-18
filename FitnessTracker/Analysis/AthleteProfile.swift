@@ -20,6 +20,15 @@ enum AthleteProfile {
         /// The bar you actually lift on, for the plate calculator. Zero means
         /// "not set", so the unit system picks the Olympic default.
         static let barWeightKg = "barWeightKg"
+
+        // Reminders. See `NotificationPlan`.
+        static let sessionReminders = "notifySessions"
+        static let sessionReminderMinute = "notifySessionMinute"
+        static let checkInReminders = "notifyCheckIn"
+        static let checkInMinute = "notifyCheckInMinute"
+        static let raceCountdown = "notifyRaces"
+        /// Set once the first-run flow has been through.
+        static let hasOnboarded = "hasOnboarded"
     }
 
     /// Build from stored settings, falling back to what the data implies.
