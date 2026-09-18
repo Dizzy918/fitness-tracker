@@ -57,6 +57,12 @@
             "state": "translated",
             "value": " · just nu %lld %@"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": " · 現在 %lld %@"
+          }
         }
       }
     },
@@ -115,6 +121,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "”80/20” är en konvention, inte en lag — den beskriver vad man mäter hos de flesta framgångsrika uthållighetsidrottare, sett över ett block, inte varje vecka."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "「80/20」は法則ではなく慣例です。多くの優れた持久系アスリートを計測した結果を、毎週ではなくブロック単位で表したものです。"
           }
         }
       }
@@ -175,6 +187,12 @@
             "state": "translated",
             "value": "%@ vid %lld km"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%2$lld km 地点で %1$@"
+          }
         }
       }
     },
@@ -233,6 +251,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "%@ bästa %@"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ ベスト %@"
           }
         }
       }
@@ -293,6 +317,12 @@
             "state": "translated",
             "value": "Jämförelse: %@"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ の比較"
+          }
         }
       }
     },
@@ -351,6 +381,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "%@ för lite — närmare kommer den här viktuppsättningen inte utan att gå över."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ 不足。オーバーせずに作れる、このプレートでの最も近い重量です。"
           }
         }
       }
@@ -411,6 +447,12 @@
             "state": "translated",
             "value": "Utveckling av %@ över %lld dagar"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%2$lld 日間の %1$@ の推移"
+          }
         }
       }
     },
@@ -469,6 +511,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "%@ → %@ · %lldd"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ → %@ · %lld日"
           }
         }
       }
@@ -529,6 +577,12 @@
             "state": "translated",
             "value": "%@, %lld procent, %@"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@、%lld パーセント、%@"
+          }
         }
       }
     },
@@ -587,6 +641,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "%@, 1 är %@, 5 är %@"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@、1 は %@、5 は %@"
           }
         }
       }
@@ -647,6 +707,12 @@
             "state": "translated",
             "value": "%@. %@"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@。%@"
+          }
         }
       }
     },
@@ -705,6 +771,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "%@/vecka"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@/週"
           }
         }
       }
@@ -765,6 +837,12 @@
             "state": "translated",
             "value": "%@: %lld procent, %@"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@：%lld パーセント、%@"
+          }
         }
       }
     },
@@ -824,6 +902,12 @@
             "state": "translated",
             "value": "%@–%@"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@〜%@"
+          }
         }
       }
     },
@@ -879,6 +963,12 @@
           }
         },
         "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld"
+          }
+        },
+        "ja": {
           "stringUnit": {
             "state": "translated",
             "value": "%lld"
@@ -942,6 +1032,12 @@
             "state": "translated",
             "value": "%lld %@"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld %@"
+          }
         }
       }
     },
@@ -1000,6 +1096,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "%lld slag/min"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld bpm"
           }
         }
       }
@@ -1060,6 +1162,12 @@
             "state": "translated",
             "value": "%lld dagar"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld 日"
+          }
         }
       }
     },
@@ -1118,6 +1226,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "%lld dagar · %@ → %@"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld 日 · %@ → %@"
           }
         }
       }
@@ -1178,6 +1292,12 @@
             "state": "translated",
             "value": "%lld hittade"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld 件見つかりました"
+          }
         }
       }
     },
@@ -1233,6 +1353,12 @@
           }
         },
         "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld km"
+          }
+        },
+        "ja": {
           "stringUnit": {
             "state": "translated",
             "value": "%lld km"
@@ -1296,6 +1422,12 @@
             "state": "translated",
             "value": "%lld mån"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld か月"
+          }
         }
       }
     },
@@ -1354,6 +1486,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "%lld av %lld set"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld / %lld セット"
           }
         }
       }
@@ -1414,6 +1552,12 @@
             "state": "translated",
             "value": "%lld av %lld · %@"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld / %lld · %@"
+          }
         }
       }
     },
@@ -1472,6 +1616,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "%lld repetitioner"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld レップ"
           }
         }
       }
@@ -1532,6 +1682,12 @@
             "state": "translated",
             "value": "%lld löppass"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld 本のラン"
+          }
         }
       }
     },
@@ -1590,6 +1746,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "%lld pass%@ den här veckan saknade effekt och puls, så belastningen uppskattas från tiden."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "今週の %lld 件のセッション%@はパワーも心拍もないため、負荷は時間から推定しています。"
           }
         }
       }
@@ -1650,6 +1812,12 @@
             "state": "translated",
             "value": "%lld set"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld セット"
+          }
         }
       }
     },
@@ -1708,6 +1876,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "%lld set · %@ volym"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld セット · ボリューム %@"
           }
         }
       }
@@ -1768,6 +1942,12 @@
             "state": "translated",
             "value": "%lld kvar"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "残り %lld"
+          }
         }
       }
     },
@@ -1826,6 +2006,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "%lld punkter%@"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld 地点%@"
           }
         }
       }
@@ -1886,6 +2072,12 @@
             "state": "translated",
             "value": "%lld pass · %@ totalt"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld 件のワークアウト · 合計 %@"
+          }
         }
       }
     },
@@ -1944,6 +2136,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "%lld slitna"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld 使用済み"
           }
         }
       }
@@ -2004,6 +2202,12 @@
             "state": "translated",
             "value": "%lld år"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld 年"
+          }
         }
       }
     },
@@ -2059,6 +2263,12 @@
           }
         },
         "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld × %@"
+          }
+        },
+        "ja": {
           "stringUnit": {
             "state": "translated",
             "value": "%lld × %@"
@@ -2122,6 +2332,12 @@
             "state": "translated",
             "value": "%lld × block"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld × ブロック"
+          }
         }
       }
     },
@@ -2177,6 +2393,12 @@
           }
         },
         "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld%%"
+          }
+        },
+        "ja": {
           "stringUnit": {
             "state": "translated",
             "value": "%lld%%"
@@ -2240,6 +2462,12 @@
             "state": "translated",
             "value": "%lld%% av dagens form"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "現在のフィットネスの %lld%%"
+          }
         }
       }
     },
@@ -2295,6 +2523,12 @@
           }
         },
         "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld/5"
+          }
+        },
+        "ja": {
           "stringUnit": {
             "state": "translated",
             "value": "%lld/5"
@@ -2358,6 +2592,12 @@
             "state": "translated",
             "value": "%lldW"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lldW"
+          }
         }
       }
     },
@@ -2416,6 +2656,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "%lld–%lld"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld〜%lld"
           }
         }
       }
@@ -2476,6 +2722,12 @@
             "state": "translated",
             "value": "%lld–%lld W"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld〜%lld W"
+          }
         }
       }
     },
@@ -2534,6 +2786,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "+30s"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "+30秒"
           }
         }
       }
@@ -2594,6 +2852,12 @@
             "state": "translated",
             "value": ".fit-fil från klockan…"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "時計からの .fit ファイル…"
+          }
         }
       }
     },
@@ -2653,6 +2917,12 @@
             "state": "translated",
             "value": "1 pass · %@ totalt"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "1 件のワークアウト · 合計 %@"
+          }
         }
       }
     },
@@ -2708,6 +2978,12 @@
           }
         },
         "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "@"
+          }
+        },
+        "ja": {
           "stringUnit": {
             "state": "translated",
             "value": "@"
@@ -2771,6 +3047,12 @@
             "state": "translated",
             "value": "En rutin är ett pass du kan köra igen. Bygg upp ditt övningsbibliotek först."
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ルーティンは繰り返し実行できるセッションです。まず種目ライブラリを用意してください。"
+          }
         }
       }
     },
@@ -2829,6 +3111,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Ett förslag ur dina egna trender, inte en mätning. Om det inte stämmer med hur du känner dig, lita på dig själv."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "測定値ではなく、あなた自身の傾向からの提案です。体感と食い違うなら、自分を信じてください。"
           }
         }
       }
@@ -2889,6 +3177,12 @@
             "state": "translated",
             "value": "A — mållopp"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A — 目標レース"
+          }
         }
       }
     },
@@ -2947,6 +3241,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "PDF-tolkning med AI"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "AI による PDF 読み取り"
           }
         }
       }
@@ -3007,6 +3307,12 @@
             "state": "translated",
             "value": "API-nyckel"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "API キー"
+          }
         }
       }
     },
@@ -3065,6 +3371,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Över den anaeroba tröskeln — intervallarbete"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "無酸素性作業閾値より上 — インターバル強度"
           }
         }
       }
@@ -3125,6 +3437,12 @@
             "state": "translated",
             "value": "Komplement"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "補助種目"
+          }
         }
       }
     },
@@ -3183,6 +3501,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Inköpta"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "購入日"
           }
         }
       }
@@ -3243,6 +3567,12 @@
             "state": "translated",
             "value": "Aktiv"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "アクティブ"
+          }
         }
       }
     },
@@ -3301,6 +3631,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Lägg till"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "追加"
           }
         }
       }
@@ -3361,6 +3697,12 @@
             "state": "translated",
             "value": "Lägg till set"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "セットを追加"
+          }
         }
       }
     },
@@ -3419,6 +3761,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Lägg till skor"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "シューズを追加"
           }
         }
       }
@@ -3479,6 +3827,12 @@
             "state": "translated",
             "value": "Lägg till ett block"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ブロックを追加"
+          }
         }
       }
     },
@@ -3537,6 +3891,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Lägg till ett par för att följa milen och få slitagevarningar."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "走行距離を記録し、摩耗の警告を受け取るには 1 足追加してください。"
           }
         }
       }
@@ -3597,6 +3957,12 @@
             "state": "translated",
             "value": "Lägg till ett foto"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "写真を追加"
+          }
         }
       }
     },
@@ -3655,6 +4021,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Lägg till ett lopp"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "レースを追加"
           }
         }
       }
@@ -3715,6 +4087,12 @@
             "state": "translated",
             "value": "Lägg till ett pass"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "セッションを追加"
+          }
         }
       }
     },
@@ -3773,6 +4151,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Lägg till ett steg"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ステップを追加"
           }
         }
       }
@@ -3833,6 +4217,12 @@
             "state": "translated",
             "value": "Lägg till ett steg här"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ここにステップを追加"
+          }
         }
       }
     },
@@ -3891,6 +4281,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Lägg först till en Anthropic-API-nyckel i Inställningar."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "先に設定で Anthropic の API キーを追加してください。"
           }
         }
       }
@@ -3951,6 +4347,12 @@
             "state": "translated",
             "value": "Lägg till en övning"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "種目を追加"
+          }
         }
       }
     },
@@ -4009,6 +4411,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Lägg till höjdprofil"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "標高プロファイルを追加"
           }
         }
       }
@@ -4069,6 +4477,12 @@
             "state": "translated",
             "value": "Lägg till mått"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "計測値を追加"
+          }
         }
       }
     },
@@ -4127,6 +4541,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Lägg till saknade grundövningar"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "不足している基本種目を追加"
           }
         }
       }
@@ -4187,6 +4607,12 @@
             "state": "translated",
             "value": "Lägg till set"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "セットを追加"
+          }
         }
       }
     },
@@ -4245,6 +4671,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Lägg till skor"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "シューズを追加"
           }
         }
       }
@@ -4305,6 +4737,12 @@
             "state": "translated",
             "value": "Lägg till steg…"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ステップを追加…"
+          }
         }
       }
     },
@@ -4363,6 +4801,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Lägg till grundlistan"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "基本リストを追加"
           }
         }
       }
@@ -4423,6 +4867,12 @@
             "state": "translated",
             "value": "Lägg till stegen så kan passet gå till klockan som ett strukturerat träningspass i stället för ett namn du måste komma ihåg."
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ステップを追加すれば、覚えておくべき名前ではなく、構造化ワークアウトとして時計へ送れます。"
+          }
         }
       }
     },
@@ -4481,6 +4931,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Summerar tid i zon…"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ゾーン別の時間を集計中…"
           }
         }
       }
@@ -4541,6 +4997,12 @@
             "state": "translated",
             "value": "Påverkar bara visningen. Dina data lagras metriskt och räknas om för visning, så att byta fram och tillbaka ändrar aldrig ett registrerat värde."
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "表示だけに影響します。データはメートル法で保存し表示時に換算するため、切り替えても記録した値は変わりません。"
+          }
         }
       }
     },
@@ -4599,6 +5061,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Ålder: %lld"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "年齢：%lld"
           }
         }
       }
@@ -4659,6 +5127,12 @@
             "state": "translated",
             "value": "Alla"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "すべて"
+          }
         }
       }
     },
@@ -4717,6 +5191,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Allt lugnt"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "すべてイージー"
           }
         }
       }
@@ -4777,6 +5257,12 @@
             "state": "translated",
             "value": "Allt detta går att ändra, eller uppskatta ur dina data, senare i Inställningar."
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "これらはあとから設定で変更したり、データから推定したりできます。"
+          }
         }
       }
     },
@@ -4835,6 +5321,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Alla sporter"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "すべての種目"
           }
         }
       }
@@ -4895,6 +5387,12 @@
             "state": "translated",
             "value": "Redan inläst från Hälsa för i dag. Att ändra ett värde här skriver över det."
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "本日分はすでにヘルスケアから読み込み済みです。ここで値を変えると上書きされます。"
+          }
         }
       }
     },
@@ -4953,6 +5451,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Ambitiöst"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "意欲的"
           }
         }
       }
@@ -5013,6 +5517,12 @@
             "state": "translated",
             "value": "En olympisk stång väger %@; damstänger %@, och en träningsstång kan väga 10."
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "オリンピックバーは %@、女性用は %@、トレーニングバーは 10 のこともあります。"
+          }
         }
       }
     },
@@ -5071,6 +5581,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Anthropic-API-nyckel"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Anthropic API キー"
           }
         }
       }
@@ -5131,6 +5647,12 @@
             "state": "translated",
             "value": "Vilken som helst av dessa, nu eller senare."
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "どれでも、今でもあとでも構いません。"
+          }
         }
       }
     },
@@ -5189,6 +5711,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Allt som är värt att minnas"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "覚えておきたいこと"
           }
         }
       }
@@ -5249,6 +5777,12 @@
             "state": "translated",
             "value": "Apple Hälsa"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Apple ヘルスケア"
+          }
         }
       }
     },
@@ -5307,6 +5841,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Arm (V)"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "腕（左）"
           }
         }
       }
@@ -5367,6 +5907,12 @@
             "state": "translated",
             "value": "Arm (H)"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "腕（右）"
+          }
         }
       }
     },
@@ -5425,6 +5971,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Idrottar-ID (t.ex. i123456, eller 0 för dig själv)"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "アスリート ID（例：i123456、自分自身なら 0）"
           }
         }
       }
@@ -5485,6 +6037,12 @@
             "state": "translated",
             "value": "Auktorisera med Strava"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Strava で認証"
+          }
         }
       }
     },
@@ -5543,6 +6101,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Snitt"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "平均"
           }
         }
       }
@@ -5603,6 +6167,12 @@
             "state": "translated",
             "value": "B — viktigt"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "B — 重要"
+          }
         }
       }
     },
@@ -5661,6 +6231,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Rygg"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "背中"
           }
         }
       }
@@ -5721,6 +6297,12 @@
             "state": "translated",
             "value": "Säkerhetskopia"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "バックアップ"
+          }
         }
       }
     },
@@ -5779,6 +6361,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Banden är de två laktattrösklarna, approximerade till 80 % och 90 % av din maxpuls. De verkliga trösklarna ligger på var sin sida om det, så formen är pålitlig medan en enskild procentenhet inte är det."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "帯は 2 つの乳酸閾値で、最大心拍の 80% と 90% で近似しています。実際の閾値はその前後にあるため、全体の形は信頼できますが、個々のパーセントは当てになりません。"
           }
         }
       }
@@ -5839,6 +6427,12 @@
             "state": "translated",
             "value": "Stång"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "バー"
+          }
         }
       }
     },
@@ -5897,6 +6491,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Bara stången."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "バーのみ。"
           }
         }
       }
@@ -5957,6 +6557,12 @@
             "state": "translated",
             "value": "Baserat på %lld%% av indata"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "入力の %lld%% に基づく"
+          }
         }
       }
     },
@@ -6015,6 +6621,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Baserat på %lld%% av passen i den här perioden."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "この期間のセッションの %lld%% に基づいています。"
           }
         }
       }
@@ -6075,6 +6687,12 @@
             "state": "translated",
             "value": "Baserat på en del av bilden och på hur dina egna trender brukar se ut — inte på hur du känner dig. Om de går isär, lita på dig själv."
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "全体の一部と、あなたの傾向の普段の形に基づいています。体感ではありません。食い違うなら自分を信じてください。"
+          }
         }
       }
     },
@@ -6133,6 +6751,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Under den aeroba tröskeln — pratvänligt"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "有酸素性作業閾値より下 — 会話できるペース"
           }
         }
       }
@@ -6193,6 +6817,12 @@
             "state": "translated",
             "value": "Bästa insats för varje tid"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "各時間のベスト"
+          }
         }
       }
     },
@@ -6251,6 +6881,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Bästa insatser"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ベスト記録"
           }
         }
       }
@@ -6311,6 +6947,12 @@
             "state": "translated",
             "value": "Mellan trösklarna — bekvämt hårt"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "2 つの閾値の間 — きついが持続可能"
+          }
         }
       }
     },
@@ -6369,6 +7011,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Cykel"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "バイク"
           }
         }
       }
@@ -6429,6 +7077,12 @@
             "state": "translated",
             "value": "Block"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ブロック"
+          }
         }
       }
     },
@@ -6487,6 +7141,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Kropp"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "身体"
           }
         }
       }
@@ -6547,6 +7207,12 @@
             "state": "translated",
             "value": "Kroppsfett"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "体脂肪率"
+          }
         }
       }
     },
@@ -6605,6 +7271,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Kroppsmått och foton"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "身体計測と写真"
           }
         }
       }
@@ -6665,6 +7337,12 @@
             "state": "translated",
             "value": "Kroppsvikt"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "体重"
+          }
         }
       }
     },
@@ -6723,6 +7401,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Båda är valfria — en plan kan vara bara ett namn på en dag."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "どちらも任意です。プランはその日の名前だけでも構いません。"
           }
         }
       }
@@ -6783,6 +7467,12 @@
             "state": "translated",
             "value": "Märke"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ブランド"
+          }
         }
       }
     },
@@ -6841,6 +7531,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Bygg en rutin…"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ルーティンを作成…"
           }
         }
       }
@@ -6901,6 +7597,12 @@
             "state": "translated",
             "value": "C — träna igenom"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "C — 通常どおり練習"
+          }
         }
       }
     },
@@ -6959,6 +7661,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Vad (V)"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ふくらはぎ（左）"
           }
         }
       }
@@ -7019,6 +7727,12 @@
             "state": "translated",
             "value": "Vad (H)"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ふくらはぎ（右）"
+          }
         }
       }
     },
@@ -7077,6 +7791,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Kalorier"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "カロリー"
           }
         }
       }
@@ -7137,6 +7857,12 @@
             "state": "translated",
             "value": "Det går inte att öppna din träningsdatabas"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "トレーニングのデータベースを開けません"
+          }
         }
       }
     },
@@ -7195,6 +7921,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Avbryt"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "キャンセル"
           }
         }
       }
@@ -7255,6 +7987,12 @@
             "state": "translated",
             "value": "Bärande"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "キャリー"
+          }
         }
       }
     },
@@ -7313,6 +8051,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Bär på trötthet"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "疲労が残っています"
           }
         }
       }
@@ -7373,6 +8117,12 @@
             "state": "translated",
             "value": "Förändring"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "変化"
+          }
         }
       }
     },
@@ -7431,6 +8181,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Kontrollera en mapp efter nya filer"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "フォルダを監視して新しいファイルを探す"
           }
         }
       }
@@ -7491,6 +8247,12 @@
             "state": "translated",
             "value": "Kontrollera varje rad mot PDF:en innan du importerar — tolkningen kan läsa tabeller fel."
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "読み取りは表を誤認することがあります。取り込む前に各行を PDF と照合してください。"
+          }
         }
       }
     },
@@ -7549,6 +8311,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Bröst"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "胸囲"
           }
         }
       }
@@ -7609,6 +8377,12 @@
             "state": "translated",
             "value": "Välj PDF…"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "PDF を選択…"
+          }
         }
       }
     },
@@ -7667,6 +8441,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Välj en mapp…"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "フォルダを選択…"
           }
         }
       }
@@ -7727,6 +8507,12 @@
             "state": "translated",
             "value": "Omkretsar i centimeter."
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "周囲径はセンチメートルです。"
+          }
         }
       }
     },
@@ -7785,6 +8571,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Omkretsar i tum."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "周囲径はインチです。"
           }
         }
       }
@@ -7845,6 +8637,12 @@
             "state": "translated",
             "value": "Claude tolkar passen. Med en lång PDF kan det ta en minut."
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Claude がワークアウトを抽出しています。長い PDF では 1 分ほどかかることがあります。"
+          }
         }
       }
     },
@@ -7904,6 +8702,12 @@
             "state": "translated",
             "value": "Rensa"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "クリア"
+          }
         }
       }
     },
@@ -7959,6 +8763,12 @@
           }
         },
         "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Client ID"
+          }
+        },
+        "ja": {
           "stringUnit": {
             "state": "translated",
             "value": "Client ID"
@@ -8022,6 +8832,12 @@
             "state": "translated",
             "value": "Client Secret"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Client Secret"
+          }
         }
       }
     },
@@ -8080,6 +8896,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Stigning"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "獲得標高"
           }
         }
       }
@@ -8140,6 +8962,12 @@
             "state": "translated",
             "value": "Stäng"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "閉じる"
+          }
         }
       }
     },
@@ -8198,6 +9026,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Slut slingan"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ループを閉じる"
           }
         }
       }
@@ -8258,6 +9092,12 @@
             "state": "translated",
             "value": "Nära, men du kommer fram med lite trötthet kvar i benen. En lugnare sista vecka skulle vässa det."
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "惜しいですが、脚に少し疲労を残したまま当日を迎えます。最終週をもう少し軽くすれば仕上がります。"
+          }
         }
       }
     },
@@ -8316,6 +9156,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Kommaseparerat. Valfritt — används för sökning."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "カンマ区切り。任意です。検索に使われます。"
           }
         }
       }
@@ -8376,6 +9222,12 @@
             "state": "translated",
             "value": "Jämför %@ — %@"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ を比較 — %@"
+          }
         }
       }
     },
@@ -8434,6 +9286,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Anslut Strava eller intervals.icu nedan för att slå på synkronisering."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "同期を有効にするには、下で Strava または intervals.icu を接続してください。"
           }
         }
       }
@@ -8494,6 +9352,12 @@
             "state": "translated",
             "value": "Anslut en tjänst…"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "サービスを接続…"
+          }
         }
       }
     },
@@ -8552,6 +9416,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Ansluten"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "接続済み"
           }
         }
       }
@@ -8612,6 +9482,12 @@
             "state": "translated",
             "value": "Fortsätt"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "続ける"
+          }
         }
       }
     },
@@ -8670,6 +9546,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Nedvarvning"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "クールダウン"
           }
         }
       }
@@ -8730,6 +9612,12 @@
             "state": "translated",
             "value": "Bål"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "体幹"
+          }
         }
       }
     },
@@ -8788,6 +9676,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Det gick inte att lägga till fotot"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "その写真を追加できませんでした"
           }
         }
       }
@@ -8848,6 +9742,12 @@
             "state": "translated",
             "value": "Det gick inte att fästa den sträckan mot en stig — en rak linje används."
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "その区間を道に合わせられませんでした。直線で表示します。"
+          }
         }
       }
     },
@@ -8906,6 +9806,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Räknas som"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "扱い"
           }
         }
       }
@@ -8966,6 +9872,12 @@
             "state": "translated",
             "value": "Bana, förhållanden, plan…"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "コース、コンディション、作戦…"
+          }
         }
       }
     },
@@ -9024,6 +9936,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Täckning"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "カバー率"
           }
         }
       }
@@ -9084,6 +10002,12 @@
             "state": "translated",
             "value": "Skapa en rutin"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ルーティンを作成"
+          }
         }
       }
     },
@@ -9142,6 +10066,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Skapa en…"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "作成する…"
           }
         }
       }
@@ -9202,6 +10132,12 @@
             "state": "translated",
             "value": "Skapa en egen API-applikation på strava.com/settings/api (gratis), sätt callback-domänen till `localhost` och klistra in Client ID och Secret här. Begär omfattningen `activity:read_all` så att även privata aktiviteter synkas."
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "strava.com/settings/api で自分の API アプリケーションを作成し（無料）、コールバックドメインを `localhost` に設定して、Client ID と Secret をここに貼り付けてください。非公開のアクティビティも同期できるよう `activity:read_all` スコープを要求します。"
+          }
         }
       }
     },
@@ -9260,6 +10196,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Cykling"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "サイクリング"
           }
         }
       }
@@ -9320,6 +10262,12 @@
             "state": "translated",
             "value": "Daglig avstämning"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "デイリーチェックイン"
+          }
         }
       }
     },
@@ -9378,6 +10326,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Daglig avstämning"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "デイリーチェックイン"
           }
         }
       }
@@ -9438,6 +10392,12 @@
             "state": "translated",
             "value": "Översikt"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ダッシュボード"
+          }
         }
       }
     },
@@ -9496,6 +10456,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Datum"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "日付"
           }
         }
       }
@@ -9556,6 +10522,12 @@
             "state": "translated",
             "value": "Dag"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "日"
+          }
         }
       }
     },
@@ -9614,6 +10586,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Radera"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "削除"
           }
         }
       }
@@ -9674,6 +10652,12 @@
             "state": "translated",
             "value": "Radera det här fotot?"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "この写真を削除しますか？"
+          }
         }
       }
     },
@@ -9732,6 +10716,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Härlett ur din bästa insats omräknad till en 10 km-motsvarighet. Ett labb- eller fälttest skulle vara noggrannare."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ベスト記録を 10 km 相当に換算して求めています。ラボまたはフィールドテストのほうが正確です。"
           }
         }
       }
@@ -9792,6 +10782,12 @@
             "state": "translated",
             "value": "Kasta"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "破棄"
+          }
         }
       }
     },
@@ -9850,6 +10846,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Koppla från"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "接続を解除"
           }
         }
       }
@@ -9910,6 +10912,12 @@
             "state": "translated",
             "value": "Distans"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "距離"
+          }
         }
       }
     },
@@ -9968,6 +10976,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Gör en daglig avstämning för att få ett beredskapsvärde. (Hälsodata finns bara på iOS.)"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "コンディションスコアを得るにはデイリーチェックインを行ってください。（ヘルスケアのデータは iOS のみです。）"
           }
         }
       }
@@ -10028,6 +11042,12 @@
             "state": "translated",
             "value": "Dokument"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "書類"
+          }
         }
       }
     },
@@ -10086,6 +11106,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Klar"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "完了"
           }
         }
       }
@@ -10146,6 +11172,12 @@
             "state": "translated",
             "value": "Klart för i dag"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "今日は完了"
+          }
         }
       }
     },
@@ -10204,6 +11236,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Släpp .fit-filer för att importera"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": ".fit ファイルをドロップして読み込み"
           }
         }
       }
@@ -10264,6 +11302,12 @@
             "state": "translated",
             "value": "Tid"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "時間"
+          }
         }
       }
     },
@@ -10322,6 +11366,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Tidskurva"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "時間別ベストカーブ"
           }
         }
       }
@@ -10382,6 +11432,12 @@
             "state": "translated",
             "value": "Tidskurva, %lld punkter"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "時間別ベストカーブ、%lld 点"
+          }
         }
       }
     },
@@ -10440,6 +11496,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Per sida"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "片側あたり"
           }
         }
       }
@@ -10500,6 +11562,12 @@
             "state": "translated",
             "value": "Varje ställe jämförs mellan sin egen första och sista mätning i perioden — du mäter nog midjan oftare än vaderna."
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "各部位はその部位自身の期間内の最初と最後の計測値で比較します。ウエストはふくらはぎより頻繁に測るはずです。"
+          }
         }
       }
     },
@@ -10558,6 +11626,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Lugnt"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "イージー"
           }
         }
       }
@@ -10618,6 +11692,12 @@
             "state": "translated",
             "value": "Lugn vecka"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "軽めの週"
+          }
         }
       }
     },
@@ -10676,6 +11756,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Ändra"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "編集"
           }
         }
       }
@@ -10736,6 +11822,12 @@
             "state": "translated",
             "value": "Ändra övning"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "種目を編集"
+          }
         }
       }
     },
@@ -10794,6 +11886,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Ändra plan"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "プランを編集"
           }
         }
       }
@@ -10854,6 +11952,12 @@
             "state": "translated",
             "value": "Ändra rutt"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ルートを編集"
+          }
         }
       }
     },
@@ -10912,6 +12016,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Ändra pass"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ワークアウトを編集"
           }
         }
       }
@@ -10972,6 +12082,12 @@
             "state": "translated",
             "value": "Ändra lopp"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "レースを編集"
+          }
         }
       }
     },
@@ -11030,6 +12146,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Ändra steg"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ステップを編集"
           }
         }
       }
@@ -11090,6 +12212,12 @@
             "state": "translated",
             "value": "Insats"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "強度"
+          }
         }
       }
     },
@@ -11148,6 +12276,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Höjd"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "標高"
           }
         }
       }
@@ -11208,6 +12342,12 @@
             "state": "translated",
             "value": "Höjdprofil"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "標高プロファイル"
+          }
         }
       }
     },
@@ -11266,6 +12406,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Slut"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "終了"
           }
         }
       }
@@ -11326,6 +12472,12 @@
             "state": "translated",
             "value": "Ange timmar manuellt"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "時間を手入力"
+          }
         }
       }
     },
@@ -11384,6 +12536,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Uppskatta ur min träning"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "自分のトレーニングから推定"
           }
         }
       }
@@ -11444,6 +12602,12 @@
             "state": "translated",
             "value": "Uppskatta trösklar"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "閾値を推定"
+          }
         }
       }
     },
@@ -11502,6 +12666,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Uppskattat 1RM"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "推定 1RM"
           }
         }
       }
@@ -11562,6 +12732,12 @@
             "state": "translated",
             "value": "Uppskattat av klockan ur puls mot tempo. Värdet rör sig långsamt och brusigt, så läs riktningen över månader snarare än en enskild mätning."
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "時計が心拍とペースの関係から推定した値です。ゆっくり、ばらつきを伴って動くので、単発の値ではなく数か月の方向で読んでください。"
+          }
         }
       }
     },
@@ -11620,6 +12796,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Uppskattat ur tiden"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "時間から推定"
           }
         }
       }
@@ -11680,6 +12862,12 @@
             "state": "translated",
             "value": "Uppskattat ur din högsta registrerade puls. Ange din verkliga maxpuls i Inställningar för korrekta zoner."
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "記録された最高心拍から推定しています。正確なゾーンのため、設定で実際の最大心拍を入力してください。"
+          }
         }
       }
     },
@@ -11738,6 +12926,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Kvällsavstämning"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "夜のチェックイン"
           }
         }
       }
@@ -11798,6 +12992,12 @@
             "state": "translated",
             "value": "Alla tider"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "すべての時間"
+          }
         }
       }
     },
@@ -11856,6 +13056,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Allt annat — armar, vader, rehab"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "その他すべて — 腕、ふくらはぎ、リハビリ"
           }
         }
       }
@@ -11916,6 +13122,12 @@
             "state": "translated",
             "value": "Allt lagras på den här enheten. Slå på synkronisering för att dela det med dina andra enheter."
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "すべてこのデバイスに保存されます。ほかのデバイスと共有するには同期をオンにしてください。"
+          }
         }
       }
     },
@@ -11974,6 +13186,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Övning"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "種目"
           }
         }
       }
@@ -12034,6 +13252,12 @@
             "state": "translated",
             "value": "Övningsbibliotek"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "種目ライブラリ"
+          }
         }
       }
     },
@@ -12092,6 +13316,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Övningar"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "種目"
           }
         }
       }
@@ -12152,6 +13382,12 @@
             "state": "translated",
             "value": "Övningarna görs i ordning, med vila efter varje set."
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "種目は順番に行い、各セットのあとに休憩します。"
+          }
         }
       }
     },
@@ -12210,6 +13446,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Förväntat %@ %@ — kontrollera decimaltecknet"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "想定は %@ %@ です。小数点を確認してください"
           }
         }
       }
@@ -12270,6 +13512,12 @@
             "state": "translated",
             "value": "Export"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "書き出し"
+          }
         }
       }
     },
@@ -12328,6 +13576,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Exportera GPX till klocka eller app"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "GPX を時計やアプリへ書き出す"
           }
         }
       }
@@ -12388,6 +13642,12 @@
             "state": "translated",
             "value": "Exportera allt…"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "すべて書き出す…"
+          }
         }
       }
     },
@@ -12446,6 +13706,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Export klar"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "書き出しの準備ができました"
           }
         }
       }
@@ -12506,6 +13772,12 @@
             "state": "translated",
             "value": "Exportera bara sammanfattningen…"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "サマリーのみ書き出す…"
+          }
         }
       }
     },
@@ -12564,6 +13836,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Exportera passen som CSV…"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ワークアウトを CSV で書き出す…"
           }
         }
       }
@@ -12624,6 +13902,12 @@
             "state": "translated",
             "value": "Tolkningen misslyckades"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "読み取りに失敗しました"
+          }
         }
       }
     },
@@ -12679,6 +13963,12 @@
           }
         },
         "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "FTP"
+          }
+        },
+        "ja": {
           "stringUnit": {
             "state": "translated",
             "value": "FTP"
@@ -12742,6 +14032,12 @@
             "state": "translated",
             "value": "FTP låser upp Intensity Factor, TSS och effektbaserad träningsbelastning på cykelpass. Kroppsvikten ger W/kg. Båda är valfria — medeleffekt och normaliserad effekt fungerar utan dem."
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "FTP を入れるとライドで Intensity Factor、TSS、パワーベースのトレーニング負荷が使えます。体重を入れると W/kg も出ます。どちらも任意で、平均パワーと正規化パワーはなくても動きます。"
+          }
         }
       }
     },
@@ -12800,6 +14096,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Trötthet"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "疲労"
           }
         }
       }
@@ -12860,6 +14162,12 @@
             "state": "translated",
             "value": "Trötthet %lld"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "疲労 %lld"
+          }
         }
       }
     },
@@ -12918,6 +14226,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Filter"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "絞り込み"
           }
         }
       }
@@ -12978,6 +14292,12 @@
             "state": "translated",
             "value": "Måltid"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "フィニッシュタイム"
+          }
         }
       }
     },
@@ -13036,6 +14356,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Form"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "フィットネス"
           }
         }
       }
@@ -13096,6 +14422,12 @@
             "state": "translated",
             "value": "Form %lld"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "フィットネス %lld"
+          }
         }
       }
     },
@@ -13154,6 +14486,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Form och trötthet"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "フィットネスと疲労"
           }
         }
       }
@@ -13214,6 +14552,12 @@
             "state": "translated",
             "value": "Form och trötthet de senaste %lld dagarna"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "直近 %lld 日のフィットネスと疲労"
+          }
         }
       }
     },
@@ -13272,6 +14616,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Mapp"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "フォルダ"
           }
         }
       }
@@ -13332,6 +14682,12 @@
             "state": "translated",
             "value": "Fräschhet"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "コンディション"
+          }
         }
       }
     },
@@ -13390,6 +14746,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Tekniknoteringar"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "フォームのメモ"
           }
         }
       }
@@ -13450,6 +14812,12 @@
             "state": "translated",
             "value": "Fyra tryck. Skärper värdet."
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "4 タップ。スコアの精度が上がります。"
+          }
         }
       }
     },
@@ -13508,6 +14876,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Fri dag"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "自由に使える日"
           }
         }
       }
@@ -13568,6 +14942,12 @@
             "state": "translated",
             "value": "Fräsch"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "フレッシュ"
+          }
         }
       }
     },
@@ -13626,6 +15006,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Fräsch, men så här mycket vila kostar form och inte bara trötthet. Ett par korta, skarpa pass sista veckan behåller mer av den."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "フレッシュですが、これだけ休むと疲労だけでなくフィットネスも落ちます。最終週に短く鋭いセッションを 2 つほど残すと、より多く保てます。"
           }
         }
       }
@@ -13686,6 +15072,12 @@
             "state": "translated",
             "value": "Från %lld %@ över %lld min den %@"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%4$@ の %3$lld 分間、%1$lld %2$@ から"
+          }
         }
       }
     },
@@ -13744,6 +15136,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Från medelpulsen"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "平均心拍から"
           }
         }
       }
@@ -13804,6 +15202,12 @@
             "state": "translated",
             "value": "Från pulskurvan"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "心拍の連続データから"
+          }
         }
       }
     },
@@ -13862,6 +15266,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Från tempo mot tröskel"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "閾値に対するペースから"
           }
         }
       }
@@ -13922,6 +15332,12 @@
             "state": "translated",
             "value": "Från effekten"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "パワーから"
+          }
         }
       }
     },
@@ -13980,6 +15396,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Framifrån"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "正面"
           }
         }
       }
@@ -14040,6 +15462,12 @@
             "state": "translated",
             "value": "Ta det lugnare"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "軽めに"
+          }
         }
       }
     },
@@ -14098,6 +15526,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Måltempo"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "目標ペース"
           }
         }
       }
@@ -14158,6 +15592,12 @@
             "state": "translated",
             "value": "Mållopp"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "目標レース"
+          }
         }
       }
     },
@@ -14216,6 +15656,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Måltid"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "目標タイム"
           }
         }
       }
@@ -14276,6 +15722,12 @@
             "state": "translated",
             "value": "Redo"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "問題なし"
+          }
         }
       }
     },
@@ -14334,6 +15786,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Gråzon"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "グレーゾーン"
           }
         }
       }
@@ -14394,6 +15852,12 @@
             "state": "translated",
             "value": "Puls"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "心拍"
+          }
         }
       }
     },
@@ -14449,6 +15913,12 @@
           }
         },
         "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "HRV"
+          }
+        },
+        "ja": {
           "stringUnit": {
             "state": "translated",
             "value": "HRV"
@@ -14512,6 +15982,12 @@
             "state": "translated",
             "value": "HRV (SDNN)"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "HRV（SDNN）"
+          }
         }
       }
     },
@@ -14570,6 +16046,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Hårt"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ハード"
           }
         }
       }
@@ -14630,6 +16112,12 @@
             "state": "translated",
             "value": "Hälsodata finns bara på iOS, så på den här Macen måste de matas in för hand. HRV och vilopuls utgör halva vikten i beredskapsvärdet."
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ヘルスケアのデータは iOS のみのため、この Mac では手入力が必要です。HRV と安静時心拍でコンディションスコアの半分を占めます。"
+          }
         }
       }
     },
@@ -14688,6 +16176,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Puls"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "心拍数"
           }
         }
       }
@@ -14748,6 +16242,12 @@
             "state": "translated",
             "value": "Pulszon %lld"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "心拍ゾーン %lld"
+          }
         }
       }
     },
@@ -14806,6 +16306,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Pulszoner"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "心拍ゾーン"
           }
         }
       }
@@ -14866,6 +16372,12 @@
             "state": "translated",
             "value": "Vandring"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ハイキング"
+          }
         }
       }
     },
@@ -14924,6 +16436,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Höftfällning"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ヒンジ"
           }
         }
       }
@@ -14984,6 +16502,12 @@
             "state": "translated",
             "value": "Höftdominant, belastad bakkedja"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "股関節主導、後面の筋群に負荷"
+          }
         }
       }
     },
@@ -15042,6 +16566,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Höfter"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ヒップ"
           }
         }
       }
@@ -15102,6 +16632,12 @@
             "state": "translated",
             "value": "Historik"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "履歴"
+          }
         }
       }
     },
@@ -15160,6 +16696,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Timmar"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "時間"
           }
         }
       }
@@ -15220,6 +16762,12 @@
             "state": "translated",
             "value": "Hur sov du?"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "睡眠はどうでしたか？"
+          }
         }
       }
     },
@@ -15278,6 +16826,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Hur känner du dig i dag?"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "今日の調子はどうですか？"
           }
         }
       }
@@ -15338,6 +16892,12 @@
             "state": "translated",
             "value": "Hur känns kroppen?"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "身体の感じはどうですか？"
+          }
         }
       }
     },
@@ -15396,6 +16956,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Hur du känner dig"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "体感"
           }
         }
       }
@@ -15456,6 +17022,12 @@
             "state": "translated",
             "value": "Jag gör det senare"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "あとでやる"
+          }
         }
       }
     },
@@ -15514,6 +17086,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Har du sett en högre siffra vid en hård insats, använd den i stället — den här uppskattningen slår fel med ±10 slag/min i bästa fall."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "きつい運動でもっと高い値を見たことがあれば、そちらを使ってください。この推定は良くても ±10 bpm の誤差があります。"
           }
         }
       }
@@ -15574,6 +17152,12 @@
             "state": "translated",
             "value": "Bilden saknas"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "画像がありません"
+          }
         }
       }
     },
@@ -15632,6 +17216,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Imperiskt"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ヤード・ポンド法"
           }
         }
       }
@@ -15692,6 +17282,12 @@
             "state": "translated",
             "value": "Importera"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "読み込む"
+          }
         }
       }
     },
@@ -15750,6 +17346,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Importera %lld"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld 件を読み込む"
           }
         }
       }
@@ -15810,6 +17412,12 @@
             "state": "translated",
             "value": "Importera .fit-filer…"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": ".fit ファイルを読み込む…"
+          }
         }
       }
     },
@@ -15868,6 +17476,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Importera .fit…"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": ".fit を読み込む…"
           }
         }
       }
@@ -15928,6 +17542,12 @@
             "state": "translated",
             "value": "Importera GPX…"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "GPX を読み込む…"
+          }
         }
       }
     },
@@ -15986,6 +17606,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Importera en .fit-fil från din Suunto — eller dra en hel mapp till det här fönstret — anslut Strava eller intervals.icu, läs en PDF med AI, eller ladda demodata för att utforska appen."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Suunto から .fit ファイルを読み込む（フォルダごとこのウィンドウにドラッグしても構いません）、Strava や intervals.icu を接続する、AI で PDF を読む、あるいはデモデータを入れてアプリを試す。"
           }
         }
       }
@@ -16046,6 +17672,12 @@
             "state": "translated",
             "value": "Importera från Hälsa"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ヘルスケアから読み込む"
+          }
         }
       }
     },
@@ -16104,6 +17736,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Importera från Hälsa eller gör en daglig avstämning för att få ett beredskapsvärde."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "コンディションスコアを得るには、ヘルスケアから読み込むかデイリーチェックインを行ってください。"
           }
         }
       }
@@ -16164,6 +17802,12 @@
             "state": "translated",
             "value": "Importera eller registrera träning så dyker prognosen upp här."
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "トレーニングを読み込むか記録すると、ここに予測が表示されます。"
+          }
         }
       }
     },
@@ -16222,6 +17866,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Importera pass eller ladda demodata först."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "先にワークアウトを読み込むか、デモデータを入れてください。"
           }
         }
       }
@@ -16282,6 +17932,12 @@
             "state": "translated",
             "value": "Importerat"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "読み込み済み"
+          }
         }
       }
     },
@@ -16340,6 +17996,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Importerar…"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "読み込み中…"
           }
         }
       }
@@ -16400,6 +18062,12 @@
             "state": "translated",
             "value": "Ta med rutten"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ルートを含める"
+          }
         }
       }
     },
@@ -16458,6 +18126,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Intensitet"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "強度"
           }
         }
       }
@@ -16518,6 +18192,12 @@
             "state": "translated",
             "value": "Intensitet %@"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "強度 %@"
+          }
         }
       }
     },
@@ -16576,6 +18256,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Intensitetsfördelning"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "強度の分布"
           }
         }
       }
@@ -16636,6 +18322,12 @@
             "state": "translated",
             "value": "Typ"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "種類"
+          }
         }
       }
     },
@@ -16694,6 +18386,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Knädominant, upprätt bål"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "膝主導、上体は直立"
           }
         }
       }
@@ -16754,6 +18452,12 @@
             "state": "translated",
             "value": "BELASTNING %lld"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "負荷 %lld"
+          }
         }
       }
     },
@@ -16812,6 +18516,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Varv"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ラップ"
           }
         }
       }
@@ -16872,6 +18582,12 @@
             "state": "translated",
             "value": "Rör du det inte uppskattas det ur tiden med samma antagande per sport som belastningsmodellen gör för ett omätt pass — då jämförs en planerad och en genomförd vecka på samma skala. Ange det själv för ett pass du vet är hårdare eller lättare."
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "そのままにすると、負荷モデルが未計測セッションに用いる種目ごとの同じ仮定で、時間から推定します。こうすれば計画した週と実施した週を同じ尺度で比べられます。それより明らかにきつい、あるいは楽なセッションは自分で設定してください。"
+          }
         }
       }
     },
@@ -16930,6 +18646,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Total distans"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "積算距離"
           }
         }
       }
@@ -16990,6 +18712,12 @@
             "state": "translated",
             "value": "Belastning"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "負荷"
+          }
         }
       }
     },
@@ -17048,6 +18776,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Bärande och hållande med last"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "荷重しての運搬と保持"
           }
         }
       }
@@ -17108,6 +18842,12 @@
             "state": "translated",
             "value": "Registrera pass"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ワークアウトを記録"
+          }
         }
       }
     },
@@ -17166,6 +18906,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Registrera ett arbetsset för %@."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ のメインセットを記録しましょう。"
           }
         }
       }
@@ -17226,6 +18972,12 @@
             "state": "translated",
             "value": "Registrera ett pass för hand…"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ワークアウトを手入力…"
+          }
         }
       }
     },
@@ -17284,6 +19036,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Registrera ett för hand…"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "手入力で 1 件記録…"
           }
         }
       }
@@ -17344,6 +19102,12 @@
             "state": "translated",
             "value": "Slår upp…"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "照会中…"
+          }
         }
       }
     },
@@ -17402,6 +19166,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Slingrutt"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "周回ルート"
           }
         }
       }
@@ -17462,6 +19232,12 @@
             "state": "translated",
             "value": "Tappar form"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "フィットネスが落ちています"
+          }
         }
       }
     },
@@ -17520,6 +19296,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Låg säkerhet — kontrollera mot PDF:en"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "確度が低いです。PDF と照合してください"
           }
         }
       }
@@ -17580,6 +19362,12 @@
             "state": "translated",
             "value": "Maxpulsen styr zongränserna (50/60/70/80/90 % av max). Använd ett värde från ett riktigt maxtest om du har ett — åldersformler är grova. Vilopulsen skärper träningsbelastningen: belastningen vägs mot puls*reserven*, inte mot råa slag. Lämnar du den tom på iOS används värdet som Hälsa mätt."
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "最大心拍がゾーンの境界（最大の 50/60/70/80/90%）を決めます。実際の最大努力テストの値があればそれを使ってください。年齢の式は大まかです。安静時心拍を入れると負荷の精度が上がります。負荷は生の bpm ではなく心拍*予備能*に対して評価されるためです。iOS で空欄にすると、ヘルスケアの計測値が使われます。"
+          }
         }
       }
     },
@@ -17638,6 +19426,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Maxpuls"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "最大心拍数"
           }
         }
       }
@@ -17698,6 +19492,12 @@
             "state": "translated",
             "value": "Max"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "最大"
+          }
         }
       }
     },
@@ -17756,6 +19556,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Mått"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "計測値"
           }
         }
       }
@@ -17816,6 +19622,12 @@
             "state": "translated",
             "value": "Metriskt"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "メートル法"
+          }
         }
       }
     },
@@ -17874,6 +19686,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Milstolpar"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "節目"
           }
         }
       }
@@ -17934,6 +19752,12 @@
             "state": "translated",
             "value": "Minuter"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "分"
+          }
         }
       }
     },
@@ -17992,6 +19816,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Blandade tids- och distanssteg, så det finns ingen enda summa förrän passet är gjort."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "時間と距離のステップが混在しているため、実施するまで合計は決まりません。"
           }
         }
       }
@@ -18052,6 +19882,12 @@
             "state": "translated",
             "value": "Läge"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "表示"
+          }
         }
       }
     },
@@ -18110,6 +19946,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Modell"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "モデル"
           }
         }
       }
@@ -18170,6 +20012,12 @@
             "state": "translated",
             "value": "Måttligt"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "モデレート"
+          }
         }
       }
     },
@@ -18228,6 +20076,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "De flesta av de dagarna har inget inplanerat, så det här antar att du vilar då."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "その大半の日は何も予定されていないため、休むものとして計算しています。"
           }
         }
       }
@@ -18288,6 +20142,12 @@
             "state": "translated",
             "value": "Namn"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "名前"
+          }
         }
       }
     },
@@ -18346,6 +20206,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Namn (valfritt)"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "名前（任意）"
           }
         }
       }
@@ -18406,6 +20272,12 @@
             "state": "translated",
             "value": "Namn, t.ex. Berlin Marathon"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "名前（例：ベルリンマラソン）"
+          }
         }
       }
     },
@@ -18464,6 +20336,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Namn, t.ex. Pressdag A"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "名前（例：プッシュ デイ A）"
           }
         }
       }
@@ -18524,6 +20402,12 @@
             "state": "translated",
             "value": "Hals"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "首"
+          }
         }
       }
     },
@@ -18582,6 +20466,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Det krävs minst två löppass på väg."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ロードのランが少なくとも 2 本必要です。"
           }
         }
       }
@@ -18642,6 +20532,12 @@
             "state": "translated",
             "value": "Behövs för att läsa pass ur PDF:er. Hämta en nyckel på console.anthropic.com. Den sparas i nyckelringen på den här enheten — tolkningen anropar API:et direkt, så nyckeln stannar lokalt och förbrukningen debiteras ditt konto."
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "PDF からワークアウトを読むために必要です。キーは console.anthropic.com で取得できます。このデバイスのキーチェーンに保存され、読み取りは API を直接呼ぶため、キーは端末内にとどまり、利用料はあなたのアカウントに請求されます。"
+          }
         }
       }
     },
@@ -18700,6 +20596,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Kräver cykelpass med effektmätare. Effekten kommer från en .fit-import eller en synkad aktivitet med dataströmmar."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "パワーメーター付きのライドが必要です。パワーは .fit の読み込みか、連続データ付きの同期アクティビティから得られます。"
           }
         }
       }
@@ -18760,6 +20662,12 @@
             "state": "translated",
             "value": "Kräver löppass med data per sekund, från en .fit-import eller en synkad aktivitet med dataströmmar."
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "秒単位データのあるランが必要です。.fit の読み込みか、連続データ付きの同期アクティビティから得られます。"
+          }
         }
       }
     },
@@ -18818,6 +20726,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Neutralt"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ニュートラル"
           }
         }
       }
@@ -18878,6 +20792,12 @@
             "state": "translated",
             "value": "Ny övning"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "新しい種目"
+          }
         }
       }
     },
@@ -18936,6 +20856,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Ny övning…"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "新しい種目…"
           }
         }
       }
@@ -18996,6 +20922,12 @@
             "state": "translated",
             "value": "Ny rutin"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "新しいルーティン"
+          }
         }
       }
     },
@@ -19054,6 +20986,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Nytt pass"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "新しいセッション"
           }
         }
       }
@@ -19114,6 +21052,12 @@
             "state": "translated",
             "value": "Härnäst"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "次は"
+          }
         }
       }
     },
@@ -19172,6 +21116,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Smeknamn (valfritt)"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "呼び名（任意）"
           }
         }
       }
@@ -19232,6 +21182,12 @@
             "state": "translated",
             "value": "Inga insatser är ännu långa nog att läsa av en tröskel ur. Det krävs 20 sammanhängande minuter med registrerad effekt eller puls."
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "閾値を読み取れるだけ長い運動がまだありません。パワーまたは心拍が 20 分間続けて記録されている必要があります。"
+          }
         }
       }
     },
@@ -19290,6 +21246,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Inga övningar ännu"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "種目がまだありません"
           }
         }
       }
@@ -19350,6 +21312,12 @@
             "state": "translated",
             "value": "Inga övningar ännu — skapa en att registrera set mot."
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "種目がまだありません。セットを記録するために 1 つ作成してください。"
+          }
         }
       }
     },
@@ -19408,6 +21376,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Ingen puls"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "心拍データなし"
           }
         }
       }
@@ -19468,6 +21442,12 @@
             "state": "translated",
             "value": "Inga pulsdata ännu"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "心拍データがまだありません"
+          }
         }
       }
     },
@@ -19526,6 +21506,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Inga lyft registrerade"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "記録されたセットがありません"
           }
         }
       }
@@ -19586,6 +21572,12 @@
             "state": "translated",
             "value": "Inga lopp"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "レースがありません"
+          }
         }
       }
     },
@@ -19644,6 +21636,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Inga rutter ännu"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ルートがまだありません"
           }
         }
       }
@@ -19704,6 +21702,12 @@
             "state": "translated",
             "value": "Inga rutiner"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ルーティンがありません"
+          }
         }
       }
     },
@@ -19762,6 +21766,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Inga löppass tilldelade ännu."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "まだランが割り当てられていません。"
           }
         }
       }
@@ -19822,6 +21832,12 @@
             "state": "translated",
             "value": "Inga bedömda pass ännu."
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "評価済みのセッションがまだありません。"
+          }
         }
       }
     },
@@ -19880,6 +21896,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Inga set ännu"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "セットがまだありません"
           }
         }
       }
@@ -19940,6 +21962,12 @@
             "state": "translated",
             "value": "Inga skor ännu"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "シューズがまだありません"
+          }
         }
       }
     },
@@ -19998,6 +22026,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Inga steg ännu"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ステップがまだありません"
           }
         }
       }
@@ -20058,6 +22092,12 @@
             "state": "translated",
             "value": "Inga dataströmmar ännu. Bästa insatser kräver data per sekund från en .fit-import eller Strava-synk."
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "連続データがまだありません。ベスト記録には .fit の読み込みか Strava 同期による秒単位データが必要です。"
+          }
         }
       }
     },
@@ -20116,6 +22156,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Ingen nedtrappning — det här är en hård träningsdag med nummerlapp."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "テーパーなし。ゼッケンを付けたきついトレーニング日です。"
           }
         }
       }
@@ -20176,6 +22222,12 @@
             "state": "translated",
             "value": "Inget mål"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ターゲットなし"
+          }
         }
       }
     },
@@ -20234,6 +22286,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Inga spår- eller ruttpunkter hittades i den GPX-filen."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "その GPX ファイルにトラックまたはルートの点が見つかりませんでした。"
           }
         }
       }
@@ -20294,6 +22352,12 @@
             "state": "translated",
             "value": "Inga pass matchar. Rensa sökningen eller filtret."
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "該当するワークアウトがありません。検索か絞り込みを解除してください。"
+          }
         }
       }
     },
@@ -20352,6 +22416,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Inga pass ännu"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ワークアウトがまだありません"
           }
         }
       }
@@ -20412,6 +22482,12 @@
             "state": "translated",
             "value": "Inget"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "なし"
+          }
         }
       }
     },
@@ -20470,6 +22546,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Normal träning"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "通常のトレーニング"
           }
         }
       }
@@ -20530,6 +22612,12 @@
             "state": "translated",
             "value": "För lite data att importera"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "読み込むデータが足りません"
+          }
         }
       }
     },
@@ -20588,6 +22676,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "För lite data ännu"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "データがまだ足りません"
           }
         }
       }
@@ -20648,6 +22742,12 @@
             "state": "translated",
             "value": "För lite att gå på"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "判断材料が足りません"
+          }
         }
       }
     },
@@ -20706,6 +22806,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Ej angivet"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "未設定"
           }
         }
       }
@@ -20766,6 +22872,12 @@
             "state": "translated",
             "value": "Inte i Hälsa ännu"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ヘルスケア未反映"
+          }
         }
       }
     },
@@ -20824,6 +22936,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Anteckningar"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "メモ"
           }
         }
       }
@@ -20884,6 +23002,12 @@
             "state": "translated",
             "value": "Inget mätt ännu"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "まだ何も計測していません"
+          }
         }
       }
     },
@@ -20942,6 +23066,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Inget att visa ännu"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "まだ表示できるものがありません"
           }
         }
       }
@@ -21002,6 +23132,12 @@
             "state": "translated",
             "value": "Inget att rita ut ännu"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "まだ描画できるものがありません"
+          }
         }
       }
     },
@@ -21061,6 +23197,12 @@
             "state": "translated",
             "value": "Notiser är avstängda för den här appen i Systeminställningar."
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "このアプリの通知はシステム設定でオフになっています。"
+          }
         }
       }
     },
@@ -21116,6 +23258,12 @@
           }
         },
         "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "OK"
+          }
+        },
+        "ja": {
           "stringUnit": {
             "state": "translated",
             "value": "OK"
@@ -21179,6 +23327,12 @@
             "state": "translated",
             "value": "På stången"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "バーの総重量"
+          }
         }
       }
     },
@@ -21237,6 +23391,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Med den här planen kommer du fram trött. Att dra ner volymen de sista två veckorna, med viss intensitet kvar, släpper tröttheten mycket snabbare än formen."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "このプランだと疲れたまま当日を迎えます。強度をある程度保ったまま最後の 2 週間で量を減らすと、フィットネスよりはるかに速く疲労が抜けます。"
           }
         }
       }
@@ -21297,6 +23457,12 @@
             "state": "translated",
             "value": "En ledtråd som håller repetitionen ärlig"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "動作を崩さないための一言"
+          }
         }
       }
     },
@@ -21355,6 +23521,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Bara %lld%% av passen i perioden hade puls, så det här beskriver den delen och inte din träning som helhet."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "この期間で心拍があったのはセッションの %lld%% だけです。したがってこれは全体ではなくその一部を表しています。"
           }
         }
       }
@@ -21415,6 +23587,12 @@
             "state": "translated",
             "value": "Valfritt — importera hellre från Hälsa om klockan registrerar dem. HRV och vilopuls utgör halva vikten i beredskapsvärdet."
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "任意です。時計が記録しているならヘルスケアから読み込んでください。HRV と安静時心拍でコンディションスコアの半分を占めます。"
+          }
         }
       }
     },
@@ -21473,6 +23651,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Valfritt, men det är en medelpuls som gör att passet kan bedömas efter belastning i stället för att uppskattas ur tiden."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "任意ですが、平均心拍があればこのセッションを時間からの推定ではなくトレーニング負荷として評価できます。"
           }
         }
       }
@@ -21533,6 +23717,12 @@
             "state": "translated",
             "value": "Valfritt. Används för att visa tempot som målet innebär."
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "任意です。目標から導かれるペースの表示に使います。"
+          }
         }
       }
     },
@@ -21591,6 +23781,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Annat"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "その他"
           }
         }
       }
@@ -21651,6 +23847,12 @@
             "state": "translated",
             "value": "Andra tjänster"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "その他のサービス"
+          }
         }
       }
     },
@@ -21709,6 +23911,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Över målet"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "目標超過"
           }
         }
       }
@@ -21769,6 +23977,12 @@
             "state": "translated",
             "value": "För mycket nedtrappning"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "テーパーのしすぎ"
+          }
         }
       }
     },
@@ -21827,6 +24041,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Överbelastning"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "オーバーリーチング"
           }
         }
       }
@@ -21887,6 +24107,12 @@
             "state": "translated",
             "value": "PDF-import"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "PDF の読み込み"
+          }
         }
       }
     },
@@ -21945,6 +24171,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Tempo"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ペース"
           }
         }
       }
@@ -22005,6 +24237,12 @@
             "state": "translated",
             "value": "Rörelsemönster"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "動作パターン"
+          }
         }
       }
     },
@@ -22063,6 +24301,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Per sida"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "片側あたり"
           }
         }
       }
@@ -22123,6 +24367,12 @@
             "state": "translated",
             "value": "Personliga rekord"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "自己ベスト"
+          }
         }
       }
     },
@@ -22181,6 +24431,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Foton"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "写真"
           }
         }
       }
@@ -22241,6 +24497,12 @@
             "state": "translated",
             "value": "Välj en PDF — en tränares plan, ett loppresultat, en export ur en träningsdagbok — så plockar Claude ut passen. Du granskar allt innan något sparas."
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "PDF を選んでください。コーチの計画、レース結果、トレーニング日誌の書き出しなど、Claude がワークアウトを抜き出します。保存前にすべてあなたが確認します。"
+          }
         }
       }
     },
@@ -22299,6 +24561,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Plan"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "プラン"
           }
         }
       }
@@ -22359,6 +24627,12 @@
             "state": "translated",
             "value": "Planera rutt"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ルートを計画"
+          }
         }
       }
     },
@@ -22417,6 +24691,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Planera ett pass"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "セッションを計画"
           }
         }
       }
@@ -22477,6 +24757,12 @@
             "state": "translated",
             "value": "Planera en rutt"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ルートを計画"
+          }
         }
       }
     },
@@ -22535,6 +24821,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Planera en rutt på kartan, eller importera en GPX-fil. Exporten skickar den till klockan."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "地図上でルートを引くか、GPX ファイルを読み込んでください。書き出すと時計へ送れます。"
           }
         }
       }
@@ -22595,6 +24887,12 @@
             "state": "translated",
             "value": "Planera på kartan"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "地図で計画"
+          }
         }
       }
     },
@@ -22653,6 +24951,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Planerad volym"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "計画ボリューム"
           }
         }
       }
@@ -22713,6 +25017,12 @@
             "state": "translated",
             "value": "Planerar %lld dagars nedtrappning före det här datumet."
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "この日付の前に %lld 日間のテーパーを計画します。"
+          }
         }
       }
     },
@@ -22771,6 +25081,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Vikter"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "プレート"
           }
         }
       }
@@ -22831,6 +25147,12 @@
             "state": "translated",
             "value": "Peka det här mot mappen som klockans app exporterar till, så importeras nya `.fit`-filer varje gång du öppnar appen. Kontrollen sker vid aktivering, inte löpande — och att importera om kostar ingenting, eftersom filer känns igen på sitt innehåll."
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "時計のアプリが書き出すフォルダを指定すると、アプリを開くたびに新しい `.fit` ファイルが読み込まれます。常時ではなく起動時に確認します。ファイルは内容で重複判定するため、再読み込みしても害はありません。"
+          }
         }
       }
     },
@@ -22889,6 +25211,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Polariserat"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ポラライズド"
           }
         }
       }
@@ -22949,6 +25277,12 @@
             "state": "translated",
             "value": "Pose"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ポーズ"
+          }
         }
       }
     },
@@ -23007,6 +25341,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Effekt"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "パワー"
           }
         }
       }
@@ -23067,6 +25407,12 @@
             "state": "translated",
             "value": "Förutsagda tider"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "予測タイム"
+          }
         }
       }
     },
@@ -23125,6 +25471,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Förval"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "プリセット"
           }
         }
       }
@@ -23185,6 +25537,12 @@
             "state": "translated",
             "value": "Pressande, horisontellt eller vertikalt"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "プレス、水平または垂直"
+          }
         }
       }
     },
@@ -23243,6 +25601,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Huvudmuskler"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "主働筋"
           }
         }
       }
@@ -23303,6 +25667,12 @@
             "state": "translated",
             "value": "Skärpt"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "仕上がっています"
+          }
         }
       }
     },
@@ -23361,6 +25731,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Prioritet"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "優先度"
           }
         }
       }
@@ -23421,6 +25797,12 @@
             "state": "translated",
             "value": "Produktivt"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "効果的"
+          }
         }
       }
     },
@@ -23479,6 +25861,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Utveckling"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "進捗"
           }
         }
       }
@@ -23539,6 +25927,12 @@
             "state": "translated",
             "value": "Drag"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "プル"
+          }
         }
       }
     },
@@ -23597,6 +25991,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Press"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "プッシュ"
           }
         }
       }
@@ -23657,6 +26057,12 @@
             "state": "translated",
             "value": "Avsluta och öppna appen igen för att tillämpa detta."
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "反映するにはアプリを終了して開き直してください。"
+          }
         }
       }
     },
@@ -23712,6 +26118,12 @@
           }
         },
         "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "RPE"
+          }
+        },
+        "ja": {
           "stringUnit": {
             "state": "translated",
             "value": "RPE"
@@ -23775,6 +26187,12 @@
             "state": "translated",
             "value": "RPE %@"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "RPE %@"
+          }
         }
       }
     },
@@ -23833,6 +26251,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Lopp"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "レース"
           }
         }
       }
@@ -23893,6 +26317,12 @@
             "state": "translated",
             "value": "Nedräkning till lopp"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "レースのカウントダウン"
+          }
         }
       }
     },
@@ -23951,6 +26381,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Läs en PDF med AI…"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "AI で PDF を読む…"
           }
         }
       }
@@ -24011,6 +26447,12 @@
             "state": "translated",
             "value": "Läs pass ur en PDF"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "PDF からワークアウトを読み取る"
+          }
         }
       }
     },
@@ -24069,6 +26511,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Beredskap %lld av 100, %@"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "コンディション 100 点中 %lld、%@"
           }
         }
       }
@@ -24129,6 +26577,12 @@
             "state": "translated",
             "value": "Beredskap är en tumregel över dina egna senaste trender — inte en medicinsk mätning. Se den som en uppgift bland andra, vid sidan av hur du faktiskt känner dig."
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "コンディションはあなた自身の最近の傾向に基づく目安であり、医学的な測定ではありません。実際の体感と並ぶ 1 つの材料として扱ってください。"
+          }
         }
       }
     },
@@ -24187,6 +26641,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Mätvärde"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "計測値"
           }
         }
       }
@@ -24247,6 +26707,12 @@
             "state": "translated",
             "value": "Läser %@…"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ を読み取り中…"
+          }
         }
       }
     },
@@ -24305,6 +26771,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Läser dina insatser…"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "運動データを読み取り中…"
           }
         }
       }
@@ -24365,6 +26837,12 @@
             "state": "translated",
             "value": "Läser dina bästa 20-minutersinsatser från det senaste året. Varje siffra är en konvention tillämpad på din egen träning, inte ett labbtest — varje rad säger vad den vilar på, och inget tillämpas förrän du trycker på det."
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "過去 1 年のベスト 20 分の運動を読み取ります。どの数値もラボのテストではなく、あなたのトレーニングに慣例を当てはめたものです。各行が根拠を示し、タップするまで反映されません。"
+          }
         }
       }
     },
@@ -24423,6 +26901,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Registrerat %@"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ に記録"
           }
         }
       }
@@ -24483,6 +26967,12 @@
             "state": "translated",
             "value": "Registrerad distans"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "距離を記録"
+          }
         }
       }
     },
@@ -24541,6 +27031,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Rekord"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "記録"
           }
         }
       }
@@ -24601,6 +27097,12 @@
             "state": "translated",
             "value": "Återhämtning"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "リカバリー"
+          }
         }
       }
     },
@@ -24659,6 +27161,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Varv för återhämtning, uppvärmning och nedvarvning är nedtonade och undantagna från jämförelsen av snabbaste varv."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "リカバリー、ウォームアップ、クールダウンのラップは淡色表示で、最速ラップの比較から除外されます。"
           }
         }
       }
@@ -24719,6 +27227,12 @@
             "state": "translated",
             "value": "Uppdatera höjddata"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "標高を更新"
+          }
         }
       }
     },
@@ -24777,6 +27291,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Påminnelser"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "リマインダー"
           }
         }
       }
@@ -24837,6 +27357,12 @@
             "state": "translated",
             "value": "Ta bort alla sparade inloggningsuppgifter"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "保存された認証情報をすべて削除"
+          }
         }
       }
     },
@@ -24895,6 +27421,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Upprepa"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "繰り返し"
           }
         }
       }
@@ -24955,6 +27487,12 @@
             "state": "translated",
             "value": "Repetitioner: %lld"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "レップ：%lld"
+          }
         }
       }
     },
@@ -25013,6 +27551,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Vila"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "レスト"
           }
         }
       }
@@ -25073,6 +27617,12 @@
             "state": "translated",
             "value": "Vilan är slut"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "レスト終了"
+          }
         }
       }
     },
@@ -25131,6 +27681,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Vila: %@"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "レスト：%@"
           }
         }
       }
@@ -25191,6 +27747,12 @@
             "state": "translated",
             "value": "Vilar"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "レスト中"
+          }
         }
       }
     },
@@ -25249,6 +27811,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Vilopuls"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "安静時心拍"
           }
         }
       }
@@ -25309,6 +27877,12 @@
             "state": "translated",
             "value": "Vilopuls"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "安静時心拍数"
+          }
         }
       }
     },
@@ -25367,6 +27941,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Återställ från en säkerhetskopia…"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "バックアップから復元…"
           }
         }
       }
@@ -25427,6 +28007,12 @@
             "state": "translated",
             "value": "Vilar %@ efter det här setet."
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "このセットのあと %@ 休みます。"
+          }
         }
       }
     },
@@ -25485,6 +28071,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Resultat"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "結果"
           }
         }
       }
@@ -25545,6 +28137,12 @@
             "state": "translated",
             "value": "Pensionera det här paret"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "この 1 足を引退させる"
+          }
         }
       }
     },
@@ -25603,6 +28201,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Pensionerade"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "引退済み"
           }
         }
       }
@@ -25663,6 +28267,12 @@
             "state": "translated",
             "value": "Riegel-extrapolering från din längsta bästa insats. Markerade rader extrapolerar långt och brukar bli optimistiska — särskilt maratonprognoser förutsätter en uthållighet du kanske inte har tränat."
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "最も長いベスト記録からの Riegel 式による外挿です。印の付いた行は外挿の幅が大きく、楽観的になりがちです。とくにマラソンの予測は、まだ養っていない持久力を前提にしています。"
+          }
         }
       }
     },
@@ -25721,6 +28331,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Tempoutveckling på väg"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ロードのペース推移"
           }
         }
       }
@@ -25781,6 +28397,12 @@
             "state": "translated",
             "value": "Ruttnamn"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ルート名"
+          }
         }
       }
     },
@@ -25839,6 +28461,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Rutter"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ルート"
           }
         }
       }
@@ -25899,6 +28527,12 @@
             "state": "translated",
             "value": "Rutiner"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ルーティン"
+          }
         }
       }
     },
@@ -25957,6 +28591,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Rodd och drag, horisontellt eller vertikalt"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ローイングとプル、水平または垂直"
           }
         }
       }
@@ -26017,6 +28657,12 @@
             "state": "translated",
             "value": "Löpning"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ラン"
+          }
         }
       }
     },
@@ -26075,6 +28721,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Löppass"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ラン"
           }
         }
       }
@@ -26135,6 +28787,12 @@
             "state": "translated",
             "value": "Fortsätter tills du trycker varv på klockan."
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "時計でラップを押すまで続きます。"
+          }
         }
       }
     },
@@ -26193,6 +28851,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "SWOLF adderar banlängdstid och antal simtag — lägre betyder effektivare."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "SWOLF は 1 本のタイムとストローク数の合計です。低いほど効率的です。"
           }
         }
       }
@@ -26253,6 +28917,12 @@
             "state": "translated",
             "value": "Spara"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "保存"
+          }
         }
       }
     },
@@ -26311,6 +28981,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Spara ett pass en gång — övningarna, seten, repetitionerna och vilan — och starta det med ett tryck på dagen."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "セッションを一度保存すれば（種目、セット、レップ、レスト）、当日は 1 タップで開始できます。"
           }
         }
       }
@@ -26371,6 +29047,12 @@
             "state": "translated",
             "value": "Kontrollera nu"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "今すぐ確認"
+          }
         }
       }
     },
@@ -26429,6 +29111,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Går igenom passen…"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ワークアウトを確認中…"
           }
         }
       }
@@ -26489,6 +29177,12 @@
             "state": "translated",
             "value": "Schemalagda"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "予定済み"
+          }
         }
       }
     },
@@ -26547,6 +29241,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Sök på namn, mönster eller muskel"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "名前、動作パターン、筋肉で検索"
           }
         }
       }
@@ -26607,6 +29307,12 @@
             "state": "translated",
             "value": "Sök i anteckningar, sport eller källa"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "メモ、種目、取得元で検索"
+          }
         }
       }
     },
@@ -26665,6 +29371,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Säsong"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "シーズン"
           }
         }
       }
@@ -26725,6 +29437,12 @@
             "state": "translated",
             "value": "Ladda demodata"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "デモデータを入れる"
+          }
         }
       }
     },
@@ -26783,6 +29501,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Välj…"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "選択…"
           }
         }
       }
@@ -26843,6 +29567,12 @@
             "state": "translated",
             "value": "Skicka till klockan…"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "時計へ送る…"
+          }
         }
       }
     },
@@ -26901,6 +29631,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Skickar ruttens koordinater till OpenTopoDatas publika tjänst för att läsa markhöjden. En importerad GPX som redan innehåller höjddata behöver inte detta."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "このルートの座標を OpenTopoData の公開サービスへ送り、地表の標高を取得します。すでに標高を含む GPX を読み込んだ場合は不要です。"
           }
         }
       }
@@ -26961,6 +29697,12 @@
             "state": "translated",
             "value": "Serie"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "系列"
+          }
         }
       }
     },
@@ -27019,6 +29761,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Pass"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "セッション"
           }
         }
       }
@@ -27079,6 +29827,12 @@
             "state": "translated",
             "value": "Påminnelser om pass"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "セッションのリマインダー"
+          }
         }
       }
     },
@@ -27137,6 +29891,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Pass"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "セッション"
           }
         }
       }
@@ -27197,6 +29957,12 @@
             "state": "translated",
             "value": "Räknade pass"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "対象セッション数"
+          }
         }
       }
     },
@@ -27255,6 +30021,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Ange belastningen själv"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "負荷を自分で設定"
           }
         }
       }
@@ -27315,6 +30087,12 @@
             "state": "translated",
             "value": "Ställ in övningar…"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "種目を設定…"
+          }
         }
       }
     },
@@ -27373,6 +30151,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Ange din FTP i Inställningar för att få Intensity Factor och TSS."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Intensity Factor と TSS を出すには、設定で FTP を入力してください。"
           }
         }
       }
@@ -27433,6 +30217,12 @@
             "state": "translated",
             "value": "Set"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "セット"
+          }
         }
       }
     },
@@ -27491,6 +30281,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Set registreras mot en övning, så börja med att bygga ditt bibliotek."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "セットは種目に紐づけて記録します。まずライブラリを用意してください。"
           }
         }
       }
@@ -27551,6 +30347,12 @@
             "state": "translated",
             "value": "Set registreras mot en övning, så du behöver minst en. Utgå från den inbyggda listan och ändra den, eller lägg till egna."
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "セットは種目に紐づけて記録するため、最低 1 つ必要です。内蔵リストから始めて編集するか、自分で追加してください。"
+          }
         }
       }
     },
@@ -27609,6 +30411,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Set: %lld"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "セット：%lld"
           }
         }
       }
@@ -27669,6 +30477,12 @@
             "state": "translated",
             "value": "Inställningar"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "設定"
+          }
         }
       }
     },
@@ -27727,6 +30541,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Dela"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "共有"
           }
         }
       }
@@ -27787,6 +30607,12 @@
             "state": "translated",
             "value": "Skärpt"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "仕上がり良好"
+          }
         }
       }
     },
@@ -27845,6 +30671,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Sko"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "シューズ"
           }
         }
       }
@@ -27905,6 +30737,12 @@
             "state": "translated",
             "value": "Skovarningar"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "シューズの警告"
+          }
         }
       }
     },
@@ -27963,6 +30801,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Skor"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "シューズ"
           }
         }
       }
@@ -28023,6 +30867,12 @@
             "state": "translated",
             "value": "Skor och utrustning"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "シューズと用具"
+          }
         }
       }
     },
@@ -28081,6 +30931,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Axlar"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "肩幅"
           }
         }
       }
@@ -28141,6 +30997,12 @@
             "state": "translated",
             "value": "Visas när du väljer den här övningen medan du registrerar ett set."
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "セットの記録時にこの種目を選ぶと表示されます。"
+          }
         }
       }
     },
@@ -28199,6 +31061,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Från sidan"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "側面"
           }
         }
       }
@@ -28259,6 +31127,12 @@
             "state": "translated",
             "value": "Ställe"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "部位"
+          }
         }
       }
     },
@@ -28317,6 +31191,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Hoppa över"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "スキップ"
           }
         }
       }
@@ -28377,6 +31257,12 @@
             "state": "translated",
             "value": "Sömn"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "睡眠"
+          }
         }
       }
     },
@@ -28435,6 +31321,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Lite tung"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "やや重い"
           }
         }
       }
@@ -28495,6 +31387,12 @@
             "state": "translated",
             "value": "Fäst mot stigar"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "道に合わせる"
+          }
         }
       }
     },
@@ -28553,6 +31451,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Mellantid"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "スプリット"
           }
         }
       }
@@ -28613,6 +31517,12 @@
             "state": "translated",
             "value": "Mellantider"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "スプリット"
+          }
         }
       }
     },
@@ -28671,6 +31581,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Sport"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "種目"
           }
         }
       }
@@ -28731,6 +31647,12 @@
             "state": "translated",
             "value": "Knäböj"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "スクワット"
+          }
         }
       }
     },
@@ -28789,6 +31711,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Start"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "スタート"
           }
         }
       }
@@ -28849,6 +31777,12 @@
             "state": "translated",
             "value": "Starta ett pass"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "セッションを開始"
+          }
         }
       }
     },
@@ -28907,6 +31841,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Starta ett pass och lägg till ditt första set."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "セッションを開始して、最初のセットを追加しましょう。"
           }
         }
       }
@@ -28967,6 +31907,12 @@
             "state": "translated",
             "value": "Utgå från ett jämnt pass"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "一定ペースのセッションから始める"
+          }
         }
       }
     },
@@ -29025,6 +31971,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Utgå från ett intervallpass"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "インターバルのセッションから始める"
           }
         }
       }
@@ -29085,6 +32037,12 @@
             "state": "translated",
             "value": "Startat"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "開始"
+          }
         }
       }
     },
@@ -29143,6 +32101,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Status"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "状態"
           }
         }
       }
@@ -29203,6 +32167,12 @@
             "state": "translated",
             "value": "Steg"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ステップ"
+          }
         }
       }
     },
@@ -29261,6 +32231,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Stegen kan skickas till klockan som ett .fit-pass, så att passet styr sig självt i stället för att vara ett namn du måste minnas."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ステップは .fit ワークアウトとして時計へ送れます。覚えておく名前ではなく、セッションが自動で進みます。"
           }
         }
       }
@@ -29321,6 +32297,12 @@
             "state": "translated",
             "value": "Kvar att göra"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "残り"
+          }
         }
       }
     },
@@ -29379,6 +32361,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Fortfarande i uppstart — 42-dagarssnittet behöver ungefär tre veckors historik innan det sätter sig."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "まだ立ち上がり中です。42 日平均が安定するには 3 週間ほどの履歴が要ります。"
           }
         }
       }
@@ -29439,6 +32427,12 @@
             "state": "translated",
             "value": "Sluta bevaka"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "監視をやめる"
+          }
         }
       }
     },
@@ -29497,6 +32491,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Sparas bara på den här enheten — de följer med i en krypterad säkerhetskopia om du gör en, och ingen annanstans."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "このデバイスにのみ保存されます。バックアップを作れば暗号化されたバックアップに入りますが、それ以外のどこにも送られません。"
           }
         }
       }
@@ -29557,6 +32557,12 @@
             "state": "translated",
             "value": "Direkt vidare till nästa övning — vilan kommer i slutet av varvet."
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "そのまま次の種目へ。レストはラウンドの最後です。"
+          }
         }
       }
     },
@@ -29612,6 +32618,12 @@
           }
         },
         "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Strava"
+          }
+        },
+        "ja": {
           "stringUnit": {
             "state": "translated",
             "value": "Strava"
@@ -29675,6 +32687,12 @@
             "state": "translated",
             "value": "Styrka"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "筋力"
+          }
         }
       }
     },
@@ -29733,6 +32751,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Struktur"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "構成"
           }
         }
       }
@@ -29793,6 +32817,12 @@
             "state": "translated",
             "value": "Superset"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "スーパーセット"
+          }
         }
       }
     },
@@ -29851,6 +32881,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Övningar i ett superset varvas: ett set av varje, sedan vila."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "スーパーセットの種目は交互に行います。各 1 セットずつ、そのあとレストです。"
           }
         }
       }
@@ -29911,6 +32947,12 @@
             "state": "translated",
             "value": "Gör de två sista till ett superset"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "最後の 2 つをスーパーセットに"
+          }
         }
       }
     },
@@ -29969,6 +33011,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Hållbart"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "持続可能"
           }
         }
       }
@@ -30029,6 +33077,12 @@
             "state": "translated",
             "value": "Går igenom alla insatser…"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "すべての運動を走査中…"
+          }
         }
       }
     },
@@ -30087,6 +33141,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Simning"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "スイム"
           }
         }
       }
@@ -30147,6 +33207,12 @@
             "state": "translated",
             "value": "Synkronisering"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "同期"
+          }
         }
       }
     },
@@ -30205,6 +33271,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Synka anslutna tjänster"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "接続済みサービスを同期"
           }
         }
       }
@@ -30265,6 +33337,12 @@
             "state": "translated",
             "value": "Synka nu"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "今すぐ同期"
+          }
         }
       }
     },
@@ -30323,6 +33401,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Synkronisering av"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "同期はオフです"
           }
         }
       }
@@ -30383,6 +33467,12 @@
             "state": "translated",
             "value": "Synka med iCloud"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "iCloud と同期"
+          }
         }
       }
     },
@@ -30441,6 +33531,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Synkar med iCloud"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "iCloud と同期中"
           }
         }
       }
@@ -30501,6 +33597,12 @@
             "state": "translated",
             "value": "Synkar…"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "同期中…"
+          }
         }
       }
     },
@@ -30559,6 +33661,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Ta det lugnt"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "無理をしないで"
           }
         }
       }
@@ -30619,6 +33727,12 @@
             "state": "translated",
             "value": "Tagen"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "撮影日"
+          }
         }
       }
     },
@@ -30677,6 +33791,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Nedtrappningen börjar"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "テーパー開始"
           }
         }
       }
@@ -30737,6 +33857,12 @@
             "state": "translated",
             "value": "Mål"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ターゲット"
+          }
         }
       }
     },
@@ -30795,6 +33921,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Mål på distans"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "距離を目標にする"
           }
         }
       }
@@ -30855,6 +33987,12 @@
             "state": "translated",
             "value": "Mål på tid"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "時間を目標にする"
+          }
         }
       }
     },
@@ -30913,6 +34051,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Den filen är inte läsbar GPX."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "そのファイルは読み取り可能な GPX ではありません。"
           }
         }
       }
@@ -30973,6 +34117,12 @@
             "state": "translated",
             "value": "Höjdtjänsten hade inga data för den här rutten. Oftast betyder det att den ligger utanför datamängdens täckning (ungefär 60°N till 56°S)."
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "標高サービスにこのルートのデータがありませんでした。多くの場合、データセットの範囲（およそ北緯 60 度〜南緯 56 度）の外にあることを意味します。"
+          }
         }
       }
     },
@@ -31031,6 +34181,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Höjdtjänsten är begränsad just nu. Försök igen om en minut."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "標高サービスは現在、回数制限がかかっています。1 分ほどおいて再試行してください。"
           }
         }
       }
@@ -31091,6 +34247,12 @@
             "state": "translated",
             "value": "Höjdtjänsten svarade med ett fel (HTTP %lld)."
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "標高サービスがエラーを返しました（HTTP %lld）。"
+          }
         }
       }
     },
@@ -31149,6 +34311,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Kurvorna för form och trötthet säger vilken form du är i i dag. Ge dem ett datum att sikta mot så säger de vilken form du är i den dagen."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "フィットネスと疲労の曲線は、今日のあなたの状態を示します。目標の日付を与えれば、その日にどんな状態でいるかを示します。"
           }
         }
       }
@@ -31209,6 +34377,12 @@
             "state": "translated",
             "value": "Den fullständiga exporten är ren JSON och innehåller GPS-spår och sensordata, så den kan återställas exakt — och den är stor. Sammanfattningen utelämnar dem. Återställning slås ihop med det som redan finns; den raderar aldrig något."
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "完全な書き出しはプレーンな JSON で、GPS トラックとセンサーの連続データを含むため、そのまま復元できますが、サイズは大きくなります。サマリーはそれらを含みません。復元は既存のデータに統合され、何も削除しません。"
+          }
         }
       }
     },
@@ -31267,6 +34441,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Rutten ritas från din egen inspelning — inga kartrutor, ingen tredje part. Den visar ändå var du startade, därför är den av tills du slår på den."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ルートはあなた自身の記録から描いています。地図タイルも第三者も使いません。ただし出発地点はそのまま写るため、オンにするまでは無効です。"
           }
         }
       }
@@ -31327,6 +34507,12 @@
             "state": "translated",
             "value": "Lår (V)"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "太もも（左）"
+          }
         }
       }
     },
@@ -31385,6 +34571,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Lår (H)"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "太もも（右）"
           }
         }
       }
@@ -31445,6 +34637,12 @@
             "state": "translated",
             "value": "Det här går inte att ångra."
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "この操作は取り消せません。"
+          }
         }
       }
     },
@@ -31503,6 +34701,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Bara den här enheten"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "このデバイスのみ"
           }
         }
       }
@@ -31563,6 +34767,12 @@
             "state": "translated",
             "value": "Det här är fönstret man tävlar bra från: tröttheten har släppt och formen finns kvar."
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ここが good race につながる範囲です。疲労は抜け、フィットネスはまだ残っています。"
+          }
         }
       }
     },
@@ -31621,6 +34831,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Med den här planen kommer du fram utvilad men långt ner i form. Fräschheten ser bra ut för att det inte finns någon trötthet kvar att dra ifrån — det är inte samma sak som att vara skärpt. Det finns utrymme för betydligt mer arbete fram till dess."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "このプランでは休養十分で迎えますが、フィットネスは大きく落ちています。差し引く疲労が残っていないのでコンディションの数字は良く見えますが、それは仕上がっていることとは違います。それまでにもっと積める余地があります。"
           }
         }
       }
@@ -31681,6 +34897,12 @@
             "state": "translated",
             "value": "Den här rutten behöver minst två punkter för att kunna ha en profil."
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "このルートにプロファイルを出すには、少なくとも 2 点必要です。"
+          }
         }
       }
     },
@@ -31739,6 +34961,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Den här veckan"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "今週"
           }
         }
       }
@@ -31799,6 +35027,12 @@
             "state": "translated",
             "value": "Det här passet saknar GPS-spår, så kortet innehåller bara siffror."
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "このワークアウトには GPS トラックがないため、カードは数値のみになります。"
+          }
         }
       }
     },
@@ -31857,6 +35091,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Det här passet har registrerade data — ett GPS-spår, varv eller sensordata. De ändras inte här, så att redigera sammanfattningen kan få den att motsäga dem."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "このワークアウトには記録データ（GPS トラック、ラップ、センサーの連続データ）があります。ここでは変更されないため、サマリーを編集すると食い違う可能性があります。"
           }
         }
       }
@@ -31917,6 +35157,12 @@
             "state": "translated",
             "value": "Tröskelpuls"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "閾値心拍"
+          }
         }
       }
     },
@@ -31975,6 +35221,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Tid"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "時間"
           }
         }
       }
@@ -32035,6 +35287,12 @@
             "state": "translated",
             "value": "Tid i varje band"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "各帯の滞在時間"
+          }
         }
       }
     },
@@ -32093,6 +35351,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Tid i zon kräver puls per sekund, som kommer från en .fit-import eller en synkad aktivitet med dataströmmar."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ゾーン別時間には秒単位の心拍が必要で、.fit の読み込みか連続データ付きの同期アクティビティから得られます。"
           }
         }
       }
@@ -32153,6 +35417,12 @@
             "state": "translated",
             "value": "Tid på dygnet, förhållanden…"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "時間帯、コンディション…"
+          }
         }
       }
     },
@@ -32211,6 +35481,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "I dag"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "今日"
           }
         }
       }
@@ -32271,6 +35547,12 @@
             "state": "translated",
             "value": "För hårt"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "きつすぎ"
+          }
         }
       }
     },
@@ -32329,6 +35611,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "För mycket, för snabbt"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "急に増やしすぎ"
           }
         }
       }
@@ -32389,6 +35677,12 @@
             "state": "translated",
             "value": "Totalt"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "合計"
+          }
         }
       }
     },
@@ -32447,6 +35741,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Total distans"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "総距離"
           }
         }
       }
@@ -32507,6 +35807,12 @@
             "state": "translated",
             "value": "Total tid"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "総時間"
+          }
         }
       }
     },
@@ -32565,6 +35871,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Terränglöpning"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "トレイルラン"
           }
         }
       }
@@ -32625,6 +35937,12 @@
             "state": "translated",
             "value": "Träningsbelastning"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "トレーニング負荷"
+          }
         }
       }
     },
@@ -32683,6 +36001,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Träningsbelastning %lld, %@"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "トレーニング負荷 %lld、%@"
           }
         }
       }
@@ -32743,6 +36067,12 @@
             "state": "translated",
             "value": "Träningstempon (per %@)"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "トレーニングペース（%@ あたり）"
+          }
         }
       }
     },
@@ -32801,6 +36131,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Träningsbelastning"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "トレーニングストレス"
           }
         }
       }
@@ -32861,6 +36197,12 @@
             "state": "translated",
             "value": "Bålspänning och antirotation"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "体幹の固定と抗回旋"
+          }
         }
       }
     },
@@ -32919,6 +36261,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Prova med exempeldata"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "サンプルデータで試す"
           }
         }
       }
@@ -32979,6 +36327,12 @@
             "state": "translated",
             "value": "Ta i bruk igen"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "引退を取り消す"
+          }
         }
       }
     },
@@ -33037,6 +36391,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Under målet"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "目標より速い"
           }
         }
       }
@@ -33097,6 +36457,12 @@
             "state": "translated",
             "value": "Ångra"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "取り消す"
+          }
         }
       }
     },
@@ -33155,6 +36521,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Enheter"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "単位"
           }
         }
       }
@@ -33215,6 +36587,12 @@
             "state": "translated",
             "value": "Tills du anger det här använder zonerna den högsta pulsen i hela din historik — bättre än toppen från ett enskilt pass, men fortfarande en gissning."
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "これを設定するまで、ゾーンは全履歴で最も高い心拍を使います。1 回のピークよりはましですが、やはり推測です。"
+          }
         }
       }
     },
@@ -33273,6 +36651,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Härnäst"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "次は"
           }
         }
       }
@@ -33333,6 +36717,12 @@
             "state": "translated",
             "value": "Kommande"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "予定"
+          }
         }
       }
     },
@@ -33391,6 +36781,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Använd"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "使う"
           }
         }
       }
@@ -33451,6 +36847,12 @@
             "state": "translated",
             "value": "Använd åldersuppskattningen (%lld slag/min)"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "年齢からの推定値を使う（%lld bpm）"
+          }
         }
       }
     },
@@ -33506,6 +36908,12 @@
           }
         },
         "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "VO₂max"
+          }
+        },
+        "ja": {
           "stringUnit": {
             "state": "translated",
             "value": "VO₂max"
@@ -33569,6 +36977,12 @@
             "state": "translated",
             "value": "VO₂max-utveckling över %lld mätningar"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld 件の計測での VO₂max の推移"
+          }
         }
       }
     },
@@ -33627,6 +37041,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Värde"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "値"
           }
         }
       }
@@ -33687,6 +37107,12 @@
             "state": "translated",
             "value": "Vy"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "表示"
+          }
         }
       }
     },
@@ -33746,6 +37172,12 @@
             "state": "translated",
             "value": "Volym"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ボリューム"
+          }
         }
       }
     },
@@ -33801,6 +37233,12 @@
           }
         },
         "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "W"
+          }
+        },
+        "ja": {
           "stringUnit": {
             "state": "translated",
             "value": "W"
@@ -33864,6 +37302,12 @@
             "state": "translated",
             "value": "Midja"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ウエスト"
+          }
         }
       }
     },
@@ -33922,6 +37366,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Promenad"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ウォーク"
           }
         }
       }
@@ -33982,6 +37432,12 @@
             "state": "translated",
             "value": "Uppvärmning"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ウォームアップ"
+          }
         }
       }
     },
@@ -34040,6 +37496,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Uppvärmningsset"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ウォームアップセット"
           }
         }
       }
@@ -34100,6 +37562,12 @@
             "state": "translated",
             "value": "Bevakad mapp"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "監視フォルダ"
+          }
         }
       }
     },
@@ -34158,6 +37626,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Slitage"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "摩耗"
           }
         }
       }
@@ -34218,6 +37692,12 @@
             "state": "translated",
             "value": "Slitagegräns"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "摩耗の上限"
+          }
         }
       }
     },
@@ -34276,6 +37756,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Slitagegräns: %lld km"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "摩耗の上限：%lld km"
           }
         }
       }
@@ -34336,6 +37822,12 @@
             "state": "translated",
             "value": "Vecka"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "週"
+          }
         }
       }
     },
@@ -34394,6 +37886,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Veckovolym"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "週間ボリューム"
           }
         }
       }
@@ -34454,6 +37952,12 @@
             "state": "translated",
             "value": "Vikt"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "重量"
+          }
         }
       }
     },
@@ -34512,6 +38016,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Vikten rör sig flera kilo på vatten och skiljer inte muskler från något annat. En midja och en arm gör det, och ett foto med några veckors mellanrum svarar direkt."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "体重は水分で数キロ動き、筋肉かどうかも区別できません。ウエストと腕なら区別でき、数週間ごとの写真ならひと目で分かります。"
           }
         }
       }
@@ -34572,6 +38082,12 @@
             "state": "translated",
             "value": "Vad som styrde det"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "内訳"
+          }
         }
       }
     },
@@ -34630,6 +38146,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Vad är det? t.ex. 8 × 400 m"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "内容は？（例：8 × 400 m）"
           }
         }
       }
@@ -34690,6 +38212,12 @@
             "state": "translated",
             "value": "Period"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "期間"
+          }
         }
       }
     },
@@ -34748,6 +38276,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Arbete"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ワーク"
           }
         }
       }
@@ -34808,6 +38342,12 @@
             "state": "translated",
             "value": "Räknar ut prognosen…"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "予測を計算中…"
+          }
         }
       }
     },
@@ -34866,6 +38406,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Pass"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ワークアウト"
           }
         }
       }
@@ -34926,6 +38472,12 @@
             "state": "translated",
             "value": "Pass, mätvärden och rutter delas med dina andra enheter via din privata iCloud-databas. Ingenting går till någon server hos oss."
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ワークアウト、計測値、ルートは、あなた個人の iCloud データベースを通じてほかのデバイスと共有されます。当方のサーバーには何も送られません。"
+          }
         }
       }
     },
@@ -34984,6 +38536,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Skriv passen till Apple Hälsa"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ワークアウトを Apple ヘルスケアに書き込む"
           }
         }
       }
@@ -35044,6 +38602,12 @@
             "state": "translated",
             "value": "Skriver en .fit-passfil — skicka den med AirDrop eller lämna den till klockans app. Ange din maxpuls i Inställningar så skrivs zonmålen som riktiga pulsintervall; utan den går stegen ut utan mål."
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": ".fit のワークアウトファイルを書き出します。AirDrop で送るか、時計のアプリに渡してください。設定で最大心拍を入力すると、ゾーンのターゲットが実際の bpm 範囲として書き込まれます。未設定ならステップはターゲットなしで出力されます。"
+          }
         }
       }
     },
@@ -35102,6 +38666,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Skriver en .fit-passfil — skicka den med AirDrop eller lämna den till klockans app. Zonmålen skrivs som pulsintervall utifrån din maxpuls på %lld."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": ".fit のワークアウトファイルを書き出します。AirDrop で送るか、時計のアプリに渡してください。ゾーンのターゲットは最大心拍 %lld から算出した bpm 範囲で書き込まれます。"
           }
         }
       }
@@ -35162,6 +38732,12 @@
             "state": "translated",
             "value": "Skriver varje importerat pass med rutt och pulsserie, vilket är mer än klockans egen Hälsa-synk tar med. Demodata och pass som kom *från* Hälsa hoppas över, och ingenting skrivs två gånger."
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "読み込んだ各ワークアウトを、ルートと心拍の系列付きで書き込みます。これは時計自身のヘルスケア同期が運ぶ情報より多いものです。デモデータとヘルスケア*から*取り込んだワークアウトは除外され、二重に書き込むことはありません。"
+          }
         }
       }
     },
@@ -35220,6 +38796,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Skriver…"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "書き込み中…"
           }
         }
       }
@@ -35280,6 +38862,12 @@
             "state": "translated",
             "value": "Din API-nyckel finns längst ner på inställningssidan i intervals.icu. Lämna idrottar-ID tomt för att använda den inloggade idrottaren."
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "API キーは intervals.icu の設定ページ下部にあります。認証済みのアスリートを使う場合はアスリート ID を空欄にしてください。"
+          }
         }
       }
     },
@@ -35339,6 +38927,12 @@
             "state": "translated",
             "value": "Dina data har inte raderats. Filen finns fortfarande på:\n%@\n\nAvsluta och öppna appen igen först. Hjälper inte det, kopiera filen till en säker plats innan du provar något annat."
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "データは削除されていません。ファイルは次の場所にあります：\n%@\n\nまずアプリを終了して開き直してください。それで解決しない場合は、ほかのことを試す前にそのファイルを安全な場所へコピーしてください。"
+          }
         }
       }
     },
@@ -35394,6 +38988,12 @@
           }
         },
         "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Z%lld %@"
+          }
+        },
+        "ja": {
           "stringUnit": {
             "state": "translated",
             "value": "Z%lld %@"
@@ -35457,6 +39057,12 @@
             "state": "translated",
             "value": "Zon %lld, %@"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ゾーン %lld、%@"
+          }
         }
       }
     },
@@ -35515,6 +39121,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Zoner, träningsbelastning och beredskap räknas alla mot din egen puls. Utan ett maxvärde faller de tillbaka på den högsta siffran i dina data, och den är oftast lite för låg."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ゾーン、トレーニング負荷、コンディションはいずれもあなた自身の心拍を基準に計算されます。最大値がないとデータ中の最高値で代用され、それはたいてい少し低めです。"
           }
         }
       }
@@ -35575,6 +39187,12 @@
             "state": "translated",
             "value": "dag kvar"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "日後"
+          }
         }
       }
     },
@@ -35633,6 +39251,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "dagar kvar"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "日後"
           }
         }
       }
@@ -35693,6 +39317,12 @@
             "state": "translated",
             "value": "e1RM"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "推定 1RM"
+          }
         }
       }
     },
@@ -35752,6 +39382,12 @@
             "state": "translated",
             "value": "fräschhet %@"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "コンディション %@"
+          }
         }
       }
     },
@@ -35807,6 +39443,12 @@
           }
         },
         "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "iCloud"
+          }
+        },
+        "ja": {
           "stringUnit": {
             "state": "translated",
             "value": "iCloud"
@@ -35870,6 +39512,12 @@
             "state": "translated",
             "value": "iCloud-synk är inte tillgänglig, så allt lagras på den här enheten. %@"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "iCloud 同期は利用できないため、すべてこのデバイスに保存されます。%@"
+          }
         }
       }
     },
@@ -35925,6 +39573,12 @@
           }
         },
         "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "intervals.icu"
+          }
+        },
+        "ja": {
           "stringUnit": {
             "state": "translated",
             "value": "intervals.icu"
@@ -35988,6 +39642,12 @@
             "state": "translated",
             "value": "km"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "km"
+          }
         }
       }
     },
@@ -36046,6 +39706,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "km, meter, kilogram"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "km、メートル、キログラム"
           }
         }
       }
@@ -36106,6 +39772,12 @@
             "state": "translated",
             "value": "gräns %lld km"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "上限 %lld km"
+          }
         }
       }
     },
@@ -36165,6 +39837,12 @@
             "state": "translated",
             "value": "belastning"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "負荷"
+          }
         }
       }
     },
@@ -36220,6 +39898,12 @@
           }
         },
         "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "m"
+          }
+        },
+        "ja": {
           "stringUnit": {
             "state": "translated",
             "value": "m"
@@ -36283,6 +39967,12 @@
             "state": "translated",
             "value": "ml/kg·min"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "mL/kg·分"
+          }
         }
       }
     },
@@ -36341,6 +40031,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "max %lld slag/min"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "最大 %lld bpm"
           }
         }
       }
@@ -36401,6 +40097,12 @@
             "state": "translated",
             "value": "miles, fot, pund"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "マイル、フィート、ポンド"
+          }
         }
       }
     },
@@ -36459,6 +40161,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "min/%@"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "分/%@"
           }
         }
       }
@@ -36519,6 +40227,12 @@
             "state": "translated",
             "value": "minuter"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "分"
+          }
         }
       }
     },
@@ -36577,6 +40291,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "ej angivet"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "未設定"
           }
         }
       }
@@ -36637,6 +40357,12 @@
             "state": "translated",
             "value": "valfritt"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "任意"
+          }
         }
       }
     },
@@ -36695,6 +40421,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "framsida lår, säte"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "大腿四頭筋、臀筋"
           }
         }
       }
@@ -36755,6 +40487,12 @@
             "state": "translated",
             "value": "beredskap"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "コンディション"
+          }
         }
       }
     },
@@ -36813,6 +40551,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "repetitioner"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "レップ"
           }
         }
       }
@@ -36873,6 +40617,12 @@
             "state": "translated",
             "value": "i dag"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "今日"
+          }
         }
       }
     },
@@ -36932,6 +40682,12 @@
             "state": "translated",
             "value": "uppvärmning"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ウォームアップ"
+          }
         }
       }
     },
@@ -36987,6 +40743,12 @@
           }
         },
         "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "x"
+          }
+        },
+        "ja": {
           "stringUnit": {
             "state": "translated",
             "value": "x"
@@ -37050,6 +40812,12 @@
             "state": "translated",
             "value": "–"
           }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "–"
+          }
         }
       }
     },
@@ -37105,6 +40873,12 @@
           }
         },
         "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "—"
+          }
+        },
+        "ja": {
           "stringUnit": {
             "state": "translated",
             "value": "—"

@@ -1,0 +1,5 @@
+{
+  "%@ at %lld km": "%2$lld km 地点で %1$@",
+  "%@ trend over %lld days": "%2$lld 日間の %1$@ の推移",
+  "From %lld %@ over %lld min on %@": "%4$@ の %3$lld 分間、%1$lld %2$@ から"
+}

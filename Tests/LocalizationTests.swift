@@ -37,17 +37,60 @@ final class LocalizationCatalogTests: XCTestCase {
 
     private var catalog: Catalog { Self.catalog }
 
-    /// Every `%@`, `%lld`, `%.1f` and friends, in order.
-    private func specifiers(in text: String) -> [String] {
-        let pattern = "%(?:%|[0-9]*\\.?[0-9]*(?:ll|l|h|hh|z|q)?[@dioufFeEgGxXcsSpaA])"
+    /// One format specifier: which argument it consumes and what type it wants.
+    private struct Specifier: Equatable, CustomStringConvertible {
+        let position: Int?   // nil when the specifier is implicitly positional
+        let type: String     // "@", "lld", "f" …
+
+        var description: String {
+            position.map { "%\($0)$\(type)" } ?? "%\(type)"
+        }
+    }
+
+    /// Every `%@`, `%lld`, `%2$@` and friends, in order.
+    ///
+    /// Positional forms matter: a language whose word order differs from
+    /// English can't simply move `%@` around — the arguments are consumed in
+    /// the order they appear unless the translation says otherwise. Japanese
+    /// needs exactly this.
+    private func specifiers(in text: String) -> [Specifier] {
+        let pattern = "%(?:%|(?:([0-9]+)\\$)?[0-9]*\\.?[0-9]*(ll|l|h|hh|z|q)?([@dioufFeEgGxXcsSpaA]))"
         let regex = try! NSRegularExpression(pattern: pattern)
         let range = NSRange(text.startIndex..., in: text)
+
         return regex.matches(in: text, range: range).compactMap { match in
-            guard let r = Range(match.range, in: text) else { return nil }
-            let token = String(text[r])
+            guard let whole = Range(match.range, in: text) else { return nil }
             // "%%" is a literal percent, not an argument.
-            return token == "%%" ? nil : token
+            guard String(text[whole]) != "%%" else { return nil }
+
+            func group(_ index: Int) -> String? {
+                guard let r = Range(match.range(at: index), in: text) else { return nil }
+                return String(text[r])
+            }
+            let position = group(1).flatMap(Int.init)
+            let type = (group(2) ?? "") + (group(3) ?? "")
+            return Specifier(position: position, type: type)
         }
+    }
+
+    /// The type each argument index must receive, resolved through positional
+    /// specifiers where they're used.
+    ///
+    /// Returns nil when a string mixes positional and implicit forms, which is
+    /// undefined behaviour rather than a reordering.
+    private func argumentTypes(in text: String) -> [Int: String]? {
+        let found = specifiers(in: text)
+        let positional = found.filter { $0.position != nil }
+        guard positional.isEmpty || positional.count == found.count else { return nil }
+
+        var types: [Int: String] = [:]
+        for (index, specifier) in found.enumerated() {
+            let position = specifier.position ?? index + 1
+            // The same argument used twice must be used as the same type.
+            if let existing = types[position], existing != specifier.type { return nil }
+            types[position] = specifier.type
+        }
+        return types
     }
 
     func testSourceLanguageIsEnglish() {
@@ -60,24 +103,50 @@ final class LocalizationCatalogTests: XCTestCase {
     }
 
     /// The one that prevents crashes.
-    func testEveryTranslationHasTheSameFormatSpecifiersAsItsSource() {
+    /// Each argument must keep its type, whatever order the words end up in.
+    ///
+    /// A translation that puts `%lld` where the source had `%@` doesn't look
+    /// wrong — it prints nonsense or crashes, at runtime, only for people using
+    /// that language. Reordering is allowed, but only through positional
+    /// specifiers, which is what they're for.
+    func testEveryTranslationTakesTheSameArgumentsAsItsSource() {
         var problems: [String] = []
         for (key, entry) in catalog.strings {
-            let expected = specifiers(in: key)
+            guard let expected = argumentTypes(in: key) else {
+                problems.append("[source] \(key.prefix(60)) mixes positional and implicit specifiers")
+                continue
+            }
             for (language, localization) in entry.localizations ?? [:] {
                 guard let value = localization.stringUnit?.value else { continue }
-                let actual = specifiers(in: value)
+                guard let actual = argumentTypes(in: value) else {
+                    problems.append("[\(language)] \(key.prefix(60))\n"
+                                    + "    mixes positional and implicit specifiers")
+                    continue
+                }
                 if actual != expected {
                     problems.append(
                         "[\(language)] \(key.prefix(60))\n"
-                        + "    source: \(expected)\n"
-                        + "    \(language): \(actual)")
+                        + "    source: \(expected.sorted { $0.key < $1.key })\n"
+                        + "    \(language): \(actual.sorted { $0.key < $1.key })")
                 }
             }
         }
         XCTAssertTrue(problems.isEmpty,
-                      "format specifiers differ from the source:\n"
+                      "arguments differ from the source:\n"
                       + problems.joined(separator: "\n"))
+    }
+
+    /// The reordering mechanism itself, so the rule above is understood rather
+    /// than merely satisfied.
+    func testPositionalSpecifiersAreAcceptedAsAReordering() {
+        // Same two arguments, opposite order.
+        XCTAssertEqual(argumentTypes(in: "%@ at %lld km"),
+                       argumentTypes(in: "%2$lld km 地点で %1$@"))
+        // Different types in the same slot is not a reordering.
+        XCTAssertNotEqual(argumentTypes(in: "%@ at %lld km"),
+                          argumentTypes(in: "%1$lld km 地点で %2$@"))
+        // Mixing the two forms is undefined, not clever.
+        XCTAssertNil(argumentTypes(in: "%1$@ and %lld"))
     }
 
     /// An empty translation renders as an empty label, which reads as a bug.
