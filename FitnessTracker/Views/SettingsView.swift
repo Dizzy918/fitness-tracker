@@ -17,6 +17,7 @@ struct SettingsView: View {
     @AppStorage(WatchedFolder.enabledKey) private var watchedFolderEnabled = true
     @AppStorage(UnitSystem.defaultsKey) private var unitSystem: UnitSystem = .metric
     @AppStorage("maxHeartRate") private var maxHeartRate = 0
+    @AppStorage(AthleteProfile.Key.thresholdHeartRate) private var thresholdHeartRate = 0
     @AppStorage("restingHeartRate") private var restingHeartRate = 0
     @AppStorage("ftpWatts") private var ftp = 0
     @AppStorage("bodyWeightKg") private var bodyWeight = 0.0
@@ -25,6 +26,8 @@ struct SettingsView: View {
     @State private var syncing = false
     @State private var exportingHealth = false
     @State private var scanningFolder = false
+    @State private var estimating = false
+    @State private var estimates: ThresholdEstimator.Result?
     @State private var pickingFolder = false
     /// Mirrors the resolved bookmark so the row updates when it changes.
     @State private var watchedFolderPath: String? = WatchedFolder.displayPath()
@@ -44,6 +47,7 @@ struct SettingsView: View {
                 unitsSection
                 backupSection
                 appleHealthSection
+                estimateSection
                 trainingSection
                 cyclingSection
                 syncSection
@@ -78,6 +82,73 @@ struct SettingsView: View {
                 Text(message ?? "")
             }
         }
+    }
+
+    // MARK: - Estimating thresholds
+
+    /// Derive FTP, threshold HR and max HR from recorded efforts.
+    ///
+    /// These were all numbers the athlete had to already know. The whole load
+    /// model rests on them, so someone who didn't know their FTP got
+    /// duration-estimated load for every ride — a worse number, silently.
+    private var estimateSection: some View {
+        Section {
+            Button {
+                Task { await estimateThresholds() }
+            } label: {
+                HStack {
+                    Text(estimating ? "Reading your efforts…" : "Estimate from my training")
+                    if estimating { Spacer(); ProgressView() }
+                }
+            }
+            .disabled(estimating)
+
+            if let estimates, !estimates.isEmpty {
+                ForEach(ThresholdEstimator.Kind.allCases) { kind in
+                    if let estimate = ThresholdEstimator.estimate(kind, in: estimates) {
+                        EstimateRow(kind: kind, estimate: estimate,
+                                    current: currentValue(for: kind)) {
+                            apply(kind, estimate)
+                        }
+                    }
+                }
+            } else if estimates != nil {
+                Text("No efforts long enough to read a threshold from yet. These need a 20-minute stretch of recorded power or heart rate.")
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
+            }
+        } header: {
+            Text("Estimate thresholds")
+        } footer: {
+            Text("Reads your best 20-minute efforts from the last year. Every figure is a convention applied to your own training, not a lab test — each row says what it rests on, and nothing is applied until you tap it.")
+        }
+    }
+
+    private func currentValue(for kind: ThresholdEstimator.Kind) -> Int {
+        switch kind {
+        case .ftp:                return ftp
+        case .lactateThresholdHR: return thresholdHeartRate
+        case .maxHeartRate:       return maxHeartRate
+        }
+    }
+
+    private func apply(_ kind: ThresholdEstimator.Kind, _ estimate: ThresholdEstimator.Estimate) {
+        switch kind {
+        case .ftp:                ftp = estimate.value
+        case .lactateThresholdHR: thresholdHeartRate = estimate.value
+        case .maxHeartRate:       maxHeartRate = estimate.value
+        }
+    }
+
+    private func estimateThresholds() async {
+        estimating = true
+        defer { estimating = false }
+
+        let snapshots = (try? context.fetch(FetchDescriptor<Workout>()))?.map(\.snapshot) ?? []
+        let since = ThresholdEstimator.defaultWindowStart()
+        estimates = await Task.detached(priority: .userInitiated) {
+            ThresholdEstimator.estimate(from: snapshots, since: since)
+        }.value
     }
 
     // MARK: - Watched folder
@@ -595,6 +666,51 @@ struct SettingsView: View {
                 stravaConnected = false
             }
         }
+    }
+}
+
+/// One estimated threshold, with what it rests on and a way to take it.
+private struct EstimateRow: View {
+    let kind: ThresholdEstimator.Kind
+    let estimate: ThresholdEstimator.Estimate
+    let current: Int
+    let apply: () -> Void
+
+    private var isCurrent: Bool { current == estimate.value }
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 4) {
+            HStack {
+                Text(kind.displayName).font(.subheadline.weight(.medium))
+                Spacer()
+                Text("\(estimate.value) \(kind.unit)")
+                    .font(.callout.monospacedDigit())
+                if isCurrent {
+                    Image(systemName: "checkmark").foregroundStyle(.green)
+                } else {
+                    Button("Use") { apply() }
+                        .buttonStyle(.bordered)
+                        .controlSize(.small)
+                }
+            }
+            Text(source)
+                .font(.caption2)
+                .foregroundStyle(.tertiary)
+            Text(ThresholdEstimator.caveat(for: kind))
+                .font(.caption2)
+                .foregroundStyle(.tertiary)
+                .fixedSize(horizontal: false, vertical: true)
+        }
+        .padding(.vertical, 2)
+    }
+
+    private var source: String {
+        let when = estimate.date.formatted(date: .abbreviated, time: .omitted)
+        if estimate.windowSeconds > 0 {
+            return "From \(estimate.observed) \(kind.unit) over \(estimate.windowMinutes) min on \(when)"
+                + (current > 0 ? " · currently \(current) \(kind.unit)" : "")
+        }
+        return "Recorded \(when)" + (current > 0 ? " · currently \(current) \(kind.unit)" : "")
     }
 }
 

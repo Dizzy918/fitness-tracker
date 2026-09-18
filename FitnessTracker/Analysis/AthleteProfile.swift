@@ -13,6 +13,8 @@ enum AthleteProfile {
     enum Key {
         static let maxHeartRate = "maxHeartRate"
         static let restingHeartRate = "restingHeartRate"
+        /// Lactate-threshold heart rate, estimated or entered.
+        static let thresholdHeartRate = "thresholdHeartRate"
         static let ftpWatts = "ftpWatts"
         static let bodyWeightKg = "bodyWeightKg"
     }

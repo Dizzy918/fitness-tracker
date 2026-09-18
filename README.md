@@ -68,6 +68,7 @@ sessions — so every screen has something to show.
 | Running | Race predictions (Riegel) and derived training-pace bands |
 | Today | Readiness, form and the day's plan reasoned about together into one suggestion |
 | Recovery | Readiness score with per-component breakdown, HRV/RHR/sleep/weight trends, daily check-in with hand-entered measurements |
+| Thresholds | FTP, threshold HR and max HR estimated from your own best 20-minute efforts |
 | HealthKit | HRV, resting HR, sleep, weight, VO₂max import, and workout **write-back** with route and HR series (iOS only) |
 | Units | Metric or imperial throughout, display-only — stored values stay SI |
 | Backup | Full JSON export and merge-restore, plus a workouts CSV |
@@ -79,7 +80,7 @@ sessions — so every screen has something to show.
 | Dashboard | This-week totals, fitness/fatigue/form with a 120-day curve, weekly volume, road pace trend, shoe alerts |
 | Finding things | Search across sport/source/notes/shoe, plus a sport filter |
 
-470 tests cover the FIT round-trip (encode → decode → assert), splits math, readiness
+490 tests cover the FIT round-trip (encode → decode → assert), splits math, readiness
 scoring (missing-input and flat-baseline cases included), HR zone boundaries and the
 time-in-zone invariant, best-effort extraction, haversine distances against known
 city pairs, GPX export/parse round-trips and malformed input, NP/IF/TSS against their
@@ -455,6 +456,32 @@ half the picture.
 **It is a suggestion, and it defers to how you feel.** The wording is chosen so it
 never reads as an instruction.
 
+## Thresholds
+
+FTP, max heart rate and lactate-threshold heart rate were numbers you had to
+already know and type in — and the whole training-load model rests on them, so
+someone who didn't know their FTP silently got duration-estimated load for every
+ride, which is a worse number arrived at invisibly.
+
+Settings → **Estimate from my training** reads them off your own best
+20-minute efforts from the last year:
+
+- **FTP** — 95% of best 20-minute power, the standard protocol. Cycling only:
+  running power is a different quantity on a different scale, and folding them
+  together gives a figure that means nothing for either.
+- **Threshold HR** — the best 20 minutes of heart rate you've held, with no
+  fraction applied, because that sits at or just above threshold for most people.
+  Read from any sport.
+- **Max HR** — the highest your watch has recorded.
+
+Nothing is applied until you tap it, each row shows the effort it came from, and
+each carries its own caveat. These are conventions applied to ordinary training,
+not lab tests: if your hardest 20 minutes this season was a hilly group ride
+rather than an all-out effort, the FTP reads low, and the screen says so.
+
+Thresholds also decay, so only the last year counts. A personal best from three
+seasons ago is a memento; training against it produces sessions you can't finish.
+
 ## Readiness
 
 The Recovery tab scores each day 0–100 from whatever inputs exist:
@@ -573,6 +600,9 @@ Tests/                       FIT, splits, readiness, zones, records, persistence
 - **HealthKit import is unverified against real data** — the simulator has none, and
   the adapter's queries haven't run against a populated Health store. The scoring it
   feeds is thoroughly tested; the plumbing that fills it is not.
+- VO₂max is whatever your watch estimated; it moves slowly and noisily, so the
+  Recovery tab shows the direction over months rather than treating any single
+  reading as meaningful.
 - HealthKit is iOS-only. On macOS every metric has to be entered by hand until
   CloudKit sync is turned on.
 - Set your max HR in Settings before trusting zones; the estimated fallback is

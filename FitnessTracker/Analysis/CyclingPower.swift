@@ -88,28 +88,11 @@ enum CyclingPower {
     }
 
     /// Best average power over a duration — the shape of a power-duration curve.
+    ///
+    /// Delegates to the shared window sweep, which answers the same question
+    /// for heart rate. A two-pointer windowing algorithm written twice is one
+    /// that drifts.
     static func bestAverage(seconds target: TimeInterval, samples: [FITSample]) -> Double? {
-        let ordered = samples.filter { $0.power != nil }.sorted { $0.t < $1.t }
-        guard ordered.count >= 2, target > 0 else { return nil }
-        guard (ordered.last!.t - ordered.first!.t) >= target else { return nil }
-
-        var best: Double?
-        var start = 0
-        var sum = 0.0
-
-        for end in ordered.indices {
-            sum += Double(ordered[end].power ?? 0)
-            // Shrink from the left until the window is no longer than target.
-            while start < end, ordered[end].t - ordered[start].t > target {
-                sum -= Double(ordered[start].power ?? 0)
-                start += 1
-            }
-            let span = ordered[end].t - ordered[start].t
-            guard span >= target * 0.9 else { continue }
-            let count = Double(end - start + 1)
-            let average = sum / count
-            if best == nil || average > best! { best = average }
-        }
-        return best
+        StreamStatistics.bestAveragePower(seconds: target, in: samples)
     }
 }

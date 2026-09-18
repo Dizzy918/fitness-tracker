@@ -315,7 +315,73 @@ struct RecoveryView: View {
             metricChart(title: "Weight", unit: units.weightUnit, values: metrics.compactMap { m in
                 m.weightKg.map { (m.date, units.displayedWeight(fromKilograms: $0)) }
             }, color: .teal)
+
+            // VO₂max was imported, stored and backed up — and never shown
+            // anywhere. Health and Garmin both make it a headline number, and
+            // it's the one metric here that tracks aerobic fitness directly
+            // rather than inferring it from load.
+            vo2MaxSection
         }
+    }
+
+    /// VO₂max, with the change over the window rather than only the latest
+    /// value — a single reading says nothing, and the direction is the point.
+    @ViewBuilder
+    private var vo2MaxSection: some View {
+        let values = metrics
+            .compactMap { m in m.vo2Max.map { (m.date, $0) } }
+            .sorted { $0.0 < $1.0 }
+
+        if let latest = values.last {
+            VStack(alignment: .leading, spacing: 8) {
+                HStack(alignment: .firstTextBaseline) {
+                    Text("VO₂max").font(.headline)
+                    Spacer()
+                    Text(String(format: "%.1f", latest.1))
+                        .font(.title3.weight(.semibold).monospacedDigit())
+                    Text("mL/kg·min").font(.caption2).foregroundStyle(.secondary)
+                }
+
+                if let change = vo2Change(values) {
+                    Text(change)
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
+                }
+
+                if values.count >= 2 {
+                    Chart {
+                        ForEach(Array(values.enumerated()), id: \.offset) { _, point in
+                            LineMark(x: .value("Date", point.0),
+                                     y: .value("mL/kg·min", point.1))
+                                .foregroundStyle(.orange)
+                                .interpolationMethod(.monotone)
+                        }
+                    }
+                    .chartYScale(domain: .automatic(includesZero: false))
+                    .frame(height: 130)
+                    .accessibilityLabel("VO₂max trend over \(values.count) readings")
+                }
+
+                Text("Estimated by your watch from heart rate against pace. It moves slowly and noisily, so read the direction over months rather than any single reading.")
+                    .font(.caption2)
+                    .foregroundStyle(.tertiary)
+                    .fixedSize(horizontal: false, vertical: true)
+            }
+        }
+    }
+
+    /// Change from the earliest reading in the window to the latest, stated
+    /// only when it's big enough to be a signal rather than noise.
+    private func vo2Change(_ values: [(Date, Double)]) -> String? {
+        guard let first = values.first, let last = values.last,
+              values.count >= 2 else { return nil }
+        let delta = last.1 - first.1
+        guard abs(delta) >= 0.5 else {
+            return "Flat since \(first.0.formatted(date: .abbreviated, time: .omitted))."
+        }
+        let direction = delta > 0 ? "up" : "down"
+        return String(format: "%@ %.1f since %@", direction.capitalized, abs(delta),
+                      first.0.formatted(date: .abbreviated, time: .omitted))
     }
 
     @ViewBuilder
