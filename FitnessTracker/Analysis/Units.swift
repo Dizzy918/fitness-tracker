@@ -118,6 +118,38 @@ struct UnitFormatter: Sendable, Equatable {
 
     var paceUnit: String { isMetric ? "km" : "mi" }
 
+    /// Speed from metres per second: "31.4 km/h" / "19.5 mph". Riders think in
+    /// speed; nobody quotes a bike split in minutes per kilometre.
+    func speed(_ metresPerSecond: Double?) -> String {
+        guard let metresPerSecond, metresPerSecond.isFinite, metresPerSecond > 0
+        else { return "–" }
+        let value = isMetric
+            ? metresPerSecond * 3.6
+            : metresPerSecond / UnitConversion.metersPerMile * 3600
+        return String(format: "%.1f %@", value, speedUnit)
+    }
+
+    var speedUnit: String { isMetric ? "km/h" : "mph" }
+
+    /// How a given sport states its rate, from seconds per kilometre.
+    ///
+    /// Riders read speed, swimmers read per 100, everyone else reads pace. A
+    /// ride labelled "3:13/mi" is arithmetically correct and unreadable — no
+    /// cyclist has ever quoted a bike split in minutes per mile.
+    func rate(_ secPerKm: Double?, sport: WorkoutSport) -> String {
+        guard let secPerKm, secPerKm.isFinite, secPerKm > 0 else { return "–" }
+        switch sport {
+        case .swim: return swimPace(secPerKm / 10)
+        case .bike: return speed(1000 / secPerKm)
+        default:    return pace(secPerKm)
+        }
+    }
+
+    /// The label that goes with `rate(_:sport:)`.
+    func rateLabel(for sport: WorkoutSport) -> String {
+        sport == .bike ? "Speed" : "Pace"
+    }
+
     /// Swimmers read per 100 m; imperial pools are 25 yd, so per 100 yd.
     func swimPace(_ secPer100m: Double?) -> String {
         guard let secPer100m, secPer100m.isFinite, secPer100m > 0 else { return "–" }

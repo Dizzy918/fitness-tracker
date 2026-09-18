@@ -386,7 +386,7 @@ struct WorkoutRow: View {
     private var subtitle: String {
         var parts = [units.distance(workout.distance), units.duration(workout.duration)]
         if let pace = workout.paceSecPerKm {
-            parts.append(units.pace(pace))
+            parts.append(units.rate(pace, sport: workout.sport))
         }
         if let hr = workout.avgHeartRate {
             parts.append("\(hr) bpm")

@@ -29,6 +29,7 @@ struct WorkoutDetailView: View {
     @State private var editing = false
     @State private var laps: [FITLap] = []
     @State private var intervalView: IntervalView = .laps
+    @State private var sharing = false
 
     /// Max HR drives zone boundaries. Set once in Recovery/Settings; falls back
     /// to the highest HR this workout recorded so zones are never nonsense.
@@ -87,8 +88,16 @@ struct WorkoutDetailView: View {
             ToolbarItem(placement: .primaryAction) {
                 Button("Edit") { editing = true }
             }
+            ToolbarItem(placement: .primaryAction) {
+                Button { sharing = true } label: {
+                    Label("Share", systemImage: "square.and.arrow.up")
+                }
+            }
         }
         .sheet(isPresented: $editing) { ManualWorkoutSheet(existing: workout) }
+        .sheet(isPresented: $sharing) {
+            ShareWorkoutSheet(workout: workout, load: load)
+        }
         .task(id: workout.id) {
             observedMaxHR = Self.highestRecordedHR(in: context)
             let decoded = workout.samples
@@ -212,7 +221,8 @@ struct WorkoutDetailView: View {
             if workout.sport == .swim, let swim = swimSummary {
                 StatTile(label: "Pace", value: units.swimPace(swim.pacePer100))
             } else {
-                StatTile(label: "Pace", value: units.pace(workout.paceSecPerKm))
+                StatTile(label: units.rateLabel(for: workout.sport),
+                         value: units.rate(workout.paceSecPerKm, sport: workout.sport))
             }
             if let power = workout.avgPower {
                 StatTile(label: "Avg power", value: "\(power) W")
@@ -521,7 +531,7 @@ struct LapsTable: View {
     private func paceText(_ lap: FITLap) -> String {
         isSwim
             ? units.swimPace(lap.pacePer100m)
-            : units.pace(lap.paceSecPerKm)
+            : units.rate(lap.paceSecPerKm, sport: sport)
     }
 
     private func accessibilityLabel(_ lap: FITLap) -> String {
