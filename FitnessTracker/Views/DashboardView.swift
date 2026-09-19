@@ -41,6 +41,7 @@ struct DashboardView: View {
                         recordsLink
                         shoesLink
                         loadSection
+                        if let week = training.currentStrain { strainSection(week) }
                         weeklyMileageChart
                         paceTrendChart
                         if !shoeWarnings.isEmpty { shoeWarningSection }
@@ -216,6 +217,32 @@ struct DashboardView: View {
     /// impulse-response model over per-session TSS: fitness is a 42-day
     /// exponential average, fatigue a 7-day one, form the gap between them.
     @ViewBuilder
+    /// Foster's monotony and strain for the week just gone.
+    ///
+    /// Sits under the fitness curves because it answers the question they
+    /// can't: two weeks with the same total load can be a well-shaped week and
+    /// a grinding one, and only this tells them apart.
+    private func strainSection(_ week: TrainingStrain.Week) -> some View {
+        VStack(alignment: .leading, spacing: 8) {
+            HStack(alignment: .firstTextBaseline) {
+                Text("Week shape").font(.headline)
+                Spacer()
+                Text(week.verdict.title)
+                    .font(.caption.weight(.medium))
+                    .foregroundStyle(week.verdict == .undifferentiated ? .orange : .secondary)
+            }
+            LazyVGrid(columns: [GridItem(.adaptive(minimum: 110), spacing: 12)], spacing: 12) {
+                StatTile(label: "Monotony", value: String(format: "%.2f", week.monotony))
+                StatTile(label: "Strain", value: "\(Int(week.strain.rounded()))")
+                StatTile(label: "Rest days", value: "\(week.restDays)")
+            }
+            Text(week.verdict.detail)
+                .font(.caption2)
+                .foregroundStyle(.secondary)
+                .fixedSize(horizontal: false, vertical: true)
+        }
+    }
+
     private var loadSection: some View {
         VStack(alignment: .leading, spacing: 8) {
             HStack(alignment: .firstTextBaseline) {

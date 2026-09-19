@@ -92,6 +92,15 @@ struct TrainingState: Sendable {
     var weakestRecentMethod: TrainingLoad.Method?
     /// Sessions in the last 7 days that had no measured intensity at all.
     var estimatedSessionCount = 0
+    /// Foster monotony and strain, one entry per week, oldest first. Computed
+    /// here because it needs the same daily totals the curves are built from,
+    /// and recomputing those would mean decoding every stream again.
+    var strain: [TrainingStrain.Week] = []
+
+    /// The most recent complete-enough week, when there is one worth judging.
+    var currentStrain: TrainingStrain.Week? {
+        strain.last.flatMap { $0.verdict == .tooLittleToJudge ? nil : $0 }
+    }
 
     var fitness: Double { today?.fitness ?? 0 }
     var fatigue: Double { today?.fatigue ?? 0 }
@@ -133,6 +142,8 @@ struct TrainingState: Sendable {
             (cache?.score(for: $0, athlete: athlete)
                 ?? TrainingLoad.score(for: $0, athlete: athlete))?.method
         }
+        state.strain = TrainingStrain.weeks(dailyTotals: totals, through: now,
+                                            calendar: calendar)
         state.weakestRecentMethod = methods.min()
         state.estimatedSessionCount = methods.filter { !$0.isMeasured }.count
         return state
