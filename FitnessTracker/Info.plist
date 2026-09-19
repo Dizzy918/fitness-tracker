@@ -34,6 +34,22 @@
 		<string>zh-Hans</string>
 		<string>pt-BR</string>
 		<string>ar</string>
+		<string>el</string>
+		<string>hu</string>
+		<string>ro</string>
+		<string>sk</string>
+		<string>sl</string>
+		<string>hr</string>
+		<string>sr</string>
+		<string>et</string>
+		<string>lv</string>
+		<string>lt</string>
+		<string>ca</string>
+		<string>is</string>
+		<string>sq</string>
+		<string>mk</string>
+		<string>ga</string>
+		<string>mt</string>
 	</array>
 	<key>CFBundleName</key>
 	<string>$(PRODUCT_NAME)</string>
