@@ -26,6 +26,7 @@ struct WorkoutDetailView: View {
     @State private var powerSummary: CyclingPower.Summary?
     @State private var swimSummary: SwimMetrics.Summary?
     @State private var load: TrainingLoad.Score?
+    @State private var decoupling: Decoupling.Result?
     @State private var editing = false
     @State private var laps: [FITLap] = []
     @State private var intervalView: IntervalView = .laps
@@ -49,6 +50,7 @@ struct WorkoutDetailView: View {
 
                 summaryGrid
                 if let load { LoadBadge(score: load) }
+                if let decoupling { DecouplingBadge(result: decoupling) }
                 shoePicker
 
                 if !samples.isEmpty {
@@ -112,6 +114,7 @@ struct WorkoutDetailView: View {
                 ? .laps
                 : .splits
             zoneTotals = HRZones(maxHR: effectiveMaxHR).timeInZones(decoded)
+            decoupling = Decoupling.analyse(samples: decoded, sport: workout.sport)
             load = TrainingLoad.score(
                 for: workout.snapshot,
                 athlete: TrainingLoad.Athlete(
@@ -321,6 +324,61 @@ struct LoadBadge: View {
         .background(.quaternary.opacity(0.4), in: RoundedRectangle(cornerRadius: 10))
         .accessibilityElement(children: .combine)
         .accessibilityLabel("Training load \(Int(score.value.rounded())), \(score.method.displayName)")
+    }
+}
+
+/// How much output-per-heartbeat fell away between the halves of a steady
+/// session.
+///
+/// Shown only when `Decoupling` agreed to score the session, so its absence on
+/// an interval day or a hilly run is the correct answer rather than a gap.
+struct DecouplingBadge: View {
+    let result: Decoupling.Result
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 6) {
+            HStack(spacing: 12) {
+                VStack(alignment: .leading, spacing: 2) {
+                    Text("Aerobic decoupling").font(.caption).foregroundStyle(.secondary)
+                    Text(Fmt.signed(result.percent, decimals: 1) + "%")
+                        .font(.title2.weight(.semibold).monospacedDigit())
+                        .foregroundStyle(tint)
+                }
+                Divider().frame(height: 32)
+                VStack(alignment: .leading, spacing: 2) {
+                    Text(result.verdict.title).font(.caption.weight(.medium))
+                    Text(basisLabel).font(.caption2).foregroundStyle(.secondary)
+                }
+                Spacer()
+            }
+            Text(result.verdict.detail)
+                .font(.caption2)
+                .foregroundStyle(.secondary)
+                .fixedSize(horizontal: false, vertical: true)
+        }
+        .padding(12)
+        .background(.quaternary.opacity(0.4), in: RoundedRectangle(cornerRadius: 10))
+        .accessibilityElement(children: .combine)
+        .accessibilityLabel("Aerobic decoupling \(Fmt.signed(result.percent, decimals: 1)) percent, \(result.verdict.title)")
+    }
+
+    /// Green for held together, orange once it is drifting; the warm-up case is
+    /// neutral because it says nothing about the athlete.
+    private var tint: Color {
+        switch result.verdict {
+        case .coupled:        return .green
+        case .drifting:       return .orange
+        case .decoupled:      return .red
+        case .warmupIncluded: return .secondary
+        }
+    }
+
+    private var basisLabel: String {
+        let minutes = Int((result.analysedSeconds / 60).rounded())
+        switch result.basis {
+        case .power: return String(localized: "Power per beat, \(minutes) min scored")
+        case .speed: return String(localized: "Speed per beat, \(minutes) min scored")
+        }
     }
 }
 
