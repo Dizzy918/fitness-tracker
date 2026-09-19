@@ -10,6 +10,7 @@ struct DurationCurveView: View {
     @State private var metric: DurationCurve.Metric = .pace
     @State private var window: Window = .ninetyDays
     @State private var comparison: DurationCurve.Comparison?
+    @State private var model: CriticalPower.Model?
     @State private var computing = true
 
     enum Window: Int, CaseIterable, Identifiable {
@@ -42,6 +43,7 @@ struct DurationCurveView: View {
                 Section { HStack { ProgressView(); Text("Sweeping every effort…") } }
             } else if let comparison, !comparison.current.isEmpty {
                 chartSection(comparison)
+                if let model { criticalPowerSection(model) }
                 tableSection(comparison)
             } else {
                 Section {
@@ -63,6 +65,46 @@ struct DurationCurveView: View {
     /// across two lines doesn't parse inside the modifier chain.
     private static let durationDomain: ClosedRange<Double> =
         DurationCurve.durations.first!...DurationCurve.durations.last!
+
+    // MARK: - Critical power
+
+    /// The two numbers the curve is falling towards.
+    ///
+    /// Shown under the chart rather than on it: it is a fit to the curve, and
+    /// drawing it as a line invites people to read it as another measurement.
+    @ViewBuilder
+    private func criticalPowerSection(_ model: CriticalPower.Model) -> some View {
+        Section {
+            LabeledContent(metric == .power ? "Critical power" : "Critical speed") {
+                Text(verbatim: criticalText(model)).monospacedDigit()
+            }
+            LabeledContent(model.reserveIsEnergy ? "W′" : "D′") {
+                Text(verbatim: reserveText(model)).monospacedDigit()
+            }
+        } header: {
+            Text("Model")
+        } footer: {
+            VStack(alignment: .leading, spacing: 6) {
+                Text(metric == .power
+                     ? "Critical power is the output the curve flattens towards — a better-grounded threshold than a percentage of one twenty-minute test. W′ is the work you can spend above it before you stop."
+                     : "Critical speed is the pace the curve flattens towards. D′ is the distance you can cover above it before you stop.")
+                Text("Fitted to \(model.pointsUsed) efforts between \(DurationCurve.label(for: model.span.lowerBound)) and \(DurationCurve.label(for: model.span.upperBound)), R² \(String(format: "%.3f", model.fitQuality)). It assumes those efforts were maximal — if they were training rides rather than tests, both numbers are low.")
+            }
+        }
+    }
+
+    private func criticalText(_ model: CriticalPower.Model) -> String {
+        switch model.metric {
+        case .power: return "\(Int(model.critical.rounded())) W"
+        case .pace:  return units.pace(1000 / model.critical)
+        }
+    }
+
+    private func reserveText(_ model: CriticalPower.Model) -> String {
+        model.reserveIsEnergy
+            ? String(format: "%.1f kJ", model.reserve / 1000)
+            : units.shortDistance(model.reserve)
+    }
 
     // MARK: - Chart
 
@@ -165,9 +207,12 @@ struct DurationCurveView: View {
         let snapshots = workouts.map(\.snapshot)
         let metric = metric
         let days = window.rawValue
-        comparison = await Task.detached(priority: .userInitiated) {
-            DurationCurve.compare(workouts: snapshots, metric: metric, days: days)
+        let result = await Task.detached(priority: .userInitiated) {
+            let comparison = DurationCurve.compare(workouts: snapshots, metric: metric, days: days)
+            return (comparison, CriticalPower.fit(comparison.current, metric: metric))
         }.value
+        comparison = result.0
+        model = result.1
         computing = false
     }
 }
