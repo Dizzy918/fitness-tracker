@@ -123,7 +123,7 @@ struct DashboardView: View {
                         .font(.caption)
                         .foregroundStyle(.secondary)
                 }
-                Image(systemName: "chevron.right").font(.caption)
+                Image(systemName: "chevron.forward").font(.caption)
             }
             .padding()
             .background(.quaternary.opacity(0.4), in: RoundedRectangle(cornerRadius: 10))
@@ -146,7 +146,7 @@ struct DashboardView: View {
                 Image(systemName: "chart.bar.doc.horizontal")
                 Text("Intensity distribution").font(.subheadline.weight(.medium))
                 Spacer()
-                Image(systemName: "chevron.right").font(.caption)
+                Image(systemName: "chevron.forward").font(.caption)
             }
             .padding()
             .background(.quaternary.opacity(0.4), in: RoundedRectangle(cornerRadius: 10))
@@ -162,7 +162,7 @@ struct DashboardView: View {
                 Image(systemName: "chart.xyaxis.line")
                 Text("Duration curve").font(.subheadline.weight(.medium))
                 Spacer()
-                Image(systemName: "chevron.right").font(.caption)
+                Image(systemName: "chevron.forward").font(.caption)
             }
             .padding()
             .background(.quaternary.opacity(0.4), in: RoundedRectangle(cornerRadius: 10))
@@ -178,7 +178,7 @@ struct DashboardView: View {
                 Image(systemName: "trophy")
                 Text("Personal records").font(.subheadline.weight(.medium))
                 Spacer()
-                Image(systemName: "chevron.right").font(.caption)
+                Image(systemName: "chevron.forward").font(.caption)
             }
             .padding()
             .background(.quaternary.opacity(0.4), in: RoundedRectangle(cornerRadius: 10))
@@ -199,7 +199,7 @@ struct DashboardView: View {
                         .font(.caption)
                         .foregroundStyle(.orange)
                 }
-                Image(systemName: "chevron.right").font(.caption)
+                Image(systemName: "chevron.forward").font(.caption)
             }
             .padding()
             .background(.quaternary.opacity(0.4), in: RoundedRectangle(cornerRadius: 10))

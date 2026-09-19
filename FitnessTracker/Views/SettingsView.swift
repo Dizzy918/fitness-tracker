@@ -154,7 +154,7 @@ struct SettingsView: View {
         }
     }
 
-    private func reminderTimePicker(_ label: String, minute: Binding<Int>) -> some View {
+    private func reminderTimePicker(_ label: LocalizedStringKey, minute: Binding<Int>) -> some View {
         DatePicker(label, selection: Binding(
             get: {
                 Calendar.current.date(bySettingHour: minute.wrappedValue / 60,

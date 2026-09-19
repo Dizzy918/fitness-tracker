@@ -85,17 +85,17 @@ struct ShareCardView: View {
     private var stats: some View {
         VStack(alignment: .leading, spacing: 26) {
             HStack(alignment: .firstTextBaseline, spacing: 0) {
-                bigStat(units.autoDistance(workout.distance), "distance")
+                bigStat(units.autoDistance(workout.distance), String(localized: "distance"))
                 Spacer()
-                bigStat(units.duration(workout.duration), "time")
+                bigStat(units.duration(workout.duration), String(localized: "time"))
             }
             HStack(alignment: .firstTextBaseline, spacing: 0) {
                 bigStat(paceText, paceLabel)
                 Spacer()
                 if let hr = workout.avgHeartRate {
-                    bigStat("\(hr)", "avg bpm")
+                    bigStat("\(hr)", String(localized: "avg bpm"))
                 } else if let gain = workout.elevationGain, gain > 0 {
-                    bigStat(units.elevation(gain), "climb")
+                    bigStat(units.elevation(gain), String(localized: "climb"))
                 }
             }
         }
@@ -103,14 +103,15 @@ struct ShareCardView: View {
         .padding(.vertical, 30)
     }
 
+    /// `label` arrives already resolved: one caller builds it from the sport.
     private func bigStat(_ value: String, _ label: String) -> some View {
         VStack(alignment: .leading, spacing: 2) {
-            Text(value)
+            Text(verbatim: value)
                 .font(.system(size: 76, weight: .bold, design: .rounded))
                 .monospacedDigit()
                 .minimumScaleFactor(0.5)
                 .lineLimit(1)
-            Text(label.uppercased())
+            Text(verbatim: label.uppercased())
                 .font(.system(size: 22, weight: .semibold))
                 .tracking(2)
                 .foregroundStyle(.white.opacity(0.55))
@@ -132,7 +133,7 @@ struct ShareCardView: View {
             AxisMarks { value in
                 AxisValueLabel {
                     if let label = value.as(String.self) {
-                        Text(label)
+                        Text(verbatim: label)
                             .font(.system(size: 18))
                             .foregroundStyle(.white.opacity(0.5))
                     }
@@ -175,7 +176,7 @@ struct ShareCardView: View {
     }
 
     private var paceLabel: String {
-        "avg " + units.rateLabel(for: workout.sport).lowercased()
+        String(localized: "avg \(units.rateLabel(for: workout.sport).lowercased())")
     }
 }
 

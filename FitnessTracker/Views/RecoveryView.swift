@@ -286,7 +286,7 @@ struct RecoveryView: View {
                                 .font(.caption).foregroundStyle(.secondary)
                         }
                         Spacer()
-                        Image(systemName: "chevron.right").font(.caption)
+                        Image(systemName: "chevron.forward").font(.caption)
                     }
                     .padding()
                     .background(.quaternary.opacity(0.4), in: RoundedRectangle(cornerRadius: 10))
@@ -393,7 +393,7 @@ struct RecoveryView: View {
     }
 
     @ViewBuilder
-    private func metricChart(title: String, unit: String,
+    private func metricChart(title: LocalizedStringKey, unit: String,
                              values: [(Date, Double)], color: Color) -> some View {
         if values.count >= 2 {
             VStack(alignment: .leading, spacing: 8) {

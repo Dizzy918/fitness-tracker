@@ -148,10 +148,13 @@ struct CheckInSheet: View {
 
 /// 1–5 picker with the ends labeled, so "3" always means the same thing.
 private struct ScaleRow: View {
-    let title: String
+    // Resources rather than plain strings: these end up both rendered on their
+    // own and interpolated into the accessibility sentence, and a `String`
+    // property would hand `Text` the English literal in every language.
+    let title: LocalizedStringResource
     @Binding var value: Int
-    let lowLabel: String
-    let highLabel: String
+    let lowLabel: LocalizedStringResource
+    let highLabel: LocalizedStringResource
 
     var body: some View {
         VStack(alignment: .leading, spacing: 6) {
@@ -160,11 +163,11 @@ private struct ScaleRow: View {
                 Spacer()
                 Text("\(value)/5").foregroundStyle(.secondary).monospacedDigit()
             }
-            Picker(title, selection: $value) {
+            Picker(String(localized: title), selection: $value) {
                 ForEach(1...5, id: \.self) { Text("\($0)").tag($0) }
             }
             .pickerStyle(.segmented)
-            .accessibilityLabel("\(title), 1 is \(lowLabel), 5 is \(highLabel)")
+            .accessibilityLabel("\(String(localized: title)), 1 is \(String(localized: lowLabel)), 5 is \(String(localized: highLabel))")
             HStack {
                 Text(lowLabel)
                 Spacer()

@@ -120,12 +120,12 @@ struct RecordsView: View {
         .task(id: workouts.count) { await recompute() }
     }
 
-    private func milestoneRow(_ title: String, _ value: String, _ date: Date) -> some View {
+    private func milestoneRow(_ title: LocalizedStringKey, _ value: String, _ date: Date) -> some View {
         HStack {
             Text(title)
             Spacer()
             VStack(alignment: .trailing, spacing: 2) {
-                Text(value).monospacedDigit()
+                Text(verbatim: value).monospacedDigit()
                 Text(date.formatted(date: .abbreviated, time: .omitted))
                     .font(.caption2).foregroundStyle(.secondary)
             }

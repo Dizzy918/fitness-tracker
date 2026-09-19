@@ -178,7 +178,7 @@ struct OnboardingView: View {
 // MARK: - Layout
 
 private struct Page<Content: View, Action: View>: View {
-    let title: String
+    let title: LocalizedStringKey
     @ViewBuilder var content: () -> Content
     @ViewBuilder var action: () -> Action
 
@@ -211,8 +211,8 @@ private struct Page<Content: View, Action: View>: View {
 
 private struct Bullet: View {
     let icon: String
-    let title: String
-    let detail: String
+    let title: LocalizedStringKey
+    let detail: LocalizedStringKey
     /// Grows with the text, like the glyph it holds. A fixed frame stops
     /// containing a `.title3` symbol at accessibility sizes.
     @ScaledMetric(relativeTo: .title3) private var iconWidth: CGFloat = 28

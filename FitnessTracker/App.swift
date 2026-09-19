@@ -82,6 +82,8 @@ extension EnvironmentValues {
 /// silently deleting someone's training history to get past an error screen is
 /// the worst possible response to a problem that's usually recoverable.
 struct StoreFailureView: View {
+    /// The underlying error's own description — already resolved text, not a
+    /// key, so it goes into `Text(verbatim:)`.
     let message: String
 
     private var storeLocation: String {
@@ -93,7 +95,7 @@ struct StoreFailureView: View {
             Label("Can't open your training database", systemImage: "externaldrive.badge.xmark")
         } description: {
             VStack(spacing: 12) {
-                Text(message)
+                Text(verbatim: message)
                 Text("""
                     Your data hasn't been deleted. The file is still at:
                     \(storeLocation)

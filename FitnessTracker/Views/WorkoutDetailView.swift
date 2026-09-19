@@ -221,7 +221,7 @@ struct WorkoutDetailView: View {
             if workout.sport == .swim, let swim = swimSummary {
                 StatTile(label: "Pace", value: units.swimPace(swim.pacePer100))
             } else {
-                StatTile(label: units.rateLabel(for: workout.sport),
+                StatTile(verbatim: units.rateLabel(for: workout.sport),
                          value: units.rate(workout.paceSecPerKm, sport: workout.sport))
             }
             if let power = workout.avgPower {
@@ -256,14 +256,30 @@ struct WorkoutDetailView: View {
 // MARK: - Pieces
 
 struct StatTile: View {
-    let label: String
+    /// A key, not a `String`: `Text(someString)` renders the string itself, so
+    /// a tile built from a plain property stays in English in every language.
+    private let label: Text
     let value: String
+
+    init(label: LocalizedStringKey, value: String) {
+        self.label = Text(label)
+        self.value = value
+    }
+
+    /// For a label that is already resolved — one chosen at runtime, or a piece
+    /// of the athlete's own data.
+    init(verbatim label: String, value: String) {
+        self.label = Text(verbatim: label)
+        self.value = value
+    }
+
     var body: some View {
         VStack(alignment: .leading, spacing: 4) {
-            Text(label)
+            label
                 .font(.caption)
                 .foregroundStyle(.secondary)
-            Text(value)
+            // Already-formatted data: a distance, a clock time, a count.
+            Text(verbatim: value)
                 .font(.title3.weight(.semibold))
                 .minimumScaleFactor(0.7)
                 .lineLimit(1)

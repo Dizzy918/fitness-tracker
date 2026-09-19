@@ -164,7 +164,7 @@ struct BodyCompositionView: View {
 
                 Menu {
                     ForEach(ProgressPhoto.Pose.allCases) { pose in
-                        PhotoAddButton(label: pose.displayName) {
+                        PhotoAddButton(verbatim: pose.displayName) {
                             add(photoData: $0, pose: pose)
                         }
                     }

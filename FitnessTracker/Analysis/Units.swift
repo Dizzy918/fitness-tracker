@@ -146,8 +146,11 @@ struct UnitFormatter: Sendable, Equatable {
     }
 
     /// The label that goes with `rate(_:sport:)`.
+    ///
+    /// Resolved here rather than returned as a key: the callers put it in a
+    /// sentence or a tile that takes a plain string.
     func rateLabel(for sport: WorkoutSport) -> String {
-        sport == .bike ? "Speed" : "Pace"
+        sport == .bike ? String(localized: "Speed") : String(localized: "Pace")
     }
 
     /// Swimmers read per 100 m; imperial pools are 25 yd, so per 100 yd.

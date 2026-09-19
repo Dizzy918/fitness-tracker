@@ -123,10 +123,10 @@ struct PlanView: View {
         }
         .toolbar {
             ToolbarItem(placement: .navigation) {
-                Button { weekOffset -= 1 } label: { Image(systemName: "chevron.left") }
+                Button { weekOffset -= 1 } label: { Image(systemName: "chevron.backward") }
             }
             ToolbarItem(placement: .primaryAction) {
-                Button { weekOffset += 1 } label: { Image(systemName: "chevron.right") }
+                Button { weekOffset += 1 } label: { Image(systemName: "chevron.forward") }
             }
             if weekOffset != 0 {
                 ToolbarItem(placement: .principal) {

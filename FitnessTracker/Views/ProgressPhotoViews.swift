@@ -20,15 +20,26 @@ func PlatformImage(data: Data) -> Image? {
 
 /// Picks a photo and hands back its bytes.
 struct PhotoAddButton: View {
-    let label: String
+    private let label: Text
     let onPick: (Data) -> Void
+
+    init(label: LocalizedStringKey, onPick: @escaping (Data) -> Void) {
+        self.label = Text(label)
+        self.onPick = onPick
+    }
+
+    /// For a label that has already been resolved.
+    init(verbatim label: String, onPick: @escaping (Data) -> Void) {
+        self.label = Text(verbatim: label)
+        self.onPick = onPick
+    }
 
     @State private var selection: PhotosPickerItem?
 
     var body: some View {
         PhotosPicker(selection: $selection, matching: .images,
                      photoLibrary: .shared()) {
-            Label(label, systemImage: "photo.badge.plus")
+            Label { label } icon: { Image(systemName: "photo.badge.plus") }
         }
         .onChange(of: selection) { _, item in
             guard let item else { return }
@@ -165,7 +176,7 @@ struct PhotoComparisonView: View {
     }
 
     @ViewBuilder
-    private func captioned(_ photo: ProgressPhoto, caption: String) -> some View {
+    private func captioned(_ photo: ProgressPhoto, caption: LocalizedStringKey) -> some View {
         VStack(spacing: 4) {
             image(photo).clipShape(.rect(cornerRadius: 10))
             Text(caption).font(.caption.weight(.medium))
@@ -187,7 +198,7 @@ struct PhotoComparisonView: View {
         }
     }
 
-    private func tag(_ text: String) -> some View {
+    private func tag(_ text: LocalizedStringKey) -> some View {
         Text(text)
             .font(.caption2.weight(.semibold))
             .padding(.horizontal, 7)
