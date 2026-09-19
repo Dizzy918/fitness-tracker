@@ -27,6 +27,7 @@ struct WorkoutDetailView: View {
     @State private var swimSummary: SwimMetrics.Summary?
     @State private var load: TrainingLoad.Score?
     @State private var decoupling: Decoupling.Result?
+    @State private var gradeAdjusted: GradeAdjustedPace.Result?
     @State private var editing = false
     @State private var laps: [FITLap] = []
     @State private var intervalView: IntervalView = .laps
@@ -115,6 +116,10 @@ struct WorkoutDetailView: View {
                 : .splits
             zoneTotals = HRZones(maxHR: effectiveMaxHR).timeInZones(decoded)
             decoupling = Decoupling.analyse(samples: decoded, sport: workout.sport)
+            let gap = GradeAdjustedPace.analyse(samples: decoded, sport: workout.sport)
+            // Hidden on a flat route: there the adjustment restates the pace
+            // already in the tile beside it.
+            gradeAdjusted = (gap?.isWorthShowing ?? false) ? gap : nil
             load = TrainingLoad.score(
                 for: workout.snapshot,
                 athlete: TrainingLoad.Athlete(
@@ -232,6 +237,10 @@ struct WorkoutDetailView: View {
             }
             StatTile(label: "Avg HR", value: units.bpm(workout.avgHeartRate))
             StatTile(label: "Max HR", value: units.bpm(workout.maxHeartRate))
+            if let gradeAdjusted {
+                StatTile(label: "Grade-adjusted",
+                         value: units.pace(gradeAdjusted.adjustedPaceSecPerKm))
+            }
             StatTile(label: "Elev gain", value: units.elevation(workout.elevationGain))
             StatTile(label: "Calories", value: units.kcal(workout.calories))
             StatTile(label: "Sport", value: workout.sport.displayName)
