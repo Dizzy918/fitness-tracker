@@ -117,6 +117,12 @@
             "state": "translated",
             "value": " · 当前 %lld %@"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": " · atualmente %lld %@"
+          }
         }
       }
     },
@@ -235,6 +241,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "「80/20」是一种惯例，而非定律——它描述的是大多数成功耐力运动员在一个训练周期内被测出的实际分布，而不是每一周都要照办。"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "\"80/20\" é uma convenção, não uma lei — descreve o que a maioria dos atletas de endurance bem-sucedidos faz, medido ao longo de um bloco, não a cada semana."
           }
         }
       }
@@ -355,6 +367,12 @@
             "state": "translated",
             "value": "%2$lld 公里处 %1$@"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ no km %lld"
+          }
         }
       }
     },
@@ -473,6 +491,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "%@ 最佳 %@"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ melhor %@"
           }
         }
       }
@@ -593,6 +617,12 @@
             "state": "translated",
             "value": "%@ 对比"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Comparação de %@"
+          }
         }
       }
     },
@@ -711,6 +741,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "差 %@——这是现有杠片在不超重的前提下能凑到的最接近重量。"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Faltam %@ — é o mais perto que essas anilhas chegam sem passar."
           }
         }
       }
@@ -831,6 +867,12 @@
             "state": "translated",
             "value": "%2$lld 天内的%1$@趋势"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tendência de %@ em %lld dias"
+          }
         }
       }
     },
@@ -949,6 +991,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "%@ → %@ · %lld 天"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ → %@ · %lldd"
           }
         }
       }
@@ -1069,6 +1117,12 @@
             "state": "translated",
             "value": "%@，%lld%%，%@"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@, %lld por cento, %@"
+          }
         }
       }
     },
@@ -1187,6 +1241,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "%@，1 为%@，5 为%@"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@, 1 é %@, 5 é %@"
           }
         }
       }
@@ -1307,6 +1367,12 @@
             "state": "translated",
             "value": "%@。%@"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@. %@"
+          }
         }
       }
     },
@@ -1425,6 +1491,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "%@/周"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@/semana"
           }
         }
       }
@@ -1545,6 +1617,12 @@
             "state": "translated",
             "value": "%@：%lld%%，%@"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@: %lld por cento, %@"
+          }
         }
       }
     },
@@ -1660,6 +1738,12 @@
           }
         },
         "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@–%@"
+          }
+        },
+        "pt-BR": {
           "stringUnit": {
             "state": "translated",
             "value": "%@–%@"
@@ -1783,6 +1867,12 @@
             "state": "translated",
             "value": "%lld"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld"
+          }
         }
       }
     },
@@ -1898,6 +1988,12 @@
           }
         },
         "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld %@"
+          }
+        },
+        "pt-BR": {
           "stringUnit": {
             "state": "translated",
             "value": "%lld %@"
@@ -2021,6 +2117,12 @@
             "state": "translated",
             "value": "%lld 次/分"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld bpm"
+          }
         }
       }
     },
@@ -2139,6 +2241,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "%lld 天"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld dias"
           }
         }
       }
@@ -2259,6 +2367,12 @@
             "state": "translated",
             "value": "%lld 天 · %@ → %@"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld dias · %@ → %@"
+          }
         }
       }
     },
@@ -2377,6 +2491,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "找到 %lld 个"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld encontrados"
           }
         }
       }
@@ -2497,6 +2617,12 @@
             "state": "translated",
             "value": "%lld 公里"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld km"
+          }
         }
       }
     },
@@ -2615,6 +2741,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "%lld 个月"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld m"
           }
         }
       }
@@ -2735,6 +2867,12 @@
             "state": "translated",
             "value": "%2$lld 组中的第 %1$lld 组"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld de %lld séries"
+          }
         }
       }
     },
@@ -2853,6 +2991,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "%2$lld 项中的 %1$lld 项 · %3$@"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld de %lld · %@"
           }
         }
       }
@@ -2973,6 +3117,12 @@
             "state": "translated",
             "value": "%lld 次"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld reps"
+          }
         }
       }
     },
@@ -3091,6 +3241,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "%lld 次跑步"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld corridas"
           }
         }
       }
@@ -3211,6 +3367,12 @@
             "state": "translated",
             "value": "本周有 %lld 次训练%@没有功率或心率数据，因此负荷由时长估算。"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld treino%@ desta semana ficaram sem potência ou frequência cardíaca, então a carga foi estimada pela duração."
+          }
         }
       }
     },
@@ -3329,6 +3491,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "%lld 组"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld séries"
           }
         }
       }
@@ -3449,6 +3617,12 @@
             "state": "translated",
             "value": "%lld 组 · 容量 %@"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld séries · volume de %@"
+          }
         }
       }
     },
@@ -3567,6 +3741,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "还剩 %lld"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "faltam %lld"
           }
         }
       }
@@ -3687,6 +3867,12 @@
             "state": "translated",
             "value": "%lld 个途经点%@"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld pontos de rota%@"
+          }
         }
       }
     },
@@ -3805,6 +3991,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "%lld 次训练 · 共 %@"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld treinos · %@ no total"
           }
         }
       }
@@ -3925,6 +4117,12 @@
             "state": "translated",
             "value": "已跑 %lld"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld rodados"
+          }
         }
       }
     },
@@ -4044,6 +4242,12 @@
             "state": "translated",
             "value": "%lld 年"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld a"
+          }
         }
       }
     },
@@ -4159,6 +4363,12 @@
           }
         },
         "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld × %@"
+          }
+        },
+        "pt-BR": {
           "stringUnit": {
             "state": "translated",
             "value": "%lld × %@"
@@ -4282,6 +4492,12 @@
             "state": "translated",
             "value": "%lld × 循环"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld × bloco"
+          }
         }
       }
     },
@@ -4397,6 +4613,12 @@
           }
         },
         "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld%%"
+          }
+        },
+        "pt-BR": {
           "stringUnit": {
             "state": "translated",
             "value": "%lld%%"
@@ -4520,6 +4742,12 @@
             "state": "translated",
             "value": "今日体能的 %lld%%"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld%% da forma de hoje"
+          }
         }
       }
     },
@@ -4635,6 +4863,12 @@
           }
         },
         "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld/5"
+          }
+        },
+        "pt-BR": {
           "stringUnit": {
             "state": "translated",
             "value": "%lld/5"
@@ -4758,6 +4992,12 @@
             "state": "translated",
             "value": "%lld 瓦"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lldW"
+          }
         }
       }
     },
@@ -4873,6 +5113,12 @@
           }
         },
         "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld–%lld"
+          }
+        },
+        "pt-BR": {
           "stringUnit": {
             "state": "translated",
             "value": "%lld–%lld"
@@ -4996,6 +5242,12 @@
             "state": "translated",
             "value": "%lld–%lld 瓦"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld–%lld W"
+          }
         }
       }
     },
@@ -5114,6 +5366,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "+30 秒"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "+30s"
           }
         }
       }
@@ -5234,6 +5492,12 @@
             "state": "translated",
             "value": "手表中的 .fit 文件…"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Arquivo .fit do relógio…"
+          }
         }
       }
     },
@@ -5353,6 +5617,12 @@
             "state": "translated",
             "value": "1 次训练 · 共 %@"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "1 treino · %@ no total"
+          }
         }
       }
     },
@@ -5468,6 +5738,12 @@
           }
         },
         "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "@"
+          }
+        },
+        "pt-BR": {
           "stringUnit": {
             "state": "translated",
             "value": "@"
@@ -5591,6 +5867,12 @@
             "state": "translated",
             "value": "计划是可以反复执行的训练。请先建立你的动作库。"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Uma rotina é um treino que você pode repetir. Monte antes a sua biblioteca de exercícios."
+          }
         }
       }
     },
@@ -5709,6 +5991,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "这是根据你自身趋势给出的建议，不是测量结果。若与你的感受不符，请相信自己。"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "É uma sugestão a partir das suas próprias tendências, não uma medição. Se discordar de como você se sente, confie em você."
           }
         }
       }
@@ -5829,6 +6117,12 @@
             "state": "translated",
             "value": "A — 目标比赛"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A — prova-alvo"
+          }
         }
       }
     },
@@ -5947,6 +6241,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "AI 解析 PDF"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Extração de PDF com IA"
           }
         }
       }
@@ -6067,6 +6367,12 @@
             "state": "translated",
             "value": "API 密钥"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Chave de API"
+          }
         }
       }
     },
@@ -6185,6 +6491,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "高于无氧阈——间歇强度"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Acima do limiar anaeróbio — esforço de tiro"
           }
         }
       }
@@ -6305,6 +6617,12 @@
             "state": "translated",
             "value": "辅助动作"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Acessório"
+          }
         }
       }
     },
@@ -6423,6 +6741,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "购入"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Adquirido"
           }
         }
       }
@@ -6543,6 +6867,12 @@
             "state": "translated",
             "value": "使用中"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ativo"
+          }
         }
       }
     },
@@ -6661,6 +6991,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "添加"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Adicionar"
           }
         }
       }
@@ -6781,6 +7117,12 @@
             "state": "translated",
             "value": "添加组"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Adicionar série"
+          }
         }
       }
     },
@@ -6899,6 +7241,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "添加跑鞋"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Adicionar tênis"
           }
         }
       }
@@ -7019,6 +7367,12 @@
             "state": "translated",
             "value": "添加循环"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Adicionar bloco"
+          }
         }
       }
     },
@@ -7137,6 +7491,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "添加一双跑鞋即可记录里程并在磨损时收到提醒。"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Adicione um par para acompanhar a quilometragem e receber avisos de desgaste."
           }
         }
       }
@@ -7257,6 +7617,12 @@
             "state": "translated",
             "value": "添加照片"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Adicionar foto"
+          }
         }
       }
     },
@@ -7375,6 +7741,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "添加比赛"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Adicionar prova"
           }
         }
       }
@@ -7495,6 +7867,12 @@
             "state": "translated",
             "value": "添加训练"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Adicionar treino"
+          }
         }
       }
     },
@@ -7613,6 +7991,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "添加步骤"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Adicionar etapa"
           }
         }
       }
@@ -7733,6 +8117,12 @@
             "state": "translated",
             "value": "在此添加步骤"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Adicionar etapa aqui"
+          }
         }
       }
     },
@@ -7851,6 +8241,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "请先在设置中添加 Anthropic API 密钥。"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Antes, adicione uma chave de API da Anthropic nos ajustes."
           }
         }
       }
@@ -7971,6 +8367,12 @@
             "state": "translated",
             "value": "添加动作"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Adicionar exercício"
+          }
         }
       }
     },
@@ -8089,6 +8491,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "添加海拔剖面"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Adicionar perfil de elevação"
           }
         }
       }
@@ -8209,6 +8617,12 @@
             "state": "translated",
             "value": "添加围度"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Adicionar medidas"
+          }
         }
       }
     },
@@ -8327,6 +8741,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "补齐缺失的入门动作"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Adicionar exercícios básicos que faltam"
           }
         }
       }
@@ -8447,6 +8867,12 @@
             "state": "translated",
             "value": "添加组"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Adicionar série"
+          }
         }
       }
     },
@@ -8565,6 +8991,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "添加跑鞋"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Adicionar tênis"
           }
         }
       }
@@ -8685,6 +9117,12 @@
             "state": "translated",
             "value": "添加步骤…"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Adicionar etapas…"
+          }
         }
       }
     },
@@ -8803,6 +9241,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "添加入门动作列表"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Adicionar a lista inicial"
           }
         }
       }
@@ -8923,6 +9367,12 @@
             "state": "translated",
             "value": "加上步骤后，这次训练就能以结构化训练的形式发到手表上，而不只是一个你得记住的名字。"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Adicione as etapas e o treino vai para o relógio como treino estruturado, em vez de ser só um nome que você tem que lembrar."
+          }
         }
       }
     },
@@ -9041,6 +9491,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "正在累计各区间时长…"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Somando o tempo em zona…"
           }
         }
       }
@@ -9161,6 +9617,12 @@
             "state": "translated",
             "value": "仅影响显示。数据以公制存储，显示时才换算，因此来回切换永远不会改变已记录的数值。"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Afeta só a exibição. Seus dados são guardados no sistema métrico e convertidos na hora de mostrar, então alternar entre as unidades nunca muda um valor registrado."
+          }
         }
       }
     },
@@ -9279,6 +9741,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "年龄：%lld"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Idade: %lld"
           }
         }
       }
@@ -9399,6 +9867,12 @@
             "state": "translated",
             "value": "全部"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tudo"
+          }
         }
       }
     },
@@ -9517,6 +9991,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "全为轻松"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tudo leve"
           }
         }
       }
@@ -9637,6 +10117,12 @@
             "state": "translated",
             "value": "这些之后都可以在设置中修改，或由你的数据推算。"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tudo isso pode ser alterado depois nos ajustes, ou estimado a partir dos seus dados."
+          }
         }
       }
     },
@@ -9755,6 +10241,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "所有运动"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Todos os esportes"
           }
         }
       }
@@ -9875,6 +10367,12 @@
             "state": "translated",
             "value": "今天的数据已从「健康」读取。在此修改将覆盖该数值。"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Já lido do app Saúde para hoje. Alterar um valor aqui substitui o dele."
+          }
         }
       }
     },
@@ -9993,6 +10491,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "激进"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ambicioso"
           }
         }
       }
@@ -10113,6 +10617,12 @@
             "state": "translated",
             "value": "奥杆为 %@；女子杆为 %@，训练杆可能只有 10。"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Uma barra olímpica tem %@; as femininas têm %@, e uma barra de treino pode ter 10."
+          }
         }
       }
     },
@@ -10231,6 +10741,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Anthropic API 密钥"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Chave de API da Anthropic"
           }
         }
       }
@@ -10351,6 +10867,12 @@
             "state": "translated",
             "value": "以下任选其一，现在或以后都行。"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Qualquer um destes, agora ou depois."
+          }
         }
       }
     },
@@ -10469,6 +10991,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "任何值得记下的内容"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Qualquer coisa que valha lembrar"
           }
         }
       }
@@ -10589,6 +11117,12 @@
             "state": "translated",
             "value": "Apple 健康"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Apple Saúde"
+          }
         }
       }
     },
@@ -10707,6 +11241,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "手臂（左）"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Braço (E)"
           }
         }
       }
@@ -10827,6 +11367,12 @@
             "state": "translated",
             "value": "手臂（右）"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Braço (D)"
+          }
         }
       }
     },
@@ -10945,6 +11491,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "运动员 ID（如 i123456，填 0 表示本人）"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ID do atleta (ex.: i123456, ou 0 para você mesmo)"
           }
         }
       }
@@ -11065,6 +11617,12 @@
             "state": "translated",
             "value": "使用 Strava 授权"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Autorizar com o Strava"
+          }
         }
       }
     },
@@ -11183,6 +11741,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "平均"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Média"
           }
         }
       }
@@ -11303,6 +11867,12 @@
             "state": "translated",
             "value": "B — 重要"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "B — importante"
+          }
         }
       }
     },
@@ -11421,6 +11991,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "背部"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Costas"
           }
         }
       }
@@ -11541,6 +12117,12 @@
             "state": "translated",
             "value": "备份"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Backup"
+          }
         }
       }
     },
@@ -11659,6 +12241,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "两条分界线是两个乳酸阈，近似取最大心率的 80% 和 90%。真实阈值落在两侧，因此整体形态可信，单个百分点并不可靠。"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "As faixas são os dois limiares de lactato, aproximados em 80% e 90% da sua frequência cardíaca máxima. Os limiares reais ficam dos dois lados disso, então o formato geral é confiável, mas um ponto percentual isolado não é."
           }
         }
       }
@@ -11779,6 +12367,12 @@
             "state": "translated",
             "value": "杠铃杆"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Barra"
+          }
         }
       }
     },
@@ -11897,6 +12491,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "仅空杆。"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Só a barra."
           }
         }
       }
@@ -12017,6 +12617,12 @@
             "state": "translated",
             "value": "基于 %lld%% 的输入数据"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Com base em %lld%% dos dados"
+          }
         }
       }
     },
@@ -12135,6 +12741,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "基于该时段内 %lld%% 的训练。"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Com base em %lld%% dos treinos deste período."
           }
         }
       }
@@ -12255,6 +12867,12 @@
             "state": "translated",
             "value": "它只基于部分信息，以及你的趋势通常的样子——而不是你的感受。若两者不符，请相信自己。"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Baseia-se em parte do quadro e em como as suas tendências costumam se comportar — não em como você se sente. Se divergirem, confie em você."
+          }
         }
       }
     },
@@ -12373,6 +12991,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "低于有氧阈——可以聊天的强度"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Abaixo do limiar aeróbio — dá para conversar"
           }
         }
       }
@@ -12493,6 +13117,12 @@
             "state": "translated",
             "value": "各时长的最佳表现"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Melhor esforço em cada duração"
+          }
         }
       }
     },
@@ -12611,6 +13241,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "最佳表现"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Melhores esforços"
           }
         }
       }
@@ -12731,6 +13367,12 @@
             "state": "translated",
             "value": "两阈之间——舒适的吃力"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Entre os limiares — forte, mas sustentável"
+          }
         }
       }
     },
@@ -12849,6 +13491,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "骑行"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bike"
           }
         }
       }
@@ -12969,6 +13617,12 @@
             "state": "translated",
             "value": "循环"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bloco"
+          }
         }
       }
     },
@@ -13087,6 +13741,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "身体"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Corpo"
           }
         }
       }
@@ -13207,6 +13867,12 @@
             "state": "translated",
             "value": "体脂率"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gordura corporal"
+          }
         }
       }
     },
@@ -13325,6 +13991,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "身体围度与照片"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Medidas corporais e fotos"
           }
         }
       }
@@ -13445,6 +14117,12 @@
             "state": "translated",
             "value": "体重"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Peso corporal"
+          }
         }
       }
     },
@@ -13563,6 +14241,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "两项均为选填——一个计划可以只是某天的一个名字。"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ambos são opcionais — um plano pode ser só um nome em um dia."
           }
         }
       }
@@ -13683,6 +14367,12 @@
             "state": "translated",
             "value": "品牌"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Marca"
+          }
         }
       }
     },
@@ -13801,6 +14491,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "创建计划…"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Montar uma rotina…"
           }
         }
       }
@@ -13921,6 +14617,12 @@
             "state": "translated",
             "value": "C — 训练中顺带参加"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "C — treinar por dentro"
+          }
         }
       }
     },
@@ -14039,6 +14741,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "小腿（左）"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Panturrilha (E)"
           }
         }
       }
@@ -14159,6 +14867,12 @@
             "state": "translated",
             "value": "小腿（右）"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Panturrilha (D)"
+          }
         }
       }
     },
@@ -14277,6 +14991,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "卡路里"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Calorias"
           }
         }
       }
@@ -14397,6 +15117,12 @@
             "state": "translated",
             "value": "无法打开训练数据库"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Não foi possível abrir seu banco de dados de treinos"
+          }
         }
       }
     },
@@ -14515,6 +15241,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "取消"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cancelar"
           }
         }
       }
@@ -14635,6 +15367,12 @@
             "state": "translated",
             "value": "负重行走"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Carregamento"
+          }
         }
       }
     },
@@ -14753,6 +15491,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "疲劳累积"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Carregando fadiga"
           }
         }
       }
@@ -14873,6 +15617,12 @@
             "state": "translated",
             "value": "更改"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Alterar"
+          }
         }
       }
     },
@@ -14991,6 +15741,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "检查文件夹中的新文件"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Verificar uma pasta em busca de arquivos novos"
           }
         }
       }
@@ -15111,6 +15867,12 @@
             "state": "translated",
             "value": "导入前请逐行与 PDF 核对——解析时可能读错表格。"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Confira cada linha com o PDF antes de importar — a extração pode ler tabelas errado."
+          }
         }
       }
     },
@@ -15229,6 +15991,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "胸围"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Peito"
           }
         }
       }
@@ -15349,6 +16117,12 @@
             "state": "translated",
             "value": "选择 PDF…"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Escolher PDF…"
+          }
         }
       }
     },
@@ -15467,6 +16241,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "选择文件夹…"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Escolher pasta…"
           }
         }
       }
@@ -15587,6 +16367,12 @@
             "state": "translated",
             "value": "围度单位为厘米。"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Circunferências em centímetros."
+          }
         }
       }
     },
@@ -15705,6 +16491,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "围度单位为英寸。"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Circunferências em polegadas."
           }
         }
       }
@@ -15825,6 +16617,12 @@
             "state": "translated",
             "value": "Claude 正在提取训练记录。较长的 PDF 可能需要一分钟。"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "O Claude está extraindo os treinos. Em um PDF longo isso pode levar um minuto."
+          }
         }
       }
     },
@@ -15944,6 +16742,12 @@
             "state": "translated",
             "value": "清除"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Limpar"
+          }
         }
       }
     },
@@ -16059,6 +16863,12 @@
           }
         },
         "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Client ID"
+          }
+        },
+        "pt-BR": {
           "stringUnit": {
             "state": "translated",
             "value": "Client ID"
@@ -16182,6 +16992,12 @@
             "state": "translated",
             "value": "Client Secret"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Client Secret"
+          }
         }
       }
     },
@@ -16300,6 +17116,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "累计爬升"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Altimetria"
           }
         }
       }
@@ -16420,6 +17242,12 @@
             "state": "translated",
             "value": "关闭"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fechar"
+          }
         }
       }
     },
@@ -16538,6 +17366,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "闭合路线"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fechar o circuito"
           }
         }
       }
@@ -16658,6 +17492,12 @@
             "state": "translated",
             "value": "已经很接近了，但比赛时腿里还留着一点疲劳。最后一周再轻一些会更锐利。"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Perto, mas você chega com um resto de fadiga nas pernas. Uma última semana mais leve deixaria você mais afiado."
+          }
         }
       }
     },
@@ -16776,6 +17616,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "用逗号分隔。选填——用于搜索。"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Separados por vírgula. Opcional — usado na busca."
           }
         }
       }
@@ -16896,6 +17742,12 @@
             "state": "translated",
             "value": "对比 %@ — %@"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Comparar %@ — %@"
+          }
         }
       }
     },
@@ -17014,6 +17866,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "在下方连接 Strava 或 intervals.icu 以启用同步。"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Conecte o Strava ou o intervals.icu abaixo para ativar a sincronização."
           }
         }
       }
@@ -17134,6 +17992,12 @@
             "state": "translated",
             "value": "连接服务…"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Conectar um serviço…"
+          }
         }
       }
     },
@@ -17252,6 +18116,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "已连接"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Conectado"
           }
         }
       }
@@ -17372,6 +18242,12 @@
             "state": "translated",
             "value": "继续"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Continuar"
+          }
         }
       }
     },
@@ -17490,6 +18366,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "放松"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Volta à calma"
           }
         }
       }
@@ -17610,6 +18492,12 @@
             "state": "translated",
             "value": "核心"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Core"
+          }
         }
       }
     },
@@ -17728,6 +18616,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "无法添加该照片"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Não foi possível adicionar essa foto"
           }
         }
       }
@@ -17848,6 +18742,12 @@
             "state": "translated",
             "value": "无法将该段吸附到路径——改用直线连接。"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Não foi possível encaixar esse trecho em um caminho — usando uma linha reta."
+          }
         }
       }
     },
@@ -17966,6 +18866,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "计为"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Conta como"
           }
         }
       }
@@ -18086,6 +18992,12 @@
             "state": "translated",
             "value": "赛道、天气、策略…"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Percurso, condições, estratégia…"
+          }
         }
       }
     },
@@ -18204,6 +19116,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "覆盖率"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cobertura"
           }
         }
       }
@@ -18324,6 +19242,12 @@
             "state": "translated",
             "value": "创建计划"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Criar uma rotina"
+          }
         }
       }
     },
@@ -18442,6 +19366,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "创建一个…"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Criar um…"
           }
         }
       }
@@ -18562,6 +19492,12 @@
             "state": "translated",
             "value": "在 strava.com/settings/api 免费创建自己的 API 应用，将回调域名设为 `localhost`，然后把 Client ID 和 Secret 粘贴到这里。会申请 `activity:read_all` 权限，这样私密活动也能同步。"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Crie seu próprio aplicativo de API em strava.com/settings/api (gratuito), defina o domínio de callback como `localhost` e cole aqui o Client ID e o Secret. É solicitado o escopo `activity:read_all` para que atividades privadas também sincronizem."
+          }
         }
       }
     },
@@ -18680,6 +19616,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "骑行"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ciclismo"
           }
         }
       }
@@ -18800,6 +19742,12 @@
             "state": "translated",
             "value": "每日签到"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Check-in diário"
+          }
         }
       }
     },
@@ -18918,6 +19866,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "每日签到"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Check-in diário"
           }
         }
       }
@@ -19038,6 +19992,12 @@
             "state": "translated",
             "value": "总览"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Painel"
+          }
         }
       }
     },
@@ -19156,6 +20116,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "日期"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Data"
           }
         }
       }
@@ -19276,6 +20242,12 @@
             "state": "translated",
             "value": "日"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dia"
+          }
         }
       }
     },
@@ -19394,6 +20366,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "删除"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Excluir"
           }
         }
       }
@@ -19514,6 +20492,12 @@
             "state": "translated",
             "value": "删除这张照片？"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Excluir esta foto?"
+          }
         }
       }
     },
@@ -19632,6 +20616,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "由你的最佳表现换算为 10 公里等效值推导而来。实验室或场地测试会更准确。"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Derivado do seu melhor esforço convertido para um equivalente de 10 km. Um teste de laboratório ou de campo seria mais preciso."
           }
         }
       }
@@ -19752,6 +20742,12 @@
             "state": "translated",
             "value": "放弃"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Descartar"
+          }
         }
       }
     },
@@ -19870,6 +20866,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "断开连接"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Desconectar"
           }
         }
       }
@@ -19990,6 +20992,12 @@
             "state": "translated",
             "value": "距离"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Distância"
+          }
         }
       }
     },
@@ -20108,6 +21116,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "完成每日签到即可获得状态评分。（健康数据仅限 iOS。）"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Faça um check-in diário para ter uma nota de prontidão. (Os dados do app Saúde são só no iOS.)"
           }
         }
       }
@@ -20228,6 +21242,12 @@
             "state": "translated",
             "value": "文稿"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Documento"
+          }
         }
       }
     },
@@ -20346,6 +21366,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "完成"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "OK"
           }
         }
       }
@@ -20466,6 +21492,12 @@
             "state": "translated",
             "value": "今天到此为止"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Por hoje é só"
+          }
         }
       }
     },
@@ -20584,6 +21616,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "拖入 .fit 文件即可导入"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Solte arquivos .fit para importar"
           }
         }
       }
@@ -20704,6 +21742,12 @@
             "state": "translated",
             "value": "时长"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Duração"
+          }
         }
       }
     },
@@ -20822,6 +21866,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "时长曲线"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Curva de duração"
           }
         }
       }
@@ -20942,6 +21992,12 @@
             "state": "translated",
             "value": "时长曲线，%lld 个数据点"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Curva de duração, %lld pontos"
+          }
         }
       }
     },
@@ -21060,6 +22116,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "每侧"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cada lado"
           }
         }
       }
@@ -21180,6 +22242,12 @@
             "state": "translated",
             "value": "每个部位都在该时段内用自己的首次与末次测量值比较——毕竟量腰围多半比量小腿勤。"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cada ponto é comparado entre a primeira e a última medição dele no período — você provavelmente mede a cintura com mais frequência do que as panturrilhas."
+          }
         }
       }
     },
@@ -21298,6 +22366,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "轻松"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Leve"
           }
         }
       }
@@ -21418,6 +22492,12 @@
             "state": "translated",
             "value": "减量周"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Semana leve"
+          }
         }
       }
     },
@@ -21536,6 +22616,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "编辑"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Editar"
           }
         }
       }
@@ -21656,6 +22742,12 @@
             "state": "translated",
             "value": "编辑动作"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Editar exercício"
+          }
         }
       }
     },
@@ -21774,6 +22866,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "编辑计划"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Editar plano"
           }
         }
       }
@@ -21894,6 +22992,12 @@
             "state": "translated",
             "value": "编辑路线"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Editar rota"
+          }
         }
       }
     },
@@ -22012,6 +23116,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "编辑训练"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Editar treino"
           }
         }
       }
@@ -22132,6 +23242,12 @@
             "state": "translated",
             "value": "编辑比赛"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Editar prova"
+          }
         }
       }
     },
@@ -22250,6 +23366,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "编辑步骤"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Editar etapas"
           }
         }
       }
@@ -22370,6 +23492,12 @@
             "state": "translated",
             "value": "主观强度"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Esforço"
+          }
         }
       }
     },
@@ -22488,6 +23616,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "海拔"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Elevação"
           }
         }
       }
@@ -22608,6 +23742,12 @@
             "state": "translated",
             "value": "海拔剖面"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Perfil de elevação"
+          }
         }
       }
     },
@@ -22726,6 +23866,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "结束"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fim"
           }
         }
       }
@@ -22846,6 +23992,12 @@
             "state": "translated",
             "value": "手动输入小时数"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Inserir as horas manualmente"
+          }
         }
       }
     },
@@ -22964,6 +24116,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "根据我的训练推算"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Estimar pelos meus treinos"
           }
         }
       }
@@ -23084,6 +24242,12 @@
             "state": "translated",
             "value": "推算阈值"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Estimar limiares"
+          }
         }
       }
     },
@@ -23202,6 +24366,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "估算 1RM"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "1RM estimado"
           }
         }
       }
@@ -23322,6 +24492,12 @@
             "state": "translated",
             "value": "由手表根据心率与配速的关系估算。它变化缓慢且噪声大，请看几个月的走势，而不是某一次的数值。"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Estimado pelo seu relógio a partir da frequência cardíaca em relação ao ritmo. Varia devagar e com ruído, então olhe a direção ao longo de meses, não uma leitura isolada."
+          }
         }
       }
     },
@@ -23440,6 +24616,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "由时长估算"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Estimado pela duração"
           }
         }
       }
@@ -23560,6 +24742,12 @@
             "state": "translated",
             "value": "由你记录到的最高心率估算。请在设置中填入真实最大心率以获得准确区间。"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Estimado pela maior frequência cardíaca registrada. Informe sua máxima real nos ajustes para ter zonas precisas."
+          }
         }
       }
     },
@@ -23678,6 +24866,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "晚间签到"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Check-in da noite"
           }
         }
       }
@@ -23798,6 +24992,12 @@
             "state": "translated",
             "value": "所有时长"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Todas as durações"
+          }
         }
       }
     },
@@ -23916,6 +25116,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "其余所有——手臂、小腿、康复"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Todo o resto — braços, panturrilhas, reabilitação"
           }
         }
       }
@@ -24036,6 +25242,12 @@
             "state": "translated",
             "value": "所有数据都存在本设备上。开启同步即可与你的其他设备共享。"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tudo fica guardado neste dispositivo. Ative a sincronização para compartilhar com seus outros aparelhos."
+          }
         }
       }
     },
@@ -24154,6 +25366,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "动作"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Exercício"
           }
         }
       }
@@ -24274,6 +25492,12 @@
             "state": "translated",
             "value": "动作库"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Biblioteca de exercícios"
+          }
         }
       }
     },
@@ -24392,6 +25616,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "动作"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Exercícios"
           }
         }
       }
@@ -24512,6 +25742,12 @@
             "state": "translated",
             "value": "动作按顺序进行，每组之后休息。"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Os exercícios seguem em ordem, com descanso depois de cada série."
+          }
         }
       }
     },
@@ -24630,6 +25866,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "预期约为 %@ %@——请检查小数点"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Esperado %@ %@ — confira a vírgula decimal"
           }
         }
       }
@@ -24750,6 +25992,12 @@
             "state": "translated",
             "value": "导出"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Exportar"
+          }
         }
       }
     },
@@ -24868,6 +26116,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "将 GPX 导出到手表或应用"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Exportar GPX para o relógio ou app"
           }
         }
       }
@@ -24988,6 +26242,12 @@
             "state": "translated",
             "value": "导出全部…"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Exportar tudo…"
+          }
         }
       }
     },
@@ -25106,6 +26366,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "导出已就绪"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Exportação pronta"
           }
         }
       }
@@ -25226,6 +26492,12 @@
             "state": "translated",
             "value": "仅导出摘要…"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Exportar só o resumo…"
+          }
         }
       }
     },
@@ -25344,6 +26616,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "将训练导出为 CSV…"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Exportar treinos em CSV…"
           }
         }
       }
@@ -25464,6 +26742,12 @@
             "state": "translated",
             "value": "解析失败"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A extração falhou"
+          }
         }
       }
     },
@@ -25579,6 +26863,12 @@
           }
         },
         "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "FTP"
+          }
+        },
+        "pt-BR": {
           "stringUnit": {
             "state": "translated",
             "value": "FTP"
@@ -25702,6 +26992,12 @@
             "state": "translated",
             "value": "填写 FTP 后，骑行可以使用 Intensity Factor、TSS 和基于功率的训练负荷。填写体重会增加瓦/公斤。两者都是选填——平均功率和标准化功率没有它们也能用。"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "O FTP libera o Intensity Factor, o TSS e a carga de treino por potência nos pedais. O peso corporal acrescenta W/kg. Os dois são opcionais — potência média e normalizada funcionam sem eles."
+          }
         }
       }
     },
@@ -25820,6 +27116,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "疲劳"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fadiga"
           }
         }
       }
@@ -25940,6 +27242,12 @@
             "state": "translated",
             "value": "疲劳 %lld"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fadiga %lld"
+          }
         }
       }
     },
@@ -26058,6 +27366,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "筛选"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Filtro"
           }
         }
       }
@@ -26178,6 +27492,12 @@
             "state": "translated",
             "value": "完赛成绩"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tempo final"
+          }
         }
       }
     },
@@ -26296,6 +27616,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "体能"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Forma"
           }
         }
       }
@@ -26416,6 +27742,12 @@
             "state": "translated",
             "value": "体能 %lld"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Forma %lld"
+          }
         }
       }
     },
@@ -26534,6 +27866,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "体能与疲劳"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Forma e fadiga"
           }
         }
       }
@@ -26654,6 +27992,12 @@
             "state": "translated",
             "value": "最近 %lld 天的体能与疲劳"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Forma e fadiga nos últimos %lld dias"
+          }
         }
       }
     },
@@ -26772,6 +28116,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "文件夹"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pasta"
           }
         }
       }
@@ -26892,6 +28242,12 @@
             "state": "translated",
             "value": "状态"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Prontidão"
+          }
         }
       }
     },
@@ -27010,6 +28366,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "动作要点"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Notas de execução"
           }
         }
       }
@@ -27130,6 +28492,12 @@
             "state": "translated",
             "value": "点四下，评分更准。"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quatro toques. Deixa a nota mais precisa."
+          }
         }
       }
     },
@@ -27248,6 +28616,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "自由日"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dia livre"
           }
         }
       }
@@ -27368,6 +28742,12 @@
             "state": "translated",
             "value": "轻盈"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Descansado"
+          }
         }
       }
     },
@@ -27486,6 +28866,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "身体很轻盈，但休息到这个程度，掉的不只是疲劳，还有体能。最后一周留两次短而锐利的训练能多保住一些。"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Descansado, mas tanto repouso assim custa forma, não só fadiga. Manter dois treinos curtos e intensos na última semana preserva mais dela."
           }
         }
       }
@@ -27606,6 +28992,12 @@
             "state": "translated",
             "value": "来自 %4$@ 的 %3$lld 分钟 %1$lld %2$@"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "De %lld %@ em %lld min no dia %@"
+          }
         }
       }
     },
@@ -27724,6 +29116,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "基于平均心率"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pela frequência cardíaca média"
           }
         }
       }
@@ -27844,6 +29242,12 @@
             "state": "translated",
             "value": "基于心率记录"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pelo registro de frequência cardíaca"
+          }
         }
       }
     },
@@ -27962,6 +29366,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "基于配速与阈值之比"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pelo ritmo em relação ao limiar"
           }
         }
       }
@@ -28082,6 +29492,12 @@
             "state": "translated",
             "value": "基于功率"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pela potência"
+          }
         }
       }
     },
@@ -28200,6 +29616,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "正面"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Frente"
           }
         }
       }
@@ -28320,6 +29742,12 @@
             "state": "translated",
             "value": "悠着点"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pegue mais leve"
+          }
         }
       }
     },
@@ -28438,6 +29866,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "目标配速"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ritmo-alvo"
           }
         }
       }
@@ -28558,6 +29992,12 @@
             "state": "translated",
             "value": "目标比赛"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Prova-alvo"
+          }
         }
       }
     },
@@ -28676,6 +30116,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "目标成绩"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tempo-alvo"
           }
         }
       }
@@ -28796,6 +30242,12 @@
             "state": "translated",
             "value": "可以开练"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pode ir"
+          }
         }
       }
     },
@@ -28914,6 +30366,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "灰色地带"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zona cinzenta"
           }
         }
       }
@@ -29034,6 +30492,12 @@
             "state": "translated",
             "value": "心率"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "FC"
+          }
         }
       }
     },
@@ -29152,6 +30616,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "HRV"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "VFC"
           }
         }
       }
@@ -29272,6 +30742,12 @@
             "state": "translated",
             "value": "HRV（SDNN）"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "VFC (SDNN)"
+          }
         }
       }
     },
@@ -29390,6 +30866,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "吃力"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Forte"
           }
         }
       }
@@ -29510,6 +30992,12 @@
             "state": "translated",
             "value": "健康数据仅限 iOS，因此在这台 Mac 上需要手动输入。HRV 和静息心率占状态评分权重的一半。"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Os dados do app Saúde só existem no iOS, então neste Mac eles precisam ser digitados. A VFC e a frequência cardíaca de repouso valem metade do peso da nota de prontidão."
+          }
         }
       }
     },
@@ -29628,6 +31116,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "心率"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Frequência cardíaca"
           }
         }
       }
@@ -29748,6 +31242,12 @@
             "state": "translated",
             "value": "心率区间 %lld"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zona de FC %lld"
+          }
         }
       }
     },
@@ -29866,6 +31366,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "心率区间"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zonas de frequência cardíaca"
           }
         }
       }
@@ -29986,6 +31492,12 @@
             "state": "translated",
             "value": "徒步"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Trilha"
+          }
         }
       }
     },
@@ -30104,6 +31616,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "髋屈伸"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dobradiça de quadril"
           }
         }
       }
@@ -30224,6 +31742,12 @@
             "state": "translated",
             "value": "以髋为主，后链承重"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dominante de quadril, cadeia posterior carregada"
+          }
         }
       }
     },
@@ -30342,6 +31866,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "臀围"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quadril"
           }
         }
       }
@@ -30462,6 +31992,12 @@
             "state": "translated",
             "value": "历史"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Histórico"
+          }
         }
       }
     },
@@ -30580,6 +32116,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "小时"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Horas"
           }
         }
       }
@@ -30700,6 +32242,12 @@
             "state": "translated",
             "value": "睡得怎么样？"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Como foi o sono?"
+          }
         }
       }
     },
@@ -30818,6 +32366,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "今天感觉如何？"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Como você se sente hoje?"
           }
         }
       }
@@ -30938,6 +32492,12 @@
             "state": "translated",
             "value": "身体感觉如何？"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Como está o corpo?"
+          }
         }
       }
     },
@@ -31056,6 +32616,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "主观感受"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Como você se sente"
           }
         }
       }
@@ -31176,6 +32742,12 @@
             "state": "translated",
             "value": "以后再说"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Faço depois"
+          }
         }
       }
     },
@@ -31294,6 +32866,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "如果你在大强度训练中见过更高的数值，请用那个——这个估算最多只能精确到 ±10 次/分。"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Se você já viu um número maior em um esforço forte, use aquele — esta estimativa erra ±10 bpm na melhor das hipóteses."
           }
         }
       }
@@ -31414,6 +32992,12 @@
             "state": "translated",
             "value": "图片缺失"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Imagem ausente"
+          }
         }
       }
     },
@@ -31532,6 +33116,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "英制"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Imperial"
           }
         }
       }
@@ -31652,6 +33242,12 @@
             "state": "translated",
             "value": "导入"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Importar"
+          }
         }
       }
     },
@@ -31770,6 +33366,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "导入 %lld 项"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Importar %lld"
           }
         }
       }
@@ -31890,6 +33492,12 @@
             "state": "translated",
             "value": "导入 .fit 文件…"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Importar arquivos .fit…"
+          }
         }
       }
     },
@@ -32008,6 +33616,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "导入 .fit…"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Importar .fit…"
           }
         }
       }
@@ -32128,6 +33742,12 @@
             "state": "translated",
             "value": "导入 GPX…"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Importar GPX…"
+          }
         }
       }
     },
@@ -32246,6 +33866,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "从你的颂拓导入 .fit 文件——或把整个文件夹拖到此窗口——连接 Strava 或 intervals.icu，用 AI 解析 PDF，或载入演示数据先逛一逛。"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Importe um arquivo .fit do seu Suunto — ou arraste uma pasta inteira para esta janela —, conecte o Strava ou o intervals.icu, leia um PDF com IA, ou carregue dados de demonstração para explorar o app."
           }
         }
       }
@@ -32366,6 +33992,12 @@
             "state": "translated",
             "value": "从「健康」导入"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Importar do app Saúde"
+          }
         }
       }
     },
@@ -32484,6 +34116,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "从「健康」导入或完成每日签到，即可获得状态评分。"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Importe do app Saúde ou faça um check-in diário para ter uma nota de prontidão."
           }
         }
       }
@@ -32604,6 +34242,12 @@
             "state": "translated",
             "value": "导入或记录一些训练后，预测会显示在这里。"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Importe ou registre algum treino e a projeção aparece aqui."
+          }
         }
       }
     },
@@ -32722,6 +34366,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "请先导入训练或载入演示数据。"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Antes, importe treinos ou carregue dados de demonstração."
           }
         }
       }
@@ -32842,6 +34492,12 @@
             "state": "translated",
             "value": "已导入"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Importado"
+          }
         }
       }
     },
@@ -32960,6 +34616,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "正在导入…"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Importando…"
           }
         }
       }
@@ -33080,6 +34742,12 @@
             "state": "translated",
             "value": "包含路线"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Incluir a rota"
+          }
         }
       }
     },
@@ -33198,6 +34866,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "强度"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Intensidade"
           }
         }
       }
@@ -33318,6 +34992,12 @@
             "state": "translated",
             "value": "强度 %@"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Intensidade %@"
+          }
         }
       }
     },
@@ -33436,6 +35116,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "强度分布"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Distribuição de intensidade"
           }
         }
       }
@@ -33556,6 +35242,12 @@
             "state": "translated",
             "value": "类型"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tipo"
+          }
         }
       }
     },
@@ -33674,6 +35366,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "以膝为主，躯干直立"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dominante de joelho, tronco ereto"
           }
         }
       }
@@ -33794,6 +35492,12 @@
             "state": "translated",
             "value": "负荷 %lld"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "CARGA %lld"
+          }
         }
       }
     },
@@ -33912,6 +35616,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "分段"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Voltas"
           }
         }
       }
@@ -34032,6 +35742,12 @@
             "state": "translated",
             "value": "留空时，会按负荷模型对未测量训练所用的同一套分项目假设，从时长估算——这样计划的一周和完成的一周才在同一把尺子上比较。如果你知道某次训练比这更难或更轻，请自行设定。"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Se você deixar em branco, o valor é estimado pela duração com a mesma suposição por esporte que o modelo de carga usa para um treino sem medição — assim a semana planejada e a cumprida se comparam na mesma escala. Defina você mesmo quando souber que o treino é mais duro ou mais leve que isso."
+          }
         }
       }
     },
@@ -34150,6 +35866,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "累计里程"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Distância total"
           }
         }
       }
@@ -34270,6 +35992,12 @@
             "state": "translated",
             "value": "负荷"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Carga"
+          }
         }
       }
     },
@@ -34388,6 +36116,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "负重行走与静力支撑"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Carregamentos e sustentações com peso"
           }
         }
       }
@@ -34508,6 +36242,12 @@
             "state": "translated",
             "value": "记录训练"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Registrar treino"
+          }
         }
       }
     },
@@ -34626,6 +36366,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "为「%@」记录一个正式组。"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Registre uma série válida de %@."
           }
         }
       }
@@ -34746,6 +36492,12 @@
             "state": "translated",
             "value": "手动记录训练…"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Registrar um treino manualmente…"
+          }
         }
       }
     },
@@ -34864,6 +36616,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "手动记录一次…"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Registrar um manualmente…"
           }
         }
       }
@@ -34984,6 +36742,12 @@
             "state": "translated",
             "value": "正在查询…"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Consultando…"
+          }
         }
       }
     },
@@ -35102,6 +36866,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "环形路线"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rota em circuito"
           }
         }
       }
@@ -35222,6 +36992,12 @@
             "state": "translated",
             "value": "体能下滑"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Perdendo forma"
+          }
         }
       }
     },
@@ -35340,6 +37116,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "置信度低——请与 PDF 核对"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Baixa confiança — confira com o PDF"
           }
         }
       }
@@ -35460,6 +37242,12 @@
             "state": "translated",
             "value": "最大心率决定区间边界（最大值的 50/60/70/80/90%）。如果你做过真正的最大强度测试，请用那个数值——按年龄推算的公式很粗糙。静息心率能让训练负荷更精确：压力是按心率*储备*计算的，而不是原始心率。在 iOS 上留空则使用「健康」测得的数值。"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A FC máxima define os limites das zonas (50/60/70/80/90% da máxima). Use um valor de um teste máximo de verdade, se tiver — as fórmulas por idade são grosseiras. A FC de repouso refina a carga de treino: o estresse é calculado sobre a *reserva* de frequência cardíaca, não sobre o bpm bruto. No iOS, deixe em branco e o valor medido pelo app Saúde é usado."
+          }
         }
       }
     },
@@ -35578,6 +37366,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "最大心率"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Frequência cardíaca máxima"
           }
         }
       }
@@ -35698,6 +37492,12 @@
             "state": "translated",
             "value": "最大值"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Máximo"
+          }
         }
       }
     },
@@ -35816,6 +37616,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "围度"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Medidas"
           }
         }
       }
@@ -35936,6 +37742,12 @@
             "state": "translated",
             "value": "公制"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Métrico"
+          }
         }
       }
     },
@@ -36054,6 +37866,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "里程碑"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Marcos"
           }
         }
       }
@@ -36174,6 +37992,12 @@
             "state": "translated",
             "value": "分钟"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Minutos"
+          }
         }
       }
     },
@@ -36292,6 +38116,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "步骤中时间与距离混用，因此在实际完成之前没有统一的总量。"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "As etapas misturam tempo e distância, então não há um total único até o treino ser feito."
           }
         }
       }
@@ -36412,6 +38242,12 @@
             "state": "translated",
             "value": "模式"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Modo"
+          }
         }
       }
     },
@@ -36530,6 +38366,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "型号"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Modelo"
           }
         }
       }
@@ -36650,6 +38492,12 @@
             "state": "translated",
             "value": "中等"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Moderado"
+          }
         }
       }
     },
@@ -36768,6 +38616,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "那些日子大多没有安排，因此默认你会一直休息。"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A maioria desses dias está sem nada planejado, então a conta assume que você vai descansar neles."
           }
         }
       }
@@ -36888,6 +38742,12 @@
             "state": "translated",
             "value": "名称"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nome"
+          }
         }
       }
     },
@@ -37006,6 +38866,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "名称（选填）"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nome (opcional)"
           }
         }
       }
@@ -37126,6 +38992,12 @@
             "state": "translated",
             "value": "名称，如柏林马拉松"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nome, ex.: Maratona de Berlim"
+          }
         }
       }
     },
@@ -37244,6 +39116,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "名称，如推日 A"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nome, ex.: Dia de empurrar A"
           }
         }
       }
@@ -37364,6 +39242,12 @@
             "state": "translated",
             "value": "颈围"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pescoço"
+          }
         }
       }
     },
@@ -37482,6 +39366,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "至少需要两次公路跑。"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "São necessárias pelo menos duas corridas de rua."
           }
         }
       }
@@ -37602,6 +39492,12 @@
             "state": "translated",
             "value": "从 PDF 读取训练时需要。可在 console.anthropic.com 获取密钥。密钥存放在本设备的钥匙串中——解析会直接调用 API，因此密钥留在本地，用量计入你的账户。"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Necessária para ler treinos em PDFs. Obtenha uma chave em console.anthropic.com. Fica guardada nas Chaves deste dispositivo — a extração chama a API direto, então a chave permanece local e o uso é cobrado na sua conta."
+          }
         }
       }
     },
@@ -37720,6 +39616,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "需要带功率计的骑行。功率来自 .fit 导入或带数据流的同步活动。"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Exige pedais com medidor de potência. A potência vem de uma importação .fit ou de uma atividade sincronizada com séries de dados."
           }
         }
       }
@@ -37840,6 +39742,12 @@
             "state": "translated",
             "value": "需要带逐秒数据的跑步，来自 .fit 导入或带数据流的同步活动。"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Exige corridas com dados segundo a segundo, vindos de uma importação .fit ou de uma atividade sincronizada com séries de dados."
+          }
         }
       }
     },
@@ -37958,6 +39866,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "中性"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Neutro"
           }
         }
       }
@@ -38078,6 +39992,12 @@
             "state": "translated",
             "value": "新建动作"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Novo exercício"
+          }
         }
       }
     },
@@ -38196,6 +40116,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "新建动作…"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Novo exercício…"
           }
         }
       }
@@ -38316,6 +40242,12 @@
             "state": "translated",
             "value": "新建计划"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nova rotina"
+          }
         }
       }
     },
@@ -38434,6 +40366,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "新建训练"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Novo treino"
           }
         }
       }
@@ -38554,6 +40492,12 @@
             "state": "translated",
             "value": "接下来"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A seguir"
+          }
         }
       }
     },
@@ -38672,6 +40616,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "昵称（选填）"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Apelido (opcional)"
           }
         }
       }
@@ -38792,6 +40742,12 @@
             "state": "translated",
             "value": "还没有足够长的片段用于推算阈值。需要连续 20 分钟的功率或心率记录。"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ainda não há esforços longos o bastante para tirar um limiar. É preciso um trecho de 20 minutos com potência ou frequência cardíaca gravada."
+          }
         }
       }
     },
@@ -38910,6 +40866,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "还没有动作"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nenhum exercício ainda"
           }
         }
       }
@@ -39030,6 +40992,12 @@
             "state": "translated",
             "value": "还没有动作——先创建一个才能记录组数。"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nenhum exercício ainda — crie um para registrar séries nele."
+          }
         }
       }
     },
@@ -39148,6 +41116,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "无心率"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sem frequência cardíaca"
           }
         }
       }
@@ -39268,6 +41242,12 @@
             "state": "translated",
             "value": "还没有心率数据"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ainda sem dados de frequência cardíaca"
+          }
         }
       }
     },
@@ -39386,6 +41366,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "没有记录的组"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nenhuma série registrada"
           }
         }
       }
@@ -39506,6 +41492,12 @@
             "state": "translated",
             "value": "没有比赛"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sem provas"
+          }
         }
       }
     },
@@ -39624,6 +41616,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "还没有路线"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nenhuma rota ainda"
           }
         }
       }
@@ -39744,6 +41742,12 @@
             "state": "translated",
             "value": "没有计划"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sem rotinas"
+          }
         }
       }
     },
@@ -39862,6 +41866,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "还没有指派跑步。"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nenhuma corrida atribuída ainda."
           }
         }
       }
@@ -39982,6 +41992,12 @@
             "state": "translated",
             "value": "还没有计分的训练。"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nenhum treino pontuado ainda."
+          }
         }
       }
     },
@@ -40100,6 +42116,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "还没有组数"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nenhuma série ainda"
           }
         }
       }
@@ -40220,6 +42242,12 @@
             "state": "translated",
             "value": "还没有跑鞋"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nenhum tênis ainda"
+          }
         }
       }
     },
@@ -40338,6 +42366,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "还没有步骤"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nenhuma etapa ainda"
           }
         }
       }
@@ -40458,6 +42492,12 @@
             "state": "translated",
             "value": "还没有数据流。最佳表现需要来自 .fit 导入或 Strava 同步的逐秒数据。"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ainda sem séries de dados. Os melhores esforços precisam de dados segundo a segundo, de uma importação .fit ou da sincronização com o Strava."
+          }
         }
       }
     },
@@ -40576,6 +42616,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "不减量——这场就是一次别着号码布的高强度训练日。"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sem polimento — esta é um dia duro de treino com número no peito."
           }
         }
       }
@@ -40696,6 +42742,12 @@
             "state": "translated",
             "value": "无目标"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sem alvo"
+          }
         }
       }
     },
@@ -40814,6 +42866,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "该 GPX 文件中未找到轨迹点或路线点。"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nenhum ponto de trilha ou de rota encontrado nesse arquivo GPX."
           }
         }
       }
@@ -40934,6 +42992,12 @@
             "state": "translated",
             "value": "没有匹配的训练。请清除搜索或筛选条件。"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nenhum treino corresponde. Limpe a busca ou o filtro."
+          }
         }
       }
     },
@@ -41052,6 +43116,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "还没有训练"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nenhum treino ainda"
           }
         }
       }
@@ -41172,6 +43242,12 @@
             "state": "translated",
             "value": "无"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nenhum"
+          }
         }
       }
     },
@@ -41290,6 +43366,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "正常训练"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Treino normal"
           }
         }
       }
@@ -41410,6 +43492,12 @@
             "state": "translated",
             "value": "数据不足，无法导入"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dados insuficientes para importar"
+          }
         }
       }
     },
@@ -41528,6 +43616,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "数据还不够"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ainda sem dados suficientes"
           }
         }
       }
@@ -41648,6 +43742,12 @@
             "state": "translated",
             "value": "依据不足"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pouco para se basear"
+          }
         }
       }
     },
@@ -41766,6 +43866,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "未设置"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Não definido"
           }
         }
       }
@@ -41886,6 +43992,12 @@
             "state": "translated",
             "value": "尚未写入「健康」"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ainda não está no app Saúde"
+          }
         }
       }
     },
@@ -42004,6 +44116,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "备注"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Notas"
           }
         }
       }
@@ -42124,6 +44242,12 @@
             "state": "translated",
             "value": "还没有测量记录"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nada medido ainda"
+          }
         }
       }
     },
@@ -42242,6 +44366,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "暂时没有可作图的数据"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nada para exibir no gráfico ainda"
           }
         }
       }
@@ -42362,6 +44492,12 @@
             "state": "translated",
             "value": "暂时没有可绘制的数据"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nada para traçar ainda"
+          }
         }
       }
     },
@@ -42480,6 +44616,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "系统设置中已关闭此应用的通知。"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "As notificações deste app estão desativadas nos Ajustes do Sistema."
           }
         }
       }
@@ -42600,6 +44742,12 @@
             "state": "translated",
             "value": "好"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "OK"
+          }
         }
       }
     },
@@ -42718,6 +44866,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "杆上"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Na barra"
           }
         }
       }
@@ -42838,6 +44992,12 @@
             "state": "translated",
             "value": "照这个计划你会带着疲劳上场。最后两周削减训练量、保留部分强度，掉疲劳会比掉体能快得多。"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Com este plano você chega cansado. Cortar volume nas duas últimas semanas — mantendo alguma intensidade — derruba a fadiga muito mais rápido do que a forma."
+          }
         }
       }
     },
@@ -42956,6 +45116,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "一句让动作不走样的提示"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Uma dica que mantém a repetição honesta"
           }
         }
       }
@@ -43076,6 +45242,12 @@
             "state": "translated",
             "value": "该时段只有 %lld%% 的训练有心率数据，因此这只反映其中一部分，而非你的全部训练。"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Só %lld%% dos treinos deste período tinham frequência cardíaca, então isto descreve essa fatia, e não o seu treino como um todo."
+          }
         }
       }
     },
@@ -43194,6 +45366,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "选填——如果手表会记录，建议改从「健康」导入。HRV 和静息心率占状态评分权重的一半。"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Opcional — se o seu relógio registra isso, prefira importar do app Saúde. A VFC e a frequência cardíaca de repouso valem metade do peso da nota de prontidão."
           }
         }
       }
@@ -43314,6 +45492,12 @@
             "state": "translated",
             "value": "选填，但正是平均心率让这次训练的负荷可以被真正计算，而不是由时长估算。"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Opcional, mas é a frequência cardíaca média que permite pontuar a carga deste treino em vez de estimá-la pela duração."
+          }
         }
       }
     },
@@ -43432,6 +45616,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "选填。用于显示该目标对应的配速。"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Opcional. Usado para mostrar o ritmo que a meta exige."
           }
         }
       }
@@ -43552,6 +45742,12 @@
             "state": "translated",
             "value": "其他"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Outro"
+          }
         }
       }
     },
@@ -43670,6 +45866,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "其他服务"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Outros serviços"
           }
         }
       }
@@ -43790,6 +45992,12 @@
             "state": "translated",
             "value": "超出目标"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Acima da meta"
+          }
         }
       }
     },
@@ -43908,6 +46116,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "减量过头"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Polimento excessivo"
           }
         }
       }
@@ -44028,6 +46242,12 @@
             "state": "translated",
             "value": "过度负荷"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sobrecarga"
+          }
         }
       }
     },
@@ -44146,6 +46366,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "PDF 导入"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Importação de PDF"
           }
         }
       }
@@ -44266,6 +46492,12 @@
             "state": "translated",
             "value": "配速"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ritmo"
+          }
         }
       }
     },
@@ -44384,6 +46616,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "动作模式"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Padrão"
           }
         }
       }
@@ -44504,6 +46742,12 @@
             "state": "translated",
             "value": "每侧"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Por lado"
+          }
         }
       }
     },
@@ -44622,6 +46866,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "个人纪录"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Recordes pessoais"
           }
         }
       }
@@ -44742,6 +46992,12 @@
             "state": "translated",
             "value": "照片"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fotos"
+          }
         }
       }
     },
@@ -44860,6 +47116,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "选一个 PDF——教练的计划、比赛成绩、训练日志导出——Claude 会把其中的训练提取出来。保存之前你会先逐项确认。"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Escolha um PDF — a planilha do treinador, o resultado de uma prova, a exportação de um diário de treinos — e o Claude tira os treinos de lá. Você revisa tudo antes de qualquer coisa ser salva."
           }
         }
       }
@@ -44980,6 +47242,12 @@
             "state": "translated",
             "value": "计划"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Plano"
+          }
         }
       }
     },
@@ -45098,6 +47366,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "规划路线"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Planejar rota"
           }
         }
       }
@@ -45218,6 +47492,12 @@
             "state": "translated",
             "value": "安排训练"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Planejar um treino"
+          }
         }
       }
     },
@@ -45336,6 +47616,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "规划路线"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Planejar uma rota"
           }
         }
       }
@@ -45456,6 +47742,12 @@
             "state": "translated",
             "value": "在地图上规划路线，或导入 GPX 文件。导出即可发送到手表。"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Planeje uma rota no mapa ou importe um arquivo GPX. A exportação envia para o seu relógio."
+          }
         }
       }
     },
@@ -45574,6 +47866,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "在地图上规划"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Planejar no mapa"
           }
         }
       }
@@ -45694,6 +47992,12 @@
             "state": "translated",
             "value": "计划训练量"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Volume planejado"
+          }
         }
       }
     },
@@ -45812,6 +48116,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "在该日期前安排 %lld 天的赛前减量。"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Planeja um polimento de %lld dias antes desta data."
           }
         }
       }
@@ -45932,6 +48242,12 @@
             "state": "translated",
             "value": "杠片"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Anilhas"
+          }
         }
       }
     },
@@ -46050,6 +48366,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "把它指向手表应用的导出文件夹，每次打开本应用时就会导入新的 `.fit` 文件。只在应用激活时检查，而不是持续监视——重复导入也没关系，文件会按内容去重。"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aponte isto para a pasta em que o app do seu relógio exporta e os novos arquivos `.fit` são importados sempre que você abrir o app. A checagem acontece quando o app é ativado, não o tempo todo — e reimportar não custa nada, já que os arquivos são desduplicados pelo conteúdo."
           }
         }
       }
@@ -46170,6 +48492,12 @@
             "state": "translated",
             "value": "两极化"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Polarizado"
+          }
         }
       }
     },
@@ -46288,6 +48616,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "角度"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pose"
           }
         }
       }
@@ -46408,6 +48742,12 @@
             "state": "translated",
             "value": "功率"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Potência"
+          }
         }
       }
     },
@@ -46526,6 +48866,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "预测成绩"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tempos previstos"
           }
         }
       }
@@ -46646,6 +48992,12 @@
             "state": "translated",
             "value": "预设"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Predefinição"
+          }
         }
       }
     },
@@ -46764,6 +49116,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "水平或垂直推"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Empurrar, horizontal ou vertical"
           }
         }
       }
@@ -46884,6 +49242,12 @@
             "state": "translated",
             "value": "主要肌群"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Músculos principais"
+          }
         }
       }
     },
@@ -47002,6 +49366,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "巅峰"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Afiado"
           }
         }
       }
@@ -47122,6 +49492,12 @@
             "state": "translated",
             "value": "优先级"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Prioridade"
+          }
         }
       }
     },
@@ -47240,6 +49616,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "有效提升"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Produtivo"
           }
         }
       }
@@ -47360,6 +49742,12 @@
             "state": "translated",
             "value": "变化"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Evolução"
+          }
         }
       }
     },
@@ -47478,6 +49866,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "拉"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Puxar"
           }
         }
       }
@@ -47598,6 +49992,12 @@
             "state": "translated",
             "value": "推"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Empurrar"
+          }
         }
       }
     },
@@ -47716,6 +50116,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "退出并重新打开应用以生效。"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Feche e reabra o app para aplicar."
           }
         }
       }
@@ -47836,6 +50242,12 @@
             "state": "translated",
             "value": "RPE"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "PSE"
+          }
         }
       }
     },
@@ -47954,6 +50366,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "RPE %@"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "PSE %@"
           }
         }
       }
@@ -48074,6 +50492,12 @@
             "state": "translated",
             "value": "比赛"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Prova"
+          }
         }
       }
     },
@@ -48192,6 +50616,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "赛前倒计时"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Contagem regressiva para a prova"
           }
         }
       }
@@ -48312,6 +50742,12 @@
             "state": "translated",
             "value": "用 AI 解析 PDF…"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ler um PDF com IA…"
+          }
         }
       }
     },
@@ -48430,6 +50866,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "从 PDF 读取训练"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ler treinos de um PDF"
           }
         }
       }
@@ -48550,6 +50992,12 @@
             "state": "translated",
             "value": "状态 %lld 分（满分 100），%@"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Prontidão %lld de 100, %@"
+          }
         }
       }
     },
@@ -48668,6 +51116,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "状态评分是基于你近期趋势的经验估算，不是医学测量。请把它当作参考之一，和你的实际感受一起看。"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A prontidão é uma heurística sobre as suas tendências recentes — não é uma medição médica. Trate como mais um dado, ao lado de como você realmente se sente."
           }
         }
       }
@@ -48788,6 +51242,12 @@
             "state": "translated",
             "value": "测量值"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Medição"
+          }
         }
       }
     },
@@ -48906,6 +51366,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "正在读取 %@…"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lendo %@…"
           }
         }
       }
@@ -49026,6 +51492,12 @@
             "state": "translated",
             "value": "正在读取你的成绩…"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lendo seus esforços…"
+          }
         }
       }
     },
@@ -49144,6 +51616,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "读取你过去一年最好的 20 分钟片段。每个数值都是套用在你自己训练上的惯例算法，而非实验室测试——每一行都注明依据，只有你点击后才会应用。"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lê seus melhores esforços de 20 minutos do último ano. Cada número é uma convenção aplicada ao seu próprio treino, não um teste de laboratório — cada linha diz em que se baseia, e nada é aplicado até você tocar nela."
           }
         }
       }
@@ -49264,6 +51742,12 @@
             "state": "translated",
             "value": "记录于 %@"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Registrado em %@"
+          }
         }
       }
     },
@@ -49382,6 +51866,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "已记录距离"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Distância registrada"
           }
         }
       }
@@ -49502,6 +51992,12 @@
             "state": "translated",
             "value": "纪录"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Recordes"
+          }
         }
       }
     },
@@ -49620,6 +52116,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "恢复"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Recuperação"
           }
         }
       }
@@ -49740,6 +52242,12 @@
             "state": "translated",
             "value": "恢复、热身和放松分段会变暗显示，且不参与最快分段的比较。"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Voltas de recuperação, aquecimento e volta à calma aparecem esmaecidas e ficam fora da comparação da volta mais rápida."
+          }
         }
       }
     },
@@ -49858,6 +52366,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "刷新海拔"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Atualizar elevação"
           }
         }
       }
@@ -49978,6 +52492,12 @@
             "state": "translated",
             "value": "提醒"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lembretes"
+          }
         }
       }
     },
@@ -50096,6 +52616,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "清除所有已保存的凭据"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Remover todas as credenciais salvas"
           }
         }
       }
@@ -50216,6 +52742,12 @@
             "state": "translated",
             "value": "重复"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Repetir"
+          }
         }
       }
     },
@@ -50334,6 +52866,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "次数：%lld"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reps: %lld"
           }
         }
       }
@@ -50454,6 +52992,12 @@
             "state": "translated",
             "value": "休息"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Descanso"
+          }
         }
       }
     },
@@ -50572,6 +53116,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "休息结束"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Acabou o descanso"
           }
         }
       }
@@ -50692,6 +53242,12 @@
             "state": "translated",
             "value": "休息：%@"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Descanso: %@"
+          }
         }
       }
     },
@@ -50810,6 +53366,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "静息"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Repouso"
           }
         }
       }
@@ -50930,6 +53492,12 @@
             "state": "translated",
             "value": "静息心率"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "FC de repouso"
+          }
         }
       }
     },
@@ -51048,6 +53616,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "静息心率"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Frequência cardíaca de repouso"
           }
         }
       }
@@ -51168,6 +53742,12 @@
             "state": "translated",
             "value": "从备份恢复…"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Restaurar de um backup…"
+          }
         }
       }
     },
@@ -51286,6 +53866,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "该组之后休息 %@。"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Descansa %@ depois desta série."
           }
         }
       }
@@ -51406,6 +53992,12 @@
             "state": "translated",
             "value": "成绩"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Resultado"
+          }
         }
       }
     },
@@ -51524,6 +54116,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "退役这双"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aposentar este par"
           }
         }
       }
@@ -51644,6 +54242,12 @@
             "state": "translated",
             "value": "已退役"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aposentado"
+          }
         }
       }
     },
@@ -51762,6 +54366,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "由你最长的最佳成绩按 Riegel 公式外推。带标记的条目外推跨度很大，通常偏乐观——尤其是马拉松预测，它假设了你可能尚未练出的耐力。"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Extrapolação de Riegel a partir do seu melhor esforço mais longo. As linhas marcadas extrapolam muito e tendem a ser otimistas — as previsões de maratona, em especial, pressupõem uma resistência que você talvez não tenha treinado."
           }
         }
       }
@@ -51882,6 +54492,12 @@
             "state": "translated",
             "value": "公路配速趋势"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tendência de ritmo no asfalto"
+          }
         }
       }
     },
@@ -52000,6 +54616,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "路线名称"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nome da rota"
           }
         }
       }
@@ -52120,6 +54742,12 @@
             "state": "translated",
             "value": "路线"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rotas"
+          }
         }
       }
     },
@@ -52238,6 +54866,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "计划"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rotinas"
           }
         }
       }
@@ -52358,6 +54992,12 @@
             "state": "translated",
             "value": "水平或垂直拉"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Remada e puxada, horizontal ou vertical"
+          }
         }
       }
     },
@@ -52476,6 +55116,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "跑步"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Corrida"
           }
         }
       }
@@ -52596,6 +55242,12 @@
             "state": "translated",
             "value": "跑步"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Corridas"
+          }
         }
       }
     },
@@ -52714,6 +55366,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "一直进行，直到你在手表上按下分段键。"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Segue até você apertar volta no relógio."
           }
         }
       }
@@ -52834,6 +55492,12 @@
             "state": "translated",
             "value": "SWOLF 是单程用时加划水次数——数值越低效率越高。"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "O SWOLF soma o tempo da piscina com o número de braçadas — quanto menor, mais eficiente."
+          }
         }
       }
     },
@@ -52952,6 +55616,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "保存"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Salvar"
           }
         }
       }
@@ -53072,6 +55742,12 @@
             "state": "translated",
             "value": "把一次训练保存下来——动作、组数、次数和休息——当天点一下就能开始。"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Salve um treino uma vez — exercícios, séries, repetições e descanso — e comece com um toque no dia."
+          }
         }
       }
     },
@@ -53190,6 +55866,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "立即扫描"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Verificar agora"
           }
         }
       }
@@ -53310,6 +55992,12 @@
             "state": "translated",
             "value": "正在扫描训练…"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Varrendo os treinos…"
+          }
         }
       }
     },
@@ -53428,6 +56116,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "已安排"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Agendado"
           }
         }
       }
@@ -53548,6 +56242,12 @@
             "state": "translated",
             "value": "搜索名称、动作模式或肌群"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Buscar por nome, padrão ou músculo"
+          }
         }
       }
     },
@@ -53666,6 +56366,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "搜索备注、运动或来源"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Buscar por notas, esporte ou origem"
           }
         }
       }
@@ -53786,6 +56492,12 @@
             "state": "translated",
             "value": "赛季"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Temporada"
+          }
         }
       }
     },
@@ -53904,6 +56616,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "载入演示数据"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Carregar dados de demonstração"
           }
         }
       }
@@ -54024,6 +56742,12 @@
             "state": "translated",
             "value": "选择…"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Selecionar…"
+          }
         }
       }
     },
@@ -54142,6 +56866,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "发送到手表…"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Enviar para o relógio…"
           }
         }
       }
@@ -54262,6 +56992,12 @@
             "state": "translated",
             "value": "将该路线的坐标发送到 OpenTopoData 的公共服务以获取地面海拔。已自带海拔的导入 GPX 不需要这一步。"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Envia as coordenadas desta rota ao serviço público do OpenTopoData para obter a elevação do terreno. Um GPX importado que já traz elevação não precisa disso."
+          }
         }
       }
     },
@@ -54380,6 +57116,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "系列"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Série"
           }
         }
       }
@@ -54500,6 +57242,12 @@
             "state": "translated",
             "value": "训练"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Treino"
+          }
         }
       }
     },
@@ -54618,6 +57366,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "训练提醒"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lembretes de treino"
           }
         }
       }
@@ -54738,6 +57492,12 @@
             "state": "translated",
             "value": "训练"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Treinos"
+          }
         }
       }
     },
@@ -54856,6 +57616,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "计入的训练"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Treinos contados"
           }
         }
       }
@@ -54976,6 +57742,12 @@
             "state": "translated",
             "value": "自己设定负荷"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Definir a carga eu mesmo"
+          }
         }
       }
     },
@@ -55094,6 +57866,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "设置动作…"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Configurar exercícios…"
           }
         }
       }
@@ -55214,6 +57992,12 @@
             "state": "translated",
             "value": "在设置中填写 FTP 即可获得 Intensity Factor 和 TSS。"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Informe seu FTP nos ajustes para ter Intensity Factor e TSS."
+          }
         }
       }
     },
@@ -55332,6 +58116,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "组数"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Séries"
           }
         }
       }
@@ -55452,6 +58242,12 @@
             "state": "translated",
             "value": "组数要记录在某个动作下，所以先建立动作库。"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "As séries são registradas em um exercício, então comece montando sua biblioteca."
+          }
         }
       }
     },
@@ -55570,6 +58366,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "组数要记录在某个动作下，所以至少需要一个。可以从内置列表开始修改，或自己添加。"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "As séries são registradas em um exercício, então você precisa de pelo menos um. Comece pela lista embutida e edite, ou crie os seus."
           }
         }
       }
@@ -55690,6 +58492,12 @@
             "state": "translated",
             "value": "组数：%lld"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Séries: %lld"
+          }
         }
       }
     },
@@ -55808,6 +58616,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "设置"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ajustes"
           }
         }
       }
@@ -55928,6 +58742,12 @@
             "state": "translated",
             "value": "分享"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Compartilhar"
+          }
         }
       }
     },
@@ -56046,6 +58866,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "锐利"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Afiado"
           }
         }
       }
@@ -56166,6 +58992,12 @@
             "state": "translated",
             "value": "跑鞋"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tênis"
+          }
         }
       }
     },
@@ -56284,6 +59116,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "跑鞋提醒"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Alertas de tênis"
           }
         }
       }
@@ -56404,6 +59242,12 @@
             "state": "translated",
             "value": "跑鞋"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tênis"
+          }
         }
       }
     },
@@ -56522,6 +59366,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "跑鞋与装备"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tênis e equipamento"
           }
         }
       }
@@ -56642,6 +59492,12 @@
             "state": "translated",
             "value": "肩围"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ombros"
+          }
         }
       }
     },
@@ -56760,6 +59616,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "记录组数时选中该动作会显示。"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aparece quando você escolhe este exercício ao registrar uma série."
           }
         }
       }
@@ -56880,6 +59742,12 @@
             "state": "translated",
             "value": "侧面"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lado"
+          }
         }
       }
     },
@@ -56998,6 +59866,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "部位"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ponto"
           }
         }
       }
@@ -57118,6 +59992,12 @@
             "state": "translated",
             "value": "跳过"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pular"
+          }
         }
       }
     },
@@ -57236,6 +60116,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "睡眠"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sono"
           }
         }
       }
@@ -57356,6 +60242,12 @@
             "state": "translated",
             "value": "略沉"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Um pouco pesado"
+          }
         }
       }
     },
@@ -57474,6 +60366,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "吸附到路径"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Encaixar nos caminhos"
           }
         }
       }
@@ -57594,6 +60492,12 @@
             "state": "translated",
             "value": "分段成绩"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Parcial"
+          }
         }
       }
     },
@@ -57712,6 +60616,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "分段成绩"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Parciais"
           }
         }
       }
@@ -57832,6 +60742,12 @@
             "state": "translated",
             "value": "运动"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Esporte"
+          }
         }
       }
     },
@@ -57950,6 +60866,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "深蹲"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Agachamento"
           }
         }
       }
@@ -58070,6 +60992,12 @@
             "state": "translated",
             "value": "开始"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Começar"
+          }
         }
       }
     },
@@ -58188,6 +61116,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "开始训练"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Começar um treino"
           }
         }
       }
@@ -58308,6 +61242,12 @@
             "state": "translated",
             "value": "开始一次训练并添加第一组。"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Comece um treino e adicione sua primeira série."
+          }
         }
       }
     },
@@ -58426,6 +61366,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "从匀速训练开始"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Começar por um treino contínuo"
           }
         }
       }
@@ -58546,6 +61492,12 @@
             "state": "translated",
             "value": "从间歇训练开始"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Começar por um treino intervalado"
+          }
         }
       }
     },
@@ -58664,6 +61616,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "开始时间"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Início"
           }
         }
       }
@@ -58784,6 +61742,12 @@
             "state": "translated",
             "value": "状态"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Estado"
+          }
         }
       }
     },
@@ -58902,6 +61866,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "步骤"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Etapas"
           }
         }
       }
@@ -59022,6 +61992,12 @@
             "state": "translated",
             "value": "步骤可以作为 .fit 训练发送到手表，这样训练会自己带着你走，而不是一个需要你记住的名字。"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "As etapas podem ir para o relógio como um treino .fit, de modo que o treino se conduz sozinho em vez de ser um nome que você tem que lembrar."
+          }
         }
       }
     },
@@ -59140,6 +62116,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "尚未完成"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ainda por fazer"
           }
         }
       }
@@ -59260,6 +62242,12 @@
             "state": "translated",
             "value": "还在预热——42 天平均值需要约三周的历史数据才会稳定。"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ainda aquecendo — a média de 42 dias precisa de umas três semanas de histórico para assentar."
+          }
         }
       }
     },
@@ -59378,6 +62366,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "停止监视"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Parar de monitorar"
           }
         }
       }
@@ -59498,6 +62492,12 @@
             "state": "translated",
             "value": "仅存放在本设备——如果你做加密备份，它们会进入备份，除此之外不会去任何地方。"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Guardadas só neste dispositivo — entram em um backup criptografado, se você fizer um, e em nenhum outro lugar."
+          }
         }
       }
     },
@@ -59617,6 +62617,12 @@
             "state": "translated",
             "value": "直接进入下一个动作——休息放在这一轮结束时。"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Direto para o próximo exercício — o descanso vem no fim da rodada."
+          }
         }
       }
     },
@@ -59732,6 +62738,12 @@
           }
         },
         "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Strava"
+          }
+        },
+        "pt-BR": {
           "stringUnit": {
             "state": "translated",
             "value": "Strava"
@@ -59855,6 +62867,12 @@
             "state": "translated",
             "value": "力量"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Força"
+          }
         }
       }
     },
@@ -59973,6 +62991,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "结构"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Estrutura"
           }
         }
       }
@@ -60093,6 +63117,12 @@
             "state": "translated",
             "value": "超级组"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bi-set"
+          }
         }
       }
     },
@@ -60211,6 +63241,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "超级组的动作交替进行：每个各做一组，然后休息。"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Os exercícios do bi-set se alternam: uma série de cada e então o descanso."
           }
         }
       }
@@ -60331,6 +63367,12 @@
             "state": "translated",
             "value": "把最后两个设为超级组"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Juntar os dois últimos em bi-set"
+          }
         }
       }
     },
@@ -60449,6 +63491,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "可持续"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sustentável"
           }
         }
       }
@@ -60569,6 +63617,12 @@
             "state": "translated",
             "value": "正在扫描每个片段…"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Varrendo cada esforço…"
+          }
         }
       }
     },
@@ -60687,6 +63741,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "游泳"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Natação"
           }
         }
       }
@@ -60807,6 +63867,12 @@
             "state": "translated",
             "value": "同步"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sincronização"
+          }
         }
       }
     },
@@ -60925,6 +63991,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "同步已连接的服务"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sincronizar serviços conectados"
           }
         }
       }
@@ -61045,6 +64117,12 @@
             "state": "translated",
             "value": "立即同步"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sincronizar agora"
+          }
         }
       }
     },
@@ -61163,6 +64241,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "同步已关闭"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sincronização desativada"
           }
         }
       }
@@ -61283,6 +64367,12 @@
             "state": "translated",
             "value": "与 iCloud 同步"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sincronizar com o iCloud"
+          }
         }
       }
     },
@@ -61401,6 +64491,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "正在与 iCloud 同步"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sincronizando com o iCloud"
           }
         }
       }
@@ -61521,6 +64617,12 @@
             "state": "translated",
             "value": "正在同步…"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sincronizando…"
+          }
         }
       }
     },
@@ -61639,6 +64741,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "悠着点"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vá com calma"
           }
         }
       }
@@ -61759,6 +64867,12 @@
             "state": "translated",
             "value": "拍摄于"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tirada em"
+          }
         }
       }
     },
@@ -61877,6 +64991,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "减量开始"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Início do polimento"
           }
         }
       }
@@ -61997,6 +65117,12 @@
             "state": "translated",
             "value": "目标"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Alvo"
+          }
         }
       }
     },
@@ -62115,6 +65241,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "以距离为目标"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mirar uma distância"
           }
         }
       }
@@ -62235,6 +65367,12 @@
             "state": "translated",
             "value": "以时长为目标"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mirar uma duração"
+          }
         }
       }
     },
@@ -62353,6 +65491,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "该文件不是可读的 GPX。"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Esse arquivo não é um GPX legível."
           }
         }
       }
@@ -62473,6 +65617,12 @@
             "state": "translated",
             "value": "海拔服务没有这条路线的数据。通常意味着它超出了数据集覆盖范围（大约北纬 60° 至南纬 56°）。"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "O serviço de elevação não tinha dados para esta rota. Isso costuma significar que ela está fora da cobertura do conjunto de dados (aproximadamente de 60°N a 56°S)."
+          }
         }
       }
     },
@@ -62591,6 +65741,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "海拔服务当前受请求频率限制。请稍等一分钟再试。"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "O serviço de elevação está limitando requisições agora. Tente de novo em um minuto."
           }
         }
       }
@@ -62711,6 +65867,12 @@
             "state": "translated",
             "value": "海拔服务返回错误（HTTP %lld）。"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "O serviço de elevação retornou um erro (HTTP %lld)."
+          }
         }
       }
     },
@@ -62829,6 +65991,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "体能与疲劳曲线告诉你今天的状态。给它们一个目标日期，它们就能告诉你那天的状态。"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "As curvas de forma e fadiga dizem em que estado você está hoje. Dê a elas uma data-alvo e elas dizem em que estado você estará no dia."
           }
         }
       }
@@ -62949,6 +66117,12 @@
             "state": "translated",
             "value": "完整导出是纯 JSON，包含 GPS 轨迹和传感器数据流，因此可以原样恢复——文件也因此很大。摘要不含这些内容。恢复会与现有数据合并，绝不会删除任何东西。"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A exportação completa é JSON puro e inclui trilhas de GPS e séries de sensores, então dá para restaurar exatamente — e é grande. O resumo deixa isso de fora. A restauração mescla com o que já está aqui; ela nunca apaga nada."
+          }
         }
       }
     },
@@ -63067,6 +66241,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "路线只用你自己的记录绘制——没有地图瓦片，也不经过第三方。但它仍会显示你从哪里出发，因此默认关闭，需要你手动开启。"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A rota é desenhada a partir da sua própria gravação — sem blocos de mapa, sem terceiros. Ainda assim ela mostra de onde você saiu, por isso vem desativada até você ligar."
           }
         }
       }
@@ -63187,6 +66367,12 @@
             "state": "translated",
             "value": "大腿（左）"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Coxa (E)"
+          }
         }
       }
     },
@@ -63305,6 +66491,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "大腿（右）"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Coxa (D)"
           }
         }
       }
@@ -63425,6 +66617,12 @@
             "state": "translated",
             "value": "此操作无法撤销。"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Isso não pode ser desfeito."
+          }
         }
       }
     },
@@ -63543,6 +66741,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "仅本设备"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Apenas neste dispositivo"
           }
         }
       }
@@ -63663,6 +66867,12 @@
             "state": "translated",
             "value": "这正是人们发挥出色的窗口期：疲劳已经消退，体能还在。"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Esta é a janela em que as pessoas competem bem: a fadiga passou e a forma continua lá."
+          }
         }
       }
     },
@@ -63781,6 +66991,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "照这个计划你会休息得很好，但体能下滑不少。状态数值好看只是因为已经没有疲劳可减——这和真正的锐利并不是一回事。从现在到那天，还有很大的训练空间。"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Este plano chega descansado, mas com a forma bem abaixo. A prontidão parece boa só porque não sobrou fadiga para subtrair — isso não é a mesma coisa que estar afiado. Há espaço para bem mais trabalho daqui até lá."
           }
         }
       }
@@ -63901,6 +67117,12 @@
             "state": "translated",
             "value": "该路线至少需要两个点才能生成剖面。"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Esta rota precisa de pelo menos dois pontos para ter um perfil."
+          }
         }
       }
     },
@@ -64019,6 +67241,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "本周"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Esta semana"
           }
         }
       }
@@ -64139,6 +67367,12 @@
             "state": "translated",
             "value": "这次训练没有 GPS 轨迹，因此卡片只显示数据。"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Este treino não tem trilha de GPS, então o card traz só números."
+          }
         }
       }
     },
@@ -64257,6 +67491,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "这次训练有记录数据——GPS 轨迹、分段或传感器数据流。这里不会改动它们，因此修改摘要可能导致两者不一致。"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Este treino tem dados gravados — trilha de GPS, voltas ou série de sensor. Eles não são alterados aqui, então editar o resumo pode deixá-lo em desacordo com esses dados."
           }
         }
       }
@@ -64377,6 +67617,12 @@
             "state": "translated",
             "value": "阈值心率"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "FC de limiar"
+          }
         }
       }
     },
@@ -64495,6 +67741,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "时间"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tempo"
           }
         }
       }
@@ -64615,6 +67867,12 @@
             "state": "translated",
             "value": "各区段用时"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tempo em cada faixa"
+          }
         }
       }
     },
@@ -64733,6 +67991,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "区间用时需要逐秒心率，它来自 .fit 导入或带数据流的同步活动。"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "O tempo em zona precisa de frequência cardíaca segundo a segundo, que vem de uma importação .fit ou de uma atividade sincronizada com séries de dados."
           }
         }
       }
@@ -64853,6 +68117,12 @@
             "state": "translated",
             "value": "时间段、天气…"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hora do dia, condições…"
+          }
         }
       }
     },
@@ -64971,6 +68241,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "今天"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hoje"
           }
         }
       }
@@ -65091,6 +68367,12 @@
             "state": "translated",
             "value": "太吃力"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Forte demais"
+          }
         }
       }
     },
@@ -65209,6 +68491,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "太多太急"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Demais, cedo demais"
           }
         }
       }
@@ -65329,6 +68617,12 @@
             "state": "translated",
             "value": "合计"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Total"
+          }
         }
       }
     },
@@ -65447,6 +68741,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "总距离"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Distância total"
           }
         }
       }
@@ -65567,6 +68867,12 @@
             "state": "translated",
             "value": "总时间"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tempo total"
+          }
         }
       }
     },
@@ -65685,6 +68991,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "越野跑"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Trail run"
           }
         }
       }
@@ -65805,6 +69117,12 @@
             "state": "translated",
             "value": "训练负荷"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Carga de treino"
+          }
         }
       }
     },
@@ -65923,6 +69241,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "训练负荷 %lld，%@"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Carga de treino %lld, %@"
           }
         }
       }
@@ -66043,6 +69367,12 @@
             "state": "translated",
             "value": "训练配速（每%@）"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ritmos de treino (por %@)"
+          }
         }
       }
     },
@@ -66161,6 +69491,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "训练压力"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Estresse de treino"
           }
         }
       }
@@ -66281,6 +69617,12 @@
             "state": "translated",
             "value": "躯干支撑与抗旋转"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Estabilização de tronco e antirrotação"
+          }
         }
       }
     },
@@ -66399,6 +69741,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "用示例数据试试"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Experimentar com dados de exemplo"
           }
         }
       }
@@ -66519,6 +69867,12 @@
             "state": "translated",
             "value": "取消退役"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reativar"
+          }
         }
       }
     },
@@ -66637,6 +69991,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "低于目标"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Abaixo da meta"
           }
         }
       }
@@ -66757,6 +70117,12 @@
             "state": "translated",
             "value": "撤销"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Desfazer"
+          }
         }
       }
     },
@@ -66875,6 +70241,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "单位"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Unidades"
           }
         }
       }
@@ -66995,6 +70367,12 @@
             "state": "translated",
             "value": "在你设定之前，区间会采用你全部历史中最高的心率——比单次训练的峰值好，但仍是估计。"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Até você definir isto, as zonas usam a maior FC de todo o seu histórico — melhor do que o pico de um treino só, mas ainda um chute."
+          }
         }
       }
     },
@@ -67113,6 +70491,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "接下来"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A seguir"
           }
         }
       }
@@ -67233,6 +70617,12 @@
             "state": "translated",
             "value": "即将到来"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Próximos"
+          }
         }
       }
     },
@@ -67351,6 +70741,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "应用"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Usar"
           }
         }
       }
@@ -67471,6 +70867,12 @@
             "state": "translated",
             "value": "使用按年龄的估算值（%lld 次/分）"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Usar a estimativa por idade (%lld bpm)"
+          }
         }
       }
     },
@@ -67589,6 +70991,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "最大摄氧量"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "VO₂máx"
           }
         }
       }
@@ -67709,6 +71117,12 @@
             "state": "translated",
             "value": "%lld 次测量的最大摄氧量趋势"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tendência de VO₂máx em %lld medições"
+          }
         }
       }
     },
@@ -67827,6 +71241,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "数值"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Valor"
           }
         }
       }
@@ -67947,6 +71367,12 @@
             "state": "translated",
             "value": "视图"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Exibição"
+          }
         }
       }
     },
@@ -68065,6 +71491,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "训练量"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Volume"
           }
         }
       }
@@ -68185,6 +71617,12 @@
             "state": "translated",
             "value": "瓦"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "W"
+          }
         }
       }
     },
@@ -68303,6 +71741,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "腰围"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cintura"
           }
         }
       }
@@ -68423,6 +71867,12 @@
             "state": "translated",
             "value": "步行"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Caminhada"
+          }
         }
       }
     },
@@ -68541,6 +71991,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "热身"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aquecimento"
           }
         }
       }
@@ -68661,6 +72117,12 @@
             "state": "translated",
             "value": "热身组"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Série de aquecimento"
+          }
         }
       }
     },
@@ -68779,6 +72241,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "监视文件夹"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pasta monitorada"
           }
         }
       }
@@ -68899,6 +72367,12 @@
             "state": "translated",
             "value": "磨损"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Desgaste"
+          }
         }
       }
     },
@@ -69017,6 +72491,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "磨损上限"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Limite de desgaste"
           }
         }
       }
@@ -69137,6 +72617,12 @@
             "state": "translated",
             "value": "磨损上限：%lld 公里"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Limite de desgaste: %lld km"
+          }
         }
       }
     },
@@ -69255,6 +72741,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "周"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Semana"
           }
         }
       }
@@ -69375,6 +72867,12 @@
             "state": "translated",
             "value": "每周训练量"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Volume semanal"
+          }
         }
       }
     },
@@ -69493,6 +72991,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "重量"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Peso"
           }
         }
       }
@@ -69613,6 +73117,12 @@
             "state": "translated",
             "value": "体重光是水分就能波动好几公斤，而且分不清肌肉和别的东西。腰围和臂围分得清，每隔几周拍一张照片更是直接给出答案。"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "O peso varia vários quilos só de água e não distingue músculo de nada mais. Uma cintura e um braço distinguem, e uma foto a cada poucas semanas responde direto."
+          }
         }
       }
     },
@@ -69731,6 +73241,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "由什么决定"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "O que pesou nisso"
           }
         }
       }
@@ -69851,6 +73367,12 @@
             "state": "translated",
             "value": "内容是什么？如 8 × 400 米"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "O que é? ex.: 8 × 400 m"
+          }
         }
       }
     },
@@ -69969,6 +73491,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "时间范围"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Período"
           }
         }
       }
@@ -70089,6 +73617,12 @@
             "state": "translated",
             "value": "正式组"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Trabalho"
+          }
         }
       }
     },
@@ -70207,6 +73741,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "正在计算预测…"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Calculando a projeção…"
           }
         }
       }
@@ -70327,6 +73867,12 @@
             "state": "translated",
             "value": "训练"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Treinos"
+          }
         }
       }
     },
@@ -70445,6 +73991,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "训练、指标和路线通过你的私人 iCloud 数据库在你的其他设备间共享。不会有任何数据发往我们的服务器。"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Treinos, métricas e rotas são compartilhados com seus outros dispositivos pelo seu banco de dados privado no iCloud. Nada vai para servidor nenhum nosso."
           }
         }
       }
@@ -70565,6 +74117,12 @@
             "state": "translated",
             "value": "将训练写入 Apple 健康"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gravar treinos no Apple Saúde"
+          }
         }
       }
     },
@@ -70683,6 +74241,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "生成一个 .fit 训练文件——用隔空投送发送，或交给手表的应用。在设置中填写最大心率后，区间目标会写成真实的心率范围；不填则步骤不带目标。"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gera um arquivo de treino .fit — envie por AirDrop ou entregue ao app do seu relógio. Informe sua frequência cardíaca máxima nos ajustes e os alvos de zona vão como faixas reais de bpm; sem ela, as etapas saem sem alvo."
           }
         }
       }
@@ -70803,6 +74367,12 @@
             "state": "translated",
             "value": "生成一个 .fit 训练文件——用隔空投送发送，或交给手表的应用。区间目标会按你的最大心率 %lld 写成心率范围。"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gera um arquivo de treino .fit — envie por AirDrop ou entregue ao app do seu relógio. Os alvos de zona são gravados como faixas de bpm a partir da sua máxima de %lld."
+          }
         }
       }
     },
@@ -70921,6 +74491,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "会把每次导入的训练连同路线和心率序列一起写入，比手表自带的「健康」同步内容更全。演示数据和*来自*「健康」的训练会被跳过，也不会重复写入。"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Grava cada treino importado com a rota e a série de frequência cardíaca, o que é mais do que a própria sincronização do relógio com o app Saúde leva. Dados de demonstração e treinos que vieram *do* app Saúde são ignorados, e nada é gravado duas vezes."
           }
         }
       }
@@ -71041,6 +74617,12 @@
             "state": "translated",
             "value": "正在写入…"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gravando…"
+          }
         }
       }
     },
@@ -71159,6 +74741,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "你的 API 密钥在 intervals.icu 设置页面底部。运动员 ID 留空即使用已认证的本人账户。"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sua chave de API está no rodapé da página Settings do intervals.icu. Deixe o ID do atleta em branco para usar o atleta autenticado."
           }
         }
       }
@@ -71279,6 +74867,12 @@
             "state": "translated",
             "value": "你的数据没有被删除。文件仍在：\n%@\n\n请先退出并重新打开应用。如果仍无效，请先把该文件复制到安全的地方，再尝试其他操作。"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Seus dados não foram apagados. O arquivo ainda está em:\n%@\n\nPrimeiro feche e reabra o app. Se isso não resolver, copie esse arquivo para um lugar seguro antes de tentar qualquer outra coisa."
+          }
         }
       }
     },
@@ -71394,6 +74988,12 @@
           }
         },
         "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Z%lld %@"
+          }
+        },
+        "pt-BR": {
           "stringUnit": {
             "state": "translated",
             "value": "Z%lld %@"
@@ -71517,6 +75117,12 @@
             "state": "translated",
             "value": "区间 %lld，%@"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zona %lld, %@"
+          }
         }
       }
     },
@@ -71635,6 +75241,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "区间、训练负荷和状态评分都基于你自己的心率计算。没有最大心率时会退而使用你数据中的最高值，而这个值通常偏低一点。"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zonas, carga de treino e prontidão são todas calculadas sobre a sua própria frequência cardíaca. Sem uma máxima, elas recorrem ao maior valor dos seus dados, que costuma ser um pouco baixo."
           }
         }
       }
@@ -71755,6 +75367,12 @@
             "state": "translated",
             "value": "天后开赛"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "dia para a prova"
+          }
         }
       }
     },
@@ -71873,6 +75491,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "天后开赛"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "dias para a prova"
           }
         }
       }
@@ -71993,6 +75617,12 @@
             "state": "translated",
             "value": "估算 1RM"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "1RM est."
+          }
         }
       }
     },
@@ -72112,6 +75742,12 @@
             "state": "translated",
             "value": "状态 %@"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "prontidão %@"
+          }
         }
       }
     },
@@ -72227,6 +75863,12 @@
           }
         },
         "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "iCloud"
+          }
+        },
+        "pt-BR": {
           "stringUnit": {
             "state": "translated",
             "value": "iCloud"
@@ -72350,6 +75992,12 @@
             "state": "translated",
             "value": "iCloud 同步不可用，因此所有数据都存在本设备上。%@"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A sincronização com o iCloud não está disponível, então tudo fica guardado neste dispositivo. %@"
+          }
         }
       }
     },
@@ -72465,6 +76113,12 @@
           }
         },
         "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "intervals.icu"
+          }
+        },
+        "pt-BR": {
           "stringUnit": {
             "state": "translated",
             "value": "intervals.icu"
@@ -72588,6 +76242,12 @@
             "state": "translated",
             "value": "公里"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "km"
+          }
         }
       }
     },
@@ -72706,6 +76366,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "公里、米、公斤"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "km, metros, quilogramas"
           }
         }
       }
@@ -72826,6 +76492,12 @@
             "state": "translated",
             "value": "上限 %lld 公里"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "limite de %lld km"
+          }
         }
       }
     },
@@ -72944,6 +76616,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "负荷"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "carga"
           }
         }
       }
@@ -73064,6 +76742,12 @@
             "state": "translated",
             "value": "米"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "m"
+          }
         }
       }
     },
@@ -73182,6 +76866,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "毫升/公斤·分"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "mL/kg·min"
           }
         }
       }
@@ -73302,6 +76992,12 @@
             "state": "translated",
             "value": "最大 %lld 次/分"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "máx %lld bpm"
+          }
         }
       }
     },
@@ -73420,6 +77116,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "英里、英尺、磅"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "milhas, pés, libras"
           }
         }
       }
@@ -73540,6 +77242,12 @@
             "state": "translated",
             "value": "分钟/%@"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "min/%@"
+          }
         }
       }
     },
@@ -73658,6 +77366,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "分钟"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "minutos"
           }
         }
       }
@@ -73778,6 +77492,12 @@
             "state": "translated",
             "value": "未设置"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "não definido"
+          }
         }
       }
     },
@@ -73896,6 +77616,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "选填"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "opcional"
           }
         }
       }
@@ -74016,6 +77742,12 @@
             "state": "translated",
             "value": "股四头肌、臀大肌"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "quadríceps, glúteos"
+          }
         }
       }
     },
@@ -74134,6 +77866,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "状态"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "prontidão"
           }
         }
       }
@@ -74254,6 +77992,12 @@
             "state": "translated",
             "value": "次数"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "reps"
+          }
         }
       }
     },
@@ -74372,6 +78116,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "今天"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "hoje"
           }
         }
       }
@@ -74492,6 +78242,12 @@
             "state": "translated",
             "value": "热身"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "aquecimento"
+          }
         }
       }
     },
@@ -74607,6 +78363,12 @@
           }
         },
         "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "×"
+          }
+        },
+        "pt-BR": {
           "stringUnit": {
             "state": "translated",
             "value": "×"
@@ -74730,6 +78492,12 @@
             "state": "translated",
             "value": "–"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "–"
+          }
         }
       }
     },
@@ -74845,6 +78613,12 @@
           }
         },
         "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "—"
+          }
+        },
+        "pt-BR": {
           "stringUnit": {
             "state": "translated",
             "value": "—"
