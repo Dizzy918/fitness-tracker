@@ -60,6 +60,7 @@
 		<string>gl</string>
 		<string>eu</string>
 		<string>nn</string>
+		<string>cy</string>
 	</array>
 	<key>CFBundleName</key>
 	<string>$(PRODUCT_NAME)</string>
