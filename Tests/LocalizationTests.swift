@@ -191,6 +191,60 @@ final class LocalizationCatalogTests: XCTestCase {
         }
     }
 
+    /// A word must not mix alphabets.
+    ///
+    /// Cyrillic "а" and Latin "a" are the same picture. A Latin "è" inside the
+    /// Macedonian "сѐ" looks perfectly correct on screen and is wrong
+    /// everywhere it matters: search misses the word, sorting puts it in the
+    /// wrong place, the spell-checker flags it, and VoiceOver switches voice
+    /// mid-word. Nothing else in this suite can see it, and neither can a
+    /// person reading the catalog.
+    ///
+    /// This found three real ones: 31 Macedonian strings spelling "сѐ" with a
+    /// Latin è, a Bulgarian "размине" ending in a Latin e, and a Bulgarian
+    /// "e1ПМ" that was half-converted from "e1RM".
+    ///
+    /// Words, not strings: "Strava", "iCloud" and "FTP" sit inside Cyrillic
+    /// sentences perfectly legitimately. It's the mixture *within one word*
+    /// that is always a mistake.
+    func testNoWordMixesAlphabets() {
+        // Format specifiers are not words — "%lld" is Latin by construction and
+        // butts up against whatever letter follows it.
+        let specifier = try! NSRegularExpression(
+            pattern: "%(?:%|(?:[0-9]+\\$)?[0-9]*\\.?[0-9]*(?:ll|l|h|hh|z|q)?[@dioufFeEgGxXcsSpaA])")
+
+        func alphabet(of scalar: Unicode.Scalar) -> String? {
+            switch scalar.value {
+            case 0x0041...0x005A, 0x0061...0x007A, 0x00C0...0x024F: return "Latin"
+            case 0x0370...0x03FF, 0x1F00...0x1FFF: return "Greek"
+            case 0x0400...0x04FF, 0x0500...0x052F: return "Cyrillic"
+            default: return nil
+            }
+        }
+
+        var problems: [String] = []
+        for (key, entry) in catalog.strings {
+            for (language, localization) in entry.localizations ?? [:] {
+                guard let value = localization.stringUnit?.value else { continue }
+                let range = NSRange(value.startIndex..., in: value)
+                let stripped = specifier.stringByReplacingMatches(
+                    in: value, range: range, withTemplate: " ")
+
+                for word in stripped.split(whereSeparator: { !$0.isLetter && $0 != "\u{0301}" }) {
+                    let alphabets = Set(word.unicodeScalars.compactMap(alphabet(of:)))
+                    if alphabets.count > 1 {
+                        problems.append("[\(language)] \"\(word)\" mixes "
+                                        + alphabets.sorted().joined(separator: " and ")
+                                        + " — in \(key.prefix(40))")
+                    }
+                }
+            }
+        }
+        XCTAssertTrue(problems.isEmpty,
+                      "look-alike letters from the wrong alphabet:\n"
+                      + problems.prefix(20).joined(separator: "\n"))
+    }
+
     /// Coverage, reported rather than asserted — a partly translated language
     /// falls back per string and is not a failure.
     func testReportCoverage() throws {
