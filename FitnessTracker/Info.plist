@@ -59,6 +59,7 @@
 		<string>he</string>
 		<string>gl</string>
 		<string>eu</string>
+		<string>nn</string>
 	</array>
 	<key>CFBundleName</key>
 	<string>$(PRODUCT_NAME)</string>
