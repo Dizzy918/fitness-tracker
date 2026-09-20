@@ -179,11 +179,35 @@ final class LoadPerformanceTests: XCTestCase {
 @MainActor
 final class SnapshotFaultingTests: XCTestCase {
 
+    /// A store of this test's own, on disk and thrown away afterwards.
+    ///
+    /// On disk because that is the whole point: `.externalStorage` only faults
+    /// when there is a file to fault from, so an in-memory store would make the
+    /// test measure nothing. Its *own* file because the default configuration
+    /// resolves to the app's real database — the test host is the app — so this
+    /// used to insert 200 workouts into the user's training history on every
+    /// run, and then skip itself, because the re-fetch below found the
+    /// accumulated rows instead of the 200 it had just written.
+    private var storeURL: URL!
+
+    override func setUpWithError() throws {
+        let directory = FileManager.default.temporaryDirectory
+            .appendingPathComponent("SnapshotFaulting-\(UUID().uuidString)", isDirectory: true)
+        try FileManager.default.createDirectory(at: directory, withIntermediateDirectories: true)
+        storeURL = directory.appendingPathComponent("faulting.store")
+    }
+
+    override func tearDownWithError() throws {
+        if let directory = storeURL?.deletingLastPathComponent() {
+            try? FileManager.default.removeItem(at: directory)
+        }
+        storeURL = nil
+    }
+
     private func makeContext() throws -> ModelContext {
         let container = try ModelContainer(
             for: FitnessTrackerApp.schema,
-            configurations: ModelConfiguration(isStoredInMemoryOnly: false,
-                                               allowsSave: true)
+            configurations: ModelConfiguration(url: storeURL)
         )
         return ModelContext(container)
     }
@@ -214,9 +238,9 @@ final class SnapshotFaultingTests: XCTestCase {
         // Re-fetch so nothing is already faulted in.
         let fresh = try makeContext()
         let stored = try fresh.fetch(FetchDescriptor<Workout>())
-        guard stored.count == 200 else {
-            throw XCTSkip("store didn't persist across contexts here")
-        }
+        // A fresh store makes this exact. It used to be a skip, which is how it
+        // went unnoticed that the test had stopped running at all.
+        XCTAssertEqual(stored.count, 200, "the store should hold exactly what this test wrote")
 
         let lightStart = Date()
         let light = stored.map(\.lightSnapshot)
