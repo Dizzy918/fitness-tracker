@@ -52,6 +52,7 @@
 		<string>mt</string>
 		<string>zh-Hant</string>
 		<string>id</string>
+		<string>ms</string>
 	</array>
 	<key>CFBundleName</key>
 	<string>$(PRODUCT_NAME)</string>
