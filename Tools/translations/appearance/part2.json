@@ -1,0 +1,170 @@
+{
+  "sk": [
+    "Vzhľad",
+    "Systém",
+    "Svetlý",
+    "Tmavý",
+    "Systém sa riadi zariadením. Svetlý a Tmavý ho prebijú len pre túto aplikáciu — presne to, čo chceš, keď je telefón celý večer tmavý a čísla byť nemajú."
+  ],
+  "sl": [
+    "Videz",
+    "Sistemski",
+    "Svetel",
+    "Temen",
+    "Sistemski sledi napravi. Svetel in Temen ga preglasita samo v tej aplikaciji, kar je natanko tisto, kar želiš, ko je telefon ves večer temen, številke pa ne bi smele biti."
+  ],
+  "hr": [
+    "Izgled",
+    "Sustav",
+    "Svijetli",
+    "Tamni",
+    "Sustav prati uređaj. Svijetli i Tamni ga nadjačavaju samo za ovu aplikaciju, što je upravo ono što želiš kad je telefon cijelu večer taman, a brojke ne bi trebale biti."
+  ],
+  "sr": [
+    "Изглед",
+    "Системски",
+    "Светли",
+    "Тамни",
+    "Системски прати уређај. Светли и Тамни га потискују само у овој апликацији, што је баш оно што желиш кад је телефон цело вече таман, а бројеви не треба да буду."
+  ],
+  "et": [
+    "Välimus",
+    "Süsteemne",
+    "Hele",
+    "Tume",
+    "Süsteemne järgib seadet. Hele ja Tume alistavad selle ainult selles rakenduses, mis on täpselt see, mida tahad, kui telefon on terve õhtu tume, numbrid aga ei tohiks olla."
+  ],
+  "lv": [
+    "Izskats",
+    "Sistēmas",
+    "Gaišs",
+    "Tumšs",
+    "Sistēmas izskats seko ierīcei. Gaišs un Tumšs to pārraksta tikai šajā lietotnē — tieši tas, ko gribi, kad telefons visu vakaru ir tumšs, bet skaitļiem tādiem nevajadzētu būt."
+  ],
+  "lt": [
+    "Išvaizda",
+    "Sistemos",
+    "Šviesi",
+    "Tamsi",
+    "Sistemos išvaizda seka įrenginį. Šviesi ir Tamsi ją nustelbia tik šioje programėlėje — būtent to ir nori, kai telefonas visą vakarą tamsus, o skaičiai tokie būti neturėtų."
+  ],
+  "ca": [
+    "Aparença",
+    "Sistema",
+    "Clar",
+    "Fosc",
+    "Sistema segueix el dispositiu. Clar i Fosc el sobreescriuen només en aquesta app, que és el que vols quan el telèfon està fosc tot el vespre i els números no ho haurien d'estar."
+  ],
+  "is": [
+    "Útlit",
+    "Kerfið",
+    "Ljóst",
+    "Dökkt",
+    "Kerfið fylgir tækinu. Ljóst og Dökkt ganga framar því aðeins í þessu forriti, sem er einmitt það sem þú vilt þegar síminn er dökkur allt kvöldið en tölurnar eiga ekki að vera það."
+  ],
+  "sq": [
+    "Pamja",
+    "Sistemi",
+    "E çelët",
+    "E errët",
+    "Sistemi ndjek pajisjen. E çelëta dhe e errëta e zëvendësojnë atë vetëm për këtë aplikacion, që është pikërisht ajo që do kur telefoni rri i errët gjithë mbrëmjen dhe numrat nuk duhet të jenë."
+  ],
+  "mk": [
+    "Изглед",
+    "Системски",
+    "Светол",
+    "Темен",
+    "Системскиот го следи уредот. Светол и Темен го потиснуваат само во оваа апликација, што е токму она што го сакаш кога телефонот е темен цела вечер, а бројките не треба да бидат."
+  ],
+  "ga": [
+    "Cuma",
+    "Córas",
+    "Sorcha",
+    "Dorcha",
+    "Leanann Córas an gléas. Sáraíonn Sorcha agus Dorcha é san aip seo amháin, rud atá uait nuair a bhíonn an fón dorcha ar feadh an tráthnóna ar fad agus nár cheart do na huimhreacha a bheith."
+  ],
+  "mt": [
+    "Dehra",
+    "Sistema",
+    "Ċara",
+    "Skura",
+    "Is-sistema timxi mal-apparat. Iċ-ċara u l-iskura jaqbżuha f'din l-app biss, li hu eżatt dak li trid meta t-telefown jibqa' skur il-lejl kollu u n-numri m'għandhomx ikunu."
+  ],
+  "id": [
+    "Tampilan",
+    "Sistem",
+    "Terang",
+    "Gelap",
+    "Sistem mengikuti perangkat. Terang dan Gelap menimpanya hanya untuk aplikasi ini, yang justru kamu butuhkan ketika ponsel gelap sepanjang malam sementara angkanya tidak boleh."
+  ],
+  "ms": [
+    "Rupa",
+    "Sistem",
+    "Cerah",
+    "Gelap",
+    "Sistem mengikut peranti. Cerah dan Gelap mengatasinya untuk aplikasi ini sahaja, iaitu apa yang anda mahukan apabila telefon gelap sepanjang malam sedangkan nombornya tidak sepatutnya."
+  ],
+  "vi": [
+    "Giao diện",
+    "Hệ thống",
+    "Sáng",
+    "Tối",
+    "Hệ thống đi theo thiết lập của máy. Sáng và Tối ghi đè lên nó chỉ trong ứng dụng này — đúng thứ bạn cần khi máy để tối suốt buổi tối mà các con số thì không nên tối."
+  ],
+  "th": [
+    "ธีมสี",
+    "ตามระบบ",
+    "สว่าง",
+    "มืด",
+    "\"ตามระบบ\" จะทำตามการตั้งค่าของเครื่อง ส่วน \"สว่าง\" และ \"มืด\" จะทับค่านั้นเฉพาะในแอปนี้ ซึ่งก็คือสิ่งที่คุณต้องการเวลาเครื่องมืดทั้งคืนแต่ไม่อยากให้ตัวเลขมืดไปด้วย"
+  ],
+  "hi": [
+    "रूप",
+    "सिस्टम",
+    "हल्का",
+    "गहरा",
+    "\"सिस्टम\" डिवाइस की सेटिंग के पीछे चलता है। \"हल्का\" और \"गहरा\" उसे सिर्फ़ इसी ऐप के लिए दरकिनार कर देते हैं — यही चाहिए जब फ़ोन पूरी शाम गहरा रहे पर आँकड़े गहरे न हों।"
+  ],
+  "he": [
+    "מראה",
+    "מערכת",
+    "בהיר",
+    "כהה",
+    "\"מערכת\" הולך אחרי המכשיר. \"בהיר\" ו\"כהה\" גוברים עליו באפליקציה הזאת בלבד, וזה בדיוק מה שצריך כשהטלפון כהה כל הערב והמספרים לא אמורים להיות."
+  ],
+  "gl": [
+    "Aparencia",
+    "Sistema",
+    "Claro",
+    "Escuro",
+    "Sistema segue o dispositivo. Claro e Escuro impóñense só nesta aplicación, que é o que queres cando o teléfono está escuro toda a tarde e os números non deberían estalo."
+  ],
+  "eu": [
+    "Itxura",
+    "Sistema",
+    "Argia",
+    "Iluna",
+    "Sistemak gailuari jarraitzen dio. Argiak eta Ilunak app honetan bakarrik gainditzen dute, eta hori da hain zuzen nahi duzuna telefonoa arrats osoan ilun dagoenean eta zenbakiek ilun egon behar ez dutenean."
+  ],
+  "cy": [
+    "Golwg",
+    "System",
+    "Golau",
+    "Tywyll",
+    "Mae System yn dilyn y ddyfais. Mae Golau a Thywyll yn ei ddisodli ar gyfer yr ap hwn yn unig, sef yn union beth rwyt ti ei eisiau pan mae'r ffôn yn dywyll drwy'r nos a'r rhifau i fod i beidio."
+  ],
+  "fa": [
+    "ظاهر",
+    "سیستم",
+    "روشن",
+    "تیره",
+    "«سیستم» از تنظیم دستگاه پیروی می‌کند. «روشن» و «تیره» فقط در همین برنامه آن را کنار می‌زنند — دقیقاً همان چیزی که می‌خواهی وقتی گوشی تمام شب تیره است اما نمی‌خواهی عددها هم تیره باشند."
+  ],
+  "fil": [
+    "Anyo",
+    "Sistema",
+    "Maliwanag",
+    "Madilim",
+    "Sinusunod ng Sistema ang device. Ang Maliwanag at Madilim ay sa app na ito lang tumatalab, na siya mo namang kailangan kapag madilim ang telepono buong gabi pero hindi dapat madilim ang mga numero."
+  ]
+}

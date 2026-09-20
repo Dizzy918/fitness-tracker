@@ -36,6 +36,13 @@ struct FitnessTrackerApp: App {
     private let failure: String?
     private let syncStatus: StoreConfiguration.Status
 
+    /// Light/dark/system, applied to the whole window.
+    ///
+    /// It lives here rather than on `RootView` so the recovery screen obeys it
+    /// too: the one moment you are certainly reading carefully is the moment
+    /// the database wouldn't open.
+    @AppStorage(Appearance.defaultsKey) private var appearance: Appearance = .system
+
     init() {
         do {
             let opened = try StoreConfiguration.open(schema: Self.schema)
@@ -52,13 +59,16 @@ struct FitnessTrackerApp: App {
 
     var body: some Scene {
         WindowGroup {
-            if let container {
-                RootView()
-                    .modelContainer(container)
-                    .environment(\.syncStatus, syncStatus)
-            } else {
-                StoreFailureView(message: failure ?? "Unknown error")
+            Group {
+                if let container {
+                    RootView()
+                        .modelContainer(container)
+                        .environment(\.syncStatus, syncStatus)
+                } else {
+                    StoreFailureView(message: failure ?? "Unknown error")
+                }
             }
+            .preferredColorScheme(appearance.colorScheme)
         }
     }
 }

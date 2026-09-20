@@ -16,6 +16,7 @@ struct SettingsView: View {
     @AppStorage(StoreConfiguration.syncEnabledKey) private var iCloudSyncEnabled = true
     @AppStorage(WatchedFolder.enabledKey) private var watchedFolderEnabled = true
     @AppStorage(UnitSystem.defaultsKey) private var unitSystem: UnitSystem = .metric
+    @AppStorage(Appearance.defaultsKey) private var appearance: Appearance = .system
     @AppStorage("maxHeartRate") private var maxHeartRate = 0
     @AppStorage(AthleteProfile.Key.thresholdHeartRate) private var thresholdHeartRate = 0
     @AppStorage("restingHeartRate") private var restingHeartRate = 0
@@ -52,6 +53,7 @@ struct SettingsView: View {
             Form {
                 syncStatusSection
                 watchedFolderSection
+                appearanceSection
                 unitsSection
                 remindersSection
                 backupSection
@@ -545,6 +547,21 @@ struct SettingsView: View {
     /// Display only. Everything is stored in SI and converted at the edge, so
     /// flipping this can't corrupt a personal best or shift a training-load
     /// curve — it re-labels the same numbers.
+    private var appearanceSection: some View {
+        Section {
+            Picker("Appearance", selection: $appearance) {
+                ForEach(Appearance.allCases) { option in
+                    Text(option.displayName).tag(option)
+                }
+            }
+            .pickerStyle(.segmented)
+        } header: {
+            Text("Appearance")
+        } footer: {
+            Text("System follows the device. Light and Dark override it for this app only, which is what you want when the phone is dark all evening and the numbers aren't.")
+        }
+    }
+
     private var unitsSection: some View {
         Section {
             Picker("Units", selection: $unitSystem) {
