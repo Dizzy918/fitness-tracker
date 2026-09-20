@@ -71,7 +71,7 @@ sessions — so every screen has something to show.
 | Thresholds | FTP, threshold HR and max HR estimated from your own best 20-minute efforts |
 | HealthKit | HRV, resting HR, sleep, weight, VO₂max import, and workout **write-back** with route and HR series (iOS only) |
 | Units | Metric or imperial throughout, display-only — stored values stay SI |
-| Languages | 44, each one complete — every one of the 716 strings, checked against the list the app actually advertises |
+| Languages | 50, each one complete — every one of the 716 strings, checked against the list the app actually advertises |
 | Backup | Full JSON export and merge-restore, plus a workouts CSV |
 | Manual entry | Log a workout by hand when nothing recorded it, and correct any workout afterwards |
 | HR zones | Five-zone split per workout with time-in-zone, from your max HR |
@@ -359,14 +359,16 @@ re-renders the moment it changes.
 
 ## Languages
 
-44, and every one of them complete: all 716 strings, translated rather than
+50, and every one of them complete: all 716 strings, translated rather than
 machine-filled, which is why they landed one language per commit. That covers
-every language the App Store itself ships in, plus the smaller European ones —
-Maltese, Irish, Icelandic, Albanian, Macedonian — that usually get dropped.
+every language the App Store itself ships in, and then the ones it doesn't:
+Maltese, Irish, Welsh, Icelandic, Albanian, Macedonian, Galician, Basque and
+Norwegian Nynorsk beside its Bokmål.
 
-Two of them read right to left, Arabic and Hebrew. Both took the same layout
-work: SwiftUI mirrors leading/trailing automatically, but a filename like `.fit`
-has to carry a left-to-right mark or the dot jumps to the wrong end of the word.
+Three of them read right to left — Arabic, Hebrew and Persian. All three took
+the same layout work: SwiftUI mirrors leading/trailing automatically, but a
+filename like `.fit` has to carry a left-to-right mark or the dot jumps to the
+wrong end of the word.
 
 The catalog is checked by tests rather than by reading it. Format specifiers must
 survive translation — a `%lld` where the source had `%@` is a crash in one
@@ -376,6 +378,14 @@ a language is only offered to anyone if it appears in `CFBundleLocalizations`, s
 that list, the catalog and the generated `Info.plist` are all asserted to agree:
 716 strings translated and one forgotten line in `project.yml` would otherwise
 ship a language that iOS never offers.
+
+Two more checks came out of near-misses. No language may be a copy of its
+neighbour — Bokmål and Nynorsk, Indonesian and Malay, the two Chinese scripts
+and the two Portuguese variants are each close enough that a copy-paste would
+pass everything else — so long strings are compared *between* languages, not
+just against English. And no word may mix alphabets: a Cyrillic "а" inside a
+Latin word is the same picture and a different letter, and that check found 31
+Macedonian strings spelling "сѐ" with a Latin è.
 
 ## Apple Health
 
