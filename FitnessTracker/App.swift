@@ -69,7 +69,21 @@ struct FitnessTrackerApp: App {
                 }
             }
             .preferredColorScheme(appearance.colorScheme)
+            // A Mac window opens at whatever its content will tolerate, and
+            // this content tolerates far too little: five tabs of charts and
+            // tables collapsed into 900×450, where onboarding arrives already
+            // scrolled and the dashboard's curves have no room to say anything.
+            // A floor, and a first-launch size with space for a chart.
+            #if os(macOS)
+            .frame(minWidth: 720, minHeight: 560)
+            #endif
         }
+        #if os(macOS)
+        .defaultSize(width: 1_180, height: 820)
+        // Honour the minimum above rather than letting the window shrink past
+        // the point where the layout stops working.
+        .windowResizability(.contentMinSize)
+        #endif
     }
 }
 
