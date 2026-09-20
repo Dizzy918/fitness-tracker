@@ -62,6 +62,7 @@
 		<string>nn</string>
 		<string>cy</string>
 		<string>fa</string>
+		<string>fil</string>
 	</array>
 	<key>CFBundleName</key>
 	<string>$(PRODUCT_NAME)</string>
