@@ -103,6 +103,7 @@ targets:
           - mk
           - ga
           - mt
+          - zh-Hant
         # Reads passive metrics; writes back workouts imported from .fit files
         # and synced services, which is the only way Apple Health ever sees the
         # full-fidelity route and heart-rate series. No CoreLocation or

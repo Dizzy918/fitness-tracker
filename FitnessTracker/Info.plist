@@ -50,6 +50,7 @@
 		<string>mk</string>
 		<string>ga</string>
 		<string>mt</string>
+		<string>zh-Hant</string>
 	</array>
 	<key>CFBundleName</key>
 	<string>$(PRODUCT_NAME)</string>
