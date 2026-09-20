@@ -71,6 +71,7 @@ sessions — so every screen has something to show.
 | Thresholds | FTP, threshold HR and max HR estimated from your own best 20-minute efforts |
 | HealthKit | HRV, resting HR, sleep, weight, VO₂max import, and workout **write-back** with route and HR series (iOS only) |
 | Units | Metric or imperial throughout, display-only — stored values stay SI |
+| Languages | 44, each one complete — every one of the 716 strings, checked against the list the app actually advertises |
 | Backup | Full JSON export and merge-restore, plus a workouts CSV |
 | Manual entry | Log a workout by hand when nothing recorded it, and correct any workout afterwards |
 | HR zones | Five-zone split per workout with time-in-zone, from your max HR |
@@ -82,7 +83,7 @@ sessions — so every screen has something to show.
 | Dashboard | This-week totals, fitness/fatigue/form with a 120-day curve, weekly volume, road pace trend, shoe alerts |
 | Finding things | Search across sport/source/notes/shoe, plus a sport filter |
 
-540 tests cover the FIT round-trip (encode → decode → assert), splits math, readiness
+800 tests cover the FIT round-trip (encode → decode → assert), splits math, readiness
 scoring (missing-input and flat-baseline cases included), HR zone boundaries and the
 time-in-zone invariant, best-effort extraction, haversine distances against known
 city pairs, GPX export/parse round-trips and malformed input, NP/IF/TSS against their
@@ -355,6 +356,26 @@ for climb, pounds for weight, and pace per mile. Input fields step in whatever
 unit is shown — 5 lb plates rather than 2.5 kg ones — and convert back on save.
 The preference rides the SwiftUI environment from the root, so every screen
 re-renders the moment it changes.
+
+## Languages
+
+44, and every one of them complete: all 716 strings, translated rather than
+machine-filled, which is why they landed one language per commit. That covers
+every language the App Store itself ships in, plus the smaller European ones —
+Maltese, Irish, Icelandic, Albanian, Macedonian — that usually get dropped.
+
+Two of them read right to left, Arabic and Hebrew. Both took the same layout
+work: SwiftUI mirrors leading/trailing automatically, but a filename like `.fit`
+has to carry a left-to-right mark or the dot jumps to the wrong end of the word.
+
+The catalog is checked by tests rather than by reading it. Format specifiers must
+survive translation — a `%lld` where the source had `%@` is a crash in one
+language and nowhere else — and reordering is allowed only through positional
+forms, which is what Japanese and Chinese need. Line breaks must survive too. And
+a language is only offered to anyone if it appears in `CFBundleLocalizations`, so
+that list, the catalog and the generated `Info.plist` are all asserted to agree:
+716 strings translated and one forgotten line in `project.yml` would otherwise
+ship a language that iOS never offers.
 
 ## Apple Health
 
