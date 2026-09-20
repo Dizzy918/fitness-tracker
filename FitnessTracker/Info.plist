@@ -55,6 +55,7 @@
 		<string>ms</string>
 		<string>vi</string>
 		<string>th</string>
+		<string>hi</string>
 	</array>
 	<key>CFBundleName</key>
 	<string>$(PRODUCT_NAME)</string>
