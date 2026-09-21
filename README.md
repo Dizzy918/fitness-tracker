@@ -71,6 +71,7 @@ sessions — so every screen has something to show.
 | Thresholds | FTP, threshold HR and max HR estimated from your own best 20-minute efforts |
 | HealthKit | HRV, resting HR, sleep, weight, VO₂max import, and workout **write-back** with route and HR series (iOS only) |
 | Units | Metric or imperial throughout, display-only — stored values stay SI |
+| Appearance | System, Light or Dark, independent of the device — every colour is semantic, so both render correctly |
 | Languages | 50, each one complete — every one of the 716 strings, checked against the list the app actually advertises |
 | Backup | Full JSON export and merge-restore, plus a workouts CSV |
 | Manual entry | Log a workout by hand when nothing recorded it, and correct any workout afterwards |
