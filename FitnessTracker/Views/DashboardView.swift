@@ -288,13 +288,18 @@ struct DashboardView: View {
                     .foregroundStyle(.secondary)
                     .fixedSize(horizontal: false, vertical: true)
 
+                // Both of these qualify the numbers directly above them — one
+                // says the curve hasn't settled, the other that part of the
+                // load was guessed from duration. A reader who misses them
+                // trusts a figure more than it deserves, so they get .secondary
+                // rather than the .tertiary used for decorative hints.
                 if !training.isEstablished {
                     Text("Still warming up — the 42-day average needs about three weeks of history before it settles.")
-                        .font(.caption2).foregroundStyle(.tertiary)
+                        .font(.caption2).foregroundStyle(.secondary)
                         .fixedSize(horizontal: false, vertical: true)
                 } else if training.estimatedSessionCount > 0 {
                     Text("\(training.estimatedSessionCount) session\(training.estimatedSessionCount == 1 ? "" : "s") this week had no power or heart rate, so its load is estimated from duration.")
-                        .font(.caption2).foregroundStyle(.tertiary)
+                        .font(.caption2).foregroundStyle(.secondary)
                         .fixedSize(horizontal: false, vertical: true)
                 }
 

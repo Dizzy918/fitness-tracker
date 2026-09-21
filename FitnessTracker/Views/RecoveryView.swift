@@ -107,11 +107,17 @@ struct RecoveryView: View {
                     }
                 }
 
+                // .secondary, not .tertiary: this is the line that says the
+                // score is a heuristic and not a measurement, and it sits on a
+                // tinted card, where the tint lifts the background toward the
+                // text and eats what little contrast .tertiary has. The caveat
+                // that stops someone treating this as medical advice should not
+                // be the least legible thing on the card.
                 Text(guidance.isPartial
                      ? "Based on part of the picture, and on how your own trends usually look — not on how you feel. If those disagree, trust yourself."
                      : "A suggestion from your own trends, not a measurement. If it disagrees with how you feel, trust yourself.")
                     .font(.caption2)
-                    .foregroundStyle(.tertiary)
+                    .foregroundStyle(.secondary)
                     .fixedSize(horizontal: false, vertical: true)
             }
             .padding()
