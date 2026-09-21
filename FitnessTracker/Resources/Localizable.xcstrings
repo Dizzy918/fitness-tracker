@@ -9468,7 +9468,7 @@
         "de": {
           "stringUnit": {
             "state": "translated",
-            "value": "%lld Einheiten · %@ gesamt"
+            "value": "%lld Trainings · %@ gesamt"
           }
         },
         "es": {
@@ -13433,7 +13433,7 @@
         "de": {
           "stringUnit": {
             "state": "translated",
-            "value": "1 Einheit · %@ gesamt"
+            "value": "1 Training · %@ gesamt"
           }
         },
         "es": {
@@ -118658,7 +118658,7 @@
         "de": {
           "stringUnit": {
             "state": "translated",
-            "value": "Keine passenden Einheiten. Setz die Suche oder den Filter zurück."
+            "value": "Keine passenden Trainings. Setz die Suche oder den Filter zurück."
           }
         },
         "es": {
@@ -118963,7 +118963,7 @@
         "de": {
           "stringUnit": {
             "state": "translated",
-            "value": "Noch keine Einheiten"
+            "value": "Noch keine Trainings"
           }
         },
         "es": {
@@ -205888,7 +205888,7 @@
         "de": {
           "stringUnit": {
             "state": "translated",
-            "value": "Einheiten"
+            "value": "Trainings"
           }
         },
         "es": {
