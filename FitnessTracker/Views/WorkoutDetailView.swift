@@ -223,7 +223,7 @@ struct WorkoutDetailView: View {
     }
 
     private var summaryGrid: some View {
-        LazyVGrid(columns: [GridItem(.adaptive(minimum: 110), spacing: 12)], spacing: 12) {
+        StatGrid {
             StatTile(label: "Distance", value: units.distance(workout.distance))
             StatTile(label: "Time", value: units.duration(workout.duration))
             if workout.sport == .swim, let swim = swimSummary {
@@ -266,6 +266,29 @@ struct WorkoutDetailView: View {
 }
 
 // MARK: - Pieces
+
+/// The tile grid every stat block in the app is laid out with.
+///
+/// The column minimum scales with Dynamic Type, which is the whole point. A
+/// fixed 110pt minimum keeps three columns at every text size, so at the
+/// accessibility sizes — where .title3 renders around three times larger — each
+/// value had 110pt to render in and lost: "40.36 mi" came out as "40.…", 2:09:41
+/// as "2:0…". The measurements are the content of these screens. They are the
+/// last thing that should be dropped, and they were the first.
+///
+/// Scaling the minimum instead lets the grid fall to two columns and then one
+/// as the text grows, which is the arrangement that keeps the numbers whole.
+struct StatGrid<Content: View>: View {
+    @ScaledMetric(relativeTo: .title3) private var minimumColumnWidth: CGFloat = 110
+    @ViewBuilder var content: () -> Content
+
+    var body: some View {
+        LazyVGrid(columns: [GridItem(.adaptive(minimum: minimumColumnWidth), spacing: 12)],
+                  spacing: 12) {
+            content()
+        }
+    }
+}
 
 struct StatTile: View {
     /// A key, not a `String`: `Text(someString)` renders the string itself, so
@@ -750,7 +773,7 @@ struct PowerSummaryView: View {
         VStack(alignment: .leading, spacing: 8) {
             Text("Power").font(.headline)
 
-            LazyVGrid(columns: [GridItem(.adaptive(minimum: 110), spacing: 12)], spacing: 12) {
+            StatGrid {
                 StatTile(label: "Average", value: "\(Int(summary.averagePower)) W")
                 StatTile(label: "Normalized", value: "\(Int(summary.normalizedPower)) W")
                 StatTile(label: "Max", value: "\(Int(summary.maxPower)) W")
@@ -797,7 +820,7 @@ struct SwimSummaryView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
             Text("Swim").font(.headline)
-            LazyVGrid(columns: [GridItem(.adaptive(minimum: 110), spacing: 12)], spacing: 12) {
+            StatGrid {
                 StatTile(label: "Pace", value: units.swimPace(summary.pacePer100))
                 if let rate = summary.strokeRate {
                     StatTile(label: "Stroke rate", value: "\(Int(rate.rounded()))/min")

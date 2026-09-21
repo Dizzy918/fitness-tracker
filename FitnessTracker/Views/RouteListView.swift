@@ -168,7 +168,7 @@ struct RouteDetailView: View {
                         .clipShape(RoundedRectangle(cornerRadius: 12))
                 }
 
-                LazyVGrid(columns: [GridItem(.adaptive(minimum: 110), spacing: 12)], spacing: 12) {
+                StatGrid {
                     StatTile(label: "Distance", value: units.distance(route.distance))
                     StatTile(label: "Elev gain", value: units.elevation(route.elevationGain))
                     StatTile(label: "Points", value: "\(route.points.count)")

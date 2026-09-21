@@ -294,7 +294,7 @@ struct ExerciseProgressView: View {
                         .frame(height: 200)
                     }
 
-                    LazyVGrid(columns: [GridItem(.adaptive(minimum: 110), spacing: 12)], spacing: 12) {
+                    StatGrid {
                         StatTile(label: "Best e1RM",
                                  value: units.volume(points.map(\.e1rm).max() ?? 0))
                         StatTile(label: "Sessions", value: "\(points.count)")

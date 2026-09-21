@@ -102,7 +102,7 @@ struct DashboardView: View {
 
         return VStack(alignment: .leading, spacing: 8) {
             Text("This week").font(.headline)
-            LazyVGrid(columns: [GridItem(.adaptive(minimum: 110), spacing: 12)], spacing: 12) {
+            StatGrid {
                 StatTile(label: "Distance", value: units.distance(km))
                 StatTile(label: "Time", value: units.duration(time))
                 StatTile(label: "Sessions", value: "\(thisWeekRuns.count)")
@@ -231,7 +231,7 @@ struct DashboardView: View {
                     .font(.caption.weight(.medium))
                     .foregroundStyle(week.verdict == .undifferentiated ? .orange : .secondary)
             }
-            LazyVGrid(columns: [GridItem(.adaptive(minimum: 110), spacing: 12)], spacing: 12) {
+            StatGrid {
                 StatTile(label: "Monotony", value: String(format: "%.2f", week.monotony))
                 StatTile(label: "Strain", value: "\(Int(week.strain.rounded()))")
                 StatTile(label: "Rest days", value: "\(week.restDays)")
