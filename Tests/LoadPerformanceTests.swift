@@ -57,7 +57,14 @@ final class LoadPerformanceTests: XCTestCase {
         XCTAssertEqual(totals.count, 400)
         XCTAssertGreaterThan(series.count, 390)
         print("  cold, 400 workouts × 2700 samples: \(String(format: "%.2f", elapsed))s")
-        XCTAssertLessThan(elapsed, 20, "took \(elapsed)s")
+        // ~10s idle on a 2019 MacBook Pro, so 20s was only a 2× margin — and a
+        // 2× margin is nothing on a machine that is also building for the
+        // simulator, which is how this failed twice in one afternoon while the
+        // code it guards was untouched. The stated intent is an
+        // order-of-magnitude guard, so give it a budget that only an
+        // order-of-magnitude regression can cross. A real one — decoding every
+        // stream twice — lands near 100s and still fails this.
+        XCTAssertLessThan(elapsed, 60, "took \(elapsed)s")
     }
 
     /// The build that actually matters: every dashboard appearance after the
